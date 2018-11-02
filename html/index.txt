@@ -1,0 +1,35 @@
+<div id = "page">
+    
+</div>
+<script>
+    map = JSON.parse(document.getElementById("datadiv").innerHTML);
+    
+    
+    for(var index = 0;index < map.length;index++){
+        var newimg = document.createElement("IMG");
+        var newa = document.createElement("A");
+        newa.appendChild(newimg);
+        newa.id = "a" + index.toString();
+        newa.href = map[index].href;
+        newimg.id = "i" + index.toString();
+        document.getElementById("page").appendChild(newa);
+        newimg.src = map[index].src;
+        newa.style.left = map[index].x.toString()*innerWidth + "px";
+        newa.style.top = map[index].y.toString()*innerHeight + "px";
+        newa.style.width = map[index].w.toString()*innerHeight + "px";
+        newa.style.transform = "rotate(" + map[index].angle.toString()*innerHeight + "deg)";
+        newimg.onload = function(){
+            this.parentElement.style.height = (this.height).toString() + "px";
+        }
+        
+    }
+</script>
+<style>
+#page{
+    position:absolute;    
+    left:0px;
+    top:0px;
+    right:0px;
+    bottom:0px;
+}
+</style>

@@ -1,0 +1,10 @@
+[
+  {
+    "src":"icons/editor.svg",
+    "href":"editor.php",
+    "x":0.5,
+    "y":0.1,
+    "w":0.1,
+    "angle":0
+  }
+]
