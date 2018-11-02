@@ -45,8 +45,36 @@ echo file_get_contents("json/map.txt");
     echo file_get_contents("json/links.txt");
 
 ?></div>
+<div id = "listoflists" style = "display:none;"><?php
+
+    echo file_get_contents("json/listoflists.txt");
+    
+?></div>
+<a href = "editor.php"><img src = "icons/editor.svg"></a>
+
 <script>
     links = JSON.parse(document.getElementById("linkdatadiv").innerHTML);
+    imgurls = [];
+    listoflists = JSON.parse(document.getElementById("listoflists").innerHTML);
+    for(var index = 0;index < listoflists.length;index++){
+        currentFile = listoflists[index];
+        var httpc = new XMLHttpRequest();     
+        httpc.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                baseurl = currentFile.split("list.txt")[0];
+                svgs = this.responseText.split(",");
+                for(var sindex = 0;sindex < svgs.length - 1;sindex++){
+                    imgurls.push(baseurl + svgs[sindex]);   
+                }
+            }
+        };
+        httpc.open("GET", "fileloader.php?filename=" + currentFile, true);
+        httpc.send();
+   
+    }
+    
+    
+
 </script>
 </body>
 </html>

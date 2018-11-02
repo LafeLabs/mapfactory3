@@ -8,48 +8,79 @@
 
 <!-- 
 PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
-
-note that "map" has a broader meaning than just geographic maps like google maps or yahoo or whatever, the wikipedia definition starts like this:
-
-"A map is a symbolic depiction emphasizing relationships between elements of some space, such as objects, regions, or themes."
-
-This is the goal of this project, to make a factory which creates maps in this generalized definition.  
-
-_9_LAWS_OF_GEOMETRON_:
-
-EVERYTHING IS PHYSICAL
-EVERYTHING IS FRACTAL
-EVERYTHING IS RECURSIVE
-
-NO MONEY
-NO PROPERTY
-NO MINING
-
-EGO DEATH:
-    LOOK AT THE INSECTS
-    LOOK AT THE FUNGI
-    LANGUAGE IS HOW THE MIND PARSES REALITY
-    
 -->
 <!--Stop Google:-->
 <META NAME="robots" CONTENT="noindex,nofollow">
 </head>
 <body>
-<div id = "datadiv" style = "display:none"><?php
-
-echo file_get_contents("json/map.txt");
-
-?></div>
 <div id = "linkdatadiv" style = "display:none"><?php
 
     echo file_get_contents("json/links.txt");
 
 ?></div>
-<div id = "savebutton"><img src = "icons/gobutton.svg" style = "width:50px;position:absolue;right:10px;top:10px" class = "button"/></div>
+<a href = "editor.php" style = "position:absolute;left:10px;top:10px">
+    <img src  = "icons/editor.svg" style = "width:50px"/>
+</a>
 
+<div id = "tablebox">
+    <table id = "maintable"></table>
+</div>
+
+<table id = "bottomtable">
+    <tr>
+        <td>ENTER URL:</td><td><input id = "urlinput"/></td>
+    </tr>
+</table>
 <script>
     links = JSON.parse(document.getElementById("linkdatadiv").innerHTML);
-
+    for(var index = 0;index < links.length;index++){
+        var newtr = document.createElement("TR");
+        document.getElementById("maintable").appendChild(newtr);
+        var newtd = document.createElement("TD");
+        newtd.innerHTML = links[index];
+        newtd.className = "linktd";
+        newtr.appendChild(newtd);
+        var deltd = document.createElement("TD");
+        newtr.appendChild(deltd);
+        deltd.className = "button";
+        var newimg = document.createElement("IMG");
+        newimg.className = "delbutton";
+        newimg.src = "icons/deletelink.svg";
+        deltd.appendChild(newimg);
+        deltd.onclick  = function(){
+            document.getElementById("maintable").removeChild(this.parentNode);
+            var newlinks = document.getElementById("maintable").getElementsByClassName("linktd");
+            links = [];
+            for(var lindex = 0;lindex < newlinks.length;lindex++){
+                links.push(newlinks[index].innerHTML);
+            }
+        }
+    }
+    
+    document.getElementById("urlinput").onchange = function(){
+        links.push(this.value);
+        var newtr = document.createElement("TR");
+        document.getElementById("maintable").appendChild(newtr);
+        var newtd = document.createElement("TD");
+        newtd.innerHTML = this.value;
+        newtd.className = "linktd";
+        newtr.appendChild(newtd);
+        var deltd = document.createElement("TD");
+        newtr.appendChild(deltd);
+        deltd.className = "button";
+        var newimg = document.createElement("IMG");
+        newimg.className = "delbutton";
+        newimg.src = "icons/deletelink.svg";
+        deltd.appendChild(newimg);
+        deltd.onclick  = function(){
+            document.getElementById("maintable").removeChild(this.parentNode);
+            var newlinks = document.getElementById("maintable").getElementsByClassName("linktd");
+            links = [];
+            for(var lindex = 0;lindex < newlinks.length;lindex++){
+                links.push(newlinks[index].innerHTML);
+            }
+        }
+    }
 </script>
 <style>
     .button{
@@ -60,6 +91,23 @@ echo file_get_contents("json/map.txt");
     }
     button:active{
         background-color:yellow;
+    }
+    #tablebox{
+        position:absolute;
+        top:100px;
+        left:50px;
+        bottom:100px;
+        right:50px;
+        border:solid;
+        overflow:scroll;
+    }
+    #bottomtable{
+        position:absolute;
+        bottom:0px;
+        left:0px;
+    }
+    .delbutton{
+        width:50px;
     }
 </style>
 </body>

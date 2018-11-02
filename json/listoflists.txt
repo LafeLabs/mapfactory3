@@ -1,0 +1,4 @@
+[
+    "http://quantumart.org/symbol/svg/list.txt",
+    "http://lafelabs.org/factory/symbol/symbols/trees/svg/list.txt"
+]
