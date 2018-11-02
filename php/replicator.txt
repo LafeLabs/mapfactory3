@@ -1,26 +1,11 @@
 <?php
 
-    $url = "https://raw.githubusercontent.com/LafeLabs/factory2/master/json/dna.txt";
+    $url = "https://raw.githubusercontent.com/LafeLabs/mapfactory3/master/json/dna.txt";
     $dnaraw = file_get_contents($url);
     $dna =json_decode($dnaraw);
     $baseurl = explode("json",$url)[0];
 
     //sources
-    mkdir("symbols");
-    mkdir("uploader");
-        mkdir("uploader/images");
-        mkdir("uploader/json");
-    mkdir("combiner");
-        mkdir("combiner/json");
-    mkdir("aligner");
-        mkdir("aligner/json");
-    mkdir("linkfeed");
-        mkdir("linkfeed/json");
-    mkdir("linker");
-        mkdir("linker/json");
-    mkdir("maps");
-    mkdir("symbol");
-    mkdir("scroll");
 
     foreach($dna as $dirs){
         mkdir($dirs->path);

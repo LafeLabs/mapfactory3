@@ -1,8 +1,40 @@
 [
+    {
+    "src":"icons/mapfactory.svg",
+    "href":"",
+    "x":0.01,
+    "y":0.01,
+    "w":0.15,
+    "angle":0
+  },
   {
     "src":"icons/editor.svg",
     "href":"editor.php",
-    "x":0.5,
+    "x":0.15,
+    "y":0.1,
+    "w":0.1,
+    "angle":0
+  },
+  {
+    "src":"icons/linker.svg",
+    "href":"linker.php",
+    "x":0.28,
+    "y":0.1,
+    "w":0.14,
+    "angle":0
+  },
+    {
+    "src":"icons/linkfeed.svg",
+    "href":"linkfeed.php",
+    "x":0.3,
+    "y":0.3,
+    "w":0.1,
+    "angle":0
+  },
+  {
+    "src":"icons/aligner.svg",
+    "href":"aligner.php",
+    "x":0.45,
     "y":0.1,
     "w":0.1,
     "angle":0
