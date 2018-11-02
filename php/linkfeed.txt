@@ -18,8 +18,8 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
     echo file_get_contents("json/links.txt");
 
 ?></div>
-<a href = "editor.php" style = "position:absolute;left:10px;top:10px">
-    <img src  = "icons/editor.svg" style = "width:50px"/>
+<a href = "index.php" style = "position:absolute;left:10px;top:10px">
+    <img src  = "icons/mapfactory.svg" style = "width:50px"/>
 </a>
 
 <div id = "tablebox">
@@ -52,8 +52,9 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
             var newlinks = document.getElementById("maintable").getElementsByClassName("linktd");
             links = [];
             for(var lindex = 0;lindex < newlinks.length;lindex++){
-                links.push(newlinks[index].innerHTML);
+                links.push(newlinks[lindex].innerHTML);
             }
+            savelinks();
         }
     }
     
@@ -79,10 +80,26 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
             for(var lindex = 0;lindex < newlinks.length;lindex++){
                 links.push(newlinks[index].innerHTML);
             }
+            savelinks();
         }
+        savelinks();
+    }
+    
+    function savelinks(){
+        data = encodeURIComponent(JSON.stringify(links,null,"    "));
+        var httpc = new XMLHttpRequest();
+        var url = "filesaver.php";        
+        httpc.open("POST", url, true);
+        httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+        httpc.send("data=" + data + "&filename=" + "json/links.txt");//send text to filesaver.php
+
     }
 </script>
 <style>
+body{
+    font-family:Helvetica;
+    font-size:36px;
+}
     .button{
         cursor:pointer;
     }

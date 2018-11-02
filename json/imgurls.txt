@@ -1,1 +1,3 @@
-[]
+[
+    "http://lafelabs.org/factory/symbol/svg/svg1539829564.svg"
+]

@@ -2,34 +2,12 @@
 <html  lang="en">
 <head>
 <meta charset="utf-8"> 
-<title>Link Creator</title>
+<title>Linker</title>
 
 <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAP//AP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiIiIiIiIiIgERAAERAAERABEQABEQABEAAREAAREAASIiIiIiIiIiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACIiIiIiIiIiAREAAREAAREAERAAERAAEQABEQABEQABIiIiIiIiIiL//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAC++wAAnnkAAI44AACeeQAAvvsAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rel="icon" type="image/x-icon" />
 
 <!-- 
 PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
-
-note that "map" has a broader meaning than just geographic maps like google maps or yahoo or whatever, the wikipedia definition starts like this:
-
-"A map is a symbolic depiction emphasizing relationships between elements of some space, such as objects, regions, or themes."
-
-This is the goal of this project, to make a factory which creates maps in this generalized definition.  
-
-_9_LAWS_OF_GEOMETRON_:
-
-EVERYTHING IS PHYSICAL
-EVERYTHING IS FRACTAL
-EVERYTHING IS RECURSIVE
-
-NO MONEY
-NO PROPERTY
-NO MINING
-
-EGO DEATH:
-    LOOK AT THE INSECTS
-    LOOK AT THE FUNGI
-    LANGUAGE IS HOW THE MIND PARSES REALITY
-    
 -->
 <!--Stop Google:-->
 <META NAME="robots" CONTENT="noindex,nofollow">
@@ -45,36 +23,115 @@ echo file_get_contents("json/map.txt");
     echo file_get_contents("json/links.txt");
 
 ?></div>
-<div id = "listoflists" style = "display:none;"><?php
+<div id = "imgurls" style = "display:none;"><?php
 
-    echo file_get_contents("json/listoflists.txt");
+    echo file_get_contents("json/imgurls.txt");
     
 ?></div>
-<a href = "editor.php"><img src = "icons/editor.svg"></a>
+
+<a href = "index.php" style = "position:absolute;left:10px;top:10px"><img src = "icons/mapfactory.svg" style = "width:50px"></a>
+
+<div id = "linkscroll"></div>
+<table id = "maintable">
+    <tr>
+        <td id = "gobutton"><img style = "width:100px;" class = "button" src = "icons/gobutton.svg"></td>
+        <td>
+            <img style = "width:100px" id = "mainimage"/>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>imgurl:<td><input id = "imgurlinput"></td>
+    </tr>
+    <tr>
+        <td>href:<td><input id = "hrefinput"></td>
+    </tr>
+
+</table>
+<div id = "imagescroll"></div>
+
 
 <script>
     links = JSON.parse(document.getElementById("linkdatadiv").innerHTML);
-    imgurls = [];
-    listoflists = JSON.parse(document.getElementById("listoflists").innerHTML);
-    for(var index = 0;index < listoflists.length;index++){
-        currentFile = listoflists[index];
-        var httpc = new XMLHttpRequest();     
-        httpc.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                baseurl = currentFile.split("list.txt")[0];
-                svgs = this.responseText.split(",");
-                for(var sindex = 0;sindex < svgs.length - 1;sindex++){
-                    imgurls.push(baseurl + svgs[sindex]);   
-                }
-            }
-        };
-        httpc.open("GET", "fileloader.php?filename=" + currentFile, true);
-        httpc.send();
-   
+    imgurls = JSON.parse(document.getElementById("imgurls").innerHTML);
+    map = JSON.parse(document.getElementById("datadiv").innerHTML);
+    
+    for(var index = 0;index < links.length; index++){
+        var newp = document.createElement("P");
+        newp.innerHTML = links[index];
+        newp.className = "button";
+        document.getElementById("linkscroll").appendChild(newp);
+        newp.onclick = function(){
+            document.getElementById("hrefinput").value = this.innerHTML;
+        }
+    }
+    for(var index = 0;index < imgurls.length; index++){
+        var newimg = document.createElement("IMG");
+        newimg.src = imgurls[index];
+        newimg.className = "button";
+        document.getElementById("imagescroll").appendChild(newimg);
+        newimg.onclick = function(){
+            document.getElementById("imgurlinput").value = this.src;
+            document.getElementById("mainimage").src = this.src;
+        }
     }
     
-    
-
 </script>
+<style>
+body{
+    font-family:Helvetica;
+    font-size:24px;
+}
+input{
+    font-family:courier;
+    font-size:20px;
+}
+    #linkscroll{
+        position:absolute;
+        overflow:scroll;
+        left:10px;
+        right:75%;
+        bottom:10px;
+        top:110px;
+        border:solid;
+        border-color:blue;
+        border-width:5px;
+    }
+    #imagescroll{
+        position:absolute;
+        left:70%;
+        right:10px;
+        top:110px;
+        bottom:10px;
+        border:solid;
+        border-color:yellow;
+        border-width:5px;
+    }
+    #imagescroll img{
+        width:50%;
+        display:block;
+        margin:auto;
+    }
+    #maintable{
+        position:absolute;
+        width:25%;
+        left:30%;
+        top:110px;
+    }
+    
+    .button{
+        cursor:pointer;
+        border:solid;
+        margin-top:1em;
+        margin-bottom:1em;
+    }
+    .button:hover{
+        background-color:green;
+    }
+    .button:active{
+        background-color:yellow;
+    }
+    
+</style>
 </body>
 </html>
