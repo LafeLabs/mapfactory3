@@ -11,6 +11,7 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
 -->
 <!--Stop Google:-->
 <META NAME="robots" CONTENT="noindex,nofollow">
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
 </head>
 <body>
 <div id = "datadiv" style = "display:none"><?php
@@ -48,7 +49,10 @@ echo file_get_contents("json/map.txt");
     </tr>
 </table>
 
-<div id = "page"></div>
+<div id = "pagebox">    
+    <div id = "page"></div>    
+</div>
+
 
 <div id = "imagescroll"></div>
 <style>
@@ -92,13 +96,21 @@ input{
         left:30%;
         top:110px;
     }
-    #page{
+    #pagebox{
         position:absolute;
         width:30%;
         left:30%;
         height:50%;
         bottom:0px;
         border:solid;
+        z-index:10;
+    }
+    #page{
+        position:absolute;
+        left:0px;
+        right:0px;
+        top:0px;
+        bottom:0px;
     }
     .button{
         cursor:pointer;
@@ -107,7 +119,7 @@ input{
         margin-bottom:1em;
     }
     .button:hover{
-        background-color:green;
+        background-color:#a0ffa0;
     }
     .button:active{
         background-color:yellow;
@@ -169,6 +181,45 @@ input{
             this.parentElement.style.height = (this.height).toString() + "px";
         }
     }
+    
+    document.getElementById("gobutton").onclick = function(){
+        var newjson = {}
+        newjson.w = 0.1;
+        newjson.x = 0.5;
+        newjson.y = 0.25;
+        newjson.angle = 0;
+        newjson.src = document.getElementById("imgurlinput").value;
+        newjson.href = document.getElementById("hrefinput").value;
+        map.push(newjson);
+            var newimg = document.createElement("IMG");
+        var newa = document.createElement("A");
+        newa.className = "linkbox";
+        newa.appendChild(newimg);
+        newa.id = "a" + (map.length - 1).toString();
+        newa.href = newjson.href;
+        newimg.id = "i" + (map.length - 1).toString();
+        document.getElementById("page").appendChild(newa);
+        newimg.src = newjson.src;
+        newa.style.left = (newjson.x*w).toString() + "px";
+        newa.style.top = (newjson.y*w).toString() + "px";
+        newa.style.width = (newjson.w*w).toString() + "px";
+        newa.style.transform = "rotate(" + newjson.angle.toString() + "deg)";
+        newimg.onload = function(){
+            this.parentElement.style.height = (this.height).toString() + "px";
+        }
+        
+    }
+    
+
+mc = new Hammer(document.getElementById("pagebox"));
+mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+mc.on("panleft panright panup pandown tap press", function(ev) {
+
+    document.getElementById("a" + (map.length - 1).toString()).style.left = (0.5*w + ev.deltaX).toString() + "px";
+    document.getElementById("a" + (map.length - 1).toString()).style.top = (0.25*w + ev.deltaY).toString() + "px";
+
+});    
+
     
 </script>
 

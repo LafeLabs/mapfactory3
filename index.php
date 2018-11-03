@@ -53,7 +53,12 @@ EGO DEATH:
 <body>
 <div id = "datadiv" style = "display:none"><?php
 
-echo file_get_contents("json/map.txt");
+    if(isset($_GET['url'])){
+        echo file_get_contents($_GET['url']);
+    }
+    else{
+        echo file_get_contents("json/map.txt");        
+    }
 
 ?></div>
 <?php
