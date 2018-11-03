@@ -16,9 +16,9 @@
         document.getElementById("page").appendChild(newa);
         newimg.src = map[index].src;
         newa.style.left = (map[index].x*innerWidth).toString() + "px";
-        newa.style.top = (map[index].y*innerHeight).toString() + "px";
-        newa.style.width = (map[index].w*innerHeight).toString() + "px";
-        newa.style.transform = "rotate(" + map[index].angle.toString()*innerHeight + "deg)";
+        newa.style.top = (map[index].y*innerWidth).toString() + "px";
+        newa.style.width = (map[index].w*innerWidth).toString() + "px";
+        newa.style.transform = "rotate(" + map[index].angle.toString() + "deg)";
         newimg.onload = function(){
             this.parentElement.style.height = (this.height).toString() + "px";
         }

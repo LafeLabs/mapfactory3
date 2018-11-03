@@ -46,37 +46,11 @@ echo file_get_contents("json/map.txt");
     <tr>
         <td>href:<td><input id = "hrefinput"></td>
     </tr>
-
 </table>
+
+<div id = "page"></div>
+
 <div id = "imagescroll"></div>
-
-
-<script>
-    links = JSON.parse(document.getElementById("linkdatadiv").innerHTML);
-    imgurls = JSON.parse(document.getElementById("imgurls").innerHTML);
-    map = JSON.parse(document.getElementById("datadiv").innerHTML);
-    
-    for(var index = 0;index < links.length; index++){
-        var newp = document.createElement("P");
-        newp.innerHTML = links[index];
-        newp.className = "button";
-        document.getElementById("linkscroll").appendChild(newp);
-        newp.onclick = function(){
-            document.getElementById("hrefinput").value = this.innerHTML;
-        }
-    }
-    for(var index = 0;index < imgurls.length; index++){
-        var newimg = document.createElement("IMG");
-        newimg.src = imgurls[index];
-        newimg.className = "button";
-        document.getElementById("imagescroll").appendChild(newimg);
-        newimg.onclick = function(){
-            document.getElementById("imgurlinput").value = this.src;
-            document.getElementById("mainimage").src = this.src;
-        }
-    }
-    
-</script>
 <style>
 body{
     font-family:Helvetica;
@@ -118,7 +92,14 @@ input{
         left:30%;
         top:110px;
     }
-    
+    #page{
+        position:absolute;
+        width:30%;
+        left:30%;
+        height:50%;
+        bottom:0px;
+        border:solid;
+    }
     .button{
         cursor:pointer;
         border:solid;
@@ -131,7 +112,65 @@ input{
     .button:active{
         background-color:yellow;
     }
-    
+    .linkbox{
+        position:absolute;
+    }
+    .linkbox img{
+        position:absolute;
+        left:0px;
+        top:0px;
+        width:100%;
+    }
+
 </style>
+
+<script>
+    links = JSON.parse(document.getElementById("linkdatadiv").innerHTML);
+    imgurls = JSON.parse(document.getElementById("imgurls").innerHTML);
+    map = JSON.parse(document.getElementById("datadiv").innerHTML);
+    
+    for(var index = 0;index < links.length; index++){
+        var newp = document.createElement("P");
+        newp.innerHTML = links[index];
+        newp.className = "button";
+        document.getElementById("linkscroll").appendChild(newp);
+        newp.onclick = function(){
+            document.getElementById("hrefinput").value = this.innerHTML;
+        }
+    }
+    for(var index = 0;index < imgurls.length; index++){
+        var newimg = document.createElement("IMG");
+        newimg.src = imgurls[index];
+        newimg.className = "button";
+        document.getElementById("imagescroll").appendChild(newimg);
+        newimg.onclick = function(){
+            document.getElementById("imgurlinput").value = this.src;
+            document.getElementById("mainimage").src = this.src;
+        }
+    }
+    
+    w = parseInt(getComputedStyle(document.getElementById("page")).width);
+
+    for(var index = 0;index < map.length;index++){
+        var newimg = document.createElement("IMG");
+        var newa = document.createElement("A");
+        newa.className = "linkbox";
+        newa.appendChild(newimg);
+        newa.id = "a" + index.toString();
+        newa.href = map[index].href;
+        newimg.id = "i" + index.toString();
+        document.getElementById("page").appendChild(newa);
+        newimg.src = map[index].src;
+        newa.style.left = (map[index].x*w).toString() + "px";
+        newa.style.top = (map[index].y*w).toString() + "px";
+        newa.style.width = (map[index].w*w).toString() + "px";
+        newa.style.transform = "rotate(" + map[index].angle.toString() + "deg)";
+        newimg.onload = function(){
+            this.parentElement.style.height = (this.height).toString() + "px";
+        }
+    }
+    
+</script>
+
 </body>
 </html>
