@@ -39,7 +39,7 @@ echo file_get_contents("json/map.txt");
         <td>
             <img style = "width:100px" id = "mainimage"/>
         </td>
-        <td></td>
+        <td id = "savebutton"><img style = "width:100px" class = "button" src = "icons/linker.svg"/></td>
     </tr>
     <tr>
         <td>imgurl:<td><input id = "imgurlinput"></td>
@@ -210,11 +210,23 @@ input{
         
     }
     
+    document.getElementById("savebutton").onclick = function(){
+        data = encodeURIComponent(JSON.stringify(map,null,"    "));
+        var httpc = new XMLHttpRequest();
+        var url = "filesaver.php";        
+        httpc.open("POST", url, true);
+        httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+        httpc.send("data=" + data + "&filename=" + "json/map.txt");//send text to filesaver.php
+    }
+
 
 mc = new Hammer(document.getElementById("pagebox"));
 mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
 mc.on("panleft panright panup pandown tap press", function(ev) {
 
+    map[map.length - 1].x = (0.5*w + ev.deltaX)/w;
+    map[map.length - 1].y = (0.25*w + ev.deltaY)/w;
+    
     document.getElementById("a" + (map.length - 1).toString()).style.left = (0.5*w + ev.deltaX).toString() + "px";
     document.getElementById("a" + (map.length - 1).toString()).style.top = (0.25*w + ev.deltaY).toString() + "px";
 

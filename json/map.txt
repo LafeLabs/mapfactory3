@@ -1,50 +1,58 @@
 [
     {
-    "src":"icons/mapfactory.svg",
-    "href":"",
-    "x":0.01,
-    "y":0.01,
-    "w":0.15,
-    "angle":0
-  },
-  {
-    "src":"icons/editor.svg",
-    "href":"editor.php",
-    "x":0.15,
-    "y":0.1,
-    "w":0.1,
-    "angle":0
-  },
-  {
-    "src":"icons/linker.svg",
-    "href":"linker.php",
-    "x":0.28,
-    "y":0.1,
-    "w":0.14,
-    "angle":0
-  },
+        "src": "icons/mapfactory.svg",
+        "href": "",
+        "x": 0.01,
+        "y": 0.01,
+        "w": 0.15,
+        "angle": 0
+    },
     {
-    "src":"icons/linkfeed.svg",
-    "href":"linkfeed.php",
-    "x":0.3,
-    "y":0.3,
-    "w":0.1,
-    "angle":0
-  },
-  {
-    "src":"icons/aligner.svg",
-    "href":"aligner.php",
-    "x":0.85,
-    "y":0.1,
-    "w":0.1,
-    "angle":0
-  },
-  {
-    "src":"icons/mapeditor.svg",
-    "href":"mapeditor.php",
-    "x":0.85,
-    "y":0.2,
-    "w":0.1,
-    "angle":0
-  }
+        "src": "icons/editor.svg",
+        "href": "editor.php",
+        "x": -0.002777777777777786,
+        "y": 0.3580409356725146,
+        "w": 0.1,
+        "angle": 0
+    },
+    {
+        "src": "icons/linker.svg",
+        "href": "linker.php",
+        "x": 0.3435964912280702,
+        "y": 0.15482456140350878,
+        "w": 0.14,
+        "angle": 0
+    },
+    {
+        "src": "icons/linkfeed.svg",
+        "href": "linkfeed.php",
+        "x": 0.3621345029239766,
+        "y": 0.0536549707602339,
+        "w": 0.1,
+        "angle": 0
+    },
+    {
+        "src": "icons/aligner.svg",
+        "href": "aligner.php",
+        "x": 0.5342105263157895,
+        "y": 0.15482456140350878,
+        "w": 0.1,
+        "angle": 0
+    },
+    {
+        "src": "icons/mapeditor.svg",
+        "href": "mapeditor.php",
+        "x": 0.5320175438596491,
+        "y": 0.2833333333333333,
+        "w": 0.1,
+        "angle": 0
+    },
+    {
+        "w": 0.1,
+        "x": 0.007317073170731708,
+        "y": 0.9085365853658537,
+        "angle": 0,
+        "src": "http://lafelabs.org/factory/symbol/svg/svg1539829564.svg",
+        "href": "index.php"
+    }
 ]
