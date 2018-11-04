@@ -5,6 +5,12 @@
     $dna =json_decode($dnaraw);
     $baseurl = explode("json",$url)[0];
 
+    mkdir("maps");
+    mkdir("symbol");
+    mkdir("scroll");
+    mkdir("curve");
+
+
     //sources
 
     foreach($dna as $dirs){

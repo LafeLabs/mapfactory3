@@ -40,46 +40,7 @@ $finalstring .= getfiles("html");
 $finalstring .= ",\n";
 $finalstring .= getfiles("json");
 $finalstring .= ",\n";
-
-$finalstring .= getALLfiles("symbols");
-$finalstring .= ",\n";
-
-$finalstring .= getfiles("uploader/php");
-$finalstring .= ",\n";
-$finalstring .= getfiles("uploader/html");
-$finalstring .= ",\n";
-
-$finalstring .= getfiles("combiner/php");
-$finalstring .= ",\n";
-$finalstring .= getfiles("combiner/json");
-$finalstring .= ",\n";
-$finalstring .= getfiles("combiner/html");
-$finalstring .= ",\n";
-
-$finalstring .= getfiles("aligner/php");
-$finalstring .= ",\n";
-$finalstring .= getfiles("aligner/json");
-$finalstring .= ",\n";
-$finalstring .= getfiles("aligner/html");
-$finalstring .= ",\n";
-
-$finalstring .= getfiles("linkfeed/php");
-$finalstring .= ",\n";
-$finalstring .= getfiles("linkfeed/json");
-$finalstring .= ",\n";
-$finalstring .= getfiles("linkfeed/html");
-$finalstring .= ",\n";
-
-$finalstring .= getfiles("linker/php");
-$finalstring .= ",\n";
-$finalstring .= getfiles("linker/html");
-$finalstring .= ",\n";
-$finalstring .= getfiles("linker/json");
-$finalstring .= ",\n";
-
-$finalstring .= getfiles("maps/php");
-$finalstring .= ",\n";
-$finalstring .= getfiles("maps/html");
+$finalstring .= getALLfiles("icons");
 $finalstring .= ",\n";
 $finalstring .= "    {\n        \"path\":\"symbol\",\n        \"files\":[\n            \"replicator.php\"\n        ]\n    },\n";
 $finalstring .= "    {\n        \"path\":\"curve\",\n        \"files\":[\n            \"replicator.php\"\n        ]\n    },\n";

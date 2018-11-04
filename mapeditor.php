@@ -166,7 +166,6 @@ document.getElementById("savebutton").onclick = function(){
     
 function savemap(){
     
-
     data = encodeURIComponent(JSON.stringify(map,null,"    "));
     var httpc = new XMLHttpRequest();
     var url = "filesaver.php";        
