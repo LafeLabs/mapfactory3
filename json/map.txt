@@ -118,5 +118,37 @@
         "angle": 0,
         "src": "http://localhost:8000/uploadimages/image1.png",
         "href": "scroll/index.php?filename=maplore.txt"
+    },
+    {
+        "w": 0.11535087719298247,
+        "x": 0.6691984025103408,
+        "y": 0.37383754100698907,
+        "angle": 0,
+        "src": "http://localhost:8000/symbol/svg/svg1541364390.svg",
+        "href": ""
+    },
+    {
+        "w": 0.1,
+        "x": 0.6896662387676508,
+        "y": 0.31430252460419333,
+        "angle": 19.7920337176157,
+        "src": "http://localhost:8000/symbol/svg/svg1541364390.svg",
+        "href": ""
+    },
+    {
+        "w": 0.08099415204678365,
+        "x": 0.7362109542148053,
+        "y": 0.2835151904150621,
+        "angle": 64.71680866394973,
+        "src": "http://localhost:8000/symbol/svg/svg1541364390.svg",
+        "href": ""
+    },
+    {
+        "w": 0.07514619883040936,
+        "x": 0.6731636000570532,
+        "y": 0.3414384538582228,
+        "angle": -30.47344873982099,
+        "src": "http://localhost:8000/symbol/svg/svg1541364390.svg",
+        "href": ""
     }
 ]

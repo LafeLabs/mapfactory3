@@ -1,10 +1,10 @@
-<svg width="65" height="213" viewbox = "0 0 65 213"  xmlns="http://www.w3.org/2000/svg">
+<svg width="250" height="250" viewbox = "0 0 250 250"  xmlns="http://www.w3.org/2000/svg">
 
 <!--
 <json>
 {
-    "svgwidth": 65,
-    "svgheight": 213,
+    "svgwidth": 250,
+    "svgheight": 250,
     "unit": 100,
     "x0": 684,
     "y0": 399,
@@ -65,4 +65,4 @@
 }
 </json>
 -->
-	<path d = "M32 207 L7 207 L8 7 L58 7 L58 207 L33 207 Z" stroke = "blue" stroke-width = "1" fill = "blue" /></svg>
+	<path d = "M125 225 L100 225 L100 25 L150 25 L150 225 L125 225 Z" stroke = "blue" stroke-width = "1" fill = "blue" /></svg>
