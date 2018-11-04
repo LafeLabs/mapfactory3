@@ -43,11 +43,10 @@ EGO DEATH:
     <div class = "php file">php/createlink.txt</div>
     <div class = "php file">php/linkfeed.txt</div>
     <div class = "php file">php/imagefeed.txt</div>
-    <div class = "php file">php/alignlink.txt</div>
-    <div class = "php file">php/editlink.txt</div>
     <div class = "php file">php/linker.txt</div>
     <div class = "php file">php/aligner.txt</div>
     <div class = "php file">php/mapeditor.txt</div>
+    <div class = "php file">php/map2link.txt</div>
 
     <div class = "php file">php/copy.txt</div>
 

@@ -3,7 +3,12 @@
 </div>
 <script>
     map = JSON.parse(document.getElementById("datadiv").innerHTML);
-    
+    data = encodeURIComponent(JSON.stringify(map,null,"    "));
+    var httpc = new XMLHttpRequest();
+    var url = "filesaver.php";        
+    httpc.open("POST", url, true);
+    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+    httpc.send("data=" + data + "&filename=" + "json/map.txt");//send text to filesaver.php
     for(var index = 0;index < map.length;index++){
         var newimg = document.createElement("IMG");
         var newa = document.createElement("A");
@@ -22,6 +27,8 @@
             this.parentElement.style.height = (this.height).toString() + "px";
         }
     }
+    
+    
 </script>
 <style>
 #page{
