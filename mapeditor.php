@@ -20,8 +20,8 @@ echo file_get_contents("json/map.txt");
 
 ?></div>
 
-<a href = "index.php" style = "position:absolute;left:10px;top:10px;z-index:4"><img src = "icons/mapfactory.svg" style = "width:50px"></a>
-<img class = "button" src = "icons/gobutton.svg" id = "savebutton"/>
+<a href = "index.php" style = "position:absolute;left:10px;top:10px;z-index:4"><img src = "mapicons/mapfactory.svg" style = "width:50px"></a>
+<img class = "button" src = "mapicons/gobutton.svg" id = "savebutton"/>
 <table id = "maintable">
     <thead>
     <tr id = "toprow">
@@ -88,7 +88,7 @@ echo file_get_contents("json/map.txt");
         var newimg = document.createElement("IMG");
         newimg.classList.add("deletebutton","button");
         newimg.style.width = "35px";
-        newimg.src = "icons/deletex.svg";
+        newimg.src = "mapicons/deletex.svg";
         newtd.appendChild(newimg);
         newtr.appendChild(newtd);
         newimg.onclick = function(){
@@ -101,7 +101,7 @@ echo file_get_contents("json/map.txt");
         var newimg = document.createElement("IMG");
         newimg.classList.add("upbutton","button");
         newimg.style.width = "35px";
-        newimg.src = "icons/uparrow.svg";
+        newimg.src = "mapicons/uparrow.svg";
         newimg.onclick = function(){
             thisrow = this.parentNode.parentNode;
             if(thisrow.previousSibling != null){
@@ -116,7 +116,7 @@ echo file_get_contents("json/map.txt");
         var newimg = document.createElement("IMG");
         newimg.classList.add("downbutton","button");
         newimg.style.width = "35px";
-        newimg.src = "icons/downarrow.svg";
+        newimg.src = "mapicons/downarrow.svg";
         newimg.onclick = function(){
             thisrow = this.parentNode.parentNode;
             if(thisrow.nextSibling != null && thisrow.nextSibling.nextSibling != null){

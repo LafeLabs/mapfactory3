@@ -19,7 +19,7 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
 
 ?></div>
 <a href = "index.php" style = "position:absolute;left:10px;top:10px">
-    <img src  = "icons/mapfactory.svg" style = "width:50px"/>
+    <img src  = "mapicons/mapfactory.svg" style = "width:50px"/>
 </a>
 
 <div id = "tablebox">
@@ -45,7 +45,7 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
         deltd.className = "button";
         var newimg = document.createElement("IMG");
         newimg.className = "delbutton";
-        newimg.src = "icons/deletelink.svg";
+        newimg.src = "mapicons/deletelink.svg";
         deltd.appendChild(newimg);
         deltd.onclick  = function(){
             document.getElementById("maintable").removeChild(this.parentNode);

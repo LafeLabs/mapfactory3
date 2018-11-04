@@ -3,8 +3,6 @@
 		"path":"php",
 		"files":[
 			"aligner.txt",
-			"createlink.txt",
-			"deleteallfiles.txt",
 			"dnagenerator.txt",
 			"editor.txt",
 			"fileloader.txt",
@@ -27,10 +25,31 @@
 	{
 		"path":"json",
 		"files":[
+			"dna.txt",
 			"imgurls.txt",
 			"links.txt",
 			"listoflists.txt",
 			"map.txt"
+		]
+	},
+	{
+		"path":"mapicons",
+		"files":[
+			"aligner.svg",
+			"back.svg",
+			"deletelink.svg",
+			"deletex.svg",
+			"downarrow.svg",
+			"editor.svg",
+			"fwd.svg",
+			"gobutton.svg",
+			"linker.svg",
+			"linkfeed.svg",
+			"map2link.svg",
+			"mapeditor.svg",
+			"mapfactory.svg",
+			"uparrow.svg",
+			"upload.svg"
 		]
 	},
 	{

@@ -29,17 +29,66 @@ echo file_get_contents("json/map.txt");
     echo file_get_contents("json/imgurls.txt");
     
 ?></div>
+<div id = "mapicons" style = "display:none;"><?php
 
-<a href = "index.php" style = "position:absolute;left:10px;top:10px"><img src = "icons/mapfactory.svg" style = "width:50px"></a>
+$files = scandir(getcwd()."/mapicons");
+$listtext = "";
+foreach($files as $value){
+    if($value != "." && $value != ".."){
+        $listtext .= $value.",";
+    }
+}
+echo $listtext;
+    
+?></div>
+<div id = "symbols" style = "display:none;"><?php
+
+$files = scandir(getcwd()."/symbol/svg/");
+$listtext = "";
+foreach($files as $value){
+    if($value != "." && $value != ".."){
+        $listtext .= $value.",";
+    }
+}
+echo $listtext;
+    
+?></div>
+<div id = "maps" style = "display:none;"><?php
+
+$files = scandir(getcwd()."/maps");
+$listtext = "";
+foreach($files as $value){
+    if($value != "." && $value != ".."){
+        $listtext .= $value.",";
+    }
+}
+echo $listtext;
+    
+?></div>
+<div id = "phpfiles" style = "display:none;"><?php
+
+$files = scandir(getcwd());
+$listtext = "";
+foreach($files as $value){
+    if(substr($value,-4) == ".php"){
+        $listtext .= $value.",";
+    }
+}
+echo $listtext;
+    
+?></div>
+
+
+<a href = "index.php" style = "position:absolute;left:10px;top:10px"><img src = "mapicons/mapfactory.svg" style = "width:50px"></a>
 
 <div id = "linkscroll"></div>
 <table id = "maintable">
     <tr>
-        <td id = "gobutton"><img style = "width:100px;" class = "button" src = "icons/gobutton.svg"></td>
+        <td id = "gobutton"><img style = "width:100px;" class = "button" src = "mapicons/gobutton.svg"></td>
         <td>
             <img style = "width:100px" id = "mainimage"/>
         </td>
-        <td id = "savebutton"><img style = "width:100px" class = "button" src = "icons/linker.svg"/></td>
+        <td id = "savebutton"><img style = "width:100px" class = "button" src = "mapicons/linker.svg"/></td>
     </tr>
     <tr>
         <td>imgurl:<td><input id = "imgurlinput"></td>
@@ -84,6 +133,7 @@ input{
         border:solid;
         border-color:yellow;
         border-width:5px;
+        overflow:scroll;
     }
     #imagescroll img{
         width:50%;
@@ -140,6 +190,20 @@ input{
     links = JSON.parse(document.getElementById("linkdatadiv").innerHTML);
     imgurls = JSON.parse(document.getElementById("imgurls").innerHTML);
     map = JSON.parse(document.getElementById("datadiv").innerHTML);
+    
+    mapicons = document.getElementById("mapicons").innerHTML.split(",");
+    for(var index = 0;index < mapicons.length - 1;index++){
+        imgurls.push("mapicons/" + mapicons[index]);
+    }
+    
+    maps = document.getElementById("maps").innerHTML.split(",");
+    for(var index = 0;index < maps.length - 1;index++){
+        links.push("index.php?url=maps/" + maps[index]);
+    }
+    phpfiles = document.getElementById("phpfiles").innerHTML.split(",");
+    for(var index = 0;index < phpfiles.length - 1;index++){
+        links.push(phpfiles[index]);
+    }
     
     for(var index = 0;index < links.length; index++){
         var newp = document.createElement("P");

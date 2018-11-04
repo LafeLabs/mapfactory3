@@ -32,9 +32,9 @@ echo file_get_contents("json/map.txt");
 
 ?></div>
 
-<a href = "index.php" style = "position:absolute;left:10px;top:10px;z-index:4"><img src = "icons/mapfactory.svg" style = "width:50px"></a>
+<a href = "index.php" style = "position:absolute;left:10px;top:10px;z-index:4"><img src = "mapicons/mapfactory.svg" style = "width:50px"></a>
 
-<img class = "button" src = "icons/gobutton.svg" id = "savebutton"/>
+<img class = "button" src = "mapicons/gobutton.svg" id = "savebutton"/>
 
 <table id = "maintable">
 <tr>
