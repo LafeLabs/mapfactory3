@@ -1,58 +1,66 @@
 [
     {
-        "src": "icons/mapfactory.svg",
         "href": "",
+        "src": "icons/mapfactory.svg",
         "x": 0.01,
         "y": 0.01,
         "w": 0.15,
         "angle": 0
     },
     {
-        "src": "icons/editor.svg",
         "href": "editor.php",
+        "src": "icons/editor.svg",
         "x": -0.002777777777777786,
         "y": 0.3580409356725146,
         "w": 0.1,
         "angle": 0
     },
     {
-        "src": "icons/linker.svg",
         "href": "linker.php",
+        "src": "icons/linker.svg",
         "x": 0.3435964912280702,
         "y": 0.15482456140350878,
         "w": 0.14,
         "angle": 0
     },
     {
-        "src": "icons/linkfeed.svg",
         "href": "linkfeed.php",
+        "src": "icons/linkfeed.svg",
         "x": 0.024415204678362556,
         "y": 0.17792397660818712,
         "w": 0.1,
         "angle": 0
     },
     {
-        "src": "icons/aligner.svg",
         "href": "aligner.php",
+        "src": "icons/aligner.svg",
         "x": 0.5342105263157895,
         "y": 0.15482456140350878,
         "w": 0.1,
         "angle": 0
     },
     {
-        "src": "icons/mapeditor.svg",
         "href": "mapeditor.php",
+        "src": "icons/mapeditor.svg",
         "x": 0.6811403508771929,
         "y": 0.15175438596491225,
         "w": 0.1,
         "angle": 0
     },
     {
-        "w": 0.1,
+        "href": "index.php",
+        "src": "http://lafelabs.org/factory/symbol/svg/svg1539829564.svg",
         "x": 0.007317073170731708,
         "y": 0.9085365853658537,
-        "angle": 0,
-        "src": "http://lafelabs.org/factory/symbol/svg/svg1539829564.svg",
-        "href": "index.php"
+        "w": 0.1,
+        "angle": 0
+    },
+    {
+        "href": "map2link.php",
+        "src": "icons/map2link.svg",
+        "x": 0.8268292682926829,
+        "y": 0.2,
+        "w": 0.1,
+        "angle": 0
     }
 ]

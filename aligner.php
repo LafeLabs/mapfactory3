@@ -76,6 +76,7 @@ mc1.on("panleft panright panup pandown tap press", function(ev) {
 mc2 = new Hammer(document.getElementById("rotatebar"));
 mc2.get('pan').set({ direction: Hammer.DIRECTION_ALL });
 mc2.on("panleft panright panup pandown tap press", function(ev) {
+    map[mapIndex].angle = angle + ev.deltaX*Math.PI/10;
     boxes[mapIndex].style.transform = "rotate(" + (angle + ev.deltaX*Math.PI/10).toString() + "deg)";
 
 

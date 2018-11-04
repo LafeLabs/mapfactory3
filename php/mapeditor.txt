@@ -21,9 +21,10 @@ echo file_get_contents("json/map.txt");
 ?></div>
 
 <a href = "index.php" style = "position:absolute;left:10px;top:10px;z-index:4"><img src = "icons/mapfactory.svg" style = "width:50px"></a>
-
+<img class = "button" src = "icons/gobutton.svg" id = "savebutton"/>
 <table id = "maintable">
-    <tr>
+    <thead>
+    <tr id = "toprow">
         <td>href</td>
         <td>src</td>
         <td>x</td>
@@ -34,6 +35,8 @@ echo file_get_contents("json/map.txt");
         <td></td>
         <td></td>
     </tr>
+    </thead>
+    <tbody id = "mainttablebody"></tbody>
 </table>
 
 <script>
@@ -41,7 +44,7 @@ echo file_get_contents("json/map.txt");
 
     for(var index = 0;index < map.length;index++){
         var newtr = document.createElement("TR");
-        document.getElementById("maintable").appendChild(newtr);
+        document.getElementById("mainttablebody").appendChild(newtr);
         newtr.className = "inputrow";
 //        newtr.id = "row" + index.toString();
         var newtd = document.createElement("TD");
@@ -90,9 +93,10 @@ echo file_get_contents("json/map.txt");
         newtr.appendChild(newtd);
         newimg.onclick = function(){
             thisrow = this.parentNode.parentNode;
-            document.getElementById("maintable").removeChild(thisrow);
+            document.getElementById("mainttablebody").removeChild(thisrow);
         }
-        
+
+
         var newtd = document.createElement("TD");
         var newimg = document.createElement("IMG");
         newimg.classList.add("upbutton","button");
@@ -100,9 +104,11 @@ echo file_get_contents("json/map.txt");
         newimg.src = "icons/uparrow.svg";
         newimg.onclick = function(){
             thisrow = this.parentNode.parentNode;
-            prevrow = thisrow.previousSibling;
-            document.getElementById("maintable").removeChild(thisrow);
-            document.getElementById("maintable").insertBefore(thisrow,prevrow);
+            if(thisrow.previousSibling != null){
+                prevrow = thisrow.previousSibling;
+                document.getElementById("mainttablebody").removeChild(thisrow);
+                document.getElementById("mainttablebody").insertBefore(thisrow,prevrow);           
+            }
         }
         newtd.appendChild(newimg);
         newtr.appendChild(newtd);
@@ -113,26 +119,54 @@ echo file_get_contents("json/map.txt");
         newimg.src = "icons/downarrow.svg";
         newimg.onclick = function(){
             thisrow = this.parentNode.parentNode;
-            nextnextrow = thisrow.nextSibling.nextSibling;
-            document.getElementById("maintable").removeChild(thisrow);
-            document.getElementById("maintable").insertBefore(thisrow,nextnextrow);
+            if(thisrow.nextSibling != null && thisrow.nextSibling.nextSibling != null){
+                //neither last nor second to last
+                nextnextrow = thisrow.nextSibling.nextSibling;
+                document.getElementById("mainttablebody").removeChild(thisrow);
+                document.getElementById("mainttablebody").insertBefore(thisrow,nextnextrow);
+            }
+            else{
+                if(thisrow.nextSibling != null){
+                    //second to last
+                    document.getElementById("mainttablebody").removeChild(thisrow);
+                    document.getElementById("mainttablebody").appendChild(thisrow);
+                }else{
+                    //last
+                    //do nothing
+                }
+            }
         }
         newtd.appendChild(newimg);
-        newtr.appendChild(newtd);
-
-
+        newtr.appendChild(newtd);   
+        
     }
 
 
-deletebuttons = document.getElementById("maintable").getElementsByClassName("deletebutton");
-upbuttons = document.getElementById("maintable").getElementsByTagName("upbutton");
-downbuttons = document.getElementById("maintable").getElementsByClassName("downbutton");
 
 inputstyle = document.createElement("style");
 document.body.appendChild(inputstyle);
 inputstyle.innerHTML = "input{width:" + (0.1*innerWidth).toString() +"px}";    
     
+document.getElementById("savebutton").onclick = function(){
+    map = [];
+    bodyrows = document.getElementById("mainttablebody").getElementsByTagName("TR");
+    for(var index = 0;index < bodyrows.length;index++){
+        var localinputs = bodyrows[index].getElementsByTagName("INPUT");
+        var localjson = {};
+        localjson.href = localinputs[0].value;
+        localjson.src = localinputs[1].value;
+        localjson.x = parseFloat(localinputs[2].value);
+        localjson.y = parseFloat(localinputs[3].value);
+        localjson.w = parseFloat(localinputs[4].value);
+        localjson.angle = parseFloat(localinputs[5].value);
+        map.push(localjson);
+    }
+    savemap();
+}    
+    
 function savemap(){
+    
+
     data = encodeURIComponent(JSON.stringify(map,null,"    "));
     var httpc = new XMLHttpRequest();
     var url = "filesaver.php";        
@@ -164,6 +198,12 @@ input{
     position:absolute;
     top:100px;
     left:0px;
+}
+#savebutton{
+    position:absolute;
+    right:0px;
+    top:0px;
+    width:100px;
 }
 </style>
 </body>

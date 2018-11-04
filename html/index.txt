@@ -4,7 +4,6 @@
 <script>
     map = JSON.parse(document.getElementById("datadiv").innerHTML);
     
-    
     for(var index = 0;index < map.length;index++){
         var newimg = document.createElement("IMG");
         var newa = document.createElement("A");

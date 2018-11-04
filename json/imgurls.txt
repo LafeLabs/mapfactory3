@@ -1,3 +1,4 @@
 [
-    "http://lafelabs.org/factory/symbol/svg/svg1539829564.svg"
+    "http://lafelabs.org/factory/symbol/svg/svg1539829564.svg",
+    "icons/map2link.svg"
 ]
