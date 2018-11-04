@@ -1,0 +1,74 @@
+
+
+ function string2byteCode(localString){
+    var localByteCode = "";
+    for(var stringIndex = 0;stringIndex < localString.length;stringIndex++){
+        var tempCharCode = localString.charCodeAt(stringIndex);
+        if(tempCharCode != 0){
+            localByteCode += "0";
+            localByteCode += tempCharCode.toString(8);
+            localByteCode += ",";
+        }
+    }
+    return localByteCode;
+}
+        
+function byteCode2string(localByteCode){
+    var localString = "";
+    var stringArray = localByteCode.split(",");
+    for(var index = 0;index < stringArray.length;index++){
+        var myCharCode = String.fromCharCode(parseInt(stringArray[index],8));
+        if(parseInt(stringArray[index],8) >= 040 && parseInt(stringArray[index],8) < 0177 ){
+            localString += myCharCode;
+        }
+        if(parseInt(stringArray[index],8) == 012){//newline
+            localString += myCharCode;
+        }
+        if(parseInt(stringArray[index],8) == 011){//vertical tab
+            localString += myCharCode;
+        }		
+        if(parseInt(stringArray[index],8) >= 0400 && parseInt(stringArray[index],8) <= 0777){
+            if(currentTable[parseInt(stringArray[index],8)].length > 0){
+                localString += byteCode2string(currentTable[parseInt(stringArray[index],8)]);
+            }
+        }		
+        
+    }
+    return localString;
+}
+        
+function drawGlyph(localString){
+    var tempArray = localString.split(',');
+    for(var index = 0;index < tempArray.length;index++){
+        doTheThing(parseInt(tempArray[index],8));
+    }
+}
+    
+function spellGlyph(localString){
+    var tempArray = localString.split(',');
+    for(var index = 0;index < tempArray.length;index++){
+        ctx.lineWidth = 4;
+        // ctx.strokeStyle="black";
+
+///        if(x > 0.94*innerWidth){
+   //         y+= 1.1*side;
+     //       x = side;
+       // }
+
+        doTheThing(parseInt(tempArray[index],8) + 01000);
+        if(parseInt(tempArray[index],8) > 01000){
+            doTheThing(01060);
+            doTheThing(01061);
+            var sixtyfours = (parseInt(tempArray[index],8) & 0700) >> 6;
+            var eights = (parseInt(tempArray[index],8) & 070) >> 3;
+            var ones = parseInt(tempArray[index],8) & 07;
+            doTheThing(01060 + sixtyfours);            
+            doTheThing(01060 + eights);            
+            doTheThing(01060 + ones);            
+        }
+    }
+}
+
+
+
+

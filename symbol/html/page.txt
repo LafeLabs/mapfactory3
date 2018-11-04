@@ -1,0 +1,64 @@
+<table id = "linkTable">
+    <tr>
+    <td>
+        <a href = "svg2markdown.php" id = "markdownlink"><img style = "width:80px" src = "icons/markdown.svg"/></a>
+    </td>
+    <td>
+        <a id = "svglink" href = "svgfeed.php"><img style = "width:80px" src = "icons/svgfeed.svg"></a>
+    </td>
+    <td>
+        <a id = "stylelink" href = "stylejsoneditor.php"><img src = "icons/style.svg"></a>
+    </td>
+    <td>
+        <a id = "shapeslink" href = "shapetableeditor.php"><img src = "icons/shapes.svg"></a>
+    </td>
+    <td><a id = "viewlink" href = "vieweditor.php">
+        <img src= "icons/vieweditor.svg"/>
+    </a></td>
+    <td>
+        <a href = "editor.php"><img style = "width:80px" src = "icons/editor.svg"></a>
+    </td>
+    <td>
+        <a href = "../"><img style = "height:80px" src = "icons/factory.svg"></a>
+    </td>
+    <td>
+        <a href = "tree.php">
+        <img style = "width:80px" src = "icons/tree.svg">
+        </a>
+    </td>
+    </tr>
+    <tr>
+    <td><input id = "actionInput"/></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    </tr>
+    <tr>
+    <td><input id = "printInput"/></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    </tr>
+    <tr>
+    <td><input id = "stackInput"/></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    </tr>
+
+</table>
+<div class = "button" id = "savesvg">SAVE</div>
+
+<canvas id="invisibleCanvas" style="display:none"></canvas>
+<canvas id="mainCanvas"></canvas>
+
+<div id = "spellBox">
+    <canvas id="spellCanvas"></canvas>
+    <input id = "glyphspellinput"/>
+</div>
+
+<table id = "keytable">
+</table>

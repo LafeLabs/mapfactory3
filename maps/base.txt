@@ -41,7 +41,7 @@
     },
     {
         "href": "map2link.php",
-        "src": "icons/map2link.svg",
+        "src": "mapicons/map2link.svg",
         "x": 0.7997824846669519,
         "y": 0.20292397660818715,
         "w": 0.11681286549707603,
@@ -56,51 +56,59 @@
         "angle": 0
     },
     {
-        "w": 0.04444444444444445,
+        "href": "",
+        "src": "http://localhost:8000/mapicons/uparrow.svg",
         "x": 0.5227107402652973,
         "y": 0.23420339466552567,
-        "angle": 90.16370915802706,
-        "src": "http://localhost:8000/mapicons/uparrow.svg",
-        "href": ""
+        "w": 0.04444444444444445,
+        "angle": 90.16370915802706
     },
     {
-        "w": 0.046637426900584804,
+        "href": "",
+        "src": "http://localhost:8000/mapicons/uparrow.svg",
         "x": 0.7214876622450435,
         "y": 0.23052702895450003,
-        "angle": 89.84954989266808,
-        "src": "http://localhost:8000/mapicons/uparrow.svg",
-        "href": ""
+        "w": 0.046637426900584804,
+        "angle": 89.84954989266808
     },
     {
-        "w": 0.1,
+        "href": "uploader.php",
+        "src": "http://localhost:8000/mapicons/uploader.svg",
         "x": 0.19652688632149481,
         "y": 0.17698973042362004,
-        "angle": -76.96902001294993,
-        "src": "http://localhost:8000/mapicons/uploader.svg",
-        "href": "uploader.php"
+        "w": 0.1,
+        "angle": -76.96902001294993
     },
     {
-        "w": 0.1,
+        "href": "imagefeed.php",
+        "src": "http://localhost:8000/mapicons/imagefeed.svg",
         "x": 0.24464769647696477,
         "y": 0.0873234916559692,
-        "angle": -43.03981935418017,
-        "src": "http://localhost:8000/mapicons/imagefeed.svg",
-        "href": "imagefeed.php"
+        "w": 0.1,
+        "angle": -43.03981935418017
     },
     {
-        "w": 0.1,
+        "href": "symbol/",
+        "src": "http://localhost:8000/mapicons/geometron.svg",
         "x": 0.34674796747967485,
         "y": 0.03995507060333761,
-        "angle": 0,
-        "src": "http://localhost:8000/mapicons/geometron.svg",
-        "href": "symbol/"
+        "w": 0.1,
+        "angle": 0
     },
     {
-        "w": 0.03713450292397662,
+        "href": "",
+        "src": "http://localhost:8000/mapicons/downarrow.svg",
         "x": 0.3326415632577378,
         "y": 0.17289972899728995,
-        "angle": -52.778756580308524,
-        "src": "http://localhost:8000/mapicons/downarrow.svg",
-        "href": ""
+        "w": 0.03713450292397662,
+        "angle": -52.778756580308524
+    },
+    {
+        "href": "scroll/",
+        "src": "http://localhost:8000/mapicons/scroll.svg",
+        "x": 0.32682926829268294,
+        "y": 0.374390243902439,
+        "w": 0.1,
+        "angle": 0
     }
 ]

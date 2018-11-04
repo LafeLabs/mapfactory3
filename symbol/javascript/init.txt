@@ -1,0 +1,130 @@
+doTheThing(06);//import embedded hypercube in this .html doc
+doTheThing(07);//initialize Geometron global variables
+
+currentJSON = JSON.parse(document.getElementById("datadiv").innerHTML);
+styleJSON = JSON.parse(document.getElementById("stylejsondiv").innerHTML);
+
+path = document.getElementById("pathdiv").innerHTML;
+
+if(path.length > 0){
+    document.getElementById("stylelink").href = "stylejsoneditor.php?path=" + path;
+    document.getElementById("shapeslink").href = "shapetableeditor.php?path=" + path;
+    document.getElementById("viewlink").href = "vieweditor.php?path=" + path;
+    document.getElementById("svglink").href = "svgfeed.php?path=" + path;
+    document.getElementById("markdownlink").href = "svg2markdown.php?path=" + path;
+}
+
+document.getElementById("mainCanvas").width = innerWidth;
+document.getElementById("mainCanvas").height = innerHeight;
+
+exturl = false;
+if(document.getElementById("extdatadiv").innerHTML.length > 10){
+    rawJSON = JSON.parse(document.getElementById("extdatadiv").innerHTML);
+    if(rawJSON.length > 0){
+        currentJSON = rawJSON[0];
+    }
+    else{
+        currentJSON = rawJSON;
+    }
+    exturl = true;
+}
+else{
+    rawJSON = [];
+    rawJSON.push(currentJSON);
+}
+
+
+currentGlyph = currentJSON.glyph + "0207,";
+    
+for(var index = 0;index < currentJSON.table.length;index++){
+    var localaddr = parseInt(currentJSON.table[index].split(":")[0],8);    
+    currentTable[localaddr] = currentJSON.table[index].split(":")[1];
+}
+
+
+
+cleanGlyph = "";
+//currentGlyph = ",0207,";
+glyphEditMode = true;
+shapeTableEditMode = false;
+spellMode = false;
+
+
+document.getElementById("actionInput").select();
+
+
+softkeys = JSON.parse(document.getElementById("softkeydata").innerHTML);
+    
+for(var index = 0;index < softkeys.length;index++){
+    var newtr = document.createElement("TR");
+    var keyarray = softkeys[index].split(",");
+    for(var keyindex = 0;keyindex < keyarray.length;keyindex++){
+        if(keyarray[keyindex].length > 0){
+            var newtd = document.createElement("TD");
+            newtr.appendChild(newtd);
+            newtd.classList.add("button","softkey");
+            var newcan = document.createElement("CANVAS");
+            newcan.width = 45;
+            newcan.height = 45;
+            newtd.appendChild(newcan);
+            ctx = newcan.getContext("2d");
+            ctx.clearRect(0,0,45,45);
+            side = 40;
+            unit = 40;
+            x0 = 2;
+            y0 = 43;
+            doTheThing(0300);
+            newtd.id = "key" + keyarray[keyindex];
+            
+            ctx.lineWidth = 2;
+            if(parseInt(keyarray[keyindex],8) > 01000){
+                doTheThing(parseInt(keyarray[keyindex],8));
+            }
+            else{
+                doTheThing(01000 + parseInt(keyarray[keyindex],8));
+            }
+
+            newtd.onclick = function(){
+                var localkey = this.id.substring(3);
+                var localaction = parseInt(localkey,8);
+                if( (localaction >= 040 && localaction < 0400) ||  (localaction > 01000 && localaction < 02000)){
+                    var glyphSplit = currentGlyph.split(",");
+                    currentGlyph = "";
+                    for(var index = 0;index < glyphSplit.length;index++){
+                        if(glyphSplit[index].length > 0 && glyphSplit[index] != "0207"){
+                            currentGlyph += glyphSplit[index] + ",";
+                        }
+                        if(glyphSplit[index] == "0207"){
+                            currentGlyph += localkey + ",0207,";
+                        }
+                    }
+                    var glyphSplit = currentGlyph.split(",");
+                    currentGlyph = "";
+                    for(var index = 0;index < glyphSplit.length;index++){
+                        if(glyphSplit[index].length > 0  && parseInt(glyphSplit[index]) >= 040){
+                            currentGlyph += glyphSplit[index] + ",";
+                        }
+                    }
+                    redraw();
+                }
+                if(localaction < 040){
+                    doTheThing(localaction);
+                    redraw();
+                }
+                
+            }
+        }
+    }
+    document.getElementById("keytable").appendChild(newtr);
+}
+
+document.getElementById("keytable").style.display = "none";
+
+currentGlyph = currentJSON.glyph + "0207,";
+//unit = 100;
+//x0 =  0.5*innerWidth;
+//y0 = 0.5*innerHeight;
+unit = currentJSON.unit;
+x0 =  0.5*innerWidth + currentJSON.x0rel;
+y0 = 0.5*innerHeight + currentJSON.y0rel;
+

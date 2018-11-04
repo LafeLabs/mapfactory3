@@ -1,0 +1,372 @@
+    if(localCommand == 0300){
+        x = x0;
+        y = y0;
+        theta = theta0;
+        side = unit;
+        thetaStep = Math.PI/2;
+        scaleFactor = 2;
+
+        ctx.strokeStyle= styleJSON.color0;
+        ctx.lineWidth = styleJSON.line0;    	
+        ctx.fillStyle = styleJSON.fill0;
+        currentStroke = styleJSON.color0;
+        currentFill = styleJSON.fill0;
+
+        currentWord = "";
+        currentHTML = "";
+        currentStyle = "";
+    }
+    if(localCommand == 0301){
+        thetaStep = 0.5*Math.PI*(1 - (2/7));
+    }
+    if(localCommand == 0304){
+        thetaStep = Math.PI/2;
+    }
+    if(localCommand == 0305){
+        thetaStep = 2*Math.PI/5;
+    }
+    if(localCommand == 0306){
+        thetaStep = Math.PI/3;
+    }
+    if(localCommand == 0307){
+        thetaStep = 2*Math.PI/7;
+    }
+    if(localCommand == 0310){
+        scaleFactor = Math.sqrt(2); 
+    }
+    if(localCommand == 0311){
+        scaleFactor = phi; //"golden" ratio 
+    }
+    if(localCommand == 0312){
+        scaleFactor = Math.sqrt(3); 
+    }
+    if(localCommand == 0313){
+        scaleFactor = 2;  //2x
+    }
+    if(localCommand == 0314){
+        scaleFactor = 3;  //3x
+    }
+    if(localCommand == 0315){
+        scaleFactor = 3.14159;  //pi*
+    }
+    if(localCommand == 0316){
+        scaleFactor = 5;  //5*
+    }
+    if(localCommand == 0317){
+        scaleFactor = 1.1524;
+    }
+    if(localCommand == 0320){
+        ctx.strokeStyle= styleJSON.color0;
+        ctx.lineWidth = styleJSON.line0;    	
+        ctx.fillStyle = styleJSON.fill0;
+        currentStroke = styleJSON.color0;
+        currentFill = styleJSON.fill0;
+    }
+    if(localCommand == 0321){
+        ctx.strokeStyle= styleJSON.color1;
+        ctx.lineWidth = styleJSON.line1;    	
+        ctx.fillStyle = styleJSON.fill1;
+        currentStroke = styleJSON.color1;
+        currentFill = styleJSON.fill1;
+    }
+    if(localCommand == 0322){
+        ctx.strokeStyle= styleJSON.color2;
+        ctx.lineWidth = styleJSON.line2;    	
+        ctx.fillStyle = styleJSON.fill2;
+        currentStroke = styleJSON.color2;
+        currentFill = styleJSON.fill2;
+    }
+    if(localCommand == 0323){
+        ctx.strokeStyle= styleJSON.color3;
+        ctx.lineWidth = styleJSON.line3;    	
+        ctx.fillStyle = styleJSON.fill3;
+        currentStroke = styleJSON.color3;
+        currentFill = styleJSON.fill3;
+    }
+    if(localCommand == 0324){
+        ctx.strokeStyle= styleJSON.color4;
+        ctx.lineWidth = styleJSON.line4;    	
+        ctx.fillStyle = styleJSON.fill4;
+        currentStroke = styleJSON.color4;
+        currentFill = styleJSON.fill4;
+    }
+    if(localCommand == 0325){
+        ctx.strokeStyle= styleJSON.color5;
+        ctx.lineWidth = styleJSON.line5;    	
+        ctx.fillStyle = styleJSON.fill5;
+        currentStroke = styleJSON.color5;
+        currentFill = styleJSON.fill5;
+    }
+    if(localCommand == 0326){
+        ctx.strokeStyle= styleJSON.color6;
+        ctx.lineWidth = styleJSON.line6;    	
+        ctx.fillStyle = styleJSON.fill6;
+        currentStroke = styleJSON.color6;
+        currentFill = styleJSON.fill6;
+    }
+    if(localCommand == 0327){
+        ctx.strokeStyle= styleJSON.color7;
+        ctx.lineWidth = styleJSON.line7;    	
+        ctx.fillStyle = styleJSON.fill7;
+        currentStroke = styleJSON.color7;
+        currentFill = styleJSON.fill7;
+    }
+    if(localCommand == 0330){
+        x += side*Math.cos(theta);   
+        y += side*Math.sin(theta); 
+    }
+    if(localCommand == 0331){
+        x -= side*Math.cos(theta);   
+        y -= side*Math.sin(theta); 
+    }
+    if(localCommand == 0332){
+        x += side*Math.cos(theta - thetaStep);
+        y += side*Math.sin(theta - thetaStep);
+    }
+    if(localCommand == 0333){
+        x += side*Math.cos(theta + thetaStep);
+        y += side*Math.sin(theta + thetaStep);
+    }
+    if(localCommand == 0334){
+        theta -= thetaStep; // CCW
+    }
+    if(localCommand == 0335){
+        theta += thetaStep; // CW
+    }
+    if(localCommand == 0336){
+        side /= scaleFactor; // -
+    }
+    if(localCommand == 0337){
+        side *= scaleFactor; // +
+    }
+    if(localCommand == 0340){
+        //point:
+        ctx.beginPath();
+        ctx.arc(x, y, ctx.lineWidth, 0, 2 * Math.PI);
+        ctx.fill();	
+        ctx.closePath();
+        currentSVG += "<circle cx=\"";
+        currentSVG += Math.round(x).toString();
+        currentSVG += "\" cy = \"";
+        currentSVG += Math.round(y).toString();
+        currentSVG += "\" r = \"" + ctx.lineWidth.toString() + "\" stroke = \"" + currentStroke + "\" stroke-width = \"" + (ctx.lineWidth).toString() + "\" ";
+        currentSVG += "fill = \"" + currentStroke + "\" />\n";		
+    }
+    if(localCommand == 0341){
+        //circle:
+        ctx.beginPath();
+        ctx.arc(x, y, side, 0, 2 * Math.PI);
+        ctx.closePath();
+        ctx.stroke();
+        currentSVG += "    <circle cx=\"";
+        currentSVG += Math.round(x).toString();
+        currentSVG += "\" cy = \"";
+        currentSVG += Math.round(y).toString();
+        currentSVG += "\" r = \"" + side.toString() + "\" stroke = \"" + currentStroke + "\" stroke-width = \"" + (ctx.lineWidth).toString() + "\" ";
+        currentSVG += "fill = \"none\" />\n";		
+    }
+    if(localCommand == 0342){
+        //line segment:
+        ctx.beginPath();
+        ctx.moveTo(x,y);
+        ctx.lineTo(x + side*Math.cos(theta),y + side*Math.sin(theta));
+        ctx.stroke();		
+        ctx.closePath();
+        var x2 = Math.round(x + side*Math.cos(theta));
+        var y2 = Math.round(y + side*Math.sin(theta));
+        currentSVG += "    <line x1=\""+Math.round(x).toString()+"\" y1=\""+Math.round(y).toString()+"\" x2=\""+x2.toString()+"\" y2=\""+y2.toString()+"\" style=\"stroke:" + currentStroke + ";stroke-width:" + (ctx.lineWidth).toString() + "\" />\n"
+    }
+    if(localCommand == 0343){
+        // arc:
+        ctx.beginPath();
+        ctx.arc(x, y, side, theta - thetaStep,theta + thetaStep);
+        ctx.stroke();
+        ctx.closePath();
+        localString = "";
+        localString += "  <path d=\"";	
+        localString += "M";
+        var localInt = x + side*Math.cos(theta - thetaStep);
+        localString += localInt.toString();
+        localString += " ";
+        localInt = y + side*Math.sin(theta - thetaStep);
+        localString += localInt.toString();
+        currentSVG += localString;
+        localString = "           A" + side.toString() + " " + side.toString() + " 0 0 1 ";
+        localInt = x + side*Math.cos(theta + thetaStep);
+        localString += localInt.toString() + " ";
+        localInt = y + side*Math.sin(theta + thetaStep);
+        localString += localInt.toString() + "\" fill = \"none\" stroke = \"" + currentStroke + "\" stroke-width = \"" + (ctx.lineWidth).toString() + "\" />\n";
+        currentSVG += localString;
+    }
+    if(localCommand == 0344){
+        //line segment as part of path 
+        ctx.lineTo(x + side*Math.cos(theta),y + side*Math.sin(theta));
+        ctx.stroke();		
+        var x2 = Math.round(x + side*Math.cos(theta));
+        var y2 = Math.round(y + side*Math.sin(theta));
+        currentSVG += "L" + x2 + " " + y2 + " ";
+    }
+    if(localCommand == 0345){
+        //arc as part of path, to the right (CW)
+        ctx.arc(x, y, side, theta - thetaStep,theta + thetaStep);
+        ctx.stroke();
+
+        localString = "";
+        localString += "M";
+        var localInt = x + side*Math.cos(theta - thetaStep);
+        localString += localInt.toString();
+        localString += " ";
+        localInt = y + side*Math.sin(theta - thetaStep);
+        localString += localInt.toString();
+        currentSVG += localString;
+        localString = "           A" + side.toString() + " " + side.toString() + " 0 0 1 ";
+        localInt = x + side*Math.cos(theta + thetaStep);
+        localString += localInt.toString() + " ";
+        localInt = y + side*Math.sin(theta + thetaStep);
+        localString += localInt.toString();
+        currentSVG += localString;
+    }
+    if(localCommand == 0346){
+        //arc, reverse direction (CCW)
+        ctx.arc(x, y, side, theta + thetaStep,theta - thetaStep,true);
+        ctx.stroke();   
+
+        localString = "";
+        localString += "M";
+        var localInt = x + side*Math.cos(theta - thetaStep);
+        localString += localInt.toString();
+        localString += " ";
+        localInt = y + side*Math.sin(theta - thetaStep);
+        localString += localInt.toString();
+        currentSVG += localString;
+        localString = "           A" + side.toString() + " " + side.toString() + " 0 0 1 ";
+        localInt = x + side*Math.cos(theta + thetaStep);
+        localString += localInt.toString() + " ";
+        localInt = y + side*Math.sin(theta + thetaStep);
+        localString += localInt.toString();
+        currentSVG += localString;
+    }
+    if(localCommand == 0347){
+        //filled circle
+        ctx.beginPath();
+        ctx.arc(x, y, side, 0, 2 * Math.PI);
+        ctx.closePath();
+        ctx.stroke();
+        ctx.fill();
+        currentSVG += "    <circle cx=\"";
+        currentSVG += Math.round(x).toString();
+        currentSVG += "\" cy = \"";
+        currentSVG += Math.round(y).toString();
+        currentSVG += "\" r = \"" + side.toString() + "\" stroke = \"" + currentStroke + "\" stroke-width = \"" + (ctx.lineWidth).toString() + "\" ";
+        currentSVG += "fill = \"" + currentFill + "\" />\n";		
+    }
+    if(localCommand == 0350){
+        thetaStep /= 2;  //angle/2
+    }
+    if(localCommand == 0351){
+        thetaStep *= 2;  //2angle
+    }
+    if(localCommand == 0352){
+        thetaStep /= 3; //angle/3  (not possible with pure classical construction, but so what?)
+    }
+    if(localCommand == 0353){
+        thetaStep *= 3; //3angle
+    }
+    if(localCommand == 0354){
+         //end a closed but not filled path
+        ctx.closePath();
+        ctx.stroke();		
+        currentSVG += "Z\""+ " stroke = \"" + currentStroke + "\" stroke-width = \"" + (ctx.lineWidth).toString() + "\" fill = \"" + "none" + "\" "+"/>";
+    }
+    if(localCommand == 0360){  
+        //first part of bezier in middle of a path
+        ctx.moveTo(Math.round(x),Math.round(y));
+        cpx1 = Math.round(x + side*Math.cos(theta));
+        cpy1 = Math.round(y + side*Math.sin(theta));
+        currentSVG += " M";
+        currentSVG += (Math.round(x)).toString() + ",";
+        currentSVG += (Math.round(y)).toString() + " C";
+        currentSVG += cpx1.toString() + "," + cpy1.toString() + " ";
+    }
+    if(localCommand == 0361){
+        //second part of bezier in middle of a path
+        x2 = Math.round(x);
+        y2 = Math.round(y);
+        cpx2 = Math.round(x + side*Math.cos(theta));
+        cpy2 = Math.round(y + side*Math.sin(theta));
+        ctx.bezierCurveTo(cpx1,cpy1,cpx2,cpy2,x2,y2);
+        ctx.stroke();
+        currentSVG += cpx2.toString() + "," + cpy2.toString() + " ";
+        currentSVG += x2.toString() + "," + y2.toString() + " ";		
+    }
+    if(localCommand == 0362){
+        //start a path
+        ctx.beginPath();
+        ctx.moveTo(x,y);
+        currentSVG += "	<path d = \"M";
+        currentSVG += Math.round(x).toString() + " ";
+        currentSVG += Math.round(y).toString() + " ";
+    }
+    if(localCommand == 0363){
+        //terminate a closed path with fill
+        ctx.closePath();
+        ctx.stroke();		
+        ctx.fill();		
+        currentSVG += "Z\""+ " stroke = \"" + currentStroke + "\" stroke-width = \"" + (ctx.lineWidth).toString() + "\" fill = \"" + currentFill + "\" "+"/>";
+    }
+    if(localCommand == 0364){
+        //end path that is not closed and also not filled
+        ctx.closePath();
+        currentSVG += "\""+ " stroke = \"" + currentStroke + "\" stroke-width = \"" + (ctx.lineWidth).toString() + "\" fill = \"" + "none" + "\" "+"/>";
+    }
+    if(localCommand == 0365){
+        //create a text field and dump the word stack into it, then clear the word stack to empty
+        //(ASCII actions in the range from 040 to 0176 can, depenting on context, add to stack or map to other atcions in Table)
+        ctx.font=side.toString(8) + "px " + myFont;
+        ctx.fillText(currentWord,x,y);
+        currentSVG += "    <text x=\"";
+        currentSVG += Math.round(x).toString();
+        currentSVG += "\" y = \"";
+        currentSVG += Math.round(y).toString();
+        currentSVG += "\" fill = \"" + currentStroke + "\""; 
+        currentSVG += " font-size = \"";
+        currentSVG += side + "px\"";
+        currentSVG += " font-family = \"arial\"";
+        currentSVG += ">";
+        if(currentWord == "&"){
+            currentWord = "&amp;";
+        }
+        if(currentWord == "<"){
+            currentWord = "&lt;";
+        }
+        if(currentWord == ">"){
+            currentWord = "&gt;";
+        }
+        currentSVG += currentWord;
+        currentSVG += "</text>\n";	
+        currentWord = "";
+        currentHTML = "";
+    }
+    if(localCommand == 0366){
+        // start a self-contained cubic Bezier path
+        ctx.beginPath();
+        ctx.moveTo(Math.round(x),Math.round(y));
+        cpx1 = Math.round(x + side*Math.cos(theta));
+        cpy1 = Math.round(y + side*Math.sin(theta));
+        currentSVG += "<path    d = \"M";
+        currentSVG += (Math.round(x)).toString() + ",";
+        currentSVG += (Math.round(y)).toString() + " C";
+        currentSVG += cpx1.toString() + "," + cpy1.toString() + " ";
+    }
+    if(localCommand == 0367){
+        // finish a self-contained cubic Bezier path
+        x2 = Math.round(x);
+        y2 = Math.round(y);
+        cpx2 = Math.round(x + side*Math.cos(theta));
+        cpy2 = Math.round(y + side*Math.sin(theta));
+        ctx.bezierCurveTo(cpx1,cpy1,cpx2,cpy2,x2,y2);
+        ctx.stroke();
+        currentSVG += cpx2.toString() + "," + cpy2.toString() + " ";
+        currentSVG += x2.toString() + "," + y2.toString() + "\" fill = \"none\" stroke-width = \"" + (ctx.lineWidth).toString() + "\" stroke = \"" + currentStroke + "\" />";		
+    }
+    

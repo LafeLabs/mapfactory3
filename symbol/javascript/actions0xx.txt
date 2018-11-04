@@ -1,0 +1,220 @@
+ 
+    if(localCommand == 06){ //<page06>
+    fullCube = false;
+    currentTable = []; 
+    for(var index = 0;index < 01777;index ++){
+        currentTable.push("");
+    }
+    var inputbytecode = document.getElementById("bytecodeScript").text;
+    var bytecodearray = inputbytecode.split("\n");
+    for(var index = 0;index < bytecodearray.length;index++){
+        if(bytecodearray[index].includes(":")){
+            var localBytecode = bytecodearray[index].split(":");
+            var localAddress = parseInt(localBytecode[0],8);
+            currentTable[localAddress] = localBytecode[1];
+        }
+    }
+    currentTableStart = [];
+    for(var index = 0;index < currentTable.length;index++){
+        currentTableStart.push(currentTable[index]);
+    }
+    //</page06>
+    }
+    if(localCommand == 07){//<page07>
+    //intialize
+    worldLine = [];
+    addressStack = [];
+    worldIndex = 0;
+    myFont = "Arial";
+    boxFontSize = 0.2;
+    viewStep = 50;
+    currentURL = "";
+    currentWord = "";
+    currentSVG = "";
+    currentHTML = "";
+    currentStyle = "";
+    latex = true;
+    currentAddress = 0260;
+    currentDeck = 0400;
+    currentGlyph = "0300,";
+    resetColor = "#000000";
+    currentStroke = "black";
+    currentFill = "black";
+    currentLineWidth = 2;
+    currentAction = 0;
+    currentCommand = "0300";
+    phi = 0.5*(Math.sqrt(5) + 1);
+    scaleFactor = 2;
+    thetaStep = Math.PI/2;
+    theta0 = -Math.PI/2; 
+    theta = theta0;
+    x0 = innerWidth/2;
+    y0 = innerHeight/2;
+    x = x0;
+    y = y0;
+    unit = 300;
+    side = unit;
+    x0 = innerWidth/2;
+    y0 = innerHeight/2;
+    unit = x0/8;//16 wm span total screen size
+    side = unit;
+    currentGlyph = "0300,0330,0341,0333,0207,0336,0341,";
+    viewGlyph = "";
+    x0 = 5;
+    y0 = 55;
+    unit = 50;
+    side = unit;
+    keyMode = "none";
+    editMode = true;
+    pageIndex = 0;
+
+    //</page07>
+    }
+    //root magic here
+
+    if(localCommand == 010){//delete
+        var bottomGlyph = currentGlyph.split("0207")[0];   
+        var topGlyph = currentGlyph.split("0207")[1]; 
+        glyphSplit = bottomGlyph.split(",");
+        currentGlyph = "";
+        for(var index = 0;index < glyphSplit.length - 2;index++){
+            if(glyphSplit[index].length > 0){
+                currentGlyph += glyphSplit[index] + ",";
+            }
+        }
+        currentGlyph += "0207,";
+        currentGlyph += topGlyph;
+        glyphSplit = currentGlyph.split(",");
+        currentGlyph = "";
+        for(var index = 0;index < glyphSplit.length;index++){
+            if(glyphSplit[index].length > 0){
+                currentGlyph += glyphSplit[index] + ",";
+            }
+        }
+    }    
+    //<page014>
+    if(localCommand == 014){//export JSON        
+        if(pages[currentPage].id == "div0660"){
+        }
+    }
+//</page014>
+    if(localCommand == 015){
+        currentData = JSON.parse(getJSON());
+        currentDataArray[currentDataIndex] = currentData;
+        document.getElementById("textIO0630").value = JSON.stringify(currentDataArray,null,"    ");
+        var fileName = document.getElementById("name04xx").value;
+        var saveText = "\"" + fileName + "\":" +document.getElementById("textIO0630").value;
+        var httpc = new XMLHttpRequest();
+        var url = "saver04xx.php";        
+        httpc.open("POST", url, true);
+        httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        httpc.send("text=" + saveText);//send text to saver04xx.php
+
+    }
+    if(localCommand == 020){//cursor back
+        var bottomGlyph = currentGlyph.split("0207")[0];   
+        var topGlyph = currentGlyph.split("0207")[1]; 
+        glyphSplit = bottomGlyph.split(",");
+        if(bottomGlyph.length == 0){
+            currentGlyph = topGlyph + "0207,";
+        }
+        else{
+            currentGlyph = "";
+            for(var index = 0;index < glyphSplit.length - 2;index++){
+                if(glyphSplit[index].length > 0){
+                    currentGlyph += glyphSplit[index] + ",";
+                }
+            }
+            currentGlyph += "0207,";
+            currentGlyph += glyphSplit[glyphSplit.length - 2];
+            currentGlyph += topGlyph;
+        }
+        glyphSplit = currentGlyph.split(",");
+        currentGlyph = "";
+        for(var index = 0;index < glyphSplit.length;index++){
+            if(glyphSplit[index].length > 0){
+                currentGlyph += glyphSplit[index] + ",";
+            }
+        }
+    }
+    if(localCommand == 021){//cursor fwd
+
+        var bottomGlyph = currentGlyph.split("0207")[0];   
+        var topGlyph = currentGlyph.split("0207")[1]; 
+        if(topGlyph == ","){
+            currentGlyph = "0207," + bottomGlyph;
+        }
+        else{
+            glyphSplit = topGlyph.split(",");
+            currentGlyph = bottomGlyph + ",";
+            currentGlyph += glyphSplit[1] + ",";
+            currentGlyph += "0207,";
+            for(var index = 2;index < glyphSplit.length - 1;index++){
+                if(glyphSplit[index].length > 0){
+                    currentGlyph += glyphSplit[index] + ",";
+                }
+            }
+        }
+        glyphSplit = currentGlyph.split(",");
+        currentGlyph = "";
+        for(var index = 0;index < glyphSplit.length;index++){
+            if(glyphSplit[index].length > 0){
+                currentGlyph += glyphSplit[index] + ",";
+            }
+        }
+
+    }
+    if(localCommand == 022){//previous glyph in table
+        if(shapeTableEditMode){
+            currentAddress--;
+            currentGlyph = currentTable[currentAddress] + ",0207,";
+        }
+    }
+    if(localCommand == 023){//next glyph in table
+        if(shapeTableEditMode){
+            currentAddress++;
+            currentGlyph = currentTable[currentAddress] + ",0207,";
+        }
+    }
+    
+    if(localCommand == 030){
+//<page030>
+        y0 -= viewStep; 
+        redraw();
+//</page030>
+    }
+    if(localCommand == 031){
+//<page031>
+        y0 += viewStep; 
+        redraw();
+//</page031>
+    }
+    if(localCommand == 032){
+//<page032>
+        x0 -= viewStep; 
+        redraw();
+//</page032>
+    }
+    if(localCommand == 033){
+//<page033>
+        x0 += viewStep; 
+        redraw();
+//</page033>
+    }
+
+    if(localCommand == 036){
+//<page036>
+        unit /= 1.1; 
+        x0 = 0.5*innerWidth + (x0 - 0.5*innerWidth)/1.1;
+        y0 = 0.5*innerHeight + (y0 - 0.5*innerHeight)/1.1;
+        redraw();
+//</page036>
+    }
+    if(localCommand == 037){
+//<page037>
+        unit *= 1.1; 
+        x0 = 0.5*innerWidth + 1.1*(x0 - 0.5*innerWidth);
+        y0 = 0.5*innerHeight + 1.1*(y0 - 0.5*innerHeight);
+        redraw();
+//</page037>
+    }

@@ -1,0 +1,99 @@
+body{
+    overflow:hidden;
+    font-family:Helvetica;
+    font-size:2em;
+}
+#mainCanvas{
+    position:absolute;
+    z-index:0;
+    left:0px;
+    top:0px;
+}
+.button{
+    padding:0.5em 0.5em 0.5em 0.5em;
+    font-family:courier;
+    cursor:pointer;
+    border:solid;
+    border-radius:0.5em;
+}
+
+.button:active{
+    background-color:yellow;
+}
+.softkey{
+    width:55px;
+    height:55px;
+    border-radius:5px;
+    border:solid;
+    padding:5px 5px 5px 5px;
+}
+#linkTable{
+        position:absolute;
+        z-index:2;
+        left:0px;
+        top:0px;
+}
+#linkTable img{
+    width:80px;
+}
+#savesvg{
+        position:absolute;
+        z-index:2;
+        right:0px;
+        top:0px;
+}
+#keytable{
+    position:absolute;
+    width:100%;
+    bottom:150px;
+    z-index:2;
+}
+#keytable td{
+    text-align:center;
+}
+#mainCanvas{
+    top:0px;
+    left:0px;
+    position:absolute;
+    z-index:0;
+}
+#spellBox{
+    position:absolute;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    overflow:scroll;
+    height:120px;
+}
+#spellCanvas{
+    position:absolute;
+    left:0px;
+    top:0px;
+}
+#glyphspellinput{
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    height:20px;
+    font-size:16px;
+    font-family:courier;
+}
+#actionInput{
+    width:1em;
+    border:solid;
+    border-color:green;
+    border-width:4px;
+    border-radius:10px;
+}
+#printInput{
+    width:1em;
+    border:solid;
+    border-color:orange;   
+    border-width:1px;
+}
+#stackInput{
+    width:1em;
+    border:solid;
+    border-color:blue;
+    border-width:1px;
+}

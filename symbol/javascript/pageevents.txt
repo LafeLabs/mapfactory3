@@ -1,0 +1,303 @@
+
+
+
+/*
+document.getElementById("savepng").onclick = function(){
+    svgwidth = currentJSON.svgwidth;
+    svgheight = currentJSON.svgheight;
+    tempx0 = x0;
+    tempy0 = y0;
+    x0 -= 0.5*(innerWidth - svgwidth);
+    y0 -= 0.5*(innerHeight - svgheight);
+    document.getElementById("invisibleCanvas").width = svgwidth;
+    document.getElementById("invisibleCanvas").height = svgheight;
+    document.getElementById("invisibleCanvas").display = "block";
+    ctx = document.getElementById("invisibleCanvas").getContext("2d");
+
+    doTheThing(0300);
+    drawGlyph(cleanGlyph);
+    var pngdata = document.getElementById("invisibleCanvas").toDataURL();
+    document.getElementById("invisibleCanvas").display = "none";
+    document.getElementById("textIO").value = pngdata;
+
+    document.getElementById("pngimage").style.display = "block";
+    document.getElementById("pngimage").style.left = (0.5*(innerWidth - svgwidth)).toString() + "px";
+    document.getElementById("pngimage").style.top = (0.5*(innerHeight - svgheight)).toString() + "px";
+    document.getElementById("pngimage").src  = pngdata;
+    x0 = tempx0;
+    y0 = tempy0;
+    redraw();
+}
+*/
+
+document.getElementById("savesvg").onclick = function(){
+    currentJSON.table = [];
+    for(var index = 0220;index < 0277;index++){
+        if(currentTable[index].length > 3){
+            var tableline = "0" + index.toString(8) + ":" + currentTable[index];
+            currentJSON.table.push(tableline);
+        }
+    }
+    for(var index = 01220;index < 01277;index++){
+        if(currentTable[index].length > 3){
+            var tableline = "0" + index.toString(8) + ":" + currentTable[index];
+            currentJSON.table.push(tableline);
+        }
+    }
+
+    svgwidth = currentJSON.svgwidth;
+    svgheight = currentJSON.svgheight;
+    tempx0 = x0;
+    tempy0 = y0;
+    x0 -= 0.5*(innerWidth - svgwidth);
+    y0 -= 0.5*(innerHeight - svgheight);
+    ctx = document.getElementById("invisibleCanvas").getContext("2d");
+    currentSVG = "<svg width=\"" + svgwidth.toString() + "\" height=\"" + svgheight.toString() + "\" viewbox = \"0 0 " + svgwidth.toString() + " " + svgheight.toString() + "\"  xmlns=\"http://www.w3.org/2000/svg\">\n";
+    currentSVG += "\n<!--\n<json>\n" + JSON.stringify(currentJSON,null,"    ") + "\n</json>\n-->\n";
+    doTheThing(0300);
+    drawGlyph(cleanGlyph);
+    currentSVG += "</svg>";
+
+    var httpc = new XMLHttpRequest();
+    var url = "feedsaver.php";        
+    httpc.open("POST", url, true);
+    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    
+    if(path.length > 1){
+         httpc.send("data=" + encodeURIComponent(currentSVG) + "&path=" + path);//send text to feedsaver.php
+    }
+    else{
+        httpc.send("data=" + encodeURIComponent(currentSVG));//send text to feedsaver.php
+    }
+    x0 = tempx0;
+    y0 = tempy0;
+    currentJSON.table = [];
+    redraw();
+        
+
+}
+ 
+saveSVG(); 
+function saveSVG(){
+    currentJSON.table = [];
+    for(var index = 0220;index < 0277;index++){
+        if(currentTable[index].length > 3){
+            var tableline = "0" + index.toString(8) + ":" + currentTable[index];
+            currentJSON.table.push(tableline);
+        }
+    }
+    for(var index = 01220;index < 01277;index++){
+        if(currentTable[index].length > 3){
+            var tableline = "0" + index.toString(8) + ":" + currentTable[index];
+            currentJSON.table.push(tableline);
+        }
+    }
+    
+    svgwidth = currentJSON.svgwidth;
+    svgheight = currentJSON.svgheight;
+    tempx0 = x0;
+    tempy0 = y0;        
+    x0 -= 0.5*(innerWidth - svgwidth);
+    y0 -= 0.5*(innerHeight - svgheight);
+    ctx = document.getElementById("invisibleCanvas").getContext("2d");
+    currentSVG = "<svg width=\"" + svgwidth.toString() + "\" height=\"" + svgheight.toString() + "\" viewbox = \"0 0 " + svgwidth.toString() + " " + svgheight.toString() + "\"  xmlns=\"http://www.w3.org/2000/svg\">\n";
+    currentSVG += "\n<!--\n<json>\n" + JSON.stringify(currentJSON,null,"    ") + "\n</json>\n-->\n";
+    doTheThing(0300);
+    drawGlyph(cleanGlyph);
+    currentSVG += "</svg>";
+
+    var httpc = new XMLHttpRequest();
+    var url = "filesaver.php";          
+    httpc.open("POST", url, true);
+    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+
+    if(path.length > 1){
+        httpc.send("data="+currentSVG+"&filename=symbols/" + path + "currentsvg.svg");//send text to filesaver.php
+    }
+    else{
+        httpc.send("data="+currentSVG+"&filename=currentsvg.svg");//send text to filesaver.php
+
+    }
+    x0 = tempx0;
+    y0 = tempy0;
+    currentJSON.table = [];
+
+
+ }
+ 
+
+document.getElementById("mainCanvas").onclick = function(){
+    document.getElementById("keytable").style.display = "block";
+}
+
+document.getElementById("actionInput").onclick = function(){
+    document.getElementById("keytable").style.display = "none";
+}
+document.getElementById("actionInput").onselect = function(){
+    document.getElementById("keytable").style.display = "none";
+}
+
+document.getElementById("actionInput").onkeydown = function(e) {
+//        if(document.getElementById("pngimage").style.display == "block"){
+  //          document.getElementById("pngimage").style.display = "none";
+    //    }
+        charCode = e.keyCode || e.which;
+        arrowkey = false;
+        if(e.key == "ArrowUp"){
+            arrowkey = true;
+        }
+        if(charCode == 010){
+            doTheThing(010);
+            redraw();
+            arrowkey = true;
+        }
+        if(charCode == 045){
+            doTheThing(020);
+            redraw();
+            arrowkey = true;
+
+        }
+        if(charCode == 047){
+            doTheThing(021);
+            redraw();
+            arrowkey = true;
+
+        }
+
+    }
+    
+    
+document.getElementById("glyphspellinput").onchange = function(){
+    cleanGlyph = this.value;
+    currentGlyph = cleanGlyph + "0207,";
+    redraw();
+}
+
+
+    
+document.getElementById("actionInput").onkeypress = function(a){//action
+    charCode = a.keyCode || a.which;
+    //console.log(a.which.toString(8));
+    if(charCode != 010 && charCode != 047 && charCode != 050 && !arrowkey){
+            
+        if(parseInt(currentTable[charCode],8) >= 0200){
+            var glyphSplit = currentGlyph.split(",");
+            currentGlyph = "";
+            for(var index = 0;index < glyphSplit.length;index++){
+                if(glyphSplit[index].length > 0 && glyphSplit[index] != "0207"){
+                    currentGlyph += glyphSplit[index] + ",";
+                }
+                if(glyphSplit[index] == "0207"){
+                    currentGlyph += currentTable[charCode] + ",0207,";
+                }
+            }
+            var glyphSplit = currentGlyph.split(",");
+            currentGlyph = "";
+            for(var index = 0;index < glyphSplit.length;index++){
+                if(glyphSplit[index].length > 0  && parseInt(glyphSplit[index]) >= 040){
+                    currentGlyph += glyphSplit[index] + ",";
+                }
+            }
+            redraw();
+        } 
+        if(parseInt(currentTable[charCode],8) < 040){
+            doTheThing(parseInt(currentTable[charCode],8));
+            redraw();
+        }
+        this.value = "";
+    }
+}
+    
+    
+    document.getElementById("printInput").onkeydown = function(e) {
+        charCode = e.keyCode || e.which;
+        arrowkey = false;
+        if(charCode == 010){
+            doTheThing(010);
+            redraw();
+            arrowkey = true;
+        }
+        if(charCode == 045){
+            doTheThing(020);
+            redraw();
+            arrowkey = true;
+        }
+        if(charCode == 047){
+            doTheThing(021);
+            redraw();
+            arrowkey = true;
+        }
+    }
+    
+    document.getElementById("stackInput").onkeydown = function(e) {
+        charCode = e.keyCode || e.which;
+        arrowkey = false;
+        if(charCode == 010){
+            doTheThing(010);
+            redraw();
+            arrowkey = true;
+        }
+        if(charCode == 045){
+            doTheThing(020);
+            redraw();
+            arrowkey = true;
+        }
+        if(charCode == 047){
+            doTheThing(021);
+            redraw();
+            arrowkey = true;
+        }
+
+    }
+ 
+ document.getElementById("printInput").onkeypress = function(a){//print
+    charCode = a.keyCode || a.which;
+    if(charCode != 010  && charCode != 047  && !arrowkey){
+        var glyphSplit = currentGlyph.split(",");
+        currentGlyph = "";
+        for(var index = 0;index < glyphSplit.length;index++){
+            if(glyphSplit[index].length > 0 && glyphSplit[index] != "0207"){
+                currentGlyph += glyphSplit[index] + ",";
+            }
+            if(glyphSplit[index] == "0207"){
+                currentGlyph += "0" + (charCode + 01000).toString(8) + ",0207,";
+            }
+        }
+        var glyphSplit = currentGlyph.split(",");
+        currentGlyph = "";
+        for(var index = 0;index < glyphSplit.length;index++){
+            if(glyphSplit[index].length > 0  && parseInt(glyphSplit[index]) >= 040){
+                currentGlyph += glyphSplit[index] + ",";
+            }
+        }
+        redraw();
+        this.value = "";
+    }
+}
+    
+document.getElementById("stackInput").onkeypress = function(a){//stack
+    charCode = a.keyCode || a.which;    
+    if(charCode != 010 && charCode != 047  && !arrowkey){
+        var glyphSplit = currentGlyph.split(",");
+        currentGlyph = "";
+        for(var index = 0;index < glyphSplit.length;index++){
+            if(glyphSplit[index].length > 0 && glyphSplit[index] != "0207"){
+                currentGlyph += glyphSplit[index] + ",";
+            }
+            if(glyphSplit[index] == "0207"){
+                currentGlyph += "0" + (charCode).toString(8) + ",0207,";
+            }
+        }
+        var glyphSplit = currentGlyph.split(",");
+        currentGlyph = "";
+        for(var index = 0;index < glyphSplit.length;index++){
+            if(glyphSplit[index].length > 0  && parseInt(glyphSplit[index]) >= 040){
+                currentGlyph += glyphSplit[index] + ",";
+            }
+        }
+        redraw();
+        this.value = "";
+    }
+}
+ 
+ 

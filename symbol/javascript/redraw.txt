@@ -1,0 +1,70 @@
+
+currentJSON.unit = unit;
+currentJSON.x0 = x0;
+currentJSON.y0 = y0;
+
+currentJSON.x0rel = x0 - 0.5*innerWidth;
+currentJSON.y0rel = y0 - 0.5*innerHeight;
+   
+ctx = document.getElementById("mainCanvas").getContext("2d");
+ctx.clearRect(0,0,innerWidth,innerHeight);
+    //ctx.strokeRect(0.5*innerWidth - 0.5*svgwidth,0.5*innerHeight - 0.5*svgheight,svgwidth,svgheight);
+
+ctx.strokeStyle= "black";
+ctx.lineWidth = 1;    	
+
+ctx.strokeRect(0.5*innerWidth - 0.5*currentJSON.svgwidth,0.5*innerHeight - 0.5*currentJSON.svgheight,currentJSON.svgwidth,currentJSON.svgheight);
+
+doTheThing(0300);
+drawGlyph(currentGlyph);
+
+
+ctx = document.getElementById("spellCanvas").getContext("2d")
+document.getElementById("spellCanvas").width = (currentGlyph.length/4)*90 + 80;
+document.getElementById("glyphspellinput").style.width = (12*currentGlyph.length).toString() + "px";
+document.getElementById("spellCanvas").height = 80;
+
+ctx.clearRect(0,0,document.getElementById("spellCanvas").width,document.getElementById("spellCanvas").height);
+
+
+doTheThing(0300);
+side = 70;
+x = 5;
+y = 75;
+spellGlyph(currentGlyph);
+
+
+    var glyphArray = currentGlyph.split(",");
+    cleanGlyph = "";
+    for(var index = 0;index < glyphArray.length;index++){
+        if(glyphArray[index] != "0207" && glyphArray[index].length > 0){
+            cleanGlyph += glyphArray[index] + ",";
+        }
+    }
+
+
+
+currentJSON.glyph = cleanGlyph;
+document.getElementById("glyphspellinput").value = cleanGlyph;
+
+//un-comment the code below to make social:
+
+if(path.length>1){
+    currentFile = "symbols/" +path + "json/currentjson.txt";
+}
+else{
+    currentFile = "json/currentjson.txt";
+}
+
+currentJSON.table = [];
+data = encodeURIComponent(JSON.stringify(currentJSON,null, "    "));
+var httpc = new XMLHttpRequest();
+var url = "filesaver.php";        
+httpc.open("POST", url, true);
+httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+httpc.send("data="+data+"&filename="+currentFile);//send text to filesaver.php
+
+
+
+
+

@@ -43,10 +43,10 @@ echo $listtext;
 ?></div>
 <div id = "symbols" style = "display:none;"><?php
 
-$files = scandir(getcwd()."/symbol/svg/");
+$files = scandir(getcwd()."/symbol/svg");
 $listtext = "";
 foreach($files as $value){
-    if($value != "." && $value != ".."){
+    if(substr($value,-4) == ".svg"){
         $listtext .= $value.",";
     }
 }
@@ -56,6 +56,18 @@ echo $listtext;
 <div id = "maps" style = "display:none;"><?php
 
 $files = scandir(getcwd()."/maps");
+$listtext = "";
+foreach($files as $value){
+    if($value != "." && $value != ".."){
+        $listtext .= $value.",";
+    }
+}
+echo $listtext;
+    
+?></div>
+<div id = "scrolls" style = "display:none;"><?php
+
+$files = scandir(getcwd()."/scroll/markdown");
 $listtext = "";
 foreach($files as $value){
     if($value != "." && $value != ".."){
@@ -200,13 +212,16 @@ input{
     links = JSON.parse(document.getElementById("linkdatadiv").innerHTML);
     imgurls = JSON.parse(document.getElementById("imgurls").innerHTML);
     map = JSON.parse(document.getElementById("datadiv").innerHTML);
-    
     mapicons = document.getElementById("mapicons").innerHTML.split(",");
     
     uploadimages = document.getElementById("uploadimages").innerHTML.split(",");
-    
     for(var index = 0;index < uploadimages.length - 1;index++){
         imgurls.push("uploadimages/" + uploadimages[index]);
+    }
+    
+    symbols = document.getElementById("symbols").innerHTML.split(",");
+    for(var index = 0;index < symbols.length - 1;index++){
+        imgurls.push("symbol/svg/" + symbols[index]);
     }
     
     for(var index = 0;index < mapicons.length - 1;index++){
@@ -217,10 +232,17 @@ input{
     for(var index = 0;index < maps.length - 1;index++){
         links.push("index.php?url=maps/" + maps[index]);
     }
+    scrolls = document.getElementById("scrolls").innerHTML.split(",");
+
+    for(var index = 0;index < scrolls.length - 1;index++){
+        links.push("scroll/index.php?filename=" + scrolls[index]);
+    }
+
     phpfiles = document.getElementById("phpfiles").innerHTML.split(",");
     for(var index = 0;index < phpfiles.length - 1;index++){
         links.push(phpfiles[index]);
     }
+
     
     for(var index = 0;index < links.length; index++){
         var newp = document.createElement("P");
