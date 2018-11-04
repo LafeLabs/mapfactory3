@@ -1,6 +1,6 @@
 <?php
-$target_dir = "images/";
-$files = scandir(getcwd()."/images");
+$target_dir = "uploadimages/";
+$files = scandir(getcwd()."/uploadimages");
 $imageIndex =  count($files) - 1;
 $infilename = basename( $_FILES["fileToUpload"]["name"]);
 $extension = substr($infilename,-4);
@@ -24,7 +24,7 @@ else{
 
 ?>
 <p style = "font-size:5em">
-    <a href = "index.php">BACK</a>
+    <a href = "uploader.php">BACK</a>
 </p>
 
 

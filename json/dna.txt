@@ -7,13 +7,16 @@
 			"editor.txt",
 			"fileloader.txt",
 			"filesaver.txt",
+			"imagefeed.txt",
 			"index.txt",
 			"linker.txt",
 			"linkfeed.txt",
 			"map2link.txt",
 			"mapeditor.txt",
 			"replicator.txt",
-			"text2php.txt"
+			"text2php.txt",
+			"upload.txt",
+			"uploader.txt"
 		]
 	},
 	{
@@ -37,19 +40,24 @@
 		"files":[
 			"aligner.svg",
 			"back.svg",
+			"combiner.svg",
 			"deletelink.svg",
 			"deletex.svg",
 			"downarrow.svg",
 			"editor.svg",
 			"fwd.svg",
+			"geometron.svg",
 			"gobutton.svg",
+			"imagefeed.svg",
 			"linker.svg",
 			"linkfeed.svg",
 			"map2link.svg",
 			"mapeditor.svg",
 			"mapfactory.svg",
+			"scroll.svg",
 			"uparrow.svg",
-			"upload.svg"
+			"upload.svg",
+			"uploader.svg"
 		]
 	},
 	{
@@ -57,12 +65,14 @@
 		"files":[
 			"aligner.svg",
 			"back.svg",
+			"combiner.svg",
 			"deletelink.svg",
 			"deletex.svg",
 			"downarrow.svg",
 			"editor.svg",
 			"fwd.svg",
 			"gobutton.svg",
+			"image.svg",
 			"linker.svg",
 			"linkfeed.svg",
 			"map2link.svg",

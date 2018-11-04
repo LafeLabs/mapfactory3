@@ -9,7 +9,7 @@
     mkdir("symbol");
     mkdir("scroll");
     mkdir("curve");
-
+    mkdir("uploadimages");
 
     //sources
 

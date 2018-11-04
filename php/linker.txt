@@ -77,8 +77,18 @@ foreach($files as $value){
 echo $listtext;
     
 ?></div>
+<div id = "uploadimages" style = "display:none;"><?php
 
-
+$files = scandir(getcwd()."/uploadimages");
+$listtext = "";
+foreach($files as $value){
+    if($value != "." && $value != ".."){
+        $listtext .= $value.",";
+    }
+}
+echo $listtext;
+    
+?></div>
 <a href = "index.php" style = "position:absolute;left:10px;top:10px"><img src = "mapicons/mapfactory.svg" style = "width:50px"></a>
 
 <div id = "linkscroll"></div>
@@ -192,6 +202,13 @@ input{
     map = JSON.parse(document.getElementById("datadiv").innerHTML);
     
     mapicons = document.getElementById("mapicons").innerHTML.split(",");
+    
+    uploadimages = document.getElementById("uploadimages").innerHTML.split(",");
+    
+    for(var index = 0;index < uploadimages.length - 1;index++){
+        imgurls.push("uploadimages/" + uploadimages[index]);
+    }
+    
     for(var index = 0;index < mapicons.length - 1;index++){
         imgurls.push("mapicons/" + mapicons[index]);
     }
