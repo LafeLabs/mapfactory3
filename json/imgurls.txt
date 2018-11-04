@@ -1,4 +1,4 @@
 [
     "http://lafelabs.org/factory/symbol/svg/svg1539829564.svg",
-    "icons/map2link.svg"
+    "http://localhost:8000/icons/map2link.svg"
 ]

@@ -69,7 +69,7 @@ mc1 = new Hammer(document.getElementById("scalebar"));
 mc1.get('pan').set({ direction: Hammer.DIRECTION_ALL });
 mc1.on("panleft panright panup pandown tap press", function(ev) {
     boxes[mapIndex].style.width = (ev.deltaX + w*W).toString() + "px";
-    map[mapIndex].w = ev.deltaX + w*W;
+    map[mapIndex].w = (ev.deltaX + w*W)/W;
     
 });
 
