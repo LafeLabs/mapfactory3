@@ -4,23 +4,14 @@
         <td><a href = "editor.php">
             <img style = "width:80px;" src = "icons/editor.svg"/>
         </a></td>
-        <td><a href = "../symbol/">
-            <img style = "width:80px;" src = "icons/symbol.svg"/>
-        </a></td>
-        <td><a href = "../curve/">
-            <img style = "width:80px;" src = "icons/curve.svg"/>
-        </a></td>
-        <td><a href = "../uploader/markdownlinks.php">
-            <img style = "width:80px;" src = "../symbols/upload.svg"/>
-        </a></td>
         <td><a href = "../">
-            <img style = "width:80px;" src = "../symbols/map.svg"/>
+            <img style = "width:80px;" src = "icons/mapfactory.svg"/>
         </a></td>
         <td><a href = "tree.php">
-            <img style = "width:80px;" src = "../symbol/icons/tree.svg"/>
+            <img style = "width:80px;" src = "icons/tree.svg"/>
         </a></td>
         <td id = "modebutton">
-            <img style = "width:80px" src = "../symbols/scrollmode.svg"/>
+            <img style = "width:80px" src = "icons/scrollmode.svg"/>
         </td>
     </tr>
 </table>
@@ -78,6 +69,7 @@ document.getElementById("modebutton").onclick = function(){
         document.getElementById("editor").style.display = "none";
     }
 }
+document.getElementById("modebutton").click();
 </script>
 <style>
 body{
