@@ -47,6 +47,34 @@ $files = scandir(getcwd()."/symbol/svg");
 $listtext = "";
 foreach($files as $value){
     if(substr($value,-4) == ".svg"){
+        $listtext .= "symbol/svg/".$value.",";
+    }
+}
+echo $listtext;
+
+
+$dirs = scandir(getcwd()."/symbol/symbols");
+foreach($dirs as $symboldir){
+    if($symboldir != "." && $symboldir != ".."){
+        $files = scandir(getcwd()."/symbol/symbols/".$symboldir."/svg");
+        $listtext = "";
+        foreach($files as $value){
+            if(substr($value,-4) == ".svg"){
+                $listtext .= "symbol/symbols/".$symboldir."/svg/".$value.",";
+            }
+        }
+        echo $listtext;
+    }
+}
+
+
+?></div>
+<div id = "curves" style = "display:none;"><?php
+
+$files = scandir(getcwd()."/curve/svg");
+$listtext = "";
+foreach($files as $value){
+    if(substr($value,-4) == ".svg"){
         $listtext .= $value.",";
     }
 }
@@ -221,9 +249,12 @@ input{
     
     symbols = document.getElementById("symbols").innerHTML.split(",");
     for(var index = 0;index < symbols.length - 1;index++){
-        imgurls.push("symbol/svg/" + symbols[index]);
+        imgurls.push(symbols[index]);
     }
-    
+    curves = document.getElementById("curves").innerHTML.split(",");
+    for(var index = 0;index < curves.length - 1;index++){
+        imgurls.push("curve/svg/" + curves[index]);
+    }
     for(var index = 0;index < mapicons.length - 1;index++){
         imgurls.push("mapicons/" + mapicons[index]);
     }

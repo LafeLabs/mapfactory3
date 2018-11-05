@@ -1,5 +1,6 @@
 [
     "index.php",
     "linkfeed.php",
-    "editor.php"
+    "editor.php",
+    "curve/"
 ]
