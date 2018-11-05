@@ -1,0 +1,30 @@
+<h2>Sine</h2>
+<p style="color:blue">
+
+</p><p class="bigeq">
+$$
+Y = \sin{X}
+$$
+</p>
+<p></p>
+
+$$
+X = g(x - x_0) - X_0
+$$
+$$
+Y = f(X)
+$$
+    
+$$
+y = y_0 - G(Y - Y_0)
+$$
+
+
+<p>
+    X and Y, and $X_0$ and $Y_0$ in physical units of the System. x and y and x0 and y0 in pixels.  G is in pixels per Y unit and g is in X units per pixel. 
+</p>
+
+
+
+
+

@@ -1,0 +1,7 @@
+# Equations
+
+$x$, $x_0$, $y$ and $y_0$ are all in pixels. x varies from 0 to the width in pixels of the plot.  Y and X are in the units of the system being studied.   
+
+$$X = g(x - x_0)$$
+$$Y = \sin{(X)}$$
+$$y = y_0 - GY$$ 

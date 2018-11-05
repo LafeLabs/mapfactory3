@@ -1,0 +1,80 @@
+
+currentSVG = "<svg width=\"" + currentjson.plotparams.plotwidth.toString() + "\" height=\"" + currentjson.plotparams.plotheight.toString() + "\" viewbox = \"0 0 " + currentjson.plotparams.plotwidth.toString() + " " + currentjson.plotparams.plotheight.toString() + "\"  xmlns=\"http://www.w3.org/2000/svg\">\n";
+
+
+currentSVG += "\n<!--\n<topfunctions>\n" + document.getElementById("topfunctions").innerText + "\n</topfunctions>\n-->\n";
+currentSVG += "\n<!--\n<currentjson>\n" + JSON.stringify(currentjson,null, "    ") + "\n</currentjson>\n-->\n";
+
+currentSVG += "\n<!--\n<equation>\n" + document.getElementById("equationdata").innerHTML + "\n</equation>\n-->\n";
+
+document.getElementById("mainCanvas").width = currentjson.plotparams.plotwidth;
+document.getElementById("mainCanvas").height = currentjson.plotparams.plotheight;
+document.getElementById("mainCanvas").style.left = (0.5*innerWidth - 0.5*currentjson.plotparams.plotwidth).toString() + "px";
+
+document.getElementById("imagebox").style.width = currentjson.plotparams.plotwidth.toString() + "px";
+document.getElementById("imagebox").style.height = currentjson.plotparams.plotheight.toString() + "px";
+document.getElementById("imagebox").style.left = (0.5*innerWidth - 0.5*currentjson.plotparams.plotwidth).toString() + "px";
+
+document.getElementById("backgroundimage").style.width =  (currentjson.image.woverw*currentjson.plotparams.plotwidth).toString() + "px";
+document.getElementById("backgroundimage").style.left =  (currentjson.image.xoverw*currentjson.plotparams.plotwidth).toString() + "px";
+document.getElementById("backgroundimage").style.top =  (currentjson.image.yoverw*currentjson.plotparams.plotwidth).toString() + "px";
+document.getElementById("backgroundimage").style.transform = "rotate(" +  (currentjson.image.angle).toString() + "deg)";
+
+
+ctx = document.getElementById("mainCanvas").getContext("2d");
+ctx.clearRect(0, 0, currentjson.plotparams.plotwidth,currentjson.plotparams.plotheight);
+
+plotfunction();
+
+currentSVG += "</svg>";
+
+
+
+if(path.length>1){
+    currentFile = "curves/"+path + "json/currentjson.txt";
+}
+else{
+    currentFile = "json/currentjson.txt";
+}
+
+inputs[0].value = currentjson.plotparams.x0;
+inputs[1].value = currentjson.plotparams.y0;
+inputs[2].value = currentjson.plotparams.g;
+inputs[3].value = currentjson.plotparams.G;
+
+
+imageinputs[0].value = currentjson.image.xoverw;
+imageinputs[1].value = currentjson.image.yoverw;
+imageinputs[2].value = currentjson.image.woverw;
+imageinputs[3].value = currentjson.image.angle;
+
+styleinputs[0].value = currentjson.plotparams.plotwidth.toString();
+styleinputs[1].value = currentjson.plotparams.plotheight.toString();
+
+functioninputs[0].value = A;
+functioninputs[1].value = B;
+currentjson.A = A;
+currentjson.B = B;
+
+data = encodeURIComponent(JSON.stringify(currentjson,null, "    "));
+var httpc = new XMLHttpRequest();
+var url = "filesaver.php";        
+httpc.open("POST", url, true);
+httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+httpc.send("data="+data+"&filename="+currentFile);//send text to filesaver.php
+
+data2 = encodeURIComponent(currentSVG);
+var httpc2 = new XMLHttpRequest();
+var url = "filesaver.php";        
+httpc2.open("POST", url, true);
+httpc2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+if(path.length>1){
+    httpc2.send("data="+data2+"&filename=curves/"+path+"currentsvg.svg");//send text to filesaver.php
+}
+else{
+    httpc2.send("data="+data2+"&filename="+"currentsvg.svg");//send text to filesaver.php
+}
+
+
+
+

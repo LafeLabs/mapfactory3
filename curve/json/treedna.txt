@@ -1,0 +1,3 @@
+[
+"bessel","cosh","cubic","ellipse","exp","gaussian","goldenspiral","hyperbola","log","logspiral","lorentzian","parabola","ringdown","squarewave","tanh","xcothx"
+]

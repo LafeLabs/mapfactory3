@@ -1,0 +1,220 @@
+
+
+    mc = new Hammer(document.getElementById("mainCanvas"));
+    mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+    mc.on("panleft panright panup pandown ", function(ev) {
+        
+        if(editmode == "plot"){
+            currentjson.plotparams.x0 = ev.deltaX;
+            currentjson.plotparams.y0 = ev.deltaY;
+        }
+        if(editmode == "image"){
+            currentjson.image.xoverw = ev.deltaX/(0.25*innerWidth);
+            currentjson.image.yoverw = ev.deltaY/(0.25*innerWidth);
+        }
+    
+        redraw();
+        
+    });    
+    
+
+
+    mc1 = new Hammer(document.getElementById("bar1"));
+    mc1.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+    mc1.on("panleft panright", function(ev) {
+        if(editmode == "plot"){
+            currentjson.plotparams.g = g0*Math.pow(10,ev.deltaX/(0.5*innerWidth));
+        }
+        if(editmode == "image"){
+            currentjson.image.woverw = Math.pow(10,ev.deltaX/(0.5*innerWidth));
+        }
+        if(editmode == "style"){
+            currentjson.plotparams.plotwidth = w0 + ev.deltaX;
+        }
+        if(editmode == "function"){
+            A = A0*Math.pow(10,ev.deltaX/(0.5*innerWidth));
+        }
+        redraw();
+    });
+
+    mc2 = new Hammer(document.getElementById("bar2"));
+    mc2.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+    mc2.on("panleft panright", function(ev) {
+        if(editmode == "plot"){
+            currentjson.plotparams.G = G0*Math.pow(10,ev.deltaX/(0.5*innerWidth));
+        }
+        if(editmode == "image"){
+            currentjson.image.angle = 360*ev.deltaX/(0.25*innerWidth);
+        }
+        if(editmode == "style"){
+            currentjson.plotparams.plotheight = h0 + ev.deltaX;
+        }
+        if(editmode == "function"){
+            B = B0*Math.pow(10,ev.deltaX/(0.5*innerWidth));
+        }
+
+        redraw();
+    });
+    
+    
+    inputs[0].onchange = function(){
+        currentjson.plotparams.x0 = parseInt(this.value);
+        redraw();
+    }
+    inputs[1].onchange = function(){
+        currentjson.plotparams.y0 = parseInt(this.value);
+        redraw();
+    }
+    inputs[2].onchange = function(){
+        currentjson.plotparams.g = parseFloat(this.value);
+        g0 = this.value;
+        redraw();
+    }
+    inputs[3].onchange = function(){
+        currentjson.plotparams.G = parseFloat(this.value);
+        G0 = this.value;
+        redraw();
+    }
+    imageinputs[0].onchange = function(){
+        currentjson.image.xoverw = parseFloat(this.value);
+        redraw();
+    }
+    imageinputs[1].onchange = function(){
+        currentjson.image.yoverw = parseFloat(this.value);
+        redraw();
+    }
+    imageinputs[2].onchange = function(){
+        currentjson.image.woverw = parseFloat(this.value);
+        redraw();
+    }
+    imageinputs[3].onchange = function(){
+        currentjson.image.angle = parseFloat(this.value);
+        redraw();
+    }
+    imageinputs[4].onchange = function(){
+        currentjson.image.url = this.value;
+        document.getElementById("backgroundimage").src = currentjson.image.url;
+        redraw();
+    }
+    
+    functioninputs[0].onchange = function(){
+        A = parseFloat(this.value);
+        A0=A;
+        
+        redraw();
+    }
+    functioninputs[1].onchange = function(){
+        B = parseFloat(this.value);
+        B0=B;
+        redraw();
+    }
+
+
+    styleinputs[0].onchange = function(){
+        currentjson.plotparams.plotwidth = parseInt(this.value);
+        w0 = parseInt(this.value);
+        redraw();
+    }
+    styleinputs[1].onchange = function(){
+        currentjson.plotparams.plotheight = parseInt(this.value);
+        h0 = parseInt(this.value);
+        redraw();
+    }
+    styleinputs[2].onchange = function(){
+        currentjson.style.linewidth = parseInt(this.value);
+        redraw();
+    }
+    styleinputs[3].onchange = function(){
+        currentjson.style.color = this.value;
+        h0 = parseInt(this.value);
+        redraw();
+    }
+    
+
+    document.getElementById("imagemodebutton").onclick = function(){
+        editmode = "image";
+        document.getElementById("maintable").style.display = "none";
+        document.getElementById("imagetable").style.display = "block";
+        document.getElementById("functiontable").style.display = "none";
+        document.getElementById("styletable").style.display = "none";
+
+        document.getElementById("bar1").innerHTML = "SCALE";
+        document.getElementById("bar2").innerHTML = "ANGLE";
+        
+        this.style.backgroundColor = "#a0ffa0";
+        document.getElementById("plotmodebutton").style.backgroundColor = "white";
+        document.getElementById("functionmodebutton").style.backgroundColor = "white";
+        document.getElementById("stylemodebutton").style.backgroundColor = "white";
+    }
+    document.getElementById("plotmodebutton").onclick = function(){
+        editmode = "plot";
+        document.getElementById("maintable").style.display = "block";
+        document.getElementById("imagetable").style.display = "none";
+        document.getElementById("functiontable").style.display = "none";
+        document.getElementById("styletable").style.display = "none";
+
+        document.getElementById("bar1").innerHTML = "g";
+        document.getElementById("bar2").innerHTML = "G";
+        this.style.backgroundColor = "#a0ffa0";
+        document.getElementById("imagemodebutton").style.backgroundColor = "white";
+        document.getElementById("functionmodebutton").style.backgroundColor = "white";
+        document.getElementById("stylemodebutton").style.backgroundColor = "white";
+
+    }
+    document.getElementById("functionmodebutton").onclick = function(){
+        editmode = "function";
+        document.getElementById("maintable").style.display = "none";
+        document.getElementById("imagetable").style.display = "none";
+        document.getElementById("functiontable").style.display = "block";
+        document.getElementById("styletable").style.display = "none";
+
+        document.getElementById("bar1").innerHTML = "A";
+        document.getElementById("bar2").innerHTML = "B";
+        this.style.backgroundColor = "#a0ffa0";
+        document.getElementById("imagemodebutton").style.backgroundColor = "white";
+        document.getElementById("plotmodebutton").style.backgroundColor = "white";
+        document.getElementById("stylemodebutton").style.backgroundColor = "white";
+
+    }
+    document.getElementById("stylemodebutton").onclick = function(){
+        editmode = "style";
+        document.getElementById("maintable").style.display = "none";
+        document.getElementById("imagetable").style.display = "none";
+        document.getElementById("functiontable").style.display = "none";
+        document.getElementById("styletable").style.display = "block";
+
+        document.getElementById("bar1").innerHTML = "WIDTH";
+        document.getElementById("bar2").innerHTML = "HEIGHT";
+        this.style.backgroundColor = "#a0ffa0";
+        document.getElementById("imagemodebutton").style.backgroundColor = "white";
+        document.getElementById("functionmodebutton").style.backgroundColor = "white";
+        document.getElementById("plotmodebutton").style.backgroundColor = "white";
+
+    }
+    
+    document.getElementById("savebutton").onclick = function(){
+        
+        data = encodeURIComponent(currentSVG);
+        timestamp = Math.round((new Date().getTime())/1000);
+        var httpc = new XMLHttpRequest();
+        var url = "filesaver.php";        
+        httpc.open("POST", url, true);
+        httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+        
+        if(path.length>1){
+            httpc.send("data=" + data + "&filename=curves/" + path + "svg/svg" + timestamp + ".svg");//send text to filesaver.php
+        }
+        else{
+            httpc.send("data=" + data + "&filename=svg/svg" + timestamp + ".svg");//send text to filesaver.php
+            path = "";
+        }
+
+        var httpc = new XMLHttpRequest();
+        var url = "listupdate.php";        
+        httpc.open("POST", url, true);
+        httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+        httpc.send("path=" + path);//send text to listupdate.php
+
+    }
+    
+    

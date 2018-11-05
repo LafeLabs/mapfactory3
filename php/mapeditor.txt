@@ -22,7 +22,8 @@ echo file_get_contents("json/map.txt");
 
 <a href = "index.php" style = "position:absolute;left:10px;top:10px;z-index:4"><img src = "mapicons/mapfactory.svg" style = "width:50px"></a>
 <img class = "button" src = "mapicons/gobutton.svg" id = "savebutton"/>
-<table id = "maintable">
+<div id = "tablescroll">
+  <table id = "maintable">
     <thead>
     <tr id = "toprow">
         <td>href</td>
@@ -34,10 +35,13 @@ echo file_get_contents("json/map.txt");
         <td></td>
         <td></td>
         <td></td>
+        <td></td>
     </tr>
     </thead>
     <tbody id = "mainttablebody"></tbody>
-</table>
+  </table>
+    
+</div>
 
 <script>
     map = JSON.parse(document.getElementById("datadiv").innerHTML);
@@ -112,6 +116,7 @@ echo file_get_contents("json/map.txt");
         }
         newtd.appendChild(newimg);
         newtr.appendChild(newtd);
+        
         var newtd = document.createElement("TD");
         var newimg = document.createElement("IMG");
         newimg.classList.add("downbutton","button");
@@ -138,6 +143,14 @@ echo file_get_contents("json/map.txt");
         }
         newtd.appendChild(newimg);
         newtr.appendChild(newtd);   
+
+        var newtd =  document.createElement("TD");
+        var newimg = document.createElement("IMG");
+        newimg.style.width = "35px";
+        newimg.src = map[index].src;
+        newtd.appendChild(newimg);
+        newtr.appendChild(newtd);   
+
         
     }
 
@@ -193,10 +206,15 @@ input{
     .button:active{
         background-color:yellow;
     }
-#maintable{
+#tablescroll{
     position:absolute;
-    top:100px;
     left:0px;
+    right:0px;
+    top:110px;
+    bottom:0px;
+    overflow:scroll;
+}
+#maintable{
 }
 #savebutton{
     position:absolute;

@@ -1,0 +1,198 @@
+<table id = "linktable">
+    <tr>
+        <td>
+            <a href = "editor.php"><img src = "../symbols/editor.svg"></a>
+        </td>
+        <td class = "button" id = "imagemodebutton"><img src = "icons/image.svg"></td>
+        <td class = "button" id = "functionmodebutton"><img src = "icons/ab.svg"></td>
+        <td class = "button" id = "plotmodebutton"><img src = "icons/plot.svg"></td>
+        <td class = "button" id = "stylemodebutton"><img src = "icons/style.svg"></td>
+        <td><a href = "tree.php"><img src = "icons/tree.svg"></a></td>
+        <td><a id = "svglink" href = "svgfeed.php"><img src = "icons/svgfeed.svg"></a></td>
+        <td><a id = "markdownlink" href = "markdownfeed.php"><img src = "icons/markdown.svg"></a></td>
+        <td><a href = "../"><img src = "icons/factory.svg"></a></td>
+        <td><a id = "funclink" href = "functioneditor.php"><img src = "icons/function.svg"></a></td>
+        <td class = "button" id = "savebutton"><img src = "icons/file.svg"></td>
+    </tr>
+</table>
+
+<canvas id="mainCanvas"></canvas>
+<img id  = "pngimage" style = "display:none"/>
+<div id = "imagebox">
+    <img id = "backgroundimage"/>
+</div>
+
+<table id = "maintable">
+    <tr>
+        <td>x0:</td><td><input></td>
+    </tr>
+    <tr>
+        <td>y0:</td><td><input></td>
+    </tr>
+    <tr>
+        <td>g:</td><td><input></td>
+    </tr>
+    <tr>
+        <td>G:</td><td><input></td>
+    </tr>
+</table>
+
+
+<table id = "imagetable">
+    <tr>
+        <td>xoverw:</td><td><input></td>
+    </tr>
+    <tr>
+        <td>yoverw:</td><td><input></td>
+    </tr>
+    <tr>
+        <td>woverw:</td><td><input></td>
+    </tr>
+    <tr>
+        <td>angle:</td><td><input></td>
+    </tr>
+    <tr>
+        <td>url:</td><td><input></td>
+    </tr>
+</table>
+
+
+<table id = "functiontable">
+    <tr>
+        <td>A:</td><td><input></td>
+    </tr>
+    <tr>
+        <td>B:</td><td><input></td>
+    </tr>
+
+</table>
+
+<textarea id = "functioneditor"></textarea>
+
+<table id = "styletable">
+    <tr>
+        <td>Width:</td><td><input></td>
+    </tr>
+    <tr>
+        <td>Width:</td><td><input></td>
+    </tr>
+    <tr>
+        <td>Linewidth:</td><td><input></td>
+    </tr>
+    <tr>
+        <td>Color:</td><td><input></td>
+    </tr>
+
+</table>
+
+<div class = "bar" id = "bar1">g</div>
+<div class = "bar" id = "bar2">G</div>
+
+
+<style>
+body{
+    font-family:Helvetica;
+}
+.button{
+    text-align:center;
+    cursor:pointer;
+    border-radius:5px;
+}
+.button:hover{
+    background-color:green;
+}
+.button:active{
+    background-color:yellow;
+}
+.bar{
+    position:absolute;
+    height:80px;
+    left:0px;
+    right:0px;
+    border-top:solid;
+    text-align:center;
+    font-size:36px;
+}
+#bar1{
+    bottom:80px;
+}
+#bar2{
+    bottom:0px;
+}
+#bar3{
+    bottom:80px;
+    display:none;
+}
+#bar4{
+    bottom:0px;
+    display:none;
+}
+#bar5{
+    bottom:80px;
+    display:none;
+}
+#bar6{
+    bottom:0px;
+    display:none;
+}
+
+#linktable{
+    position:absolute;
+    top:0px;
+    left:0px;
+}
+#linktable img{
+    width:60px;
+}
+#mainCanvas{
+    position:absolute;
+    z-index:0;
+    top:110px;
+    border:solid;
+}    
+#maintable{
+    position:absolute;
+    left:0px;
+    z-index:3;
+    top:110px;
+}
+#imagetable{
+    position:absolute;
+    left:0px;
+    z-index:3;
+    top:110px;
+    display:none;
+}
+#functiontable{
+    position:absolute;
+    left:0px;
+    z-index:3;
+    top:110px;
+    display:none;
+}
+#styletable{
+    position:absolute;
+    left:0px;
+    z-index:3;
+    top:110px;
+    display:none;
+}
+
+#imagebox{
+    position:absolute;
+    z-index:-1;
+    top:110px;
+    overflow:hidden;
+}
+#backgroundimage{
+    position:absolute;
+}
+#functioneditor{
+    position:absolute;
+    right:0px;
+    top:25%;
+    width:20em;
+    height:20em;
+    display:none;
+}
+</style>

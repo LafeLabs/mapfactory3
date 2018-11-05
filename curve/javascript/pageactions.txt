@@ -1,0 +1,8 @@
+document.getElementById("mainp").onclick = function(){
+    if(this.style.backgroundColor != "blue"){
+        this.style.backgroundColor = "blue";
+    }
+    else{
+        this.style.backgroundColor = "white";
+    }
+}

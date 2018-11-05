@@ -1,0 +1,54 @@
+A = 1;
+B = 1;
+
+currentjson = JSON.parse(document.getElementById("jsondatadiv").innerHTML);
+
+path = document.getElementById("pathdiv").innerHTML;
+if(path.length>1){
+    document.getElementById("funclink").href = "functioneditor.php?path="  + path;
+    document.getElementById("markdownlink").href = "markdownfeed.php?path="  + path;
+    document.getElementById("svglink").href = "svgfeed.php?path="  + path;
+
+}
+inputs = document.getElementById("maintable").getElementsByTagName("input");
+
+imageinputs = document.getElementById("imagetable").getElementsByTagName("input");
+imageinputs[4].value = currentjson.image.url;
+
+functioninputs = document.getElementById("functiontable").getElementsByTagName("input");
+functioninputs[0].value = A;
+functioninputs[1].value = B;
+
+styleinputs = document.getElementById("styletable").getElementsByTagName("input");
+styleinputs[0].value = currentjson.plotparams.plotwidth.toString();
+styleinputs[1].value = currentjson.plotparams.plotheight.toString();
+styleinputs[2].value = currentjson.style.linewidth.toString();
+styleinputs[3].value = currentjson.style.color;
+
+document.getElementById("backgroundimage").src = currentjson.image.url;
+
+
+g0 = currentjson.plotparams.g;
+G0 = currentjson.plotparams.G;
+w0 = currentjson.plotparams.plotwidth;
+h0 = currentjson.plotparams.plotheight;
+
+
+if(currentjson.A != undefined){
+    A = currentjson.A;
+}
+if(currentjson.B != undefined){
+    B = currentjson.B;
+}
+A0=A;
+B0=B;
+editmode = "plot";
+//editmode = "function";
+//editmode = "style";
+//editmode = "image";
+
+document.getElementById("plotmodebutton").style.backgroundColor = "#a0ffa0";
+document.getElementById("imagemodebutton").style.backgroundColor = "white";
+document.getElementById("functionmodebutton").style.backgroundColor = "white";        
+document.getElementById("stylemodebutton").style.backgroundColor = "white";
+
