@@ -53,16 +53,19 @@ EGO DEATH:
 <body>
 <div id = "pathdiv" style = "display:none"><?php
     if(isset($_GET['path'])){
-        echo file_get_contents($_GET['path']);
+        echo $_GET['path'];
     }
 ?></div>
 <div id = "urldiv" style = "display:none"><?php
     if(isset($_GET['url'])){
-        echo file_get_contents($_GET['url']);
+        echo $_GET['url'];
     }
 ?></div>
 <div id = "datadiv" style = "display:none"><?php
-    if(isset($_GET['path']) & !isset($_GET['url'])){
+    if(isset($_GET['path']) && isset($_GET['url'])){
+        echo file_get_contents($_GET['url']);
+    }
+    if(isset($_GET['path']) && !isset($_GET['url'])){
         echo file_get_contents($_GET['path']);
     }
     if(isset($_GET['url']) && !isset($_GET['path'])){

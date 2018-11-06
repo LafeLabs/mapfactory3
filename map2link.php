@@ -52,7 +52,7 @@ echo file_get_contents("json/map.txt");
         var newtr = document.createElement("TR");
         var newtd = document.createElement("TD");
         var newa = document.createElement("A");
-        newa.href =  "index.php?url=maps/" + maps[index];
+        newa.href =  "index.php?path=maps/" + maps[index];
         newa.innerHTML = maps[index];
         newtd.appendChild(newa);
         newtr.appendChild(newtd);
@@ -62,6 +62,15 @@ echo file_get_contents("json/map.txt");
 
 
 document.getElementById("savebutton").onclick = function(){
+        var newtr = document.createElement("TR");
+        var newtd = document.createElement("TD");
+        var newa = document.createElement("A");
+        newa.href =  "index.php?path=maps/" + document.getElementById("nameinput").value + ".txt";
+        newa.innerHTML = maps[index];
+        newtd.appendChild(newa);
+        newtr.appendChild(newtd);
+        document.getElementById("maintable").appendChild(newtr);
+
     savemap();
 }    
     

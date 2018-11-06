@@ -14,10 +14,18 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
 </head>
 <body>
+<div id = "pathdiv" style = "display:none"><?php
+    if(isset($_GET['path'])){
+        echo $_GET['path'];
+    }
+?></div>
 <div id = "datadiv" style = "display:none"><?php
-
-echo file_get_contents("json/map.txt");
-
+    if(isset($_GET['path'])){
+        echo file_get_contents($_GET['path']);
+    }
+    else{
+        echo file_get_contents("json/map.txt");        
+    }
 ?></div>
 <div id = "linkdatadiv" style = "display:none"><?php
 
@@ -129,7 +137,7 @@ foreach($files as $value){
 echo $listtext;
     
 ?></div>
-<a href = "index.php" style = "position:absolute;left:10px;top:10px"><img src = "mapicons/mapfactory.svg" style = "width:50px"></a>
+<a id = "factorylink" href = "index.php" style = "position:absolute;left:10px;top:10px"><img src = "mapicons/mapfactory.svg" style = "width:50px"></a>
 
 <div id = "linkscroll"></div>
 <table id = "maintable">
@@ -237,6 +245,15 @@ input{
 </style>
 
 <script>
+    path = document.getElementById("pathdiv").innerHTML;
+    if(path.length > 1){
+        pathset = true;
+        document.getElementById("factorylink").href += "?path=" + path;
+    }
+    else{
+        pathset = false;
+    }
+    
     links = JSON.parse(document.getElementById("linkdatadiv").innerHTML);
     imgurls = JSON.parse(document.getElementById("imgurls").innerHTML);
     map = JSON.parse(document.getElementById("datadiv").innerHTML);
@@ -261,7 +278,7 @@ input{
     
     maps = document.getElementById("maps").innerHTML.split(",");
     for(var index = 0;index < maps.length - 1;index++){
-        links.push("index.php?url=maps/" + maps[index]);
+        links.push("index.php?path=maps/" + maps[index]);
     }
     scrolls = document.getElementById("scrolls").innerHTML.split(",");
 
@@ -345,12 +362,18 @@ input{
     }
     
     document.getElementById("savebutton").onclick = function(){
+        if(pathset){
+            currentFile = path;
+        }
+        else{
+            currentFile = "json/map.txt";
+        }
         data = encodeURIComponent(JSON.stringify(map,null,"    "));
         var httpc = new XMLHttpRequest();
         var url = "filesaver.php";        
         httpc.open("POST", url, true);
         httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
-        httpc.send("data=" + data + "&filename=" + "json/map.txt");//send text to filesaver.php
+        httpc.send("data=" + data + "&filename=" + currentFile);//send text to filesaver.php
     }
 
 

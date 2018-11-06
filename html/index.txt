@@ -42,17 +42,17 @@
             </a>
         </td>
         <td>
-            <a href = "linker.php">
+            <a id = "linkerlink" href = "linker.php">
                 <img src = "mapicons/linker.svg"/>
             </a>
         </td>
         <td>
-            <a href = "aligner.php">
+            <a id = "alignerlink" href = "aligner.php">
                 <img src = "mapicons/aligner.svg"/>
             </a>
         </td>
         <td>
-            <a href = "mapeditor.php">
+            <a id = "mapeditorlink" href = "mapeditor.php">
                 <img src = "mapicons/mapeditor.svg"/>
             </a>
         </td>
@@ -72,12 +72,43 @@
 <script>
 
     map = JSON.parse(document.getElementById("datadiv").innerHTML);
-    data = encodeURIComponent(JSON.stringify(map,null,"    "));
-    var httpc = new XMLHttpRequest();
-    var url = "filesaver.php";
-    httpc.open("POST", url, true);
-    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
-    httpc.send("data=" + data + "&filename=" + "json/map.txt");//send text to filesaver.php
+    url = document.getElementById("urldiv").innerHTML;
+    path = document.getElementById("pathdiv").innerHTML;
+    if(path.length > 1){
+        pathset = true;
+    }
+    else{
+        pathset = false;
+    }
+    if(url.length > 1){
+        urlset = true;
+    }
+    else{
+        urlset = false;
+    }
+    
+    if(urlset && !pathset){
+        data = encodeURIComponent(JSON.stringify(map,null,"    "));
+        var httpc = new XMLHttpRequest();
+        var url = "filesaver.php";
+        httpc.open("POST", url, true);
+        httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+        httpc.send("data=" + data + "&filename=" + "json/map.txt");//send text to filesaver.php
+    }
+    if(urlset && pathset){
+        data = encodeURIComponent(JSON.stringify(map,null,"    "));
+        var httpc = new XMLHttpRequest();
+        var url = "filesaver.php";
+        httpc.open("POST", url, true);
+        httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+        httpc.send("data=" + data + "&filename=" + path);//send text to filesaver.php
+    }    
+    if(pathset){
+        document.getElementById("linkerlink").href += "?path=" + path; 
+        document.getElementById("alignerlink").href += "?path=" + path; 
+        document.getElementById("mapeditorlink").href += "?path=" + path; 
+    }
+    
     for(var index = 0;index < map.length;index++){
         var newimg = document.createElement("IMG");
         var newa = document.createElement("A");

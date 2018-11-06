@@ -14,13 +14,20 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
 </head>
 <body>
-<div id = "datadiv" style = "display:none"><?php
-
-echo file_get_contents("json/map.txt");
-
+<div id = "pathdiv" style = "display:none"><?php
+    if(isset($_GET['path'])){
+        echo $_GET['path'];
+    }
 ?></div>
-
-<a href = "index.php" style = "position:absolute;left:10px;top:10px;z-index:4"><img src = "mapicons/mapfactory.svg" style = "width:50px"></a>
+<div id = "datadiv" style = "display:none"><?php
+    if(isset($_GET['path'])){
+        echo file_get_contents($_GET['path']);
+    }
+    else{
+        echo file_get_contents("json/map.txt");        
+    }
+?></div>
+<a id = "factorylink" href = "index.php" style = "position:absolute;left:10px;top:10px;z-index:4"><img src = "mapicons/mapfactory.svg" style = "width:50px"></a>
 
 
 <div id = "page"></div>
@@ -30,6 +37,16 @@ echo file_get_contents("json/map.txt");
 <div id = "scalebar" class = "bar">SCALE</div>
 <div id = "rotatebar" class = "bar">ROTATE</div>
 <script>
+
+    path = document.getElementById("pathdiv").innerHTML;
+    if(path.length > 1){
+        pathset = true;
+        document.getElementById("factorylink").href += "?path=" + path;
+    }
+    else{
+        pathset = false;
+    }
+
     map = JSON.parse(document.getElementById("datadiv").innerHTML);
     W = innerWidth;
     for(var index = 0;index < map.length;index++){
@@ -111,12 +128,19 @@ document.getElementById("backbutton").onclick = function(){
 
 
 function savemap(){
+    if(pathset){
+        currentFile = path;
+    }
+    else{
+        currentFile = "json/map.txt";
+    }
+    
     data = encodeURIComponent(JSON.stringify(map,null,"    "));
     var httpc = new XMLHttpRequest();
     var url = "filesaver.php";        
     httpc.open("POST", url, true);
     httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
-    httpc.send("data=" + data + "&filename=" + "json/map.txt");//send text to filesaver.php
+    httpc.send("data=" + data + "&filename=" + currentFile);//send text to filesaver.php
 }
 </script>
 <style>
