@@ -14,13 +14,21 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
 
 </head>
 <body>
+<div id = "pathdiv" style = "display:none"><?php
+    if(isset($_GET['path'])){
+        echo $_GET['path'];
+    }
+?></div>
 <div id = "datadiv" style = "display:none"><?php
-
-echo file_get_contents("json/map.txt");
-
+    if(isset($_GET['path'])){
+        echo file_get_contents($_GET['path']);
+    }
+    else{
+        echo file_get_contents("json/map.txt");        
+    }
 ?></div>
 
-<a href = "index.php" style = "position:absolute;left:10px;top:10px;z-index:4"><img src = "mapicons/mapfactory.svg" style = "width:50px"></a>
+<a id = "factorylink" href = "index.php" style = "position:absolute;left:10px;top:10px;z-index:4"><img src = "mapicons/mapfactory.svg" style = "width:50px"></a>
 <img class = "button" src = "mapicons/gobutton.svg" id = "savebutton"/>
 <div id = "tablescroll">
   <table id = "maintable">
@@ -44,6 +52,17 @@ echo file_get_contents("json/map.txt");
 </div>
 
 <script>
+
+    path = document.getElementById("pathdiv").innerHTML;
+    if(path.length > 1){
+        pathset = true;
+        document.getElementById("factorylink").href += "?path=" + path;
+    }
+    else{
+        pathset = false;
+    }
+
+
     map = JSON.parse(document.getElementById("datadiv").innerHTML);
 
     for(var index = 0;index < map.length;index++){
@@ -178,13 +197,19 @@ document.getElementById("savebutton").onclick = function(){
 }    
     
 function savemap(){
-    
+    if(pathset){
+        currentFile = path;
+    }
+    else{
+        currentFile = "json/map.txt";
+    }
+
     data = encodeURIComponent(JSON.stringify(map,null,"    "));
     var httpc = new XMLHttpRequest();
     var url = "filesaver.php";        
     httpc.open("POST", url, true);
     httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
-    httpc.send("data=" + data + "&filename=" + "json/map.txt");//send text to filesaver.php
+    httpc.send("data=" + data + "&filename=" + currentFile);//send text to filesaver.php
 }
 </script>
 <style>

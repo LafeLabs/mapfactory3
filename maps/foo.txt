@@ -1,66 +1,10 @@
 [
     {
-        "href": "editor.php",
-        "src": "icons/editor.svg",
-        "x": -0.002777777777777786,
-        "y": 0.3580409356725146,
         "w": 0.1,
-        "angle": 0
-    },
-    {
-        "href": "linker.php",
-        "src": "icons/linker.svg",
-        "x": 0.3435964912280702,
-        "y": 0.15482456140350878,
-        "w": 0.14,
-        "angle": 0
-    },
-    {
-        "href": "linkfeed.php",
-        "src": "icons/linkfeed.svg",
-        "x": 0.024415204678362556,
-        "y": 0.17792397660818712,
-        "w": 0.1,
-        "angle": 0
-    },
-    {
-        "href": "aligner.php",
-        "src": "icons/aligner.svg",
-        "x": 0.5342105263157895,
-        "y": 0.15482456140350878,
-        "w": 0.1,
-        "angle": 0
-    },
-    {
-        "href": "mapeditor.php",
-        "src": "icons/mapeditor.svg",
-        "x": 0.6811403508771929,
-        "y": 0.15175438596491225,
-        "w": 0.1,
-        "angle": 0
-    },
-    {
-        "href": "map2link.php",
-        "src": "icons/map2link.svg",
-        "x": 0.8268292682926829,
-        "y": 0.2,
-        "w": 0.1,
-        "angle": 0
-    },
-    {
-        "w": 0.5159468438538206,
-        "x": 0.40365448504983387,
-        "y": -0.049667774086378735,
-        "angle": 90.16370915802706,
-        "src": "https://i.imgur.com/5226cet.png",
-        "href": ""
-    },
-    {
-        "w": 0.1,
-        "x": 0.15188470066518847,
-        "y": 0.041574279379157426,
+        "x": 0.5,
+        "y": 0.25,
         "angle": 0,
         "src": "http://localhost:8000/uploadimages/image1.png",
-        "href": ""
+        "href": "index.php?path=maps/main.txt"
     }
 ]
