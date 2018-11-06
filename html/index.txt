@@ -61,6 +61,11 @@
                 <img src = "mapicons/map2link.svg"/>
             </a>
         </td>
+        <td>
+            <a href = "copy.php">
+                <img src = "mapicons/copy.svg"/>
+            </a>
+        </td>
     </tr>
 </table>
 </div>
@@ -98,6 +103,7 @@
     position:absolute;
     left:0px;
     top:0px;
+    z-index:9999999;
 }
 #linktable img{
     width:40px;

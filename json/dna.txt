@@ -3,6 +3,7 @@
 		"path":"php",
 		"files":[
 			"aligner.txt",
+			"copy.txt",
 			"dnagenerator.txt",
 			"editor.txt",
 			"fileloader.txt",
@@ -43,6 +44,7 @@
 			"aligner.svg",
 			"back.svg",
 			"combiner.svg",
+			"copy.svg",
 			"curve.svg",
 			"deletelink.svg",
 			"deletex.svg",

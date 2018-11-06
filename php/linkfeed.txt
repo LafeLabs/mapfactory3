@@ -71,7 +71,7 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
         deltd.className = "button";
         var newimg = document.createElement("IMG");
         newimg.className = "delbutton";
-        newimg.src = "icons/deletelink.svg";
+        newimg.src = "mapicons/deletelink.svg";
         deltd.appendChild(newimg);
         deltd.onclick  = function(){
             document.getElementById("maintable").removeChild(this.parentNode);
@@ -122,6 +122,7 @@ body{
         position:absolute;
         bottom:0px;
         left:0px;
+        z-index:99999999;
     }
     .delbutton{
         width:50px;

@@ -51,15 +51,26 @@ EGO DEATH:
 -->
 </head>
 <body>
-<div id = "datadiv" style = "display:none"><?php
-
+<div id = "pathdiv" style = "display:none"><?php
+    if(isset($_GET['path'])){
+        echo file_get_contents($_GET['path']);
+    }
+?></div>
+<div id = "urldiv" style = "display:none"><?php
     if(isset($_GET['url'])){
         echo file_get_contents($_GET['url']);
     }
-    else{
+?></div>
+<div id = "datadiv" style = "display:none"><?php
+    if(isset($_GET['path']) & !isset($_GET['url'])){
+        echo file_get_contents($_GET['path']);
+    }
+    if(isset($_GET['url']) && !isset($_GET['path'])){
+        echo file_get_contents($_GET['url']);
+    }
+    if(!isset($_GET['url']) && !isset($_GET['path'])){
         echo file_get_contents("json/map.txt");        
     }
-
 ?></div>
 <?php
     echo file_get_contents("html/index.txt");
