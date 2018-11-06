@@ -1,11 +1,75 @@
 <div id = "page">
-    
+<table id = "linktable">
+    <tr>
+        <td>
+            <a href = "editor.php">
+                <img src = "mapicons/editor.svg"/>
+            </a>
+        </td>
+        <td>
+            <a href = "index.php?url=json/factory.txt">
+                <img src = "mapicons/mapfactory.svg"/>
+            </a>
+        </td>
+        <td>
+            <a href = "scroll/">
+                <img src = "mapicons/scroll.svg"/>
+            </a>
+        </td>
+        <td>
+            <a href = "linkfeed.php">
+                <img src = "mapicons/linkfeed.svg"/>
+            </a>
+        </td>
+        <td>
+            <a href = "uploader.php">
+                <img src = "mapicons/uploader.svg"/>
+            </a>
+        </td>
+        <td>
+            <a href = "imagefeed.php">
+                <img src = "mapicons/imagefeed.svg"/>
+            </a>
+        </td>
+        <td>
+            <a href = "curve/">
+                <img src = "mapicons/curve.svg"/>
+            </a>
+        </td>
+        <td>
+            <a href = "symbol/">
+                <img src = "mapicons/geometron.svg"/>
+            </a>
+        </td>
+        <td>
+            <a href = "linker.php">
+                <img src = "mapicons/linker.svg"/>
+            </a>
+        </td>
+        <td>
+            <a href = "aligner.php">
+                <img src = "mapicons/aligner.svg"/>
+            </a>
+        </td>
+        <td>
+            <a href = "mapeditor.php">
+                <img src = "mapicons/mapeditor.svg"/>
+            </a>
+        </td>
+        <td>
+            <a href = "map2link.php">
+                <img src = "mapicons/map2link.svg"/>
+            </a>
+        </td>
+    </tr>
+</table>
 </div>
 <script>
+
     map = JSON.parse(document.getElementById("datadiv").innerHTML);
     data = encodeURIComponent(JSON.stringify(map,null,"    "));
     var httpc = new XMLHttpRequest();
-    var url = "filesaver.php";        
+    var url = "filesaver.php";
     httpc.open("POST", url, true);
     httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
     httpc.send("data=" + data + "&filename=" + "json/map.txt");//send text to filesaver.php
@@ -28,9 +92,16 @@
         }
     }
     
-    
 </script>
 <style>
+#linktable{
+    position:absolute;
+    left:0px;
+    top:0px;
+}
+#linktable img{
+    width:40px;
+}
 #page{
     position:absolute;    
     left:0px;

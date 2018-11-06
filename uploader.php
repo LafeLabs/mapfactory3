@@ -56,6 +56,8 @@ body{
     position:absolute;
     bottom:0px;
     left:0px;
+        z-index:99999999;
+
 }
 #imagescroll{
     position:absolute;
