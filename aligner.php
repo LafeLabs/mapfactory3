@@ -129,6 +129,8 @@ function savemap(){
     z-index:5;
     border-left:solid;
     border-right:solid;
+    z-index:99999999;
+
 }
 #scalebar{
     bottom:50px;
@@ -173,6 +175,8 @@ input{
      bottom:0px;
      width:100px;
      height:100px;
+     z-index:99999999;
+
  }
  #fwdbutton{
      position:absolute;
@@ -180,6 +184,8 @@ input{
      bottom:0px;
      width:100px;
      height:100px;
+     z-index:99999999;
+
  }
 
 </style>

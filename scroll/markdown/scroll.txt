@@ -3,3 +3,7 @@
 Here is a paragraph
 
 
+
+![](http://localhost:8000/symbol/symbols/gates/svg/svg1541429017.svg)
+
+

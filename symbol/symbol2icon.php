@@ -39,7 +39,7 @@ echo $listtext;
 
 ?></div>
 
-<a href = "index.php" style = "position:absolute;left:10px;top:10px;z-index:4"><img src = "icons/symbol.svg" style = "width:50px"></a>
+<a href = "index.php" style = "position:absolute;left:10px;top:10px;z-index:4"><img src = "icons/geometron.svg" style = "width:50px"></a>
 
 <img class = "button" src = "mapicons/gobutton.svg" id = "savebutton"/>
 
