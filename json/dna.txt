@@ -28,7 +28,9 @@
 	{
 		"path":"json",
 		"files":[
+			"currentjson.txt",
 			"dna.txt",
+			"factory.txt",
 			"imgurls.txt",
 			"links.txt",
 			"listoflists.txt",
@@ -41,6 +43,7 @@
 			"aligner.svg",
 			"back.svg",
 			"combiner.svg",
+			"curve.svg",
 			"deletelink.svg",
 			"deletex.svg",
 			"downarrow.svg",
