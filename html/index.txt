@@ -71,6 +71,11 @@
 </div>
 <script>
 
+linkimages = document.getElementById("linktable").getElementsByTagName("img");
+for(var index = 0;index < linkimages.length;index++){
+    linkimages[index].style.width = (innerWidth/16).toString() + "px";
+}
+
     map = JSON.parse(document.getElementById("datadiv").innerHTML);
     url = document.getElementById("urldiv").innerHTML;
     path = document.getElementById("pathdiv").innerHTML;
