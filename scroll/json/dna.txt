@@ -28,8 +28,11 @@
 		"path":"icons",
 		"files":[
 			"editor.svg",
+			"mapfactory.svg",
 			"markdown.svg",
-			"symbol.svg"
+			"scrollmode.svg",
+			"symbol.svg",
+			"tree.svg"
 		]
 	},
 	{
@@ -37,6 +40,7 @@
 		"files":[
 			"bar.txt",
 			"foo.txt",
+			"maplore.txt",
 			"scroll.txt"
 		]
 	},

@@ -10,7 +10,7 @@
     "y0": 227,
     "x0rel": -245,
     "y0rel": -172,
-    "glyph": "0331,0331,0333,0230,0220,0236,",
+    "glyph": "",
     "table": [
         "0220:0244,0130,0245,",
         "0221:0244,0131,0245,",
@@ -65,18 +65,4 @@
 }
 </json>
 -->
-    <line x1="188" y1="283" x2="270" y2="283" style="stroke:black;stroke-width:3" />
-    <line x1="188" y1="365" x2="270" y2="365" style="stroke:black;stroke-width:3" />
-    <circle cx="229" cy = "365" r = "10.330578512396693" stroke = "black" stroke-width = "3" fill = "none" />
-    <line x1="229" y1="365" x2="229" y2="376" style="stroke:black;stroke-width:3" />
-    <line x1="229" y1="365" x2="229" y2="283" style="stroke:black;stroke-width:3" />
-    <circle cx="229" cy = "283" r = "10.330578512396693" stroke = "black" stroke-width = "3" fill = "black" />
-    <line x1="270" y1="283" x2="291" y2="283" style="stroke:black;stroke-width:3" />
-	<path d = "M332 303 L332 262 L291 262 L291 303 L332 303 Z" stroke = "black" stroke-width = "3" fill = "none" />    <text x="301" y = "293" fill = "black" font-size = "20.661157024793386px" font-family = "arial">X</text>
-    <line x1="332" y1="283" x2="353" y2="283" style="stroke:black;stroke-width:3" />
-    <line x1="353" y1="283" x2="436" y2="283" style="stroke:black;stroke-width:3" />
-	<path d = "M436 314 L436 251 L499 251 L530 251 L530 283 L530 314 L499 314 L467 314 L436 314 Z" stroke = "black" stroke-width = "3" fill = "none" />  <path d="M441.16061177812134 290.2413176652457           A48.23075495878197 48.23075495878197 0 0 1 524.6987298541362 290.2413176652457" fill = "none" stroke = "black" stroke-width = "3" />
-    <line x1="483" y1="314" x2="514" y2="260" style="stroke:black;stroke-width:3" />
-    <line x1="514" y1="260" x2="508" y2="264" style="stroke:black;stroke-width:3" />
-    <line x1="514" y1="260" x2="514" y2="268" style="stroke:black;stroke-width:3" />
-	<path d = "M514 268 L514 260 L508 264 " stroke = "black" stroke-width = "3" fill = "none" /></svg>
+</svg>

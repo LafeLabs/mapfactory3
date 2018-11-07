@@ -1,0 +1,11 @@
+{
+    "svgwidth": 321,
+    "svgheight": 302,
+    "unit": 100,
+    "x0": 683,
+    "y0": 379,
+    "x0rel": -1,
+    "y0rel": -20,
+    "glyph": "0225,",
+    "table": []
+}
