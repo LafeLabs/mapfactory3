@@ -130,7 +130,7 @@ echo $listtext;
 $files = scandir(getcwd()."/uploadimages");
 $listtext = "";
 foreach($files as $value){
-    if($value != "." && $value != ".."){
+    if($value != "." && $value != ".." && substr($value,-4) != ".txt"){
         $listtext .= $value.",";
     }
 }
