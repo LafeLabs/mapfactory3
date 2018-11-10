@@ -1,0 +1,26 @@
+{
+    "constants": {},
+    "YofXstring": "Y = Math.exp(-X)",
+    "style": {
+        "linewidth": 4,
+        "color": "blue",
+        "fill": "none"
+    },
+    "plotparams": {
+        "G": 225.08117895663068,
+        "g": "0.005",
+        "duration": 450.78888054094654,
+        "plotwidth": 500,
+        "plotheight": 500,
+        "x0": 17,
+        "y0": 339
+    },
+    "funcparams": {},
+    "image": {
+        "url": "",
+        "xoverw": 0.038011695906432746,
+        "yoverw": -0.08771929824561403,
+        "woverw": 0.8536631795472632,
+        "angle": "0"
+    }
+}

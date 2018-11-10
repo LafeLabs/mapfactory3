@@ -1,0 +1,29 @@
+{
+    "constants": {},
+    "YofXstring": "Y =  (1/Math.PI)*0.5/(X*X + 0.25);",
+    "style": {
+        "linewidth": 4,
+        "color": "blue",
+        "fill": "none"
+    },
+    "plotparams": {
+        "G": 100,
+        "g": 0.01,
+        "duration": 450.78888054094654,
+        "plotwidth": 500,
+        "plotheight": 500,
+        "x0": 250,
+        "y0": 250,
+        "tstart": -200
+    },
+    "funcparams": {},
+    "image": {
+        "url": "",
+        "xoverw": 0.038011695906432746,
+        "yoverw": -0.08771929824561403,
+        "woverw": 0.8536631795472632,
+        "angle": "0"
+    },
+    "A": 0.5598244299801641,
+    "B": -0.3541778825696293
+}

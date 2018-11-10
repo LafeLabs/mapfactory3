@@ -1,0 +1,94 @@
+function XYofT(){
+    T = currentjson.plotparams.g*t;
+    X = A*Math.cosh(2*Math.PI*T);
+    Y = B*Math.sinh(2*Math.PI*T);
+    y = currentjson.plotparams.y0 - currentjson.plotparams.G*Y;
+    x = currentjson.plotparams.x0 - currentjson.plotparams.G*X;    
+}
+
+function XYofT2(){
+    T = currentjson.plotparams.g*t;
+    X = -A*Math.cosh(2*Math.PI*T);
+    Y = B*Math.sinh(2*Math.PI*T);
+    y = currentjson.plotparams.y0 - currentjson.plotparams.G*(Y);
+    x = currentjson.plotparams.x0 - currentjson.plotparams.G*(X);   
+}
+
+
+
+function plotfunction(){
+    
+    currentStroke = "blue";
+    currentLineWidth = 4;
+    ctx.strokeStyle = currentStroke;
+    ctx.lineWidth = currentLineWidth;
+    ctx.beginPath();	
+    x = 0;
+    y = 0;
+    t = currentjson.plotparams.tstart;
+    XYofT();
+    currentSVG += "	<path d = \"M";
+    currentSVG += Math.round(x).toString() + " ";
+    currentSVG += Math.round(y).toString() + " ";
+    for(t = 1 + currentjson.plotparams.tstart; t < currentjson.plotparams.tstart + currentjson.plotparams.duration;t++){
+        ctx.moveTo(x,y);
+        XYofT();
+        ctx.lineTo(x,y);
+        currentSVG += "L" + x + " " + y + " ";
+    }
+    ctx.stroke();
+    currentSVG += "\""+ " stroke = \"" + currentStroke + "\" stroke-width = \"" + currentLineWidth.toString() + "\" fill = \"" + "none" + "\" "+"/>";
+
+
+    currentStroke = "blue";
+    currentLineWidth = 4;
+    ctx.strokeStyle = currentStroke;
+    ctx.lineWidth = currentLineWidth;
+    ctx.beginPath();	
+    x = 0;
+    y = 0;
+    t = currentjson.plotparams.tstart;
+    XYofT();
+    currentSVG += "	<path d = \"M";
+    currentSVG += Math.round(x).toString() + " ";
+    currentSVG += Math.round(y).toString() + " ";
+    for(t = 1 + currentjson.plotparams.tstart; t < currentjson.plotparams.tstart + currentjson.plotparams.duration;t++){
+        ctx.moveTo(x,y);
+        XYofT2();
+        ctx.lineTo(x,y);
+        currentSVG += "L" + x + " " + y + " ";
+    }
+    ctx.stroke();
+    currentSVG += "\""+ " stroke = \"" + currentStroke + "\" stroke-width = \"" + currentLineWidth.toString() + "\" fill = \"" + "none" + "\" "+"/>";
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+{
+    "constants": {},
+    "YofXstring": "tau = 100;Y =  Math.exp(-X/tau)*Math.sin(X)",
+    "style": {
+        "linewidth": 4,
+        "color": "blue",
+        "fill": "none"
+    },
+    "plotparams": {
+        "G": 211.1355692539679,
+        "g": 0.10699891185269558,
+        "duration": 450.78888054094654,
+        "plotwidth": 500,
+        "plotheight": 500,
+        "x0": "0",
+        "y0": 200
+    },
+    "funcparams": {},
+    "image": {
+        "url": "",
+        "xoverw": 0.038011695906432746,
+        "yoverw": -0.08771929824561403,
+        "woverw": 0.8536631795472632,
+        "angle": "0"
+    },
+    "A": 6.812920690579613,
+    "B": 1
+}

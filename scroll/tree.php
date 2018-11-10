@@ -36,10 +36,10 @@ foreach($files as $value){
 <table id  = "linktable">
     <tr>
         <td><a href = "editor.php">
-                <img  style = "width:80px" src = "../symbols/editor.svg"/>
+                <img  style = "width:80px" src = "icons/editor.svg"/>
             </a></td>
         <td><a href = "index.php">
-            <img style = "width:80px" src = "../symbols/scroll.svg"/>
+            <img style = "width:80px" src = "../mapicons/scroll.svg"/>
         </a></td>
     </tr>
 </table>

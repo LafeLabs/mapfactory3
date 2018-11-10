@@ -1,0 +1,135 @@
+<div id = "page">
+<table id = "linktable">
+    <tr>
+        <td>
+            <a href = "editor.php">
+                <img src = "mapicons/editor.svg"/>
+            </a>
+        </td>
+        <td>
+            <a href = "../" >
+                <img src = "../mapicons/mapfactory.svg"/>
+            </a>
+        </td>
+        <td>
+            <a href = "externalimagefeed.php" >
+                <img src = "mapicons/externalimagefeed.svg"/>
+            </a>
+        </td>
+        <td>
+            <a href = "uploader.php" >
+                <img src = "mapicons/uploader.svg"/>
+            </a>
+        </td>
+        <td>
+            <a href = "imagefeed.php">
+                <img src = "mapicons/imagefeed.svg"/>
+            </a>
+        </td>
+        <td>
+            <a id = "linkerlink" href = "combiner.php">
+                <img src = "mapicons/combiner.svg"/>
+            </a>
+        </td>
+        <td>
+            <a id = "alignerlink" href = "aligner.php">
+                <img src = "mapicons/aligner.svg"/>
+            </a>
+        </td>
+        <td>
+            <a href = "memefeed.php">
+                <img src = "mapicons/memefeed.svg"/>
+            </a>
+        </td>
+        <td>
+            <a href = "copy.php">
+                <img src = "mapicons/copy.svg"/>
+            </a>
+        </td>
+    </tr>
+</table>
+</div>
+<script>
+
+linkimages = document.getElementById("linktable").getElementsByTagName("img");
+for(var index = 0;index < linkimages.length;index++){
+    linkimages[index].style.width = (innerWidth/16).toString() + "px";
+}
+
+meme = JSON.parse(document.getElementById("datadiv").innerHTML);
+
+    url = document.getElementById("urldiv").innerHTML;
+    path = document.getElementById("pathdiv").innerHTML;
+    if(path.length > 1){
+        pathset = true;
+    }
+    else{
+        pathset = false;
+    }
+    if(url.length > 1){
+        urlset = true;
+    }
+    else{
+        urlset = false;
+    }
+    
+    if(urlset && !pathset){
+        data = encodeURIComponent(JSON.stringify(meme,null,"    "));
+        var httpc = new XMLHttpRequest();
+        var url = "filesaver.php";
+        httpc.open("POST", url, true);
+        httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+        httpc.send("data=" + data + "&filename=" + "json/meme.txt");//send text to filesaver.php
+    }
+    if(urlset && pathset){
+        data = encodeURIComponent(JSON.stringify(meme,null,"    "));
+        var httpc = new XMLHttpRequest();
+        var url = "filesaver.php";
+        httpc.open("POST", url, true);
+        httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+        httpc.send("data=" + data + "&filename=" + path);//send text to filesaver.php
+    }    
+    if(pathset){
+        document.getElementById("linkerlink").href += "?path=" + path; 
+        document.getElementById("alignerlink").href += "?path=" + path; 
+    }
+    
+    W = innerWidth;
+    for(var index = 0;index < meme.length;index++){
+        var newimg = document.createElement("IMG");
+        newimg.id = "i" + index.toString();
+        newimg.className = "boximg";
+        document.getElementById("page").appendChild(newimg);
+        newimg.src = meme[index].src;
+        newimg.style.left = (meme[index].x*W).toString() + "px";
+        newimg.style.top = (meme[index].y*W).toString() + "px";
+        newimg.style.width = (meme[index].w*W).toString() + "px";
+        newimg.style.transform = "rotate(" + meme[index].angle.toString() + "deg)";
+    }
+    
+</script>
+<style>
+#linktable{
+    position:absolute;
+    left:0px;
+    top:0px;
+    z-index:99999999;
+}
+#linktable img{
+    width:40px;
+    background-color:white;
+}
+#page{
+    position:absolute;    
+    left:0px;
+    top:0px;
+    right:0px;
+    bottom:0px;
+}
+ .boximg{
+     position:absolute;
+     z-index:-1;
+ }   
+
+
+</style>

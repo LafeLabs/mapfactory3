@@ -1,0 +1,26 @@
+{
+    "constants": {},
+    "YofXstring": "Y = Math.log(X)",
+    "style": {
+        "linewidth": 4,
+        "color": "blue",
+        "fill": "none"
+    },
+    "plotparams": {
+        "G": 69.75370036682376,
+        "g": 0.0014982289736751597,
+        "duration": 450.78888054094654,
+        "plotwidth": 500,
+        "plotheight": 500,
+        "x0": -20,
+        "y0": 115
+    },
+    "funcparams": {},
+    "image": {
+        "url": "",
+        "xoverw": 0.038011695906432746,
+        "yoverw": -0.08771929824561403,
+        "woverw": 0.8536631795472632,
+        "angle": "0"
+    }
+}

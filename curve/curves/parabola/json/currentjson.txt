@@ -1,0 +1,26 @@
+{
+    "constants": {},
+    "YofXstring": "Y = X*X",
+    "style": {
+        "linewidth": 4,
+        "color": "blue",
+        "fill": "none"
+    },
+    "plotparams": {
+        "G": 291.683780824842,
+        "g": 0.003173960979675239,
+        "duration": 450.78888054094654,
+        "plotwidth": 500,
+        "plotheight": 500,
+        "x0": "240",
+        "y0": 200
+    },
+    "funcparams": {},
+    "image": {
+        "url": "",
+        "xoverw": 0.038011695906432746,
+        "yoverw": -0.08771929824561403,
+        "woverw": 0.8536631795472632,
+        "angle": "0"
+    }
+}

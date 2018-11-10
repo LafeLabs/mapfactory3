@@ -1,0 +1,69 @@
+
+function YofX(){
+    X = currentjson.plotparams.g*(x - currentjson.plotparams.x0);
+    F1 = 0.5*(1 + Math.tanh(X/A));
+    F2 = 0.5*(1 + Math.tanh((B - X)/A));
+    Y = F1*F2*Math.cos(2*Math.PI*X);
+    y = currentjson.plotparams.y0 - currentjson.plotparams.G*(Y);
+}
+
+
+
+
+
+function plotfunction(){
+    
+    /*plot one function:*/
+    currentStroke = "red";
+    currentLineWidth = 4;
+    ctx.strokeStyle = currentStroke;
+    ctx.lineWidth = currentLineWidth;
+    ctx.beginPath();	
+    x = 0;
+    intx = x;
+    YofX();
+    currentSVG += "	<path d = \"M";
+    currentSVG += Math.round(x).toString() + " ";
+    currentSVG += Math.round(y).toString() + " ";
+    for(x = 1;x < currentjson.plotparams.plotwidth;x++){
+        ctx.moveTo(x-1,y);
+        YofX();
+        ctx.lineTo(x,y);
+        currentSVG += "L" + x + " " + y + " ";
+    }
+    ctx.stroke();
+    currentSVG += "\""+ " stroke = \"" + currentStroke + "\" stroke-width = \"" + currentLineWidth.toString() + "\" fill = \"" + "none" + "\" "+"/>";
+    /*finish plot one function*/
+    
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

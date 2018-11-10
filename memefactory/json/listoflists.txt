@@ -1,0 +1,4 @@
+[
+    "http://quantumart.org/symbol/svg/list.txt",
+    "http://actiongeometry.org/symbol/svg/list.txt"
+]

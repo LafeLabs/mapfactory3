@@ -1,0 +1,50 @@
+
+function YofX(){
+    X = currentjson.plotparams.g*(x - currentjson.plotparams.x0);
+
+    Y = Math.exp(-X/100)*(Math.sin(X));
+
+    y = currentjson.plotparams.y0 - currentjson.plotparams.G*(Y);
+}
+
+
+function XYofT(){
+    T = currentjson.plotparams.g*t;
+    X = Math.exp(-T/A)*Math.cos(2*Math.PI*T);
+    Y = Math.exp(-T/A)*Math.sin(2*Math.PI*T);
+    y = currentjson.plotparams.y0 - currentjson.plotparams.G*(Y);
+    x = currentjson.plotparams.x0 - currentjson.plotparams.G*(X);    
+}
+
+
+
+
+function plotfunction(){
+    
+    /*plot one function:*/
+    currentStroke = currentjson.style.color;
+    currentLineWidth = currentjson.style.linewidth;
+    ctx.strokeStyle = currentStroke;
+    ctx.lineWidth = currentLineWidth;
+    ctx.beginPath();	
+    x = 0;
+    y = 0;
+    t = 0;
+    intx = x;
+    XYofT();
+    currentSVG += "	<path d = \"M";
+    currentSVG += Math.round(x).toString() + " ";
+    currentSVG += Math.round(y).toString() + " ";
+    for(t = 1;t < currentjson.plotparams.duration;t++){
+        ctx.moveTo(x,y);
+        XYofT();
+        ctx.lineTo(x,y);
+        currentSVG += "L" + x + " " + y + " ";
+    }
+    ctx.stroke();
+    currentSVG += "\""+ " stroke = \"" + currentStroke + "\" stroke-width = \"" + currentLineWidth.toString() + "\" fill = \"" + "none" + "\" "+"/>";
+    /*finish plot one function*/
+    
+    
+
+}

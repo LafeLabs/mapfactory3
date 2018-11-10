@@ -1,7 +1,7 @@
 <table id = "linktable">
     <tr>
         <td>
-            <a href = "editor.php"><img src = "../symbols/editor.svg"></a>
+            <a href = "editor.php"><img src = "../mapicons/editor.svg"></a>
         </td>
         <td class = "button" id = "imagemodebutton"><img src = "icons/image.svg"></td>
         <td class = "button" id = "functionmodebutton"><img src = "icons/ab.svg"></td>
