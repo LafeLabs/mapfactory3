@@ -7,8 +7,8 @@
             </a>
         </td>
         <td>
-            <a href = "index.php?url=json/factory.txt">
-                <img src = "mapicons/mapfactory.svg"/>
+            <a href = "memefactory/">
+                <img src = "mapicons/memefactory.svg"/>
             </a>
         </td>
         <td>

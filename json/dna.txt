@@ -59,6 +59,7 @@
 			"map2link.svg",
 			"mapeditor.svg",
 			"mapfactory.svg",
+			"memefactory.svg",
 			"scroll.svg",
 			"uparrow.svg",
 			"upload.svg",
@@ -87,6 +88,12 @@
 			"upload.svg"
 		]
 	},
+    {
+        "path":"memefactory",
+        "files":[
+            "replicator.php"
+        ]
+    },
     {
         "path":"symbol",
         "files":[

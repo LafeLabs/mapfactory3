@@ -44,6 +44,7 @@ $finalstring .= getALLfiles("mapicons");
 $finalstring .= ",\n";
 $finalstring .= getALLfiles("icons");
 $finalstring .= ",\n";
+$finalstring .= "    {\n        \"path\":\"memefactory\",\n        \"files\":[\n            \"replicator.php\"\n        ]\n    },\n";
 $finalstring .= "    {\n        \"path\":\"symbol\",\n        \"files\":[\n            \"replicator.php\"\n        ]\n    },\n";
 $finalstring .= "    {\n        \"path\":\"curve\",\n        \"files\":[\n            \"replicator.php\"\n        ]\n    },\n";
 $finalstring .= "    {\n        \"path\":\"scroll\",\n        \"files\":[\n            \"replicator.php\"\n        ]\n    }";
