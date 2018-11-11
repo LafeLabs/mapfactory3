@@ -35,19 +35,10 @@
 			"tree.svg"
 		]
 	},
-	{
-		"path":"markdown",
-		"files":[
-			"bar.txt",
-			"foo.txt",
-			"maplore.txt",
-			"scroll.txt"
-		]
-	},
-    {
-        "path":"symbol",
-        "files":[
-            "replicator.php"
-        ]
-    }
+         {
+             "path":"markdown",
+             "files":[
+                     "scroll.txt"
+             ]
+         }
 ]

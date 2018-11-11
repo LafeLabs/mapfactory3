@@ -28,13 +28,14 @@ $finalstring .= getfiles("json");
 $finalstring .= ",\n";
 $finalstring .= getfiles("icons");
 $finalstring .= ",\n";
-$finalstring .= getfiles("markdown");
-$finalstring .= ",\n";
-$finalstring .= "    {\n        \"path\":\"symbol\",\n        \"files\":[\n            \"replicator.php\"\n        ]\n    }";
+$finalstring .= "         {\n             \"path\":\"markdown\",\n             \"files\":[\n                     \"scroll.txt\"\n             ]\n         }";
+
 
 $finalstring .= "\n]";
 
+echo "<pre>\n";
 echo $finalstring;
+echo "\n</pre>";
 
 $file = fopen("json/dna.txt","w");// create new file with this name
 fwrite($file,$finalstring); //write data to file

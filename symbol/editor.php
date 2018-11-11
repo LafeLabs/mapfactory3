@@ -80,6 +80,7 @@ ALL CODE IS PUBLIC DOMAIN NO PATENTS NO COPYRIGHTS
     <div class = "php file">php/dnagenerator.txt</div>
     <div class = "php file">php/replicator.txt</div>
     <div class = "php file">php/symbol2icon.txt</div>
+    <div class = "php file">php/deletefile.txt</div>
 
     <div class = "json file">json/currentjson.txt</div>
     <div class = "json file">json/stylejson.txt</div>
