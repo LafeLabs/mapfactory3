@@ -10,7 +10,7 @@
     "y0": 379,
     "x0rel": -1,
     "y0rel": -20,
-    "glyph": "0223,0222,0221,0220,",
+    "glyph": "0336,0331,0331,0223,0222,0221,0220,",
     "table": [
         "0220:0336,0336,0336,0336,0336,0362,0203,0337,0203,0306,0334,0337,0203,0335,0335,0203,0203,0334,0334,0203,0203,0335,0335,0203,0203,0334,0334,0203,0203,0335,0335,0203,0203,0334,0334,0203,0335,0203,0336,0336,0203,0364,0304,0337,0337,0337,0337,0337,",
         "0221:0336,0314,0336,0313,0337,0362,0245,0245,0245,0245,0364,0337,0314,0337,0313,0336,",
@@ -65,13 +65,13 @@
 }
 </json>
 -->
-    <line x1="160" y1="131" x2="160" y2="181" style="stroke:black;stroke-width:3" />
-	<path d = "M160 181 L135 181 L160 206 L185 181 L160 181 " stroke = "black" stroke-width = "3" fill = "none" />    <line x1="160" y1="131" x2="160" y2="106" style="stroke:black;stroke-width:3" />
-    <line x1="160" y1="106" x2="160" y2="94" style="stroke:black;stroke-width:3" />
-    <line x1="160" y1="94" x2="135" y2="94" style="stroke:black;stroke-width:3" />
-    <line x1="160" y1="94" x2="185" y2="94" style="stroke:black;stroke-width:3" />
-    <line x1="160" y1="69" x2="185" y2="69" style="stroke:black;stroke-width:3" />
-    <line x1="160" y1="69" x2="135" y2="69" style="stroke:black;stroke-width:3" />
-    <line x1="160" y1="69" x2="160" y2="56" style="stroke:black;stroke-width:3" />
-    <line x1="160" y1="56" x2="160" y2="31" style="stroke:black;stroke-width:3" />
-	<path d = "M160 31  M160,31 C160,14 193,6 193,23  M193,23 C193,39 160,23 160,6  M160,6 C159,-11 193,-19 193,-2  M193,-2 C193,14 160,-2 160,-19  M160,-19 C160,-36 193,-44 193,-27  M193,-27 C193,-11 160,-27 160,-44  M160,-44 C160,-61 193,-69 193,-52  M193,-52 C193,-36 160,-52 160,-69 " stroke = "black" stroke-width = "3" fill = "none" />	<path d = "M160 -69 L160 -72 L160 -78 L149 -85 L160 -91 L170 -97 L160 -103 L149 -110 L160 -116 L170 -122 L160 -128 L149 -135 L160 -141 L170 -147 L160 -153 L160 -166 L160 -169 " stroke = "black" stroke-width = "3" fill = "none" /></svg>
+    <line x1="160" y1="231" x2="160" y2="256" style="stroke:black;stroke-width:3" />
+	<path d = "M160 256 L147 256 L160 269 L172 256 L160 256 " stroke = "black" stroke-width = "3" fill = "none" />    <line x1="160" y1="231" x2="160" y2="219" style="stroke:black;stroke-width:3" />
+    <line x1="160" y1="219" x2="160" y2="212" style="stroke:black;stroke-width:3" />
+    <line x1="160" y1="212" x2="147" y2="212" style="stroke:black;stroke-width:3" />
+    <line x1="160" y1="212" x2="172" y2="212" style="stroke:black;stroke-width:3" />
+    <line x1="160" y1="200" x2="172" y2="200" style="stroke:black;stroke-width:3" />
+    <line x1="160" y1="200" x2="147" y2="200" style="stroke:black;stroke-width:3" />
+    <line x1="160" y1="200" x2="160" y2="194" style="stroke:black;stroke-width:3" />
+    <line x1="160" y1="194" x2="160" y2="181" style="stroke:black;stroke-width:3" />
+	<path d = "M160 181  M160,181 C160,173 176,168 176,177  M176,177 C176,185 160,177 160,168  M160,168 C159,160 176,156 176,164  M176,164 C176,173 159,164 159,156  M159,156 C160,148 176,143 176,152  M176,152 C176,160 159,152 160,143  M160,143 C160,135 176,131 176,139  M176,139 C176,148 160,139 160,131 " stroke = "black" stroke-width = "3" fill = "none" />	<path d = "M160 131 L160 129 L160 126 L154 123 L160 120 L165 117 L160 114 L154 111 L160 108 L165 104 L160 101 L154 98 L160 95 L165 92 L160 89 L160 83 L160 81 " stroke = "black" stroke-width = "3" fill = "none" /></svg>

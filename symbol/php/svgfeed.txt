@@ -105,6 +105,7 @@ LANGUAGE IS HOW THE MIND PARSES REALITY
     .symbolbox{
         display:block;
         margin:auto;
+        border-top:solid;
     }
 
     #indexlink{
