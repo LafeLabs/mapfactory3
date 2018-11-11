@@ -1,6 +1,6 @@
 <?php
 
-    $url = "https://raw.githubusercontent.com/LafeLabs/factory2/master/curve/json/treedna.txt";
+    $url = "https://raw.githubusercontent.com/LafeLabs/mapfactory3/master/curve/json/treedna.txt";
     $dnaraw = file_get_contents($url);
     $dna =json_decode($dnaraw);
     $baseurl = explode("json",$url)[0];

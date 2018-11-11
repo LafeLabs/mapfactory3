@@ -17,7 +17,7 @@
     },
     "funcparams": {},
     "image": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Insane_Clown_Posse.JPG",
+        "url": "",
         "xoverw": 0.02046783625730994,
         "yoverw": 0.005847953216374269,
         "woverw": 0.996639307336601,
