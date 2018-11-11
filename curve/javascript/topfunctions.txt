@@ -1,4 +1,7 @@
 
+
+
+
 function YofX(){
     X = currentjson.plotparams.g*(x - currentjson.plotparams.x0);
 
@@ -38,6 +41,8 @@ function plotfunction(){
     
 
 }
+
+
 
 
 

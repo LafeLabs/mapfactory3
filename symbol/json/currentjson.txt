@@ -1,5 +1,5 @@
 {
-    "svgwidth": 250,
+    "svgwidth": 276,
     "svgheight": 250,
     "unit": 100,
     "x0": 684,

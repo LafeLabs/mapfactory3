@@ -8,19 +8,19 @@
     },
     "plotparams": {
         "G": 103.42365531743322,
-        "g": 0.15083501404857097,
+        "g": 0.054942153364123114,
         "duration": 450.78888054094654,
         "plotwidth": 500,
-        "plotheight": 500,
-        "x0": 36,
-        "y0": 255
+        "plotheight": 310,
+        "x0": 24,
+        "y0": 114
     },
     "funcparams": {},
     "image": {
-        "url": "",
-        "xoverw": 0.038011695906432746,
-        "yoverw": -0.08771929824561403,
-        "woverw": 0.8536631795472632,
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Insane_Clown_Posse.JPG",
+        "xoverw": 0.02046783625730994,
+        "yoverw": 0.005847953216374269,
+        "woverw": 0.996639307336601,
         "angle": "0"
     },
     "A": 10.169742146064136,

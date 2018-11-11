@@ -1,9 +1,9 @@
-<svg width="250" height="250" viewbox = "0 0 250 250"  xmlns="http://www.w3.org/2000/svg">
+<svg width="276" height="250" viewbox = "0 0 276 250"  xmlns="http://www.w3.org/2000/svg">
 
 <!--
 <json>
 {
-    "svgwidth": 250,
+    "svgwidth": 276,
     "svgheight": 250,
     "unit": 100,
     "x0": 684,
@@ -65,4 +65,4 @@
 }
 </json>
 -->
-<path    d = "M25,125 C25,25 225,225 225,125" fill = "none" stroke-width = "1" stroke = "black" />	<path d = "M238 238 L238 9 L9 9 L9 238 L238 238 Z" stroke = "black" stroke-width = "6" fill = "none" /></svg>
+<path    d = "M38,125 C38,25 238,225 238,125" fill = "none" stroke-width = "1" stroke = "black" />	<path d = "M251 238 L251 9 L22 9 L22 238 L251 238 Z" stroke = "black" stroke-width = "6" fill = "none" /></svg>

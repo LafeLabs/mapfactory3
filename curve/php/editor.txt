@@ -48,6 +48,7 @@
 
     <div class = "php file">php/treednagenerator.txt</div>
     <div class = "php file">php/treereplicator.txt</div>
+    <div class = "php file">php/deletefile.txt</div>
 
     <div class = "php file">php/dnagenerator.txt</div>
     <div class = "php file">php/replicator.txt</div>

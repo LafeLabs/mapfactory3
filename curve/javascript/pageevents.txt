@@ -209,11 +209,6 @@
             path = "";
         }
 
-        var httpc = new XMLHttpRequest();
-        var url = "listupdate.php";        
-        httpc.open("POST", url, true);
-        httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
-        httpc.send("path=" + path);//send text to listupdate.php
 
     }
     
