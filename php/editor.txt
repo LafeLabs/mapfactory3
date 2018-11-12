@@ -57,6 +57,7 @@ EGO DEATH:
     <div class = "php file">php/mapeditor.txt</div>
     <div class = "php file">php/map2link.txt</div>
     <div class = "php file">php/newmemefactory.txt</div>
+    <div class = "php file">php/newmapfactory.txt</div>
 
     <div class = "php file">php/copy.txt</div>
 
