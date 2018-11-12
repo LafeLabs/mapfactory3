@@ -43,7 +43,16 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
         }
     }
     
+    $listofimgurls = json_decode(file_get_contents("json/listofimgurls.txt"));
+
+    foreach($listofimgurls as $imgurlsurl){
+        $imgurls = json_decode(file_get_contents($imgurlsurl));
+        foreach($imgurls as $value){
+            echo $value.",";
+        }
+    }
 ?></div>
+
 
 <a id = "factorylink" href = "index.php" style = "position:absolute;left:10px;top:10px"><img src = "mapicons/memefactory.svg" style = "width:50px"></a>
 

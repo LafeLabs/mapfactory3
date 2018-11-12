@@ -29,7 +29,16 @@ if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 }
 else{
     echo "upload failed for some reason, possibly image size. Try screen shotting and uploading that(smaller) image.";    
-    
+        $files = scandir(getcwd()."/uploadimages");
+        $listtext = "";
+        foreach(array_reverse($files) as $value){
+            if($value != "." && $value != ".." && substr($value,-4) != ".txt"){
+                $listtext .= $value.",";
+            }
+        }
+        $file = fopen("uploadimages/list.txt","w");// create new file with this name
+        fwrite($file,$listtext); //write data to file
+        fclose($file);  //close file
 }
 
 

@@ -59,6 +59,7 @@ EGO DEATH:
     <div class = "json file">json/meme.txt</div>
     <div class = "json file">json/listoflists.txt</div>
     <div class = "json file">json/imgurls.txt</div>
+    <div class = "json file">json/listofimgurls.txt</div>
 
 </div>
 
