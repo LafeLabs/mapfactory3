@@ -31,6 +31,18 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
     echo file_get_contents("json/imgurls.txt");
     
 ?></div>
+<div id = "uploadimages" style = "display:none;"><?php
+
+$files = scandir(getcwd()."/uploadimages");
+$listtext = "";
+foreach($files as $value){
+    if($value != "." && $value != ".." && substr($value,-4) != ".txt"){
+        $listtext .= $value.",";
+    }
+}
+echo $listtext;
+    
+?></div>
 <div id = "listoflists" style = "display:none"><?php
 
     $listoflists = json_decode(file_get_contents("json/listoflists.txt"));
@@ -73,6 +85,11 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
 
     imgurls = JSON.parse(document.getElementById("imgurls").innerHTML);
 
+    uploadimages = document.getElementById("uploadimages").innerHTML.split(",");
+    for(var index = 0;index < uploadimages.length - 1;index++){
+        imgurls.push("uploadimages/" + uploadimages[index]);
+    }
+    
     extimages = document.getElementById("listoflists").innerHTML.split(",");
     for(var index = 0;index < extimages.length;index++){
         if(extimages[index].length > 1){
