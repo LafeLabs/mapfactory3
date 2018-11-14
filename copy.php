@@ -25,7 +25,7 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
 <h2>Steps to copy the factory:</h2>
 <ol>
     <li>
-            Get your free hosting account at <a href = "https://www.000webhost.com/">www.000webhost.com</a>.  They will try to get you to get the paid hosting, which you can do later if you want but to get started the free one is fine.  You have to choose a name for your site, but since this is decentralized, picking a catchy name is not important, just something you can easily write down.  It could even be nonsense, as long as it's easy to write down and remember.   
+            Get your free hosting account at <a href = "https://www.000webhost.com/free-website-sign-up">https://www.000webhost.com/free-website-sign-up</a>.  They will try to get you to get the paid hosting, which you can do later if you want but to get started the free one is fine.  You have to choose a name for your site, but since this is decentralized, picking a catchy name is not important, just something you can easily write down.  It could even be nonsense, as long as it's easy to write down and remember.   
     </li>
     <li>Navigate to the part of 000webhost where you can upload files to your main web directory.  Create a new file by clicking the appropriate icon and name it replicator.php.</li>
     <li>
