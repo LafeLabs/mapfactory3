@@ -70,11 +70,6 @@
 			"uploader.svg"
 		]
 	},
-	{
-		"path":"icons",
-		"files":
-		]
-	},
     {
         "path":"memefactory",
         "files":[
