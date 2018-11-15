@@ -26,6 +26,13 @@
         <img style = "width:80px" src = "icons/tree.svg">
         </a>
     </td>
+
+    <td>
+        <a href = "imageeditor.php">
+        <img style = "width:80px" src = "icons/image.svg">
+        </a>
+    </td>
+
     </tr>
     <tr>
     <td><input id = "actionInput"/></td>
@@ -54,6 +61,7 @@
 
 <canvas id="invisibleCanvas" style="display:none"></canvas>
 <canvas id="mainCanvas"></canvas>
+<img id = "backgroundimage"/>
 
 <div id = "spellBox">
     <canvas id="spellCanvas"></canvas>

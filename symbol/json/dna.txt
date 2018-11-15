@@ -2,12 +2,14 @@
 	{
 		"path":"php",
 		"files":[
+			"deletefile.txt",
 			"dnagenerator.txt",
 			"editor.txt",
 			"feedsaver.txt",
 			"fileloader.txt",
 			"filesaver.txt",
 			"glypheditor.txt",
+			"imageeditor.txt",
 			"index.txt",
 			"keyboardeditor.txt",
 			"loadtable.txt",
@@ -18,6 +20,7 @@
 			"stylejsoneditor.txt",
 			"svg2markdown.txt",
 			"svgfeed.txt",
+			"symbol2icon.txt",
 			"text2php.txt",
 			"tree.txt",
 			"treednagenerator.txt",
@@ -50,8 +53,10 @@
 	{
 		"path":"icons",
 		"files":[
+			"delete.svg",
 			"editor.svg",
 			"factory.svg",
+			"image.svg",
 			"markdown.svg",
 			"shapes.svg",
 			"style.svg",

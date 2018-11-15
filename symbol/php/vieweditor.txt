@@ -147,6 +147,7 @@ if(isset($_GET['url'])){
     <tr>
         <td>Y OFFSET:</td><td><input/></td>
     </tr>
+    
 </table>
 
 <div id = "resetbutton" class = "button">RESET</div>

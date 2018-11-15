@@ -97,3 +97,7 @@ body{
     border-color:blue;
     border-width:1px;
 }
+#backgroundimage{
+    position:absolute;
+    z-index:-2;
+}

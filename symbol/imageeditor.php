@@ -123,6 +123,7 @@ if(isset($_GET['url'])){
 }?>
 </div>
 <div id = "page">
+<img id = "backgroundimage" src = ""/>
 <table id = "linkTable">
     <tr>
         <td>
@@ -133,29 +134,27 @@ if(isset($_GET['url'])){
 
 <table id = "inputtable">
     <tr>
-        <td>WIDTH:</td><td><input/></td>
+        <td>IMG URL:</td><td><input/></td>
     </tr>
     <tr>
-        <td>HEIGHT:</td><td><input/></td>
+        <td>IMG X:</td><td><input/></td>
     </tr>
     <tr>
-        <td>UNIT:</td><td><input/></td>
+        <td>IMG Y:</td><td><input/></td>
     </tr>
     <tr>
-        <td>X OFFSET:</td><td><input/></td>
+        <td>IMG W:</td><td><input/></td>
     </tr>
     <tr>
-        <td>Y OFFSET:</td><td><input/></td>
+        <td>IMG angle:</td><td><input/></td>
     </tr>
     
 </table>
 
-<div id = "resetbutton" class = "button">RESET</div>
 
 <table id = "hammertable">
-    <tr><td id = "svgwidthslider">WIDTH</td></tr>
-    <tr><td id = "svgheightslider">HEIGHT</td></tr>
     <tr><td id = "scaleslider">SCALE</td></tr>
+    <tr><td id = "angleslider">ANGLE</td></tr>
 </table>
 
 <canvas id="invisibleCanvas" style="display:none"></canvas>
@@ -172,6 +171,13 @@ function init(){
 
     currentJSON = JSON.parse(document.getElementById("datadiv").innerHTML);
     styleJSON = JSON.parse(document.getElementById("stylejsondiv").innerHTML);
+   
+    imgangle = parseFloat(currentJSON.angle);
+    imgx = parseFloat(currentJSON.imgx);
+    imgy = parseFloat(currentJSON.imgy);
+    imgw = parseFloat(currentJSON.imgw);
+    
+    document.getElementById("backgroundimage").src = currentJSON.imgurl;
 
     path = document.getElementById("pathdiv").innerHTML;
 
@@ -208,14 +214,23 @@ function init(){
 redraw();
 function redraw(){
 
+
     unit = currentJSON.unit;
     x0 =  0.5*innerWidth + currentJSON.x0rel;
     y0 = 0.5*innerHeight + currentJSON.y0rel;
 
+    document.getElementById("backgroundimage").style.width = currentJSON.imgw.toString() + "px";
+
+    document.getElementById("backgroundimage").style.left = (currentJSON.imgx + 0.5*innerWidth - 0.5*currentJSON.svgwidth).toString() + "px";
+
+    document.getElementById("backgroundimage").style.top = (currentJSON.imgy + 0.5*innerHeight - 0.5*currentJSON.svgheight).toString() + "px";
+    
+    document.getElementById("backgroundimage").style.transform = "rotate(" + currentJSON.angle.toString() + "deg)";
+    
     ctx = document.getElementById("mainCanvas").getContext("2d");
     ctx.clearRect(0,0,innerWidth,innerHeight);
-ctx.strokeStyle= "black";
-ctx.lineWidth = 1;    	
+    ctx.strokeStyle= "black";
+    ctx.lineWidth = 1;    	
 
     ctx.strokeRect(0.5*innerWidth - 0.5*currentJSON.svgwidth,0.5*innerHeight - 0.5*currentJSON.svgheight,currentJSON.svgwidth,currentJSON.svgheight);
 
@@ -238,76 +253,63 @@ ctx.lineWidth = 1;
     httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
     httpc.send("data="+data+"&filename="+currentFile);//send text to filesaver.php
     
-
-    tableinputs[0].value = currentJSON.svgwidth.toString();
-    tableinputs[1].value = currentJSON.svgheight.toString();
-    tableinputs[2].value = currentJSON.unit.toString();
-    tableinputs[3].value = currentJSON.x0rel.toString();
-    tableinputs[4].value = currentJSON.y0rel.toString();
+    
+    tableinputs[0].value = currentJSON.imgurl;
+    tableinputs[1].value = currentJSON.imgx.toString();
+    tableinputs[2].value = currentJSON.imgy.toString();
+    tableinputs[3].value = currentJSON.imgw.toString();
+    tableinputs[4].value = currentJSON.angle.toString();
 
     
 }
 </script>
 <script id = "pageevents">
 
-document.getElementById("resetbutton").onclick = function(){
-    currentJSON.x0rel = 0;
-    currentJSON.y0rel = 0;
-    currentJSON.unit = 100;
-    currentJSON.svgwidth = 250;
-    currentJSON.svgheight = 250;
-    redraw();
- }
-
 mc = new Hammer(document.getElementById("mainCanvas"));
 mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
 mc.on("panleft panright panup pandown tap press", function(ev) {
-    currentJSON.x0rel = ev.deltaX;
-    currentJSON.y0rel = ev.deltaY;
+    currentJSON.imgx = imgx + ev.deltaX;
+    currentJSON.imgy = imgy + ev.deltaY;
     redraw();
 });    
 
 mc1 = new Hammer(document.getElementById("scaleslider"));
 mc1.get('pan').set({ direction: Hammer.DIRECTION_ALL });
 mc1.on("panleft panright panup pandown tap press", function(ev) {
-    currentJSON.unit = Math.round(100*Math.exp(ev.deltaX/100));
+    currentJSON.imgw = imgw + ev.deltaX;
     redraw();
 });
 
 
-mc2 = new Hammer(document.getElementById("svgwidthslider"));
+mc2 = new Hammer(document.getElementById("angleslider"));
 mc2.get('pan').set({ direction: Hammer.DIRECTION_ALL });
 mc2.on("panleft panright panup pandown tap press", function(ev) {
-    currentJSON.svgwidth = Math.round(250*Math.exp(ev.deltaX/100));
+    currentJSON.angle = imgangle + ev.deltaX*Math.PI/10;
     redraw();
 });
 
-mc3 = new Hammer(document.getElementById("svgheightslider"));
-mc3.get('pan').set({ direction: Hammer.DIRECTION_ALL });
-mc3.on("panleft panright panup pandown tap press", function(ev) {
-    currentJSON.svgheight = Math.round(250*Math.exp(ev.deltaX/100));
-    redraw();
-});
+
 
 
 tableinputs[0].onchange = function(){
-    currentJSON.svgwidth = parseInt(this.value);
+    currentJSON.imgurl = this.value;
+    document.getElementById("backgroundimage").src = currentJSON.imgurl;    
     redraw();
 } 
 tableinputs[1].onchange = function(){
-    currentJSON.svgheight = parseInt(this.value);
+    currentJSON.imgx = parseInt(this.value);
     redraw();
 } 
 tableinputs[2].onchange = function(){
-    currentJSON.unit = parseInt(this.value);
+    currentJSON.imgy = parseInt(this.value);
     redraw();
 } 
 tableinputs[3].onchange = function(){
-    currentJSON.x0rel = parseInt(this.value);
+    currentJSON.imgw = parseInt(this.value);
     redraw();
 } 
 tableinputs[4].onchange = function(){
-    currentJSON.y0rel = parseInt(this.value);
+    currentJSON.angle = parseInt(this.value);
     redraw();
 } 
 
@@ -384,6 +386,10 @@ body{
     right:0px;
     top:0px;
     z-index:3;
+}
+#backgroundimage{
+    position:absolute;
+    z-index:-2;
 }
 
 </style>

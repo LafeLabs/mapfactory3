@@ -73,6 +73,7 @@ for(var mindex = memes.length - 1;mindex >= 0;mindex--){
         newimg.style.width = (memes[mindex][index].w*W).toString() + "px";
         newimg.style.left = (memes[mindex][index].x*W).toString() + "px";
         newimg.style.top = (memes[mindex][index].y*W).toString() + "px";
+        newimg.style.transform = "rotate(" + (memes[mindex][index].angle).toString() + "deg)";
     }
     var newa = document.createElement("a");
     var newimg = document.createElement("img");

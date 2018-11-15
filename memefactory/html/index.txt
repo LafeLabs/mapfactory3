@@ -12,7 +12,7 @@
             </a>
         </td>
         <td>
-            <a href = "externalimagefeed.php" >
+            <a href = "externalimagefeed.php">
                 <img src = "mapicons/externalimagefeed.svg"/>
             </a>
         </td>

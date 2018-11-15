@@ -71,6 +71,7 @@ ALL CODE IS PUBLIC DOMAIN NO PATENTS NO COPYRIGHTS
     <div class = "php file">php/keyboardeditor.txt</div>
     <div class = "php file">php/stylejsoneditor.txt</div>
     <div class = "php file">php/vieweditor.txt</div>
+    <div class = "php file">php/imageeditor.txt</div>
     <div class = "php file">php/svgfeed.txt</div>
     <div class = "php file">php/svg2markdown.txt</div>    
     <div class = "php file">php/tree.txt</div>

@@ -231,6 +231,7 @@ body{
     background-color:#101010;
     font-family:courier;
     font-size:22px;
+    z-index:99999999;
 }
 #linkscroll{
     position:absolute;
