@@ -55,6 +55,7 @@
 			"fwd.svg",
 			"geometron.svg",
 			"gobutton.svg",
+			"hidetable.svg",
 			"imagefeed.svg",
 			"linker.svg",
 			"linkfeed.svg",
@@ -63,6 +64,7 @@
 			"mapfactory.svg",
 			"memefactory.svg",
 			"scroll.svg",
+			"unhidebutton.svg",
 			"uparrow.svg",
 			"upload.svg",
 			"uploader.svg"
