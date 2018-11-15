@@ -12,6 +12,9 @@ if(path.length > 0){
     document.getElementById("viewlink").href = "vieweditor.php?path=" + path;
     document.getElementById("svglink").href = "svgfeed.php?path=" + path;
     document.getElementById("markdownlink").href = "svg2markdown.php?path=" + path;
+
+    document.getElementById("imageeditlink").href = "imageeditor.php?path=" + path;
+    
 }
 
 document.getElementById("mainCanvas").width = innerWidth;

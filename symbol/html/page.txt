@@ -16,6 +16,12 @@
         <img src= "icons/vieweditor.svg"/>
     </a></td>
     <td>
+        <a id = "imageeditlink" href = "imageeditor.php">
+        <img style = "width:80px" src = "icons/image.svg">
+        </a>
+    </td>
+
+    <td>
         <a href = "editor.php"><img style = "width:80px" src = "icons/editor.svg"></a>
     </td>
     <td>
@@ -26,13 +32,6 @@
         <img style = "width:80px" src = "icons/tree.svg">
         </a>
     </td>
-
-    <td>
-        <a href = "imageeditor.php">
-        <img style = "width:80px" src = "icons/image.svg">
-        </a>
-    </td>
-
     </tr>
     <tr>
     <td><input id = "actionInput"/></td>
