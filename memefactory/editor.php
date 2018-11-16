@@ -48,7 +48,9 @@ EGO DEATH:
     <div class = "php file">php/imagefeed.txt</div>
     <div class = "php file">php/externalimagefeed.txt</div>
     <div class = "php file">php/combiner.txt</div>
+    <div class = "php file">php/adder.txt</div>
     <div class = "php file">php/aligner.txt</div>
+    <div class = "php file">php/memeeditor.txt</div>
     <div class = "php file">php/memefeed.txt</div>
     <div class = "php file">php/uploader.txt</div>
     <div class = "php file">php/upload.txt</div>

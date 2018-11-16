@@ -2,6 +2,7 @@
 	{
 		"path":"php",
 		"files":[
+			"adder.txt",
 			"aligner.txt",
 			"combiner.txt",
 			"copy.txt",
@@ -16,6 +17,7 @@
 			"linkfeed.txt",
 			"map2link.txt",
 			"mapeditor.txt",
+			"memeeditor.txt",
 			"memefeed.txt",
 			"replicator.txt",
 			"text2php.txt",
@@ -34,6 +36,7 @@
 		"files":[
 			"dna.txt",
 			"imgurls.txt",
+			"listofimgurls.txt",
 			"listoflists.txt",
 			"meme.txt"
 		]
@@ -41,6 +44,7 @@
 	{
 		"path":"mapicons",
 		"files":[
+			"add.svg",
 			"aligner.svg",
 			"back.svg",
 			"combiner.svg",
@@ -61,6 +65,7 @@
 			"map2link.svg",
 			"mapeditor.svg",
 			"mapfactory.svg",
+			"memeeditor.svg",
 			"memefactory.svg",
 			"memefeed.svg",
 			"memesave.svg",

@@ -27,13 +27,18 @@
             </a>
         </td>
         <td>
-            <a id = "linkerlink" href = "combiner.php">
+            <a id = "linkerlink" href = "adder.php">
                 <img src = "mapicons/combiner.svg"/>
             </a>
         </td>
         <td>
             <a id = "alignerlink" href = "aligner.php">
                 <img src = "mapicons/aligner.svg"/>
+            </a>
+        </td>
+        <td>
+            <a id = "memeeditlink" href = "memeeditor.php">
+                <img src = "mapicons/memeeditor.svg"/>
             </a>
         </td>
         <td>
@@ -91,7 +96,9 @@ meme = JSON.parse(document.getElementById("datadiv").innerHTML);
     }    
     if(pathset){
         document.getElementById("linkerlink").href += "?path=" + path; 
-        document.getElementById("alignerlink").href += "?path=" + path; 
+        document.getElementById("alignerlink").href += "?path=" + path;
+        document.getElementById("memeeditlink").href += "?path=" + path;
+        
     }
     
     W = innerWidth;
