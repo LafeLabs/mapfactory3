@@ -113,6 +113,19 @@ foreach($files as $value){
 echo $listtext;
     
 ?></div>
+<div id = "memes" style = " display:none"><?php
+
+$files = scandir(getcwd()."/memefactory/memes");
+$listtext = "";
+foreach($files as $value){
+    if($value != "." && $value != ".."){
+        $listtext .= $value.",";
+    }
+}
+echo $listtext;
+
+
+?></div>
 <div id = "phpfiles" style = "display:none;"><?php
 
 $files = scandir(getcwd());
@@ -255,6 +268,7 @@ input{
     }
     
     links = JSON.parse(document.getElementById("linkdatadiv").innerHTML);
+
     imgurls = JSON.parse(document.getElementById("imgurls").innerHTML);
     map = JSON.parse(document.getElementById("datadiv").innerHTML);
     mapicons = document.getElementById("mapicons").innerHTML.split(",");
@@ -290,7 +304,10 @@ input{
     for(var index = 0;index < phpfiles.length - 1;index++){
         links.push(phpfiles[index]);
     }
-
+    memes = document.getElementById("memes").innerHTML.split(",");
+    for(var index = 0;index < memes.length;index++){
+        links.push("memefactory/index.php?path=memes/" + memes[index]);
+    }
     
     for(var index = 0;index < links.length; index++){
         var newp = document.createElement("P");
