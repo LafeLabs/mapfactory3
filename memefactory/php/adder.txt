@@ -55,6 +55,7 @@ foreach($files as $value){
 }
 echo $listtext;
 
+$listtext = "";
 
 $dirs = scandir(getcwd()."../symbol/symbols");
 foreach($dirs as $symboldir){
@@ -74,15 +75,31 @@ foreach($dirs as $symboldir){
 ?></div>
 <div id = "curves" style = "display:none;"><?php
 
-$files = scandir(getcwd()."../curve/svg");
+$files = scandir(getcwd()."/../curve/svg");
 $listtext = "";
 foreach($files as $value){
     if(substr($value,-4) == ".svg"){
-        $listtext .= $value.",";
+        $listtext .= "../curve/svg/".$value.",";
     }
 }
 echo $listtext;
+
+$listtext = "";
+$dirs = scandir(getcwd()."/../curve/curves");
+foreach($dirs as $symboldir){
+    if($symboldir != "." && $symboldir != ".."){
+        $files = scandir(getcwd()."/../curve/curves/".$symboldir."/svg");
+        $listtext = "";
+        foreach($files as $value){
+            if(substr($value,-4) == ".svg"){
+                $listtext .= "../curve/curves/".$symboldir."/svg/".$value.",";
+            }
+        }
+        echo $listtext;
+    }
+}    
     
+
 ?></div>
 <div id = "uploadimages" style = "display:none;"><?php
 
@@ -215,7 +232,7 @@ input{
     }
     curves = document.getElementById("curves").innerHTML.split(",");
     for(var index = 0;index < curves.length - 1;index++){
-        imgurls.push("curve/svg/" + curves[index]);
+        imgurls.push(curves[index]);
     }
     for(var index = 0;index < mapicons.length - 1;index++){
         imgurls.push("mapicons/" + mapicons[index]);
