@@ -73,7 +73,7 @@ document.getElementById("savesvg").onclick = function(){
     y0 = tempy0;
     currentJSON.table = [];
     redraw();
-        
+    pngdata = document.getElementById("invisibleCanvas").toDataURL();
 
 }
  
