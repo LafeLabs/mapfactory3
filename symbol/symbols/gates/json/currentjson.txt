@@ -7,5 +7,10 @@
     "x0rel": -245,
     "y0rel": -172,
     "glyph": "",
-    "table": []
+    "table": [],
+    "imgurl": "",
+    "imgw": 500,
+    "imgx": 0,
+    "imgy": 0,
+    "angle": 0
 }

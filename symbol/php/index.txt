@@ -42,6 +42,10 @@ if(isset($_GET['path'])){
     if(file_exists("symbols/".$_GET['path']."/bytecode/font.txt")){
         echo file_get_contents("symbols/".$_GET['path']."/bytecode/font.txt");
     }
+    if(file_exists("symbols/".$_GET['path']."/bytecode/keyboard.txt")){
+        echo file_get_contents("symbols/".$_GET['path']."/bytecode/keyboard.txt");
+    }
+
 }
 
 

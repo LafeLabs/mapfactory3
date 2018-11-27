@@ -28,7 +28,7 @@
         <a href = "../"><img style = "height:80px" src = "icons/factory.svg"></a>
     </td>
     <td>
-        <a href = "keyboardeditor.php">
+        <a id = "keyboardlink" href = "keyboardeditor.php">
         <img style = "width:80px" src = "icons/keyboard.svg">
         </a>
     </td>

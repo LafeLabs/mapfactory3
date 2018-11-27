@@ -14,7 +14,8 @@ if(path.length > 0){
     document.getElementById("markdownlink").href = "svg2markdown.php?path=" + path;
 
     document.getElementById("imageeditlink").href = "imageeditor.php?path=" + path;
-    
+    document.getElementById("keyboardlink").href = "keyboardeditor.php?path=" + path;
+
 }
 
 document.getElementById("mainCanvas").width = innerWidth;
@@ -130,5 +131,12 @@ currentGlyph = currentJSON.glyph + "0207,";
 unit = currentJSON.unit;
 x0 =  0.5*innerWidth + currentJSON.x0rel;
 y0 = 0.5*innerHeight + currentJSON.y0rel;
-    document.getElementById("backgroundimage").src = currentJSON.imgurl;
 
+
+if(currentJSON.imgw == undefined){
+   currentJSON.imgurl = "";
+   currentJSON.imgw = 500;
+   currentJSON.imgx = 0;
+   currentJSON.imgy = 0;
+   currentJSON.angle = 0;
+}

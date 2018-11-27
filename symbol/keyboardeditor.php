@@ -14,6 +14,21 @@ echo file_get_contents("bytecode/font.txt")."\n";
 echo file_get_contents("bytecode/keyboard.txt")."\n";
 echo file_get_contents("bytecode/symbols013xx.txt")."\n";
 echo file_get_contents("bytecode/symbols010xx.txt")."\n";
+
+
+if(isset($_GET['path'])){
+    if(file_exists("symbols/".$_GET['path']."/bytecode/shapetable.txt")){
+        echo file_get_contents("symbols/".$_GET['path']."/bytecode/shapetable.txt");
+    }
+    if(file_exists("symbols/".$_GET['path']."/bytecode/font.txt")){
+        echo file_get_contents("symbols/".$_GET['path']."/bytecode/font.txt");
+    }
+    if(file_exists("symbols/".$_GET['path']."/bytecode/keyboard.txt")){
+        echo file_get_contents("symbols/".$_GET['path']."/bytecode/keyboard.txt");
+    }
+}
+
+
 ?>
 */
 </script>
@@ -46,34 +61,24 @@ function doTheThing(localCommand){
 </script>
 </head>
 <body>
-<div id = "stylejsondiv" style = "display:none">
-{
-    "color0": "black",
-    "fill0": "black",
-    "line0": 1,
-    "color1": "black",
-    "fill1": "black",
-    "line1": 5,
-    "color2": "red",
-    "fill2": "red",
-    "line2": 2,
-    "color3": "#FF7900",
-    "fill3": "#FF7900",
-    "line3": 2,
-    "color4": "yellow",
-    "fill4": "yellow",
-    "line4": 2,
-    "color5": "green",
-    "fill5": "green",
-    "line5": 2,
-    "color6": "blue",
-    "fill6": "blue",
-    "line6": 2,
-    "color7": "purple",
-    "fill7": "purple",
-    "line7": 2
-}
-</div>
+<div id = "pathdiv" style= "display:none"><?php
+
+    if(isset($_GET['path'])){
+        echo $_GET['path'];
+    }
+
+?></div>
+<div id = "stylejsondiv" style = "display:none"><?php
+
+    if(isset($_GET['path'])){
+        echo file_get_contents("symbols/".$_GET['path']."json/stylejson.txt");
+    }
+    else{
+        echo file_get_contents("json/stylejson.txt");
+    }
+    
+    
+?></div>
 <div id = "page">
     <table id = "linktable">
         <tr>
@@ -83,7 +88,7 @@ function doTheThing(localCommand){
                 </a>
             </td>
             <td>
-                <a href = "index.php">
+                <a id = "indexlink" href = "index.php">
                     <img src = "icons/symbol.svg"/>
                 </a>
             </td>
@@ -109,6 +114,13 @@ function doTheThing(localCommand){
 <script id = "init">
 init();
 function init(){
+    
+    path = document.getElementById("pathdiv").innerHTML;
+    
+    if(path.length > 0){
+        document.getElementById("indexlink").href = "index.php?path=" + path;
+    }
+
     doTheThing(06);//import embedded hypercube in this .html doc
     doTheThing(07);//initialize Geometron global variables
 
@@ -187,6 +199,7 @@ function init(){
                     y0 = 29;
                     ctx.clearRect(0,0,30,30);
                     doTheThing(0300);
+                    ctx.lineWidth = 1;    	
                     doTheThing(01000 + tdjson.upperaction);
                     ctx = document.getElementById("lowercan").getContext("2d");
                     unit = 28;
@@ -194,6 +207,7 @@ function init(){
                     y0 = 29;
                     ctx.clearRect(0,0,30,30);
                     doTheThing(0300);
+                    ctx.lineWidth = 1;
                     doTheThing(01000 + tdjson.loweraction);
 
                 }
@@ -204,6 +218,68 @@ function init(){
         newtr.style.left = indentArray[rowIndex].toString() + "em";
     }   
 }
+
+document.getElementById("upperaction").onchange = function(){
+    currentTable[parseInt(document.getElementById("upperascii").value,8)] = this.value;
+    ctx = document.getElementById("uppercan").getContext("2d");
+    unit = 28;
+    x0 = 1;
+    y0 = 29;
+    ctx.clearRect(0,0,30,30);
+    doTheThing(0300);
+    ctx.lineWidth = 1;
+    doTheThing(01000 + parseInt(this.value,8));
+    savekeyboard();
+}
+
+document.getElementById("loweraction").onchange = function(){
+    currentTable[parseInt(document.getElementById("lowerascii").value,8)] = this.value;
+    ctx = document.getElementById("lowercan").getContext("2d");
+    unit = 28;
+    x0 = 1;
+    y0 = 29;
+    ctx.clearRect(0,0,30,30);
+    doTheThing(0300);
+    ctx.lineWidth = 1;
+    doTheThing(01000 + parseInt(this.value,8));
+    savekeyboard();
+}
+
+
+function savekeyboard(){
+    
+    if(path.length > 1){
+        currentFile = "symbols/" + path + "bytecode/keyboard.txt";
+        
+        data = "";
+        for(var index = 040;index < 0177;index++){
+            if(currentTable[index].length > 1 && currentTable[index] != currentTableStart[index]){
+                data += "0" + index.toString(8) + ":" + currentTable[index] + "\n";
+            }
+        }
+        
+    }
+    else{
+        currentFile = "bytecode/keyboard.txt";
+        data = "";
+        for(var index = 040;index < 0177;index++){
+            if(currentTable[index].length > 2){
+                data += "0" + index.toString(8) + ":" + currentTable[index] + "\n";
+            }
+        }
+    }
+    
+    
+    var httpc = new XMLHttpRequest();
+    var url = "filesaver.php";        
+    httpc.open("POST", url, true);
+    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+    httpc.send("data="+data+"&filename="+currentFile);//send text to filesaver.php
+    
+    document.getElementById("textIO").value  = data;  
+}
+
+
 
 </script>
 <script id = "redraw">
