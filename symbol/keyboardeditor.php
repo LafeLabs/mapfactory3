@@ -46,32 +46,64 @@ function doTheThing(localCommand){
 </script>
 </head>
 <body>
-<div id = "stylejsondiv" style = "display:none"><?php
-
-echo file_get_contents("json/stylejson.txt");
-    
-?></div>
+<div id = "stylejsondiv" style = "display:none">
+{
+    "color0": "black",
+    "fill0": "black",
+    "line0": 1,
+    "color1": "black",
+    "fill1": "black",
+    "line1": 5,
+    "color2": "red",
+    "fill2": "red",
+    "line2": 2,
+    "color3": "#FF7900",
+    "fill3": "#FF7900",
+    "line3": 2,
+    "color4": "yellow",
+    "fill4": "yellow",
+    "line4": 2,
+    "color5": "green",
+    "fill5": "green",
+    "line5": 2,
+    "color6": "blue",
+    "fill6": "blue",
+    "line6": 2,
+    "color7": "purple",
+    "fill7": "purple",
+    "line7": 2
+}
+</div>
 <div id = "page">
-    <p>
-        <a href = "editor.php">editor.php</a>
-    </p>
-    <table id = "keytable">
+    <table id = "linktable">
         <tr>
-            <td>keycode:</td><td id = "keycodeinput"></td>
-        </tr>
-        <tr>
-            <td>Key:</td><td id = "keyinput"></td>
-        </tr>
-        <tr>
-            <td>Action:</td><td><input id  = "actioninput"/></td>
+            <td>
+                <a href = "editor.php">
+                    <img src = "icons/editor.svg"/>
+                </a>
+            </td>
+            <td>
+                <a href = "index.php">
+                    <img src = "icons/symbol.svg"/>
+                </a>
+            </td>
         </tr>
     </table>
     <textarea id = "textIO"></textarea>
-    <canvas id = "mainCanvas"></canvas>
-    
-    
+
+
+    <table id = "keytable">
+        <tr>
+            <td>UPPERCASE KEY: <span id = "upperkey"></span></td><td><input id = "upperascii"/></td><td>Action:</td><td><canvas id = "uppercan"></canvas></td><td><input  id = "upperaction"/></td>
+        </tr>
+        <tr>
+            <td>LOWERCASE KEY: <span id = "lowerkey"></span></td><td><input id = "lowerascii"/></td><td>Action:</td><td><canvas id = "lowercan"></canvas></td><td><input id = "loweraction"/></td>
+        </tr>
+    </table>
+
     <table id = "keyboardtable">
     </table>
+
 </div>
 
 <script id = "init">
@@ -80,10 +112,12 @@ function init(){
     doTheThing(06);//import embedded hypercube in this .html doc
     doTheThing(07);//initialize Geometron global variables
 
-    styleJSON = JSON.parse(document.getElementById("stylejsondiv").innerHTML);
+    document.getElementById("uppercan").width = 30;
+    document.getElementById("uppercan").height = 30;
+    document.getElementById("lowercan").width = 30;
+    document.getElementById("lowercan").height = 30;
 
-    document.getElementById("mainCanvas").width = 140;
-    document.getElementById("mainCanvas").height = 140;
+    styleJSON = JSON.parse(document.getElementById("stylejsondiv").innerHTML);
 
     currentKey = "0101";
     
@@ -99,146 +133,98 @@ function init(){
     lowerArray = [numbersLower,qwertyLower,asdfLower,zxcvLower];
     indentArray = [1,5.8,6.7,7.7];
 
-
-
-    for(var rowIndex = 0;rowIndex < upperArray.length;rowIndex++){
-        var newtr = document.createElement("TR");
-        var tempArray = lowerArray[rowIndex].split(",");
-        for(var index = 0;index < tempArray.length;index++){
-            if(tempArray[index].length > 1){
-                var newtd = document.createElement("TD");
-                var newcanvas = document.createElement("canvas");
-                newcanvas.width = 60;
-                newcanvas.height = 60;
-                ctx = newcanvas.getContext("2d");
-                unit = 50;
-                x0 = 5;
-                y0 = 55;
-                doTheThing(0300);
-                doTheThing(01000 + parseInt(currentTable[parseInt(tempArray[index],8)],8));
-                newtd.appendChild(newcanvas);
-                newtr.appendChild(newtd);
-                
-
-            }
-        }
-        document.getElementById("keyboardtable").appendChild(newtr);
-        newtr.style.position = "relative";
-        newtr.style.left = indentArray[rowIndex].toString() + "em";
-    }   
-
-    for(var rowIndex = 0;rowIndex < upperArray.length;rowIndex++){
-        var newtr = document.createElement("TR");
-        var tempArray = lowerArray[rowIndex].split(",");
-        for(var index = 0;index < tempArray.length;index++){
-            if(tempArray[index].length > 1){
-                var newtd = document.createElement("TD");
-                newtd.innerHTML = byteCode2string(tempArray[index]) + "<br/>" + tempArray[index] + ":";   
-                newtd.innerHTML += "<input value = \"" + currentTable[parseInt(tempArray[index],8)] + "\" id = \"i" + tempArray[index] + "\"/>";
-
-                newtr.appendChild(newtd);
-                newtd.id = "k" + tempArray[index];
-                newtd.onclick  = function(){
-                    currentKey = this.id.substring(1);
-                    redraw();
-                }
-
-            }
-        }
-        document.getElementById("keyboardtable").appendChild(newtr);
-        newtr.style.position = "relative";
-        newtr.style.left = indentArray[rowIndex].toString() + "em";
-    }   
-
-
-    for(var rowIndex = 0;rowIndex < upperArray.length;rowIndex++){
-        var newtr = document.createElement("TR");
-        var tempArray = upperArray[rowIndex].split(",");
-        for(var index = 0;index < tempArray.length;index++){
-            if(tempArray[index].length > 1){
-                var newtd = document.createElement("TD");
-                var newcanvas = document.createElement("canvas");
-                newcanvas.width = 60;
-                newcanvas.height = 60;
-                ctx = newcanvas.getContext("2d");
-                unit = 50;
-                x0 = 5;
-                y0 = 55;
-                doTheThing(0300);
-                doTheThing(01000 + parseInt(currentTable[parseInt(tempArray[index],8)],8));
-                newtd.appendChild(newcanvas);
-                newtr.appendChild(newtd);
-                
-
-            }
-        }
-        document.getElementById("keyboardtable").appendChild(newtr);
-        newtr.style.position = "relative";
-        newtr.style.left = indentArray[rowIndex].toString() + "em";
-    }   
     
-        for(var rowIndex = 0;rowIndex < upperArray.length;rowIndex++){
+    
+    for(var rowIndex = 0;rowIndex < upperArray.length;rowIndex++){
         var newtr = document.createElement("TR");
-        var tempArray = upperArray[rowIndex].split(",");
+        var tempArray = lowerArray[rowIndex].split(",");
+        var tempArrayUp = upperArray[rowIndex].split(",");
+
         for(var index = 0;index < tempArray.length;index++){
             if(tempArray[index].length > 1){
                 var newtd = document.createElement("TD");
-                
-                newtd.innerHTML = byteCode2string(tempArray[index]) + "<br/>" + tempArray[index] + ":";   
-                newtd.innerHTML += "<input value = \"" + currentTable[parseInt(tempArray[index],8)] + "\" id = \"i" + tempArray[index] + "\"/>";
-                //newtd.innerHTML = tempArray[index] + ":<br/>" +byteCode2string(tempArray[index]);   
-                //newtd.innerHTML += "<br/>" + currentTable[parseInt(tempArray[index],8)];
+                var newcanvas = document.createElement("canvas");
+                newcanvas.width = 60;
+                newcanvas.height = 60;
+                ctx = newcanvas.getContext("2d");
+                unit = 55;
+                x0 = 5;
+                y0 = 55;
+                doTheThing(0300);
+                doTheThing(parseInt(tempArrayUp[index],8));
+                drawGlyph("0333,0200,0336,0330,0332,0332,0365,");
+                doTheThing(parseInt(tempArray[index],8));
+                drawGlyph("0331,0365,0330,0333,");
+                doTheThing(01000 + parseInt(currentTable[parseInt(tempArrayUp[index],8)],8));
+                drawGlyph("0331,0332,");
+                doTheThing(01000 + parseInt(currentTable[parseInt(tempArray[index],8)],8));
+
+    //            doTheThing(01000 + parseInt(currentTable[parseInt(tempArray[index],8)],8));
+                newtd.appendChild(newcanvas);
                 newtr.appendChild(newtd);
-                newtd.id = "k" + tempArray[index];
-                newtd.onclick  = function(){
-                    currentKey = this.id.substring(1);
-                    redraw();
+                
+                var tdjson = {};
+                tdjson.upperkey = parseInt(tempArrayUp[index],8);
+                tdjson.upperaction = parseInt(currentTable[parseInt(tempArrayUp[index],8)],8);
+                tdjson.lowerkey = parseInt(tempArray[index],8);
+                tdjson.loweraction = parseInt(currentTable[parseInt(tempArray[index],8)],8);
+                var newp = document.createElement("P");
+                newp.className = "datap";
+                newp.innerHTML = JSON.stringify(tdjson,null,"    ");
+                newtd.appendChild(newp);
+                newtd.onclick = function(){
+                    var tdjson = JSON.parse(this.getElementsByClassName("datap")[0].innerHTML);
+                    document.getElementById("upperkey").innerHTML = String.fromCharCode(tdjson.upperkey);
+                    document.getElementById("lowerkey").innerHTML = String.fromCharCode(tdjson.lowerkey);
+                    document.getElementById("upperascii").value = "0" + tdjson.upperkey.toString(8);
+                    document.getElementById("lowerascii").value = "0" + tdjson.lowerkey.toString(8);
+                    document.getElementById("upperaction").value = "0" + tdjson.upperaction.toString(8);
+                    document.getElementById("loweraction").value = "0" + tdjson.loweraction.toString(8);
+                    
+                    ctx = document.getElementById("uppercan").getContext("2d");
+                    unit = 28;
+                    x0 = 1;
+                    y0 = 29;
+                    ctx.clearRect(0,0,30,30);
+                    doTheThing(0300);
+                    doTheThing(01000 + tdjson.upperaction);
+                    ctx = document.getElementById("lowercan").getContext("2d");
+                    unit = 28;
+                    x0 = 1;
+                    y0 = 29;
+                    ctx.clearRect(0,0,30,30);
+                    doTheThing(0300);
+                    doTheThing(01000 + tdjson.loweraction);
+
                 }
             }
-       }
+        }
         document.getElementById("keyboardtable").appendChild(newtr);
         newtr.style.position = "relative";
         newtr.style.left = indentArray[rowIndex].toString() + "em";
-    }
-
-      
+    }   
 }
+
 </script>
 <script id = "redraw">
-redraw();
-function redraw(){
-
-    ctx = document.getElementById("mainCanvas").getContext("2d");
-    ctx.clearRect(0,0,200,200);
-    x0 = 20;
-    y0 = 120;
-    unit = 100;
-    doTheThing(0300);
-    drawGlyph(currentTable[01000 + parseInt(currentTable[parseInt(currentKey,8)],8)]);
-    document.getElementById("keycodeinput").innerHTML = currentKey;
-    document.getElementById("keyinput").innerHTML = byteCode2string(currentKey);
-    document.getElementById("actioninput").value = currentTable[parseInt(currentKey,8)];
-    
-}
-
-document.getElementById("actioninput").onchange = function(){
-    currentTable[parseInt(currentKey,8)] = this.value;    
-    
-    keyboardout = "";
-    for(var index = 040;index < 0177;index++){
-        keyboardout += "0" + index.toString(8) + ":" + currentTable[index] + "\n";
-    }
-    document.getElementById("textIO").value = keyboardout;
-    redraw();
-}
 
 </script>
 <script id = "pageevents">
 
 </script>
 <style>
-
+#linktable{
+    position:absolute;
+    top:0px;
+    left:50%;
+}
+#linktable img{
+    width:80px;
+}
 #keyboardtable{
+  position:absolute;
+  left:10px;
+  top:200px;
   font-family:Helvetica;
   font-size:1em
 }
@@ -280,6 +266,20 @@ document.getElementById("actioninput").onchange = function(){
 }
 input{
     width:3em;
+}
+.datap{
+    display:none;
+}
+#keytable{
+    position:absolute;
+    left:0px;
+    top:0px;
+}
+#uppercan{
+    border:solid;
+}
+#lowercan{
+    border:solid;
 }
 </style>
 

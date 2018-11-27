@@ -64,10 +64,12 @@
 			"mapfactory.svg",
 			"memefactory.svg",
 			"scroll.svg",
+			"street.svg",
 			"unhidebutton.svg",
 			"uparrow.svg",
 			"upload.svg",
-			"uploader.svg"
+			"uploader.svg",
+			"watershed.svg"
 		]
 	},
     {

@@ -1,10 +1,26 @@
 [
     {
-        "href": "linker.php",
-        "src": "http://localhost:8000/mapicons/linker.svg",
-        "x": 0.35134037367993504,
-        "y": 0.17770105605199024,
-        "w": 0.27871649065800164,
+        "href": "",
+        "src": "http://localhost:8000/mapicons/watershed.svg",
+        "x": 0.5211667379831694,
+        "y": 0.24437312794180574,
+        "w": 0.15774853801169592,
+        "angle": 0
+    },
+    {
+        "href": "",
+        "src": "http://localhost:8000/mapicons/street.svg",
+        "x": 0.24234060761660248,
+        "y": 0.264384538582228,
+        "w": 0.20087719298245615,
+        "angle": 0
+    },
+    {
+        "href": "",
+        "src": "http://localhost:8000/mapicons/mapfactory.svg",
+        "x": 0.4026850663243475,
+        "y": 0.11212737127371275,
+        "w": 0.1489766081871345,
         "angle": 0
     }
 ]
