@@ -146,6 +146,8 @@ function init(){
     indentArray = [1,5.8,6.7,7.7];
 
     
+    tdindex = 0;
+    currenttd = 0;
     
     for(var rowIndex = 0;rowIndex < upperArray.length;rowIndex++){
         var newtr = document.createElement("TR");
@@ -180,6 +182,9 @@ function init(){
                 tdjson.upperaction = parseInt(currentTable[parseInt(tempArrayUp[index],8)],8);
                 tdjson.lowerkey = parseInt(tempArray[index],8);
                 tdjson.loweraction = parseInt(currentTable[parseInt(tempArray[index],8)],8);
+                tdjson.index = tdindex;
+                newtd.id = "t" + tdindex.toString();
+                tdindex++;
                 var newp = document.createElement("P");
                 newp.className = "datap";
                 newp.innerHTML = JSON.stringify(tdjson,null,"    ");
@@ -192,7 +197,7 @@ function init(){
                     document.getElementById("lowerascii").value = "0" + tdjson.lowerkey.toString(8);
                     document.getElementById("upperaction").value = "0" + tdjson.upperaction.toString(8);
                     document.getElementById("loweraction").value = "0" + tdjson.loweraction.toString(8);
-                    
+                    currenttd = parseInt(this.id.substring(1));
                     ctx = document.getElementById("uppercan").getContext("2d");
                     unit = 28;
                     x0 = 1;
@@ -209,7 +214,6 @@ function init(){
                     doTheThing(0300);
                     ctx.lineWidth = 1;
                     doTheThing(01000 + tdjson.loweraction);
-
                 }
             }
         }
@@ -230,6 +234,7 @@ document.getElementById("upperaction").onchange = function(){
     ctx.lineWidth = 1;
     doTheThing(01000 + parseInt(this.value,8));
     savekeyboard();
+    drawkey();
 }
 
 document.getElementById("loweraction").onchange = function(){
@@ -243,8 +248,28 @@ document.getElementById("loweraction").onchange = function(){
     ctx.lineWidth = 1;
     doTheThing(01000 + parseInt(this.value,8));
     savekeyboard();
+
+    drawkey();
 }
 
+
+
+function drawkey(){
+    ctx = document.getElementById("t" + currenttd.toString()).getElementsByTagName("canvas")[0].getContext("2d");
+    ctx.clearRect(0,0,60,60);
+    unit = 55;
+    x0 = 5;
+    y0 = 55;
+    doTheThing(0300);
+    doTheThing(parseInt(document.getElementById("upperascii").value,8));
+    drawGlyph("0333,0200,0336,0330,0332,0332,0365,");
+    doTheThing(parseInt(document.getElementById("lowerascii").value,8));
+    drawGlyph("0331,0365,0330,0333,");
+    doTheThing(01000 + parseInt(document.getElementById("upperaction").value,8),8);
+    drawGlyph("0331,0332,");
+    doTheThing(01000 + parseInt(document.getElementById("loweraction").value,8),8);
+
+}
 
 function savekeyboard(){
     
@@ -277,6 +302,8 @@ function savekeyboard(){
     httpc.send("data="+data+"&filename="+currentFile);//send text to filesaver.php
     
     document.getElementById("textIO").value  = data;  
+
+    
 }
 
 
