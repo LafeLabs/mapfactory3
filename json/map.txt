@@ -1,6 +1,6 @@
 [
     {
-        "href": "",
+        "href": "index.php?path=maps/watershed.txt",
         "src": "http://localhost:8000/mapicons/watershed.svg",
         "x": 0.5211667379831694,
         "y": 0.24437312794180574,
@@ -8,7 +8,7 @@
         "angle": 0
     },
     {
-        "href": "",
+        "href": "index.php?path=maps/street.txt",
         "src": "http://localhost:8000/mapicons/street.svg",
         "x": 0.24234060761660248,
         "y": 0.264384538582228,
@@ -16,7 +16,7 @@
         "angle": 0
     },
     {
-        "href": "",
+        "href": "index.php?path=maps/factory.txt",
         "src": "http://localhost:8000/mapicons/mapfactory.svg",
         "x": 0.4026850663243475,
         "y": 0.11212737127371275,

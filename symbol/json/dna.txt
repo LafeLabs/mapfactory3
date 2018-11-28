@@ -57,13 +57,16 @@
 			"editor.svg",
 			"factory.svg",
 			"image.svg",
+			"keyboard.svg",
 			"markdown.svg",
 			"shapes.svg",
+			"street.svg",
 			"style.svg",
 			"svgfeed.svg",
 			"symbol.svg",
 			"tree.svg",
-			"vieweditor.svg"
+			"vieweditor.svg",
+			"watershed.svg"
 		]
 	},
 	{
