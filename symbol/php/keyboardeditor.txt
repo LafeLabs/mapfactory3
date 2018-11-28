@@ -278,7 +278,7 @@ function savekeyboard(){
         
         data = "";
         for(var index = 040;index < 0177;index++){
-            if(currentTable[index].length > 1 && currentTable[index] != currentTableStart[index]){
+            if(currentTable[index].length > 1){
                 data += "0" + index.toString(8) + ":" + currentTable[index] + "\n";
             }
         }
