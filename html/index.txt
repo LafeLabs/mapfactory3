@@ -220,7 +220,7 @@ for(var index = 0;index < map.length;index++){
             newa.appendChild(newimg);
             newa.id = "a" + index.toString();
             newa.href = map[index].href;
-            newa.innerHTML  = map[index].href.substring(map[index].href.length-30,map[index].href.length-1);
+            newa.innerHTML  = map[index].href;
             document.getElementById("page").appendChild(newa);
             newa.style.left = (map[index].x*innerWidth).toString() + "px";
             newa.style.top = (map[index].y*innerWidth).toString() + "px";
