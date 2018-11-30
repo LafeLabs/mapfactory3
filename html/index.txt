@@ -130,6 +130,8 @@ if(pathset){
 }
 
 httparray =  [];    
+maphttparray = [];
+maphttpindex = 0;
 httpindex = 0;    
 for(var index = 0;index < map.length;index++){
     if(map[index].href.length > 0 && map[index].src !=undefined){
@@ -211,6 +213,52 @@ for(var index = 0;index < map.length;index++){
 
         }
         if(map[index].href.includes("index.php?path=maps/")){
+            //maps.  as with scrolls we must check to see if it's localhost or not
+            var newa = document.createElement("A");
+            newa.className = "maplinkboxbox";
+            newa.appendChild(newimg);
+            newa.id = "a" + index.toString();
+            newa.href = map[index].href;
+            document.getElementById("page").appendChild(newa);
+            newa.style.left = (map[index].x*innerWidth).toString() + "px";
+            newa.style.top = (map[index].y*innerWidth).toString() + "px";
+            newa.style.width = (map[index].w*innerWidth).toString() + "px";
+            newa.style.transform = "rotate(" + map[index].angle.toString() + "deg)";
+            
+            var newimg = document.createElement("img");
+            newimg.id = "z" + maphttpindex.toString();
+            newimg.className = "mapboximg";
+            newa.appendChild(newimg);
+            newimg.onload = function(){
+                this.parentElement.style.height = (this.height).toString() + "px";
+            }
+            
+            var localfile = map[index].href.split("index.php?path=maps/")[1];
+            if(!map[index].href.includes("localhost")){
+                currentFile = map[index].href.split("index.php?path=maps/")[0] + "maps/" + localfile;
+            }
+            else{
+                currentFile = "maps/" + localfile;
+            }
+        
+            var httpc = new XMLHttpRequest();
+            maphttparray.push(httpc);
+            maphttparray[maphttpindex].id = "m" + maphttpindex.toString();
+            maphttparray[maphttpindex].onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var remotemap = JSON.parse(this.responseText);
+                    var localimg = document.getElementById("z" +this.id.substring(1));
+                    for(var mindex = 0;mindex < remotemap.length;mindex++){
+                        if(remotemap[mindex].src.length > 0){
+                            localimg.src = remotemap[mindex].src;
+                            break;
+                        }
+                    }
+                }
+            }
+            httpc.open("GET", "fileloader.php?filename=" + currentFile, true);
+            httpc.send();
+            maphttpindex++;
             
         }
         if(!map[index].href.includes("scroll/index.php?filename=") && !map[index].href.includes("index.php?path=maps/")){
@@ -289,6 +337,11 @@ document.getElementById("hidebutton").onclick = function(){
      position:absolute;
      display:block;
  }
+  .maplinkboxbox{
+     position:absolute;
+     display:block;
+ }
+
  .boxdiv{
      position:absolute;
      overflow:scroll;
@@ -302,6 +355,12 @@ document.getElementById("hidebutton").onclick = function(){
      width:100%;
      display:block;
      margin:auto;
+ }
+ .mapboximg{
+     position:absolute;
+     left:0px;
+     top:0px;
+     width:100%;
  }
 
 </style>

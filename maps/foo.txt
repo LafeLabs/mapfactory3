@@ -32,11 +32,27 @@
         "angle": 0
     },
     {
-        "w": 0.1358187134502924,
+        "href": "http://lafelabs.org/factory/",
+        "src": "",
         "x": 0.43564042219369564,
         "y": 0.43279132791327907,
+        "w": 0.1358187134502924,
+        "angle": 0
+    },
+    {
+        "href": "http://geometron.000webhostapp.com/index.php?path=maps/thingfactory.txt",
+        "src": "",
+        "x": 0.5121951219512195,
+        "y": 0.020731707317073172,
+        "w": 0.1,
+        "angle": 0
+    },
+    {
+        "w": 0.1,
+        "x": 0.2741228070175439,
+        "y": 0.38742690058479534,
         "angle": 0,
         "src": "",
-        "href": "http://lafelabs.org/factory/"
+        "href": "http://localhost:8000/index.php?path=maps/factory.txt"
     }
 ]
