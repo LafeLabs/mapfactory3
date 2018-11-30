@@ -16,11 +16,19 @@
         "angle": 0
     },
     {
-        "w": 0.17821637426900583,
-        "x": 0.195906432748538,
-        "y": 0.3742690058479532,
-        "angle": -182.212373908208,
+        "href": "http://localhost:8000/scroll/index.php?filename=foo.txt",
         "src": "",
-        "href": "http://localhost:8000/scroll/index.php?filename=foo.txt"
+        "x": 0.10964912280701754,
+        "y": 0.29312865497076024,
+        "w": 0.1,
+        "angle": 39.5840674352314
+    },
+    {
+        "href": "http://geometron.000webhostapp.com/scroll/index.php?filename=plasticshapes.txt",
+        "src": "",
+        "x": 0.6365853658536585,
+        "y": 0.2304878048780488,
+        "w": 0.21549707602339183,
+        "angle": 0
     }
 ]
