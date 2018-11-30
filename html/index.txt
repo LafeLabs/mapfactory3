@@ -8,11 +8,6 @@
             </a>
         </td>
         <td>
-            <a href = "memefactory/">
-                <img src = "mapicons/memefactory.svg"/>
-            </a>
-        </td>
-        <td>
             <a href = "scroll/">
                 <img src = "mapicons/scroll.svg"/>
             </a>
@@ -62,6 +57,12 @@
                 <img src = "mapicons/map2link.svg"/>
             </a>
         </td>
+        <td>
+            <a href = "mapfeed.php">
+                <img src = "mapicons/mapfeed.svg"/>
+            </a>
+        </td>
+
         <td>
             <a href = "copy.php">
                 <img src = "mapicons/copy.svg"/>

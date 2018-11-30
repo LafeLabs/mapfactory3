@@ -29,6 +29,7 @@ EGO DEATH:
     <a href = "aligner.php">aligner.php</a>
     <a href = "uploader.php">uploader.php</a>
     <a href = "linkfeed.php">linkfeed.php</a>
+    <a href = "mapfeed.php">mapfeed.php</a>
     <a href = "imagefeed.php">imagefeed.php</a>
     <a href = "mapeditor.php">mapeditor.php</a>
     <a href = "map2link.php">map2link.php</a>
@@ -49,6 +50,7 @@ EGO DEATH:
     <div class = "php file">php/dnagenerator.txt</div>
 
     <div class = "php file">php/linkfeed.txt</div>
+    <div class = "php file">php/mapfeed.txt</div>
     <div class = "php file">php/imagefeed.txt</div>
     <div class = "php file">php/uploader.txt</div>
     <div class = "php file">php/upload.txt</div>
