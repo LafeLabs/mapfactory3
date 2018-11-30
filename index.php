@@ -34,9 +34,6 @@ EGO DEATH:
 <!--Stop Google:-->
 <META NAME="robots" CONTENT="noindex,nofollow">
 
-<!-- links to MathJax JavaScript library, un-comment to use math-->
-<!--
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script>
 	MathJax.Hub.Config({
@@ -48,7 +45,8 @@ EGO DEATH:
 		}
 	});//			MathJax.Hub.Typeset();//tell Mathjax to update the math
 </script>
--->
+
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.6/showdown.js"></script>
 </head>
 <body>
 <div id = "pathdiv" style = "display:none"><?php

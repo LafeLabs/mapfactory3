@@ -75,6 +75,9 @@
 </div>
 <script>
 
+var converter = new showdown.Converter();
+converter.setOption('literalMidWordUnderscores', 'true');
+
 linkimages = document.getElementById("linktable").getElementsByTagName("img");
 for(var index = 0;index < linkimages.length;index++){
     linkimages[index].style.width = (innerWidth/16).toString() + "px";
@@ -120,11 +123,11 @@ else{
     } 
 */
     
-    if(pathset){
-        document.getElementById("linkerlink").href += "?path=" + path; 
-        document.getElementById("alignerlink").href += "?path=" + path; 
-        document.getElementById("mapeditorlink").href += "?path=" + path; 
-    }
+if(pathset){
+    document.getElementById("linkerlink").href += "?path=" + path; 
+    document.getElementById("alignerlink").href += "?path=" + path; 
+    document.getElementById("mapeditorlink").href += "?path=" + path; 
+}
     
 for(var index = 0;index < map.length;index++){
     if(map[index].href.length > 0 && map[index].src !=undefined){
@@ -140,13 +143,14 @@ for(var index = 0;index < map.length;index++){
         newa.style.left = (map[index].x*innerWidth).toString() + "px";
         newa.style.top = (map[index].y*innerWidth).toString() + "px";
         newa.style.width = (map[index].w*innerWidth).toString() + "px";
+                newa.style.height = (map[index].w*innerWidth).toString() + "px";
         newa.style.transform = "rotate(" + map[index].angle.toString() + "deg)";
         newimg.onload = function(){
             this.parentElement.style.height = (this.height).toString() + "px";
         }   
     }
     if((map[index].href.length==0 || map[index].href == undefined) && map[index].src !=undefined){
-        //image only, no linke = meme element, src exists href doesn't
+        //image only, no link = meme element, src exists href doesn't
         var newimg = document.createElement("IMG");
         newimg.id = "i" + index.toString();
         newimg.className = "boximg";
@@ -156,6 +160,55 @@ for(var index = 0;index < map.length;index++){
         newimg.style.top = (map[index].y*innerWidth).toString() + "px";
         newimg.style.width = (map[index].w*innerWidth).toString() + "px";
         newimg.style.transform = "rotate(" + map[index].angle.toString() + "deg)";
+    }
+    if((map[index].src.length == 0 || map[index].src == undefined) && map[index].href !=undefined){
+        //link only, no image, href exists src doesn't 
+        //cases are: is this a link to a scroll, link to a map, or other? if link to scroll, put in scroll div, if link to map, get first image in that map, otherwise put link with words which are the last bit after the last "/""
+        
+        if(map[index].href.includes("scroll/index.php?filename=")){
+            var newa = document.createElement("A");
+            newa.className = "linkboxbox";
+            newa.appendChild(newimg);
+            newa.id = "a" + index.toString();
+            newa.href = map[index].href;
+            document.getElementById("page").appendChild(newa);
+            newa.style.left = (map[index].x*innerWidth).toString() + "px";
+            newa.style.top = (map[index].y*innerWidth).toString() + "px";
+            newa.style.width = (map[index].w*innerWidth).toString() + "px";
+            newa.style.transform = "rotate(" + map[index].angle.toString() + "deg)";
+        
+            var newdiv = document.createElement("div");
+            newdiv.id = "d" + index.toString();
+            newdiv.className = "boxdiv";
+            newa.appendChild(newdiv);
+            newdiv.style.height = (map[index].w*innerWidth).toString() + "px";
+            
+            var localfile = map[index].href.split("scroll/index.php?filename=")[1];
+            if(!map[index].href.includes("localhost")){
+                currentFile = map[index].href.split("scroll/index.php?filename=")[0] + "scroll/markdown/" + localfile;
+            }
+            else{
+                currentFile = "scroll/markdown/" + localfile;
+            }
+        
+            var httpc = new XMLHttpRequest();
+            httpc.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    filedata = this.responseText;
+                    newdiv.innerHTML = converter.makeHtml(filedata);
+                    MathJax.Hub.Typeset();//tell Mathjax to update the math
+                }
+            }
+            httpc.open("GET", "fileloader.php?filename=" + currentFile, true);
+            httpc.send();
+        
+        }
+        if(map[index].href.includes("index.php?path=maps/")){
+            
+        }
+        if(!map[index].href.includes("scroll/index.php?filename=") && !map[index].href.includes("index.php?path=maps/")){
+            
+        }
     }
 }
     
@@ -213,5 +266,23 @@ document.getElementById("hidebutton").onclick = function(){
      position:absolute;
      z-index:-1;
  }   
+ .linkboxbox{
+     position:absolute;
+     display:block;
+ }
+ .boxdiv{
+     position:absolute;
+     overflow:scroll;
+     display:block;
+     left:0px;
+     top:0px;
+     width:100%;
+
+ }
+ .boxdiv img{
+     width:100%;
+     display:block;
+     margin:auto;
+ }
 
 </style>

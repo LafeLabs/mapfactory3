@@ -1,3 +1,11 @@
+[link back](http://localhost:8000/index.php?path=maps/foo.txt)
+
+$$S = k_b\log{\Omega}$$
 # Header
 
-Here is another file.
+
+![](http://localhost:8000/symbol/svg/svg1543041484.svg)
+
+![](http://localhost:8000/symbol/svg/svg1543041484.svg)
+![](http://localhost:8000/symbol/svg/svg1543041484.svg)
+![](http://localhost:8000/symbol/svg/svg1543041484.svg)
