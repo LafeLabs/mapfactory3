@@ -82,24 +82,24 @@ for(var index = 0;index < linkimages.length;index++){
     
 }
 
-    document.getElementById("linktable").style.display = "block";
-    document.getElementById("unhidebutton").style.display = "none";
+document.getElementById("linktable").style.display = "block";
+document.getElementById("unhidebutton").style.display = "none";
     
-    map = JSON.parse(document.getElementById("datadiv").innerHTML);
-    url = document.getElementById("urldiv").innerHTML;
-    path = document.getElementById("pathdiv").innerHTML;
-    if(path.length > 1){
-        pathset = true;
-    }
-    else{
-        pathset = false;
-    }
-    if(url.length > 1){
-        urlset = true;
-    }
-    else{
-        urlset = false;
-    }
+map = JSON.parse(document.getElementById("datadiv").innerHTML);
+url = document.getElementById("urldiv").innerHTML;
+path = document.getElementById("pathdiv").innerHTML;
+if(path.length > 1){
+    pathset = true;
+}
+else{
+    pathset = false;
+}
+if(url.length > 1){
+    urlset = true;
+}
+else{
+    urlset = false;
+}
     
 /*    
     if(urlset && !pathset){
@@ -126,7 +126,8 @@ for(var index = 0;index < linkimages.length;index++){
         document.getElementById("mapeditorlink").href += "?path=" + path; 
     }
     
-    for(var index = 0;index < map.length;index++){
+for(var index = 0;index < map.length;index++){
+    if(map[index].href.length > 0 && map[index].src !=undefined){
         var newimg = document.createElement("IMG");
         var newa = document.createElement("A");
         newa.className = "linkbox";
@@ -142,8 +143,21 @@ for(var index = 0;index < linkimages.length;index++){
         newa.style.transform = "rotate(" + map[index].angle.toString() + "deg)";
         newimg.onload = function(){
             this.parentElement.style.height = (this.height).toString() + "px";
-        }
+        }   
     }
+    if((map[index].href.length==0 || map[index].href == undefined) && map[index].src !=undefined){
+        //image only, no linke = meme element, src exists href doesn't
+        var newimg = document.createElement("IMG");
+        newimg.id = "i" + index.toString();
+        newimg.className = "boximg";
+        document.getElementById("page").appendChild(newimg);
+        newimg.src = map[index].src;
+        newimg.style.left = (map[index].x*innerWidth).toString() + "px";
+        newimg.style.top = (map[index].y*innerWidth).toString() + "px";
+        newimg.style.width = (map[index].w*innerWidth).toString() + "px";
+        newimg.style.transform = "rotate(" + map[index].angle.toString() + "deg)";
+    }
+}
     
 document.getElementById("unhidebutton").onclick = function(){
     document.getElementById("linktable").style.display = "block";
@@ -195,4 +209,9 @@ document.getElementById("hidebutton").onclick = function(){
 .button:active{
     background-color:yellow;
 }
+ .boximg{
+     position:absolute;
+     z-index:-1;
+ }   
+
 </style>
