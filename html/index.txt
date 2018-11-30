@@ -128,10 +128,9 @@ if(pathset){
     document.getElementById("alignerlink").href += "?path=" + path; 
     document.getElementById("mapeditorlink").href += "?path=" + path; 
 }
-    
-    
+
 httparray =  [];    
-httpindex = 0;
+httpindex = 0;    
 for(var index = 0;index < map.length;index++){
     if(map[index].href.length > 0 && map[index].src !=undefined){
         var newimg = document.createElement("IMG");
@@ -185,16 +184,16 @@ for(var index = 0;index < map.length;index++){
             newdiv.className = "boxdiv";
             newa.appendChild(newdiv);
             newdiv.style.height = (map[index].w*innerWidth).toString() + "px";
+
             
             var localfile = map[index].href.split("scroll/index.php?filename=")[1];
             if(!map[index].href.includes("localhost")){
                 currentFile = map[index].href.split("scroll/index.php?filename=")[0] + "scroll/markdown/" + localfile;
-                console.log(currentFile);
             }
             else{
                 currentFile = "scroll/markdown/" + localfile;
             }
-            
+        
             var httpc = new XMLHttpRequest();
             httparray.push(httpc);
             httparray[httpindex].id = "h" + httpindex.toString();
@@ -209,12 +208,24 @@ for(var index = 0;index < map.length;index++){
             httpc.open("GET", "fileloader.php?filename=" + currentFile, true);
             httpc.send();
             httpindex++;
+
         }
         if(map[index].href.includes("index.php?path=maps/")){
             
         }
         if(!map[index].href.includes("scroll/index.php?filename=") && !map[index].href.includes("index.php?path=maps/")){
-            
+            //not a scroll, also not a map, just a random link with no image source(src)
+            var newa = document.createElement("A");
+            newa.className = "linkbox";
+            newa.appendChild(newimg);
+            newa.id = "a" + index.toString();
+            newa.href = map[index].href;
+            newa.innerHTML  = map[index].href.substring(map[index].href.length-30,map[index].href.length-1);
+            document.getElementById("page").appendChild(newa);
+            newa.style.left = (map[index].x*innerWidth).toString() + "px";
+            newa.style.top = (map[index].y*innerWidth).toString() + "px";
+            newa.style.width = (map[index].w*innerWidth).toString() + "px";
+            newa.style.transform = "rotate(" + map[index].angle.toString() + "deg)";    
         }
     }
 }
@@ -273,6 +284,7 @@ document.getElementById("hidebutton").onclick = function(){
      position:absolute;
      z-index:-1;
  }   
+ 
  .linkboxbox{
      position:absolute;
      display:block;

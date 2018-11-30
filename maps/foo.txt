@@ -18,10 +18,10 @@
     {
         "href": "http://localhost:8000/scroll/index.php?filename=foo.txt",
         "src": "",
-        "x": 0.10964912280701754,
-        "y": 0.29312865497076024,
-        "w": 0.1,
-        "angle": 39.5840674352314
+        "x": 0.14692982456140352,
+        "y": 0.18494152046783627,
+        "w": 0.22865497076023392,
+        "angle": -1.2566370614359101
     },
     {
         "href": "http://geometron.000webhostapp.com/scroll/index.php?filename=plasticshapes.txt",
