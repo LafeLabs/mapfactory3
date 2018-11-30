@@ -62,6 +62,7 @@
 			"map2link.svg",
 			"mapeditor.svg",
 			"mapfactory.svg",
+			"mapfeed.svg",
 			"memefactory.svg",
 			"scroll.svg",
 			"street.svg",
