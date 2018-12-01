@@ -270,7 +270,13 @@ input{
     links = JSON.parse(document.getElementById("linkdatadiv").innerHTML);
 
     imgurls = JSON.parse(document.getElementById("imgurls").innerHTML);
-    map = JSON.parse(document.getElementById("datadiv").innerHTML);
+    if(document.getElementById("datadiv").innerHTML.length>1){
+        map = JSON.parse(document.getElementById("datadiv").innerHTML);
+    }
+    else{
+        map = [];
+    }
+
     mapicons = document.getElementById("mapicons").innerHTML.split(",");
     
     uploadimages = document.getElementById("uploadimages").innerHTML.split(",");

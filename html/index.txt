@@ -89,7 +89,13 @@ for(var index = 0;index < linkimages.length;index++){
 document.getElementById("linktable").style.display = "block";
 document.getElementById("unhidebutton").style.display = "none";
     
-map = JSON.parse(document.getElementById("datadiv").innerHTML);
+if(document.getElementById("datadiv").innerHTML.length>1){
+    map = JSON.parse(document.getElementById("datadiv").innerHTML);
+}
+else{
+    map = [];
+}
+
 url = document.getElementById("urldiv").innerHTML;
 path = document.getElementById("pathdiv").innerHTML;
 if(path.length > 1){
