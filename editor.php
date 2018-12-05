@@ -33,6 +33,7 @@ EGO DEATH:
     <a href = "imagefeed.php">imagefeed.php</a>
     <a href = "mapeditor.php">mapeditor.php</a>
     <a href = "map2link.php">map2link.php</a>
+    <a href = "duality.php">duality.php</a>
 
     <a href = "dnagenerator.php">dnagenerator.php</a>
 </div>
@@ -52,13 +53,13 @@ EGO DEATH:
     <div class = "php file">php/linkfeed.txt</div>
     <div class = "php file">php/mapfeed.txt</div>
     <div class = "php file">php/imagefeed.txt</div>
+    <div class = "php file">php/duality.txt</div>
     <div class = "php file">php/uploader.txt</div>
     <div class = "php file">php/upload.txt</div>
     <div class = "php file">php/linker.txt</div>
     <div class = "php file">php/aligner.txt</div>
     <div class = "php file">php/mapeditor.txt</div>
     <div class = "php file">php/map2link.txt</div>
-    <div class = "php file">php/newmemefactory.txt</div>
     <div class = "php file">php/newmapfactory.txt</div>
 
     <div class = "php file">php/copy.txt</div>
