@@ -351,12 +351,12 @@ document.getElementById("hidebutton").onclick = function(){
 
  .boxdiv{
      position:absolute;
-     overflow:scroll;
+     overflow:auto;
      display:block;
      left:0px;
      top:0px;
      width:100%;
-
+    color:black;
  }
  .boxdiv img{
      width:100%;
