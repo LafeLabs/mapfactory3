@@ -27,7 +27,7 @@ ctx.strokeRect(0.5*innerWidth - 0.5*currentJSON.svgwidth,0.5*innerHeight - 0.5*c
 
 doTheThing(0300);
 drawGlyph(currentGlyph);
-
+document.getElementById("toppng").style.display = "none";
 
 ctx = document.getElementById("spellCanvas").getContext("2d")
 document.getElementById("spellCanvas").width = (currentGlyph.length/4)*90 + 80;

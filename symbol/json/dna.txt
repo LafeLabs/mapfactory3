@@ -59,6 +59,7 @@
 			"image.svg",
 			"keyboard.svg",
 			"markdown.svg",
+			"savepng.svg",
 			"shapes.svg",
 			"street.svg",
 			"style.svg",

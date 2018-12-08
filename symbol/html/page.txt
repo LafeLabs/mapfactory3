@@ -68,6 +68,8 @@
 
 <canvas id="invisibleCanvas" style="display:none"></canvas>
 <canvas id="mainCanvas"></canvas>
+
+<img id = "toppng"/>
 <img id = "backgroundimage"/>
 
 <div id = "spellBox">
