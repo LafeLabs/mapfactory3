@@ -132,6 +132,8 @@ unit = currentJSON.unit;
 x0 =  0.5*innerWidth + currentJSON.x0rel;
 y0 = 0.5*innerHeight + currentJSON.y0rel;
 
+document.getElementById("backgroundimage").src = currentJSON.imgurl;
+
 
 if(currentJSON.imgw == undefined){
    currentJSON.imgurl = "";

@@ -3,17 +3,14 @@ currentJSON.unit = unit;
 currentJSON.x0 = x0;
 currentJSON.y0 = y0;
 
+
 currentJSON.x0rel = x0 - 0.5*innerWidth;
 currentJSON.y0rel = y0 - 0.5*innerHeight;
    
-   
-     document.getElementById("backgroundimage").style.width = currentJSON.imgw.toString() + "px";
-
-    document.getElementById("backgroundimage").style.left = (currentJSON.imgx + 0.5*innerWidth - 0.5*currentJSON.svgwidth).toString() + "px";
-
-    document.getElementById("backgroundimage").style.top = (currentJSON.imgy + 0.5*innerHeight - 0.5*currentJSON.svgheight).toString() + "px";
-    
-    document.getElementById("backgroundimage").style.transform = "rotate(" + currentJSON.angle.toString() + "deg)";
+document.getElementById("backgroundimage").style.width = (unit*currentJSON.imgw).toString() + "px";
+document.getElementById("backgroundimage").style.left = (currentJSON.x0rel + currentJSON.imgx*unit + 0.5*innerWidth).toString() + "px";
+document.getElementById("backgroundimage").style.top = (currentJSON.y0rel + currentJSON.imgy*unit + 0.5*innerHeight).toString() + "px";
+document.getElementById("backgroundimage").style.transform = "rotate(" + currentJSON.angle.toString() + "deg)";
     
     
 ctx = document.getElementById("mainCanvas").getContext("2d");

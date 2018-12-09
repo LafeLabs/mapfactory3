@@ -219,13 +219,15 @@ function redraw(){
     x0 =  0.5*innerWidth + currentJSON.x0rel;
     y0 = 0.5*innerHeight + currentJSON.y0rel;
 
-    document.getElementById("backgroundimage").style.width = currentJSON.imgw.toString() + "px";
 
-    document.getElementById("backgroundimage").style.left = (currentJSON.imgx + 0.5*innerWidth - 0.5*currentJSON.svgwidth).toString() + "px";
+currentJSON.x0rel = x0 - 0.5*innerWidth;
+currentJSON.y0rel = y0 - 0.5*innerHeight;
+   
+document.getElementById("backgroundimage").style.width = (unit*currentJSON.imgw).toString() + "px";
+document.getElementById("backgroundimage").style.left = (currentJSON.x0rel + currentJSON.imgx*unit + 0.5*innerWidth).toString() + "px";
+document.getElementById("backgroundimage").style.top = (currentJSON.y0rel +currentJSON.imgy*unit + 0.5*innerHeight).toString() + "px";
+document.getElementById("backgroundimage").style.transform = "rotate(" + currentJSON.angle.toString() + "deg)";
 
-    document.getElementById("backgroundimage").style.top = (currentJSON.imgy + 0.5*innerHeight - 0.5*currentJSON.svgheight).toString() + "px";
-    
-    document.getElementById("backgroundimage").style.transform = "rotate(" + currentJSON.angle.toString() + "deg)";
     
     ctx = document.getElementById("mainCanvas").getContext("2d");
     ctx.clearRect(0,0,innerWidth,innerHeight);
@@ -268,15 +270,15 @@ function redraw(){
 mc = new Hammer(document.getElementById("mainCanvas"));
 mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
 mc.on("panleft panright panup pandown tap press", function(ev) {
-    currentJSON.imgx = imgx + ev.deltaX;
-    currentJSON.imgy = imgy + ev.deltaY;
+    currentJSON.imgx = imgx + (ev.deltaX/unit);
+    currentJSON.imgy = imgy + (ev.deltaY/unit);
     redraw();
 });    
 
 mc1 = new Hammer(document.getElementById("scaleslider"));
 mc1.get('pan').set({ direction: Hammer.DIRECTION_ALL });
 mc1.on("panleft panright panup pandown tap press", function(ev) {
-    currentJSON.imgw = imgw + ev.deltaX;
+    currentJSON.imgw = imgw + (ev.deltaX/unit);
     redraw();
 });
 
@@ -297,19 +299,19 @@ tableinputs[0].onchange = function(){
     redraw();
 } 
 tableinputs[1].onchange = function(){
-    currentJSON.imgx = parseInt(this.value);
+    currentJSON.imgx = parseFloat(this.value);
     redraw();
 } 
 tableinputs[2].onchange = function(){
-    currentJSON.imgy = parseInt(this.value);
+    currentJSON.imgy = parseFloat(this.value);
     redraw();
 } 
 tableinputs[3].onchange = function(){
-    currentJSON.imgw = parseInt(this.value);
+    currentJSON.imgw = parseFloat(this.value);
     redraw();
 } 
 tableinputs[4].onchange = function(){
-    currentJSON.angle = parseInt(this.value);
+    currentJSON.angle = parseFloat(this.value);
     redraw();
 } 
 
