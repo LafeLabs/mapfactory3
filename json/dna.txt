@@ -13,7 +13,6 @@
 			"index.txt",
 			"linker.txt",
 			"linkfeed.txt",
-			"map2link.txt",
 			"mapeditor.txt",
 			"mapfeed.txt",
 			"newmapfactory.txt",

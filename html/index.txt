@@ -53,11 +53,6 @@
             </a>
         </td>
         <td>
-            <a href = "map2link.php">
-                <img src = "mapicons/map2link.svg"/>
-            </a>
-        </td>
-        <td>
             <a href = "mapfeed.php">
                 <img src = "mapicons/mapfeed.svg"/>
             </a>

@@ -1,16 +1,16 @@
-<svg width="700" height="579" viewbox = "0 0 700 579"  xmlns="http://www.w3.org/2000/svg">
+<svg width="250" height="250" viewbox = "0 0 250 250"  xmlns="http://www.w3.org/2000/svg">
 
 <!--
 <json>
 {
-    "svgwidth": 700,
-    "svgheight": 579,
-    "unit": 82.64462809917354,
-    "x0": 439,
-    "y0": 227,
-    "x0rel": -245,
-    "y0rel": -172,
-    "glyph": "",
+    "svgwidth": 250,
+    "svgheight": 250,
+    "unit": 90.9090909090909,
+    "x0": 450,
+    "y0": 250,
+    "x0rel": 0,
+    "y0rel": 0,
+    "glyph": "0336,0330,0332,0332,0220,0230,0233,0236,",
     "table": [
         "0220:0244,0130,0245,",
         "0221:0244,0131,0245,",
@@ -66,4 +66,26 @@
 }
 </json>
 -->
-</svg>
+    <line x1="34" y1="80" x2="45" y2="80" style="stroke:black;stroke-width:3" />
+	<path d = "M68 91 L68 68 L45 68 L45 91 L68 91 Z" stroke = "black" stroke-width = "3" fill = "none" />    <text x="51" y = "85" fill = "black" font-size = "11.363636363636363px" font-family = "arial">X</text>
+    <line x1="68" y1="80" x2="80" y2="80" style="stroke:black;stroke-width:3" />
+    <line x1="80" y1="80" x2="125" y2="80" style="stroke:black;stroke-width:3" />
+    <line x1="80" y1="125" x2="125" y2="125" style="stroke:black;stroke-width:3" />
+    <circle cx="102" cy = "125" r = "5.681818181818182" stroke = "black" stroke-width = "3" fill = "none" />
+    <line x1="102" y1="125" x2="102" y2="131" style="stroke:black;stroke-width:3" />
+    <line x1="102" y1="125" x2="102" y2="80" style="stroke:black;stroke-width:3" />
+    <circle cx="102" cy = "80" r = "5.681818181818182" stroke = "black" stroke-width = "3" fill = "black" />
+    <line x1="125" y1="80" x2="170" y2="80" style="stroke:black;stroke-width:3" />
+    <circle cx="148" cy = "80" r = "5.681818181818182" stroke = "black" stroke-width = "3" fill = "black" />
+    <line x1="125" y1="125" x2="136" y2="125" style="stroke:black;stroke-width:3" />
+	<path d = "M159 136 L159 114 L136 114 L136 136 L159 136 Z" stroke = "black" stroke-width = "3" fill = "none" />    <text x="142" y = "131" fill = "black" font-size = "11.363636363636363px" font-family = "arial">S</text>
+    <line x1="159" y1="125" x2="170" y2="125" style="stroke:black;stroke-width:3" />
+    <line x1="148" y1="114" x2="148" y2="102" style="stroke:black;stroke-width:3" />
+    <line x1="148" y1="102" x2="148" y2="91" style="stroke:black;stroke-width:3" />
+    <line x1="148" y1="91" x2="148" y2="80" style="stroke:black;stroke-width:3" />
+    <line x1="170" y1="80" x2="216" y2="80" style="stroke:black;stroke-width:3" />
+	<path d = "M216 97 L216 62 L251 62 L268 62 L268 80 L268 97 L251 97 L233 97 L216 97 Z" stroke = "black" stroke-width = "3" fill = "none" />  <path d="M218.9792455688758 83.64408835224884           A26.52691522733009 26.52691522733009 0 0 1 264.925210510684 83.64408835224886" fill = "none" stroke = "black" stroke-width = "3" />
+    <line x1="242" y1="97" x2="259" y2="67" style="stroke:black;stroke-width:3" />
+    <line x1="259" y1="67" x2="256" y2="69" style="stroke:black;stroke-width:3" />
+    <line x1="259" y1="67" x2="259" y2="71" style="stroke:black;stroke-width:3" />
+	<path d = "M259 71 L259 67 L256 69 " stroke = "black" stroke-width = "3" fill = "none" /></svg>
