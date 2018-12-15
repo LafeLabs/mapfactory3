@@ -15,12 +15,14 @@
         </td>
     </tr>
 </table>
+<input id = "linkinput"/>
 </div>
 <textarea id = "editor"></textarea>
 <div id = "scroll"></div>
+<div id = "imagescroll"></div>
 <script>
 
-document.getElementById("editor").style.width = 0.45*innerWidth.toString() + "px";
+document.getElementById("editor").style.width = 0.40*innerWidth.toString() + "px";
                 
 document.getElementById("editor").style.height = (innerHeight - 110).toString() + "px";
 var converter = new showdown.Converter();
@@ -61,15 +63,55 @@ editmode = true;
 document.getElementById("modebutton").onclick = function(){
     editmode = !editmode;
     if(editmode){
-        document.getElementById("scroll").style.left = (0.5*innerWidth).toString() + "px";
+        document.getElementById("scroll").style.left = (0.6*innerWidth).toString() + "px";
         document.getElementById("editor").style.display = "block";
+        document.getElementById("imagescroll").style.display = "block";
     }
     else{
         document.getElementById("scroll").style.left = "10px";
         document.getElementById("editor").style.display = "none";
+        document.getElementById("imagescroll").style.display = "none";
     }
 }
 document.getElementById("modebutton").click();
+
+
+svgfiles = document.getElementById("svgfilesdiv").innerHTML.split(",");
+
+for(var index = 0;index < svgfiles.length-1;index++){
+    var newimg = document.createElement("IMG");
+    newimg.src = svgfiles[index];
+    document.getElementById("imagescroll").appendChild(newimg);
+    newimg.onclick = function(){
+        document.getElementById("linkinput").value = "![](" + this.src + ")";
+        document.getElementById("linkinput").select();
+    }
+}
+
+extimagejson = JSON.parse(document.getElementById("imgurlsdiv").innerHTML);
+
+for(var index = 0;index < extimagejson.length;index++){
+    var newimg = document.createElement("IMG");
+    newimg.src = extimagejson[index];
+    document.getElementById("imagescroll").appendChild(newimg);
+    newimg.onclick = function(){
+        document.getElementById("linkinput").value = "![](" + this.src + ")";
+        document.getElementById("linkinput").select();
+    }
+}
+
+uploadfiles = document.getElementById("uploadimages").innerHTML.split(",");
+
+for(var index = 0;index < uploadfiles.length-1;index++){
+    var newimg = document.createElement("IMG");
+    newimg.src = uploadfiles[index];
+    document.getElementById("imagescroll").appendChild(newimg);
+    newimg.onclick = function(){
+        document.getElementById("linkinput").value = "![](" + this.src + ")";
+        document.getElementById("linkinput").select();
+    }
+}
+
 </script>
 <style>
 body{
@@ -79,7 +121,7 @@ body{
         position:absolute;
         left:10px;
         top:110px;
-        width:40%;
+        width:45%;
         bottom:0px;
         z-index:0;
     }
@@ -101,6 +143,23 @@ body{
         max-width:90%;
     
     }
+    #imagescroll{
+        position:absolute;
+        display:none;
+        top:100px;
+        left:42%;
+        right:40%;
+        bottom:0px;
+        overflow:scroll;
+        border:solid;
+        border-radius:5px;
+    }
+    #imagescroll img{
+        width:80%;
+        display:block;
+        margin:auto;
+        cursor:pointer;
+    }
     h1,h2,h3,h4,h5{
         width:100%;
         text-align:center;
@@ -119,5 +178,13 @@ body{
     }
     #modebutton{
         cursor:pointer;
+    }
+    #linkinput{
+        position:absolute;
+        top:0px;
+        right:0px;
+        font-family:courier;
+        font-size:18px;
+        width:20em;
     }
 </style>

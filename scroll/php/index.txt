@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8"> 
 <title>Scroll Factory</title>
+<link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADf+wAA3/sAAAfgAACv9QAAoAUAAK/1AACv9QAAqBUAAK/1AACoFQAAr/UAAKAFAACv9QAAB+AAAN/7AADf+wAA" rel="icon" type="image/x-icon" />
 
 <!-- 
 PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
@@ -43,6 +44,51 @@ EGO DEATH:
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.6/showdown.js"></script>
 </head>
 <body>
+<div id = "svgfilesdiv" style = "display:none"><?php
+
+$files = scandir(getcwd()."/../symbol/svg");
+$listtext = "";
+foreach($files as $value){
+    if(substr($value,-4) == ".svg"){
+        $listtext .= "../symbol/svg/".$value.",";
+    }
+}
+echo $listtext;
+
+
+$dirs = scandir(getcwd()."/../symbol/symbols");
+foreach($dirs as $symboldir){
+    if($symboldir != "." && $symboldir != ".."){
+        $files = scandir(getcwd()."/../symbol/symbols/".$symboldir."/svg");
+        $listtext = "";
+        foreach($files as $value){
+            if(substr($value,-4) == ".svg"){
+                $listtext .= "../symbol/symbols/".$symboldir."/svg/".$value.",";
+            }
+        }
+        echo $listtext;
+    }
+}
+
+
+?></div>
+<div id = "imgurlsdiv" style = "display:none"><?php
+
+echo file_get_contents("../json/imgurls.txt");
+
+?></div>
+<div id = "uploadimages" style = "display:none;"><?php
+
+$files = scandir(getcwd()."/../uploadimages");
+$listtext = "";
+foreach($files as $value){
+    if($value != "." && $value != ".." && substr($value,-4) != ".txt"){
+        $listtext .= "../uploadimages/".$value.",";
+    }
+}
+echo $listtext;
+    
+?></div>
 <div id = "filenamediv" style = "display:none"><?php
 
 if(isset($_GET['filename'])){
