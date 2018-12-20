@@ -23,6 +23,7 @@
 <textarea id = "editor"></textarea>
 <div id = "scroll"></div>
 <div id = "imagescroll"></div>
+<div id = "invisiblescroll" style = "display:none"></div>
 <script>
 
 document.getElementById("editor").style.width = 0.40*innerWidth.toString() + "px";
@@ -121,17 +122,49 @@ for(var index = 0;index < uploadfiles.length-1;index++){
 
 document.getElementById("texbutton").onclick = function(){
     
-    textin = document.getElementById("editor").value;
+    document.getElementById("invisiblescroll").innerHTML = converter.makeHtml(document.getElementById("editor").value);
+
+    invisiblechildren = document.getElementById("invisiblescroll").childNodes;
+    
+    for(var index = 0;index < invisiblechildren.length;index++){
+        if(invisiblechildren[index].tagName == "H1" || invisiblechildren[index].tagName == "H2" || invisiblechildren[index].tagName == "H3" || invisiblechildren[index].tagName == "H4"){
+                invisiblechildren[index].removeAttribute("id");
+        }
+    }
+    images = document.getElementById("invisiblescroll").getElementsByTagName("img");
+    for(var index = 0;index < images.length;index++){
+        images[index].removeAttribute("alt");
+    }
+    
+    textin = document.getElementById("invisiblescroll").innerHTML;
+
+    
     textout = "\n\\documentclass[11pt]{article}\n\\usepackage{hyperref}\n\\usepackage{graphicx}\n\\begin{document}\n";
 
     textout += textin;    
     
+ 
     textout+= "\n\\end{document}\n";
-   
+ 
+    textout = textout.replace(/<h1>/g,"\n\\section{");
+    textout = textout.replace(/<\/h1>/g,"}");
+    textout = textout.replace(/<h2>/g,"\n\\section{");
+    textout = textout.replace(/<\/h2>/g,"}");
+    textout = textout.replace(/<h3>/g,"\n\\section{");
+    textout = textout.replace(/<\/h3>/g,"}");
+    textout = textout.replace(/<h4>/g,"\n\\section{");
+    textout = textout.replace(/<\/h4>/g,"}");
+
+    textout = textout.replace(/<p>/g,"\n\n");
+    textout = textout.replace(/<\/p>/g,"\n\n");
+
+    textout = textout.replace(/<img src=\"/g,"\n\\includegraphics[width=\\linewidth]{");
+    textout = textout.replace(/\">/g,"}");
+    
     data = encodeURIComponent(textout);
     texfile = "latex/" + currentFile.split("markdown/")[1].split(".")[0] + ".tex";
     var httpc = new XMLHttpRequest();
-    var url = "filesaver.php";        
+    var url = "filesaver.php";
     httpc.open("POST", url, true);
     httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
     httpc.send("data="+data+"&filename="+ texfile);//send text to filesaver.php
