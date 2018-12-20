@@ -105,7 +105,7 @@ document.getElementById("savesvg").onclick = function(){
     httpc2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
     if(path.length > 1){
-       httpc2.send("data="+encodeURIComponent(pngdata)+"&filename="+ path + "png/png" + timestamp +  ".png");//send text to filesaver.php
+       httpc2.send("data="+encodeURIComponent(pngdata)+"&filename=symbols/"+ path + "png/png" + timestamp +  ".png&path=" + path);//send text to filesaver.php
     }
     else{
        httpc2.send("data="+encodeURIComponent(pngdata)+"&filename=png/png" + timestamp +  ".png");//send text to filesaver.php

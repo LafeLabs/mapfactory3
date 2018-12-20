@@ -3,6 +3,12 @@
 
 */
 
+    if(!empty($_POST['path'])){
+        $path = $_POST['path'];
+        if(!file_exists("symbols/".$path."png")){
+            mkdir("symbols/".$path."png");
+        }
+    }
     $img = $_POST["data"]; //get data 
     $filename = $_POST["filename"];
     $file = fopen($filename,"w");// create new file with this name
