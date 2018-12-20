@@ -13,6 +13,9 @@
         <td id = "modebutton">
             <img style = "width:80px" src = "icons/scrollmode.svg"/>
         </td>
+        <td id = "texbutton" class = "button">
+            $\LaTeX$
+        </td>
     </tr>
 </table>
 <input id = "linkinput"/>
@@ -31,13 +34,14 @@ converter.setOption('literalMidWordUnderscores', 'true');
 
 //currentFile = "markdown/scroll.txt";
 currentFile = "markdown/" + document.getElementById("filenamediv").innerHTML;
-
+notexhtml = "";
 var httpc = new XMLHttpRequest();
 httpc.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         filedata = this.responseText;
         document.getElementById("editor").value = filedata;
         document.getElementById("scroll").innerHTML = converter.makeHtml(filedata);
+        notexhtml = document.getElementById("scroll").innerHTML;
         MathJax.Hub.Typeset();//tell Mathjax to update the math
 
     }
@@ -48,6 +52,8 @@ httpc.send();
 
 document.getElementById("editor").onkeyup = function(){
     document.getElementById("scroll").innerHTML = converter.makeHtml(this.value);
+    notexhtml = document.getElementById("scroll").innerHTML;
+    
     MathJax.Hub.Typeset();//tell Mathjax to update the math
     data = encodeURIComponent(this.value);
     var httpc = new XMLHttpRequest();
@@ -112,6 +118,68 @@ for(var index = 0;index < uploadfiles.length-1;index++){
     }
 }
 
+
+document.getElementById("texbutton").onclick = function(){
+    
+    textin = document.getElementById("editor").value;
+    textout = "\n\\documentclass[11pt]{article}\n\\usepackage{hyperref}\n\\usepackage{graphicx}\n\\begin{document}\n";
+
+    textout += textin;    
+    
+    textout+= "\n\\end{document}\n";
+   
+    data = encodeURIComponent(textout);
+    texfile = "latex/" + currentFile.split("markdown/")[1].split(".")[0] + ".tex";
+    var httpc = new XMLHttpRequest();
+    var url = "filesaver.php";        
+    httpc.open("POST", url, true);
+    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+    httpc.send("data="+data+"&filename="+ texfile);//send text to filesaver.php
+   
+}
+
+
+
+function html2tex(){
+
+//https://www.latex-tutorial.com/tutorials/first-document/
+
+// \href{http://www.latex-tutorial.com}{LaTeX-Tutorial}
+
+
+    textout = textout.replace(/<h2>/g,"\n\\section{\n");
+    textout = textout.replace(/<\/h2>/g,"}");
+    textout = textout.replace(/<figure>/g,"\n\\begin{figure}");
+    textout = textout.replace(/<\/figure>/g,"\\end{figure}\n");
+    textout = textout.replace(/<figcaption>/g,"\\caption{");
+    textout = textout.replace(/<\/figcaption>/g,"\}");
+
+
+    textout = textout.replace(/<img src = "/g,"\n\\includegraphics[width=\\linewidth]{../");
+    textout = textout.replace(/"\/><!--img-->/g,"\}\n");
+    
+    
+
+    textout = textout.replace(/<li>/g,"\\item\n");
+    textout = textout.replace(/<\/li>/g,"");
+    
+    
+    textout = textout.replace(/<ul>/g,"\\begin{itemize}\n");
+    textout = textout.replace(/<\/ul>/g,"\\end{itemize}");
+
+    textout = textout.replace(/<ol>/g,"\\begin{enumerate}\n");
+    textout = textout.replace(/<\/ol>/g,"\\end{enumerate}");
+
+    textout = textout.replace(/<em>/g,"\\textit{\n");
+    textout = textout.replace(/<\/em>/g,"}");
+    
+    
+    textout+= "\n\\end{document}\n";
+
+    
+    //save tex file 
+    
+}
 </script>
 <style>
 body{
@@ -187,4 +255,16 @@ body{
         font-size:18px;
         width:20em;
     }
+    #texbutton{
+        border:solid;
+        cursor:pointer;
+        border-radius:15px;
+    }
+    #texbutton:hover{
+        background-color:green;
+    }
+    #texbutton:active{
+        background-color:yellow;
+    }
+
 </style>

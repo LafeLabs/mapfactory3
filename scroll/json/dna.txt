@@ -7,7 +7,9 @@
 			"fileloader.txt",
 			"filesaver.txt",
 			"index.txt",
+			"pdflatex.txt",
 			"replicator.txt",
+			"texeditor.txt",
 			"text2php.txt",
 			"tree.txt"
 		]

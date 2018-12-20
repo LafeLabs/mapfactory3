@@ -11,6 +11,7 @@
     mkdir("json");
     mkdir("markdown");
     mkdir("jupyter");
+    mkdir("latex");
     mkdir("symbol");
     mkdir("icons");
     

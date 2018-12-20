@@ -22,36 +22,17 @@ EGO DEATH:
 </head>
 <body>
 <div id = "linkscroll">
-    <a href = "text2php.php">text2php.php</a>
-    <a href = "dnagenerator.php">dnagenerator.php</a>    
-    <a href = "tree.php">tree.php</a>    
     <a href = "index.php">index.php</a>
-    <a href = "texeditor.php">texeditor.php</a>
-
 </div>
 <div id = "namediv"></div>
 <div id="maineditor" contenteditable="true" spellcheck="false"></div>
 <div id = "filescroll">
-
-    <div class = "html file">html/index.txt</div>
-    <div class = "php file">php/index.txt</div>
-    <div class = "php file">php/replicator.txt</div>
-    <div class = "php file">php/dnagenerator.txt</div>
-    <div class = "php file">php/editor.txt</div>
-    <div class = "php file">php/filesaver.txt</div>
-    <div class = "php file">php/fileloader.txt</div>
-    <div class = "php file">php/text2php.txt</div>
-    <div class = "php file">php/tree.txt</div>
-
-    <div class = "php file">php/texlist.txt</div>
-    <div class = "php file">php/texeditor.txt</div>
-    <div class = "php file">php/pdflatex.txt</div>
-
-    <div class = "json file">json/dna.txt</div>
 </div>
 
+<div id = "pdflatexbutton">PDFLATEX</div>
+
 <script>
-currentFile = "html/index.txt";
+currentFile = "latex/scroll.tex";
 var httpc = new XMLHttpRequest();
 httpc.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -123,7 +104,7 @@ document.getElementById("namediv").style.borderColor = "#0000ff";
 
 editor = ace.edit("maineditor");
 editor.setTheme("ace/theme/cobalt");
-editor.getSession().setMode("ace/mode/html");
+editor.getSession().setMode("ace/mode/latex");
 editor.getSession().setUseWrapMode(true);
 editor.$blockScrolling = Infinity;
 
@@ -138,6 +119,13 @@ document.getElementById("maineditor").onkeyup = function(){
     var fileName = currentFile.split("/")[1];
 }
 
+document.getElementById("pdflatexbutton").onclick = function(){
+    var httpc = new XMLHttpRequest();
+    var url = "pdflatex.php";        
+    httpc.open("POST", url, true);
+    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+    httpc.send("filename="+currentFile);//send text to filesaver.php 
+}
 </script>
 <style>
 #namediv{
@@ -230,6 +218,21 @@ body{
     font-size:22px;
 }
 
+#pdflatexbutton{
+    position:absolute;
+    right:10px;
+    top:10px;
+    border:solid;
+    background-color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+#pdflatexbutton:hover{
+    background-color:green;
+}
+#pdflatexbutton:active{
+    background-color:yellow;
+}
 
 
 </style>
