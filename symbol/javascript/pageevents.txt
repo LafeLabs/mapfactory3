@@ -58,16 +58,19 @@ document.getElementById("savesvg").onclick = function(){
     drawGlyph(cleanGlyph);
     currentSVG += "</svg>";
 
+
+    timestamp = Math.round((new Date().getTime())/1000).toString();
+        
     var httpc = new XMLHttpRequest();
     var url = "feedsaver.php";        
     httpc.open("POST", url, true);
     httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     
     if(path.length > 1){
-         httpc.send("data=" + encodeURIComponent(currentSVG) + "&path=" + path);//send text to feedsaver.php
+         httpc.send("data=" + encodeURIComponent(currentSVG) + "&path=" + path + "&timestamp=" + timestamp);//send text to feedsaver.php
     }
     else{
-        httpc.send("data=" + encodeURIComponent(currentSVG));//send text to feedsaver.php
+        httpc.send("data=" + encodeURIComponent(currentSVG) + "&timestamp=" + timestamp);//send text to feedsaver.php
     }
     x0 = tempx0;
     y0 = tempy0;
@@ -84,7 +87,7 @@ document.getElementById("savesvg").onclick = function(){
 
     doTheThing(0300);
     drawGlyph(cleanGlyph);
-    var pngdata = document.getElementById("invisibleCanvas").toDataURL();
+    pngdata = document.getElementById("invisibleCanvas").toDataURL("image/png");
     document.getElementById("invisibleCanvas").display = "none";
 
     document.getElementById("toppng").style.display = "block";
@@ -95,6 +98,18 @@ document.getElementById("savesvg").onclick = function(){
     y0 = tempy0;
 //    redraw();
 
+
+    var httpc2 = new XMLHttpRequest();
+    var url = "pngsave.php";        
+    httpc2.open("POST", url, true);
+    httpc2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+    if(path.length > 1){
+       httpc2.send("data="+encodeURIComponent(pngdata)+"&filename="+ path + "png/png" + timestamp +  ".png");//send text to filesaver.php
+    }
+    else{
+       httpc2.send("data="+encodeURIComponent(pngdata)+"&filename=png/png" + timestamp +  ".png");//send text to filesaver.php
+    }
 
 
 }

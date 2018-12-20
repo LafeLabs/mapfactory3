@@ -58,7 +58,7 @@ for(var index = 0;index < dirlist.length - 1;index++){
         var newli = document.createElement("LI");
         var newa = document.createElement("A");
         newa.innerHTML = dirlist[index];
-        newa.href = "latex/" + dirlist[index];
+        newa.href = "texeditor.php?filename=" + dirlist[index];
         newli.appendChild(newa);
         document.getElementById("texfileslinklist").appendChild(newli);
     }

@@ -21,8 +21,22 @@ EGO DEATH:
 <title>PHP Editor replicator</title>
 </head>
 <body>
+<div id = "filenamediv" style = "display:none"><?php
+
+if(isset($_GET['filename'])){
+    echo $_GET['filename'];
+}
+else{
+    echo "scroll.tex";
+}
+    
+
+?></div>
 <div id = "linkscroll">
     <a href = "index.php">index.php</a>
+    <a href = "editor.php">editor.php</a>
+    <a href = "texlist.php">texlist.php</a>
+
 </div>
 <div id = "namediv"></div>
 <div id="maineditor" contenteditable="true" spellcheck="false"></div>
@@ -32,7 +46,7 @@ EGO DEATH:
 <div id = "pdflatexbutton">PDFLATEX</div>
 
 <script>
-currentFile = "latex/scroll.tex";
+currentFile = "latex/" + document.getElementById("filenamediv").innerHTML;
 var httpc = new XMLHttpRequest();
 httpc.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {

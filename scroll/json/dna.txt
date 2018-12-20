@@ -2,14 +2,18 @@
 	{
 		"path":"php",
 		"files":[
+			"copy.txt",
+			"copyimage.txt",
 			"dnagenerator.txt",
 			"editor.txt",
 			"fileloader.txt",
 			"filesaver.txt",
 			"index.txt",
+			"mkdir.txt",
 			"pdflatex.txt",
 			"replicator.txt",
 			"texeditor.txt",
+			"texlist.txt",
 			"text2php.txt",
 			"tree.txt"
 		]

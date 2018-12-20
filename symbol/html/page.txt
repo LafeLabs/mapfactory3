@@ -7,6 +7,9 @@
         <a id = "svglink" href = "svgfeed.php"><img style = "width:80px" src = "icons/svgfeed.svg"></a>
     </td>
     <td>
+        <a id = "pnglink" href = "pngfeed.php"><img style = "width:80px" src = "icons/pngfeed.svg"></a>
+    </td>
+    <td>
         <a id = "stylelink" href = "stylejsoneditor.php"><img src = "icons/style.svg"></a>
     </td>
     <td>
@@ -45,6 +48,7 @@
     <td></td>
     <td></td>
     <td></td>
+    <td></td>
     </tr>
     <tr>
     <td><input id = "printInput"/></td>
@@ -53,9 +57,11 @@
     <td></td>
     <td></td>
     <td></td>
+    <td></td>
     </tr>
     <tr>
     <td><input id = "stackInput"/></td>
+    <td></td>
     <td></td>
     <td></td>
     <td></td>

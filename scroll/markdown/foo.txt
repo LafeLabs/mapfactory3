@@ -1,15 +1,10 @@
-![](http://localhost:8000/symbol/svg/svg1543041484.svg)
-
-
-
-[link back](http://localhost:8000/index.php?path=maps/foo.txt)
 
 $$S = k_b\log{\Omega}$$
+
+
 # Header
 
 
 
 
-![](http://localhost:8000/symbol/svg/svg1543041484.svg)
-![](http://localhost:8000/symbol/svg/svg1543041484.svg)
-![](http://localhost:8000/symbol/svg/svg1543041484.svg)
+![](https://i.imgur.com/jZGnwH7.jpg)

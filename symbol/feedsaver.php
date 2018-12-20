@@ -44,8 +44,9 @@ document.getElementById("savesvg").onclick = function(){
         $path = "";
     }
 
+    $timestamp = $_POST["timestamp"];//get timestamp from javascript
     $data = $_POST["data"]; //get data 
-    $filename = "svg".time().".svg";
+    $filename = "svg".$timestamp.".svg";
     $file = fopen($feedpath.$filename,"w");// create new file with this name
     fwrite($file,$data); //write data to file
     fclose($file);  //close file
