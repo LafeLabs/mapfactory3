@@ -3,6 +3,7 @@
 */
     $filename = $_POST["filename"];
 
-    exec("pdflatex -output-directory=\"latex\" ".$filename);
-
+    exec("pdflatex -interaction=nonstopmode -output-directory=\"latex\" ".$filename);
+    
+    
 ?>

@@ -120,7 +120,9 @@ for(var index = 0;index < uploadfiles.length-1;index++){
 }
 
 
+
 document.getElementById("texbutton").onclick = function(){
+
     
     document.getElementById("invisiblescroll").innerHTML = converter.makeHtml(document.getElementById("editor").value);
 
@@ -132,8 +134,29 @@ document.getElementById("texbutton").onclick = function(){
         }
     }
     images = document.getElementById("invisiblescroll").getElementsByTagName("img");
+    
+    httparray = [];
+    fileendingarray = [];
+    imagesrcarray = [];
     for(var index = 0;index < images.length;index++){
         images[index].removeAttribute("alt");
+        
+        fileending = images[index].src.split(".")[images[index].src.split(".").length - 1];
+        fileendingarray.push(fileending);
+        texfile = "latex/" + currentFile.split("markdown/")[1].split(".")[0] + "_images/image" + index.toString() + "." + fileending;
+        
+
+        var httpc = new XMLHttpRequest();
+        httparray.push(httpc);
+        imagesrcarray.push(images[index].src);
+        var url = "copy.php";
+        httparray[index].open("POST", url, true);
+        httparray[index].setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+        httparray[index].send("source="+imagesrcarray[index]+"&destination="+ texfile);//send text to filesaver.php
+        
+    }
+    for(var index = 0;index < images.length;index++){
+        images[index].src = currentFile.split("markdown/")[1].split(".")[0] + "_images/image" + index.toString() + "." + fileendingarray[index];
     }
     
     textin = document.getElementById("invisiblescroll").innerHTML;
@@ -169,6 +192,15 @@ document.getElementById("texbutton").onclick = function(){
     httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
     httpc.send("data="+data+"&filename="+ texfile);//send text to filesaver.php
    
+   
+    var httpc = new XMLHttpRequest();
+    var url = "mkdir.php";
+    httpc.open("POST", url, true);
+    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+    dirname = "latex/" + currentFile.split("markdown/")[1].split(".")[0] + "_images";
+    httpc.send("dirname="+dirname);//send text to mkdir.php   
+    
+    
 }
 
 
