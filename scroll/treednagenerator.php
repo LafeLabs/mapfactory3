@@ -19,16 +19,22 @@ foreach($files as $value){
     if(substr($value,-4) == ".tex"){
         $finalstring .= "    \"".$value."\",\n";
     }
+}
+$finalstring = rtrim($finalstring, ",\n");
+$finalstring .= "\n  ],\n  \"image\":[\n";
+
+foreach($files as $value){
     if(substr($value,-7) == "_images"){
         $subfiles = scandir(getcwd()."/latex/".$value);
         foreach($subfiles as $subvalue){
             if($subvalue != "." && $subvalue != ".."){
-                $finalstring .= "    \"latex/".$value."/".$subvalue."\",\n";
+                $finalstring .= "    \"".$value."/".$subvalue."\",\n";
             }
         }
     }
 }
 $finalstring = rtrim($finalstring, ",\n");
+
 
 
 $finalstring .= "\n  ]\n}";
