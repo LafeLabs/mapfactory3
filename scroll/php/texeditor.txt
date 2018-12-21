@@ -32,20 +32,49 @@ else{
     
 
 ?></div>
-<div id = "linkscroll">
-    <a href = "index.php">index.php</a>
-    <a href = "editor.php">editor.php</a>
-    <a href = "texlist.php">texlist.php</a>
+<table id = "linktable">
+    <tr>
+        <td>
+            <a href = "tree.php">
+            <img src = "icons/tree.svg"/>
+            </a>
+        </td>
+        <td>
+            <a id = "indexlink" href = "index.php">
+            <img src = "../mapicons/scroll.svg"/>
+            </a>
+        </td>
+        <td>
+            <a href = "editor.php">
+            <img src = "../mapicons/editor.svg"/>
+            </a>
+        </td>
 
-</div>
+    </tr>
+</table>
+
 <div id = "namediv"></div>
 <div id="maineditor" contenteditable="true" spellcheck="false"></div>
 <div id = "filescroll">
-</div>
 
-<div id = "pdflatexbutton">PDFLATEX</div>
+<?php
+
+$files = scandir(getcwd()."/latex");
+foreach($files as $value){
+    if($value != "." && $value != ".." && substr($value,-4) == ".tex"){
+        echo "<a href = \"texeditor.php?filename=".$value."\">".$value."</a>";
+    }
+}
+
+
+?></div>
 
 <script>
+
+if(document.getElementById("filenamediv").innerHTML.length > 1){
+    document.getElementById("indexlink").href += "?filename=" + document.getElementById("filenamediv").innerHTML.split(".tex")[0] + ".txt";
+}
+
 currentFile = "latex/" + document.getElementById("filenamediv").innerHTML;
 var httpc = new XMLHttpRequest();
 httpc.onreadystatechange = function() {
@@ -56,62 +85,7 @@ httpc.onreadystatechange = function() {
 };
 httpc.open("GET", "fileloader.php?filename=" + currentFile, true);
 httpc.send();
-files = document.getElementById("filescroll").getElementsByClassName("file");
-for(var index = 0;index < files.length;index++){
-    files[index].onclick = function(){
-        currentFile = this.innerHTML;
-        //use php script to load current file;
-        var httpc = new XMLHttpRequest();
-        httpc.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                filedata = this.responseText;
-                editor.setValue(filedata);
-                var fileType = currentFile.split("/")[0]; 
-                var fileName = currentFile.split("/")[1];
-              
-            }
-        };
-        httpc.open("GET", "fileloader.php?filename=" + currentFile, true);
-        httpc.send();
-        if(this.classList[0] == "css"){
-            editor.getSession().setMode("ace/mode/css");
-            document.getElementById("namediv").style.color = "yellow";
-            document.getElementById("namediv").style.borderColor = "yellow";
-        }
-        if(this.classList[0] == "html"){
-            editor.getSession().setMode("ace/mode/html");
-            document.getElementById("namediv").style.color = "#0000ff";
-            document.getElementById("namediv").style.borderColor = "#0000ff";
-        }
-        if(this.classList[0] == "scrolls"){
-            editor.getSession().setMode("ace/mode/html");
-            document.getElementById("namediv").style.color = "#87CEEB";
-            document.getElementById("namediv").style.borderColor = "#87CEEB";
-        }
-        if(this.classList[0] == "javascript"){
-            editor.getSession().setMode("ace/mode/javascript");
-            document.getElementById("namediv").style.color = "#ff0000";
-            document.getElementById("namediv").style.borderColor = "#ff0000";
-        }
-        if(this.classList[0] == "bytecode"){
-            editor.getSession().setMode("ace/mode/text");
-            document.getElementById("namediv").style.color = "#654321";
-            document.getElementById("namediv").style.borderColor = "#654321";
-        }
-        if(this.classList[0] == "php"){
-            editor.getSession().setMode("ace/mode/php");
-            document.getElementById("namediv").style.color = "#800080";
-            document.getElementById("namediv").style.borderColor = "#800080";
-        }
-        if(this.classList[0] == "json"){
-            editor.getSession().setMode("ace/mode/json");
-            document.getElementById("namediv").style.color = "orange";
-            document.getElementById("namediv").style.borderColor = "orange";
-        }
 
-        document.getElementById("namediv").innerHTML = currentFile;
-    }
-}
 document.getElementById("namediv").innerHTML = currentFile;
 document.getElementById("namediv").style.color = "#0000ff";
 document.getElementById("namediv").style.borderColor = "#0000ff";
@@ -133,15 +107,22 @@ document.getElementById("maineditor").onkeyup = function(){
     var fileName = currentFile.split("/")[1];
 }
 
-document.getElementById("pdflatexbutton").onclick = function(){
-    var httpc = new XMLHttpRequest();
-    var url = "pdflatex.php";        
-    httpc.open("POST", url, true);
-    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
-    httpc.send("filename="+currentFile);//send text to filesaver.php 
-}
+
 </script>
 <style>
+#linktable{
+    position:absolute;
+    right:0px;
+    top:0px;
+    cursor:pointer;
+}
+#linktable img{
+    width:80px;
+}
+#linktable img:hover{
+    background-color:green;
+}
+
 #namediv{
     position:absolute;
     top:5px;
@@ -149,7 +130,7 @@ document.getElementById("pdflatexbutton").onclick = function(){
     font-family:courier;
     padding:0.5em 0.5em 0.5em 0.5em;
     border:solid;
-    background-color:#101010;
+    background-color:#a0a0a0;
 
 }
 a{
@@ -159,28 +140,7 @@ a{
     margin-left:0.5em;
 }
 body{
-    background-color:#404040;
-}
-.html{
-    color:#0000ff;
-}
-.css{
-    color:yellow;
-}
-.php{
-    color:#800080;
-}
-.javascript{
-    color:#ff0000;
-}
-.bytecode{
-    color:#654321;
-}
-.json{
-    color:orange;
-}
-.scrolls{
-    color:#87ceeb;
+    background-color:#b0b0b0;
 }
 
 .file{
@@ -198,7 +158,7 @@ body{
 #filescroll{
     position:absolute;
     overflow:scroll;
-    top:60%;
+    top:200px;
     bottom:0%;
     right:0%;
     left:75%;
@@ -209,20 +169,8 @@ body{
     font-family:courier;
     font-size:22px;
 }
-#linkscroll{
-    position:absolute;
-    overflow:scroll;
-    top:5em;
-    bottom:50%;
-    right:0px;
-    left:75%;
-    border:solid;
-    border-radius:5px;
-    border-width:3px;
-    background-color:#101010;
-    font-family:courier;
-    font-size:22px;
-}
+
+
 #maineditor{
     position:absolute;
     left:0%;

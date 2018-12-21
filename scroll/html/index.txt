@@ -16,6 +16,12 @@
         <td id = "texbutton" class = "button">
             $\LaTeX$
         </td>
+        <td style = "border:solid;border-radius:10px">
+            <a id =  "texedit" href = "texeditor.php">
+            <img style = "width:40px;display:block;margin:auto" src = "icons/editor.svg"/>
+            $\TeX$
+            </a>
+        </td>
     </tr>
 </table>
 <input id = "linkinput"/>
@@ -25,6 +31,11 @@
 <div id = "imagescroll"></div>
 <div id = "invisiblescroll" style = "display:none"></div>
 <script>
+
+if(document.getElementById("filenamediv").innerHTML.length > 1){
+    document.getElementById("texedit").href += "?filename=" + document.getElementById("filenamediv").innerHTML.split(".txt")[0] + ".tex";
+}
+
 
 document.getElementById("editor").style.width = 0.40*innerWidth.toString() + "px";
                 
@@ -161,12 +172,10 @@ document.getElementById("texbutton").onclick = function(){
     
     textin = document.getElementById("invisiblescroll").innerHTML;
 
-    
     textout = "\n\\documentclass[11pt]{article}\n\\usepackage{hyperref}\n\\usepackage{graphicx}\n\\begin{document}\n";
 
     textout += textin;    
     
- 
     textout+= "\n\\end{document}\n";
  
     textout = textout.replace(/<h1>/g,"\n\\section{");

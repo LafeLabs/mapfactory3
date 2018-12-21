@@ -46,24 +46,24 @@ EGO DEATH:
 <body>
 <div id = "svgfilesdiv" style = "display:none"><?php
 
-$files = scandir(getcwd()."/../symbol/svg");
+
+$files = scandir(getcwd()."/../symbol/png");
 $listtext = "";
 foreach($files as $value){
-    if(substr($value,-4) == ".svg"){
-        $listtext .= "../symbol/svg/".$value.",";
+    if(substr($value,-4) == ".png"){
+        $listtext .= "../symbol/png/".$value.",";
     }
 }
 echo $listtext;
 
-
 $dirs = scandir(getcwd()."/../symbol/symbols");
 foreach($dirs as $symboldir){
     if($symboldir != "." && $symboldir != ".."){
-        $files = scandir(getcwd()."/../symbol/symbols/".$symboldir."/svg");
+        $files = scandir(getcwd()."/../symbol/symbols/".$symboldir."/png");
         $listtext = "";
         foreach($files as $value){
-            if(substr($value,-4) == ".svg"){
-                $listtext .= "../symbol/symbols/".$symboldir."/svg/".$value.",";
+            if(substr($value,-4) == ".png"){
+                $listtext .= "../symbol/symbols/".$symboldir."/png/".$value.",";
             }
         }
         echo $listtext;
