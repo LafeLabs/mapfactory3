@@ -70,7 +70,29 @@ foreach($dirs as $symboldir){
     }
 }
 
+$files = scandir(getcwd()."/../curve/png");
+$listtext = "";
+foreach($files as $value){
+    if(substr($value,-4) == ".png"){
+        $listtext .= "../curve/png/".$value.",";
+    }
+}
+echo $listtext;
 
+
+$dirs = scandir(getcwd()."/../curve/curves");
+foreach($dirs as $symboldir){
+    if($symboldir != "." && $symboldir != ".."){
+        $files = scandir(getcwd()."/../curve/curves/".$symboldir."/png");
+        $listtext = "";
+        foreach($files as $value){
+            if(substr($value,-4) == ".png"){
+                $listtext .= "../curve/curves/".$symboldir."/png/".$value.",";
+            }
+        }
+        echo $listtext;
+    }
+}
 ?></div>
 <div id = "imgurlsdiv" style = "display:none"><?php
 
