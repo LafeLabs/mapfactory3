@@ -11,6 +11,7 @@ $eqtemplate = file_get_contents("markdown/equation.txt");
 mkdir("curves/".$path);
     mkdir("curves/".$path."/"."json");
     mkdir("curves/".$path."/"."svg");
+    mkdir("curves/".$path."/"."png");
     mkdir("curves/".$path."/"."javascript");
     mkdir("curves/".$path."/"."markdown");
     

@@ -210,6 +210,21 @@
         }
 
 
+        pngdata = document.getElementById("mainCanvas").toDataURL("image/png");
+
+
+        var httpc2 = new XMLHttpRequest();
+        var url = "pngsave.php";        
+        httpc2.open("POST", url, true);
+        httpc2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        if(path.length > 1){
+           httpc2.send("data="+encodeURIComponent(pngdata)+"&filename=curves/"+ path + "png/png" + timestamp +  ".png&path=" + path);//send text to filesaver.php
+        }
+        else{
+           httpc2.send("data="+encodeURIComponent(pngdata)+"&filename=png/png" + timestamp +  ".png");//send text to filesaver.php
+        }
+
     }
     
     

@@ -2,6 +2,7 @@
 	{
 		"path":"php",
 		"files":[
+			"deletefile.txt",
 			"dnagenerator.txt",
 			"editor.txt",
 			"equationeditor.txt",
@@ -14,6 +15,8 @@
 			"listupdate.txt",
 			"markdownfeed.txt",
 			"newdir.txt",
+			"pngfeed.txt",
+			"pngsave.txt",
 			"replicator.txt",
 			"svgfeed.txt",
 			"text2php.txt",
@@ -35,6 +38,7 @@
 			"ab.svg",
 			"copy.svg",
 			"curve.svg",
+			"delete.svg",
 			"editor.svg",
 			"factory.svg",
 			"file.svg",
