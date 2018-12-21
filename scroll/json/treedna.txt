@@ -1,0 +1,16 @@
+{
+  "markdown":[
+    "bar.txt",
+    "foo.txt",
+    "geometron.txt",
+    "maplore.txt",
+    "scroll.txt"
+  ],
+  "latex":[
+    "foo.tex",
+    "latex/foo_images/image0.jpg",
+    "scroll.tex",
+    "latex/scroll_images/image0.jpg",
+    "latex/scroll_images/image1.jpg"
+  ]
+}

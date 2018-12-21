@@ -15,7 +15,9 @@
 			"texeditor.txt",
 			"texlist.txt",
 			"text2php.txt",
-			"tree.txt"
+			"tree.txt",
+			"treednagenerator.txt",
+			"treereplicator.txt"
 		]
 	},
 	{
@@ -27,7 +29,8 @@
 	{
 		"path":"json",
 		"files":[
-			"dna.txt"
+			"dna.txt",
+			"treedna.txt"
 		]
 	},
 	{
