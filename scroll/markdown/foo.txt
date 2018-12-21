@@ -8,3 +8,4 @@ $$S = k_b\log{\Omega}$$
 
 
 ![](https://i.imgur.com/jZGnwH7.jpg)
+![](http://localhost:8000/symbol/symbols/arrows/png/png1545339232.png)

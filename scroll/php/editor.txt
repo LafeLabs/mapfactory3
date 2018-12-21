@@ -26,7 +26,6 @@ EGO DEATH:
     <a href = "dnagenerator.php">dnagenerator.php</a>    
     <a href = "tree.php">tree.php</a>    
     <a href = "index.php">index.php</a>
-    <a href = "texlist.php">texlist.php</a>
     <a href = "texeditor.php">texeditor.php</a>
 
 </div>
@@ -44,7 +43,6 @@ EGO DEATH:
     <div class = "php file">php/text2php.txt</div>
     <div class = "php file">php/tree.txt</div>
 
-    <div class = "php file">php/texlist.txt</div>
     <div class = "php file">php/texeditor.txt</div>
     <div class = "php file">php/copy.txt</div>
     <div class = "php file">php/mkdir.txt</div>
