@@ -44,6 +44,16 @@ EGO DEATH:
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.6/showdown.js"></script>
 </head>
 <body>
+<div id = "textdatadiv" style = "display:none" class = "no-mathjax"><?php
+  
+$files = scandir(getcwd()."/textfeed");
+foreach($files as $value){
+    if(substr($value,-4) == ".txt"){
+        echo "\n<p id = \"".$value."\" class = \"textelement\">\n".file_get_contents("textfeed/".$value)."\n</p>\n";
+    }
+}
+
+?></div>
 <div id = "svgfilesdiv" style = "display:none"><?php
 
 

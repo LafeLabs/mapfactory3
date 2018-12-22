@@ -27,13 +27,15 @@
         </td>
     </tr>
 </table>
-<input id = "linkinput"/>
+<input id = "linkinput" class = "no-mathjax"/>
 </div>
 <textarea id = "editor"></textarea>
 <div id = "scroll"></div>
 <div id = "imagescroll"></div>
 <div id = "invisiblescroll" style = "display:none"></div>
 <script>
+
+
 
 if(document.getElementById("filenamediv").innerHTML.length > 1){
     document.getElementById("texedit").href += "?filename=" + document.getElementById("filenamediv").innerHTML.split(".txt")[0] + ".tex";
@@ -133,6 +135,23 @@ for(var index = 0;index < uploadfiles.length-1;index++){
     }
 }
 
+
+textelements = document.getElementById("textdatadiv").getElementsByClassName("textelement");
+    
+for(var index = 0;index < textelements.length;index++){
+        var newp = document.createElement("p");
+        newp.innerHTML = textelements[index].innerHTML;
+        newp.className = "scrollelement";
+        document.getElementById("imagescroll").appendChild(newp);
+        newp.id = "p" + index.toString();
+        newp.onclick = function(){
+            pindex = this.id.substring(1);
+            document.getElementById("linkinput").value = textelements[pindex].innerHTML;
+            document.getElementById("linkinput").select();
+        }
+}
+    
+MathJax.Hub.Typeset();//tell Mathjax to update the math
 
 
 document.getElementById("texbutton").onclick = function(){
@@ -342,6 +361,12 @@ body{
     }
     #texbutton:active{
         background-color:yellow;
+    }
+    .scrollelement{
+        cursor:pointer;
+    }
+    .scrollelement:hover{
+        background-color:green;
     }
 
 </style>
