@@ -48,7 +48,7 @@ EGO DEATH:
 $files = scandir(getcwd()."/textfeed");
 foreach($files as $value){
     if(substr($value,-4) == ".txt"){
-        echo "\n<p class = \"textelement\">\n".file_get_contents("textfeed/".$value)."\n</p>\n";
+        echo "\n<p id = \"".$value."\" class = \"textelement\">\n".file_get_contents("textfeed/".$value)."\n</p>\n";
     }
 }
 
@@ -77,8 +77,26 @@ for(var index = 0;index < textelements.length;index++){
         newp.innerHTML = textelements[index].innerHTML;
         newp.className = "scrollelement";
         document.getElementById("scrolldiv").appendChild(newp);
-    }
-    MathJax.Hub.Typeset();//tell Mathjax to update the math
+
+        var newimg = document.createElement("img");
+        newimg.src = "icons/delete.svg";
+        newp.appendChild(newimg);
+        newimg.className= "button";
+        newimg.alt = textelements[index].id;
+        newimg.style.width = "30px";
+        newimg.onclick = function(){
+            textname = "textfeed/" + this.alt;
+            var httpc = new XMLHttpRequest();
+            var url = "deletefile.php";         
+            httpc.open("POST", url, true);
+            httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+            httpc.send("filename=" + textname);//send text to filesaver.php
+            document.getElementById("scrolldiv").removeChild(this.parentElement);
+        }
+    
+}
+    
+MathJax.Hub.Typeset();//tell Mathjax to update the math
 
 
 document.getElementById("wordsinput").onchange = function(){

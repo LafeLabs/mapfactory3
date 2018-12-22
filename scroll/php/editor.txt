@@ -51,6 +51,7 @@ EGO DEATH:
     <div class = "php file">php/textfeed.txt</div>
     <div class = "php file">php/copy.txt</div>
     <div class = "php file">php/mkdir.txt</div>
+    <div class = "php file">php/deletefile.txt</div>
 
     <div class = "json file">json/dna.txt</div>
     <div class = "json file">json/treedna.txt</div>
