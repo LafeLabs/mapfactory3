@@ -13,6 +13,9 @@
         <td id = "modebutton">
             <img style = "width:80px" src = "icons/scrollmode.svg"/>
         </td>
+        <td><a href = "textfeed.php">
+            <img style = "width:80px;" src = "icons/textfeed.svg"/>
+        </a></td>
         <td id = "texbutton" class = "button">
             $\LaTeX$
         </td>

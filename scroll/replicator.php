@@ -14,6 +14,7 @@
     mkdir("latex");
     mkdir("symbol");
     mkdir("icons");
+    mkdir("textfeed");    
     
     foreach($dna as $dirs){
         mkdir($dirs->path);
