@@ -4,6 +4,7 @@
 		"files":[
 			"copy.txt",
 			"copyimage.txt",
+			"deletefile.txt",
 			"dnagenerator.txt",
 			"editor.txt",
 			"fileloader.txt",
@@ -15,6 +16,7 @@
 			"texeditor.txt",
 			"texlist.txt",
 			"text2php.txt",
+			"textfeed.txt",
 			"tree.txt",
 			"treednagenerator.txt",
 			"treereplicator.txt"
@@ -36,11 +38,13 @@
 	{
 		"path":"icons",
 		"files":[
+			"delete.svg",
 			"editor.svg",
 			"mapfactory.svg",
 			"markdown.svg",
 			"scrollmode.svg",
 			"symbol.svg",
+			"textfeed.svg",
 			"tree.svg"
 		]
 	},
