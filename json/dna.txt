@@ -4,6 +4,7 @@
 		"files":[
 			"aligner.txt",
 			"copy.txt",
+			"deletefile.txt",
 			"dnagenerator.txt",
 			"duality.txt",
 			"editor.txt",
@@ -18,6 +19,7 @@
 			"newmapfactory.txt",
 			"replicator.txt",
 			"text2php.txt",
+			"textfeed.txt",
 			"upload.txt",
 			"uploader.txt"
 		]
@@ -65,8 +67,10 @@
 			"mapfactory.svg",
 			"mapfeed.svg",
 			"memefactory.svg",
+			"pngfeed.svg",
 			"scroll.svg",
 			"street.svg",
+			"textfeed.svg",
 			"unhidebutton.svg",
 			"uparrow.svg",
 			"upload.svg",

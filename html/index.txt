@@ -57,7 +57,11 @@
                 <img src = "mapicons/mapfeed.svg"/>
             </a>
         </td>
-
+        <td>
+            <a href = "textfeed.php">
+                <img src = "mapicons/textfeed.svg"/>
+            </a>
+        </td>
         <td>
             <a href = "copy.php">
                 <img src = "mapicons/copy.svg"/>

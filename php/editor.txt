@@ -29,6 +29,7 @@ EGO DEATH:
     <a href = "aligner.php">aligner.php</a>
     <a href = "uploader.php">uploader.php</a>
     <a href = "linkfeed.php">linkfeed.php</a>
+    <a href = "textfeed.php">textfeed.php</a>
     <a href = "mapfeed.php">mapfeed.php</a>
     <a href = "imagefeed.php">imagefeed.php</a>
     <a href = "mapeditor.php">mapeditor.php</a>
@@ -61,6 +62,8 @@ EGO DEATH:
     <div class = "php file">php/newmapfactory.txt</div>
 
     <div class = "php file">php/copy.txt</div>
+    <div class = "php file">php/textfeed.txt</div>
+    <div class = "php file">php/deletefile.txt</div>
 
     <div class = "php file">symbol/replicator.php</div>
     <div class = "php file">scroll/replicator.php</div>
