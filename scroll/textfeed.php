@@ -46,7 +46,7 @@ EGO DEATH:
 <div id = "datadiv" style = "display:none" class = "no-mathjax"><?php
   
 $files = scandir(getcwd()."/textfeed");
-foreach($files as $value){
+foreach(array_reverse($files) as $value){
     if(substr($value,-4) == ".txt"){
         echo "\n<p id = \"".$value."\" class = \"textelement\">\n".file_get_contents("textfeed/".$value)."\n</p>\n";
     }
@@ -55,7 +55,12 @@ foreach($files as $value){
 ?></div>
 <table id = "linktable">
     <tr>
-        <td><a href = "editor.php">editor.php</a></td>
+        <td><a href = "editor.php">
+            <img src = "../mapicons/editor.svg">
+        </a></td>
+        <td><a href = "index.php">
+            <img src = "../mapicons/mapfactory.svg">
+        </a></td>
     </tr>
 </table>
 
@@ -122,6 +127,24 @@ document.getElementById("wordsinput").onchange = function(){
     }
     MathJax.Hub.Typeset();//tell Mathjax to update the math
     this.value = "";
+    
+
+    
+    var newimg = document.createElement("img");
+    newimg.src = "../mapicons/deletex.svg";
+    newp.appendChild(newimg);
+    newimg.className= "button";
+    newimg.alt = "text" + timestamp + ".txt";
+    newimg.style.width = "30px";
+    newimg.onclick = function(){
+        textname = "textfeed/" + this.alt;
+        var httpc = new XMLHttpRequest();
+        var url = "deletefile.php";         
+        httpc.open("POST", url, true);
+        httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+        httpc.send("filename=" + textname);//send text to filesaver.php
+        document.getElementById("scrolldiv").removeChild(this.parentElement);
+    }
 }
 
 document.getElementById("wordsinput").onkeydown = function(e) {
@@ -173,6 +196,9 @@ document.getElementById("wordsinput").onkeydown = function(e) {
         position:absolute;
         right:10px;
         top:10px;
+    }
+    #linktable img{
+        width:80px;
     }
     #scrolldiv{
         position:absolute;
