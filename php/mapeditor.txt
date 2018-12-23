@@ -37,6 +37,7 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
     <tr id = "toprow">
         <td>href</td>
         <td>src</td>
+        <td>text</td>
         <td>x</td>
         <td>y</td>
         <td>w</td>
@@ -82,12 +83,23 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
         newinput.value = map[index].href;
         newtd.appendChild(newinput);
         newtr.appendChild(newtd);
+        
         var newtd = document.createElement("TD");
         var newinput = document.createElement("INPUT");
         newinput.className = "srcinput";
         newinput.value = map[index].src;
         newtd.appendChild(newinput);
         newtr.appendChild(newtd);
+
+        var newtd = document.createElement("TD");
+        var newinput = document.createElement("INPUT");
+        newinput.className = "textinput";
+        if(map[index].text != undefined){
+            newinput.value = map[index].text;
+        }
+        newtd.appendChild(newinput);
+        newtr.appendChild(newtd);        
+        
         var newtd = document.createElement("TD");
         var newinput = document.createElement("INPUT");
         newinput.className = "xinput";
@@ -193,10 +205,11 @@ document.getElementById("savebutton").onclick = function(){
         var localjson = {};
         localjson.href = localinputs[0].value;
         localjson.src = localinputs[1].value;
-        localjson.x = parseFloat(localinputs[2].value);
-        localjson.y = parseFloat(localinputs[3].value);
-        localjson.w = parseFloat(localinputs[4].value);
-        localjson.angle = parseFloat(localinputs[5].value);
+        localjson.text = localinputs[2].value;
+        localjson.x = parseFloat(localinputs[3].value);
+        localjson.y = parseFloat(localinputs[4].value);
+        localjson.w = parseFloat(localinputs[5].value);
+        localjson.angle = parseFloat(localinputs[6].value);
         map.push(localjson);
     }
     savemap();

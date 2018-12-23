@@ -2,14 +2,16 @@
     {
         "href": "index.php?path=maps/watershed.txt",
         "src": "http://localhost:8000/mapicons/watershed.svg",
-        "x": 0.5211667379831694,
-        "y": 0.24437312794180574,
+        "text": "",
+        "x": 0.569412352018257,
+        "y": 0.24949008700613323,
         "w": 0.15774853801169592,
         "angle": 0
     },
     {
         "href": "index.php?path=maps/street.txt",
         "src": "http://localhost:8000/mapicons/street.svg",
+        "text": "",
         "x": 0.24234060761660248,
         "y": 0.264384538582228,
         "w": 0.20087719298245615,
@@ -18,9 +20,19 @@
     {
         "href": "index.php?path=maps/factory.txt",
         "src": "http://localhost:8000/mapicons/mapfactory.svg",
+        "text": "",
         "x": 0.4026850663243475,
         "y": 0.11212737127371275,
         "w": 0.1489766081871345,
+        "angle": 0
+    },
+    {
+        "href": "",
+        "src": "",
+        "text": "$\\alpha$",
+        "x": 0.31070817287120234,
+        "y": 0.2770253886749394,
+        "w": 0.44502923976608183,
         "angle": 0
     }
 ]

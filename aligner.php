@@ -12,6 +12,17 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
 <!--Stop Google:-->
 <META NAME="robots" CONTENT="noindex,nofollow">
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+	MathJax.Hub.Config({
+		tex2jax: {
+		inlineMath: [['$','$'], ['\\(','\\)']],
+		processEscapes: true,
+		processClass: "mathjax",
+        ignoreClass: "no-mathjax"
+		}
+	});//			MathJax.Hub.Typeset();//tell Mathjax to update the math
+</script>
 </head>
 <body>
 <div id = "pathdiv" style = "display:none"><?php
@@ -50,15 +61,32 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
     map = JSON.parse(document.getElementById("datadiv").innerHTML);
     W = innerWidth;
     for(var index = 0;index < map.length;index++){
-        var newimg = document.createElement("IMG");
-        newimg.id = "i" + index.toString();
-        newimg.className = "boximg";
-        document.getElementById("page").appendChild(newimg);
-        newimg.src = map[index].src;
-        newimg.style.left = (map[index].x*W).toString() + "px";
-        newimg.style.top = (map[index].y*W).toString() + "px";
-        newimg.style.width = (map[index].w*W).toString() + "px";
-        newimg.style.transform = "rotate(" + map[index].angle.toString() + "deg)";
+        if(map[index].src.length > 0){
+            var newimg = document.createElement("IMG");
+            newimg.id = "i" + index.toString();
+            newimg.className = "boximg";
+            document.getElementById("page").appendChild(newimg);
+            newimg.src = map[index].src;
+            newimg.style.left = (map[index].x*W).toString() + "px";
+            newimg.style.top = (map[index].y*W).toString() + "px";
+            newimg.style.width = (map[index].w*W).toString() + "px";
+            newimg.style.transform = "rotate(" + map[index].angle.toString() + "deg)";   
+        }
+        if(map[index].text != undefined && map[index].src.length == 0){
+            if(map[index].text.length > 1){
+                var newdiv = document.createElement("DIV");
+                newdiv.className = "boximg";
+                newdiv.style.borderTop = "solid";
+                newdiv.innerHTML = map[index].text;
+                newdiv.style.left = (map[index].x*W).toString() + "px";
+                newdiv.style.top = (map[index].y*W).toString() + "px";
+                newdiv.style.height = (map[index].w*W/map[index].text.length).toString() + "px";
+                newdiv.style.width = (map[index].w*W).toString() + "px";
+                newdiv.style.transform = "rotate(" + map[index].angle.toString() + "deg)";
+                document.getElementById("page").appendChild(newdiv);
+                newdiv.style.fontSize = (map[index].w*W/map[index].text.length).toString() + "px";
+            }
+        }
     }
     boxes = document.getElementById("page").getElementsByClassName("boximg");
     mapIndex = 0;
@@ -87,7 +115,12 @@ mc1.get('pan').set({ direction: Hammer.DIRECTION_ALL });
 mc1.on("panleft panright panup pandown tap press", function(ev) {
     boxes[mapIndex].style.width = (ev.deltaX + w*W).toString() + "px";
     map[mapIndex].w = (ev.deltaX + w*W)/W;
-    
+    if(map[mapIndex].text != undefined && map[mapIndex].src.length == 0){
+        if(map[mapIndex].text.length > 1){
+            boxes[mapIndex].style.height = (map[mapIndex].w*W/map[mapIndex].text.length).toString() + "px";
+            boxes[mapIndex].style.fontSize = (map[mapIndex].w*W/map[mapIndex].text.length).toString() + "px";
+        }
+    }
 });
 
 mc2 = new Hammer(document.getElementById("rotatebar"));

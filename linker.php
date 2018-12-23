@@ -150,6 +150,29 @@ foreach($files as $value){
 echo $listtext;
     
 ?></div>
+<div id = "textfeeddata" style = "display:none;" class = "no-mathjax"><?php
+
+$files = scandir(getcwd()."/textfeed");
+
+foreach(array_reverse($files) as $value){
+    if($value != "." && $value != ".."){
+        $listtext .= $value.",";
+        echo "\n<p>".file_get_contents("textfeed/".$value)."</p>\n";
+    }
+}
+
+$files = scandir(getcwd()."/scroll/textfeed");
+
+foreach(array_reverse($files) as $value){
+    if($value != "." && $value != ".."){
+        $listtext .= $value.",";
+        echo "\n<p>".file_get_contents("scroll/textfeed/".$value)."</p>\n";
+    }
+}
+
+    
+?></div>
+
 <a id = "factorylink" href = "index.php" style = "position:absolute;left:10px;top:10px"><img src = "mapicons/mapfactory.svg" style = "width:50px"></a>
 
 <div id = "linkscroll"></div>
@@ -162,10 +185,13 @@ echo $listtext;
         <td id = "savebutton"><img style = "width:100px" class = "button" src = "mapicons/linker.svg"/></td>
     </tr>
     <tr>
-        <td>imgurl:<td><input id = "imgurlinput"></td>
+        <td>imgurl:</td><td><input id = "imgurlinput"></td>
     </tr>
     <tr>
-        <td>href:<td><input id = "hrefinput"></td>
+        <td>href:</td><td><input id = "hrefinput"></td>
+    </tr>
+    <tr>
+        <td>text:</td><td><input id = "textinput"/></td>
     </tr>
 </table>
 
@@ -315,6 +341,9 @@ input{
         links.push("memefactory/index.php?path=memes/" + memes[index]);
     }
     
+
+    
+    
     for(var index = 0;index < links.length; index++){
         var newp = document.createElement("P");
         newp.innerHTML = links[index];
@@ -322,6 +351,7 @@ input{
         document.getElementById("linkscroll").appendChild(newp);
         newp.onclick = function(){
             document.getElementById("hrefinput").value = this.innerHTML;
+            document.getElementById("textinput").value = "";
         }
     }
     for(var index = 0;index < imgurls.length; index++){
@@ -332,7 +362,22 @@ input{
         newimg.onclick = function(){
             document.getElementById("imgurlinput").value = this.src;
             document.getElementById("mainimage").src = this.src;
+            document.getElementById("textinput").value = "";
         }
+    }
+    
+    texts = document.getElementById("textfeeddata").getElementsByTagName("p");
+    for(var index = 0;index < texts.length;index++){
+        var newp = document.createElement("P");
+        newp.innerHTML = texts[index].innerHTML;
+        newp.className = "button";
+        newp.onclick = function(){
+            document.getElementById("textinput").value = this.innerHTML;
+            document.getElementById("imgurlinput").value = "";
+            document.getElementById("mainimage").src = "";
+        }
+        document.getElementById("imagescroll").appendChild(newp);
+
     }
     
     w = parseInt(getComputedStyle(document.getElementById("page")).width);
@@ -346,7 +391,14 @@ input{
         newa.href = map[index].href;
         newimg.id = "i" + index.toString();
         document.getElementById("page").appendChild(newa);
+
         newimg.src = map[index].src;
+        if(map[index].text != undefined){
+            if(map[index].text.length > 0){
+                newimg.src = "mapicons/textfeed.svg";
+            }
+        }
+
         newa.style.left = (map[index].x*w).toString() + "px";
         newa.style.top = (map[index].y*w).toString() + "px";
         newa.style.width = (map[index].w*w).toString() + "px";
@@ -364,6 +416,7 @@ input{
         newjson.angle = 0;
         newjson.src = document.getElementById("imgurlinput").value;
         newjson.href = document.getElementById("hrefinput").value;
+        newjson.text = document.getElementById("textinput").value;
         map.push(newjson);
             var newimg = document.createElement("IMG");
         var newa = document.createElement("A");
@@ -373,7 +426,12 @@ input{
         newa.href = newjson.href;
         newimg.id = "i" + (map.length - 1).toString();
         document.getElementById("page").appendChild(newa);
-        newimg.src = newjson.src;
+        if(document.getElementById("textinput").value.length > 0){
+            newimg.src = "mapicons/textfeed.svg";
+        }
+        else{
+            newimg.src = newjson.src;
+        }
         newa.style.left = (newjson.x*w).toString() + "px";
         newa.style.top = (newjson.y*w).toString() + "px";
         newa.style.width = (newjson.w*w).toString() + "px";

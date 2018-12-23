@@ -47,7 +47,7 @@ EGO DEATH:
 <div id = "datadiv" style = "display:none" class = "no-mathjax"><?php
   
 $files = scandir(getcwd()."/textfeed");
-foreach(array_reverse ($files) as $value){
+foreach(array_reverse($files) as $value){
     if(substr($value,-4) == ".txt"){
         echo "\n<p id = \"".$value."\" class = \"textelement\">\n".file_get_contents("textfeed/".$value)."\n</p>\n";
     }

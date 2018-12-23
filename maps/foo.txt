@@ -2,57 +2,28 @@
     {
         "href": "",
         "src": "http://localhost:8000/uploadimages/image1.png",
-        "x": 0.4422514619883041,
-        "y": 0.18421052631578946,
+        "text": "",
+        "x": 0.2236842105263158,
+        "y": 0.18128654970760233,
         "w": 0.181140350877193,
         "angle": 0
     },
     {
         "href": "",
         "src": "http://localhost:8000/symbol/svg/svg1541363728.svg",
+        "text": "",
         "x": 0.38152545999144205,
         "y": 0.17714662672942516,
         "w": 0.25277777777777777,
         "angle": 0
     },
     {
-        "href": "http://localhost:8000/scroll/index.php?filename=foo.txt",
-        "src": "",
-        "x": 0.14692982456140352,
-        "y": 0.18494152046783627,
-        "w": 0.22865497076023392,
-        "angle": -1.2566370614359101
-    },
-    {
-        "href": "http://geometron.000webhostapp.com/scroll/index.php?filename=plasticshapes.txt",
-        "src": "",
-        "x": 0.6365853658536585,
-        "y": 0.2304878048780488,
-        "w": 0.21549707602339183,
-        "angle": 0
-    },
-    {
-        "href": "http://lafelabs.org/factory/",
-        "src": "",
-        "x": 0.43564042219369564,
-        "y": 0.43279132791327907,
-        "w": 0.1358187134502924,
-        "angle": 0
-    },
-    {
-        "href": "http://geometron.000webhostapp.com/index.php?path=maps/thingfactory.txt",
-        "src": "",
-        "x": 0.5121951219512195,
-        "y": 0.020731707317073172,
-        "w": 0.1,
-        "angle": 0
-    },
-    {
-        "w": 0.1,
-        "x": 0.2741228070175439,
-        "y": 0.38742690058479534,
+        "w": 0.2440058479532164,
+        "x": 0.4444444444444444,
+        "y": 0.22807017543859648,
         "angle": 0,
         "src": "",
-        "href": "http://localhost:8000/index.php?path=maps/factory.txt"
+        "href": "",
+        "text": "$\\alpha$"
     }
 ]

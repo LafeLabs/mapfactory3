@@ -140,6 +140,20 @@ maphttparray = [];
 maphttpindex = 0;
 httpindex = 0;    
 for(var index = 0;index < map.length;index++){
+    if(map[index].text != undefined){
+        if(map[index].text.length > 0){
+            var newdiv = document.createElement("DIV");
+            newdiv.className = "textonlydiv";
+            newdiv.innerHTML = map[index].text;
+            newdiv.style.left = (map[index].x*innerWidth).toString() + "px";
+            newdiv.style.top = (map[index].y*innerWidth).toString() + "px";
+            newdiv.style.width = (map[index].w*innerWidth).toString() + "px";
+            newdiv.style.fontSize = (map[index].w*innerWidth/map[index].text.length).toString() + "px";
+            newdiv.style.height = (map[index].w*innerWidth/map[index].text.length).toString() + "px";
+            newdiv.style.transform = "rotate(" + map[index].angle.toString() + "deg)";
+            document.getElementById("page").appendChild(newdiv);
+        }
+    }
     if(map[index].href.length > 0 && map[index].src !=undefined){
         var newimg = document.createElement("IMG");
         var newa = document.createElement("A");
@@ -368,5 +382,8 @@ document.getElementById("hidebutton").onclick = function(){
      top:0px;
      width:100%;
  }
-
+ .textonlydiv{
+     position:absolute;
+     
+ }
 </style>
