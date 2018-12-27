@@ -87,6 +87,19 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
                 newdiv.style.fontSize = (map[index].w*W/map[index].text.length).toString() + "px";
             }
         }
+        if(map[index].src.length == 0){
+            if(map[index].href.includes("scroll/index.php?filename=")){
+                var newimg = document.createElement("IMG");
+                newimg.id = "i" + index.toString();
+                newimg.className = "boximg";
+                document.getElementById("page").appendChild(newimg);
+                newimg.src = "mapicons/scroll.svg";
+                newimg.style.left = (map[index].x*W).toString() + "px";
+                newimg.style.top = (map[index].y*W).toString() + "px";
+                newimg.style.width = (map[index].w*W).toString() + "px";
+                newimg.style.transform = "rotate(" + map[index].angle.toString() + "deg)";
+            }
+        }
     }
     boxes = document.getElementById("page").getElementsByClassName("boximg");
     mapIndex = 0;

@@ -34,5 +34,14 @@
         "y": 0.2770253886749394,
         "w": 0.44502923976608183,
         "angle": 0
+    },
+    {
+        "w": 0.1,
+        "x": 0.004878048780487805,
+        "y": 0.24024390243902438,
+        "angle": 65.97344572538566,
+        "src": "http://localhost:8000/mapicons/downarrow.svg",
+        "href": "index.php?path=maps/foo.txt",
+        "text": ""
     }
 ]
