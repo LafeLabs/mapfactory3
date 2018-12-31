@@ -325,6 +325,9 @@ document.getElementById("hidebutton").onclick = function(){
 }
 </script>
 <style>
+body{
+    font-family:Helvetica;
+}
 #linktable{
     position:absolute;
     left:0px;
