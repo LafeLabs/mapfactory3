@@ -208,7 +208,6 @@ for(var index = 0;index < map.length;index++){
         if(map[index].href.includes("scroll/index.php?filename=")){
             var newa = document.createElement("A");
             newa.className = "linkboxbox";
-            newa.appendChild(newimg);
             newa.id = "a" + index.toString();
             newa.href = map[index].href;
             document.getElementById("page").appendChild(newa);
