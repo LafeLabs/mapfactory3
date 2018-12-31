@@ -140,21 +140,36 @@ maphttparray = [];
 maphttpindex = 0;
 httpindex = 0;    
 for(var index = 0;index < map.length;index++){
-    if(map[index].text != undefined){
-        if(map[index].text.length > 0){
-            var newdiv = document.createElement("DIV");
-            newdiv.className = "textonlydiv";
-            newdiv.innerHTML = map[index].text;
-            newdiv.style.left = (map[index].x*innerWidth).toString() + "px";
-            newdiv.style.top = (map[index].y*innerWidth).toString() + "px";
-            newdiv.style.width = (map[index].w*innerWidth).toString() + "px";
-            newdiv.style.fontSize = (map[index].w*innerWidth/map[index].text.length).toString() + "px";
-            newdiv.style.height = (map[index].w*innerWidth/map[index].text.length).toString() + "px";
-            newdiv.style.transform = "rotate(" + map[index].angle.toString() + "deg)";
-            document.getElementById("page").appendChild(newdiv);
-        }
+    if(map[index].text == undefined){
+        map[index].text = "";
     }
-    if(map[index].href.length > 0 && map[index].src !=undefined){
+    if(map[index].src == undefined){
+        map[index].src = "";
+    }
+    if(map[index].href == undefined){
+        map[index].href = "";
+    }
+    
+    if(map[index].text.length > 0 && map[index].src.length == 0){
+        var newdiv = document.createElement("DIV");
+        newdiv.className = "textonlydiv";
+        if(map[index].href.length > 0){
+            newdiv.innerHTML = "<a href = \"" + map[index].href + "\">" + map[index].text + "</a>";
+        }
+        else{
+            newdiv.innerHTML = map[index].text;
+        }
+        
+        newdiv.style.left = (map[index].x*innerWidth).toString() + "px";
+        newdiv.style.top = (map[index].y*innerWidth).toString() + "px";
+        newdiv.style.width = (map[index].w*innerWidth).toString() + "px";
+        newdiv.style.fontSize = (map[index].w*innerWidth/map[index].text.length).toString() + "px";
+        newdiv.style.height = (map[index].w*innerWidth/map[index].text.length).toString() + "px";
+        newdiv.style.transform = "rotate(" + map[index].angle.toString() + "deg)";
+        document.getElementById("page").appendChild(newdiv);
+    }
+    
+    if(map[index].href.length > 0 && map[index].src.length > 0){
         var newimg = document.createElement("IMG");
         var newa = document.createElement("A");
         newa.className = "linkbox";
@@ -173,8 +188,9 @@ for(var index = 0;index < map.length;index++){
             this.parentElement.style.height = (this.height).toString() + "px";
         }   
     }
-    if((map[index].href.length==0 || map[index].href == undefined) && map[index].src !=undefined){
+    if(map[index].href.length == 0 && map[index].src.length > 0 && map[index].text.length == 0){
         //image only, no link = meme element, src exists href doesn't
+        //also text length == 0
         var newimg = document.createElement("IMG");
         newimg.id = "i" + index.toString();
         newimg.className = "boximg";
@@ -185,8 +201,8 @@ for(var index = 0;index < map.length;index++){
         newimg.style.width = (map[index].w*innerWidth).toString() + "px";
         newimg.style.transform = "rotate(" + map[index].angle.toString() + "deg)";
     }
-    if((map[index].src.length == 0 || map[index].src == undefined) && map[index].href !=undefined){
-        //link only, no image, href exists src doesn't 
+    if(map[index].src.length == 0 && map[index].href.length > 0 && map[index].text.length == 0){
+        //link only, no image, href exists src doesn't, also no text 
         //cases are: is this a link to a scroll, link to a map, or other? if link to scroll, put in scroll div, if link to map, get first image in that map, otherwise put link with words which are the last bit after the last "/""
         
         if(map[index].href.includes("scroll/index.php?filename=")){

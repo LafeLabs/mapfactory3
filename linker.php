@@ -351,7 +351,6 @@ input{
         document.getElementById("linkscroll").appendChild(newp);
         newp.onclick = function(){
             document.getElementById("hrefinput").value = this.innerHTML;
-            document.getElementById("textinput").value = "";
         }
     }
     for(var index = 0;index < imgurls.length; index++){
@@ -362,7 +361,6 @@ input{
         newimg.onclick = function(){
             document.getElementById("imgurlinput").value = this.src;
             document.getElementById("mainimage").src = this.src;
-            document.getElementById("textinput").value = "";
         }
     }
     
