@@ -34,6 +34,7 @@ EGO DEATH:
     <a href = "imagefeed.php">imagefeed.php</a>
     <a href = "mapeditor.php">mapeditor.php</a>
     <a href = "duality.php">duality.php</a>
+    <a href = "texteditor.php">texteditor.php</a>
 
     <a href = "dnagenerator.php">dnagenerator.php</a>
 </div>
@@ -44,6 +45,7 @@ EGO DEATH:
     <div class = "html file">html/index.txt</div>
     <div class = "php file">php/index.txt</div>
     <div class = "php file">php/editor.txt</div>
+    <div class = "php file">php/texteditor.txt</div>
     <div class = "php file">php/replicator.txt</div>
     <div class = "php file">php/filesaver.txt</div>
     <div class = "php file">php/fileloader.txt</div>

@@ -19,6 +19,7 @@
 			"newmapfactory.txt",
 			"replicator.txt",
 			"text2php.txt",
+			"texteditor.txt",
 			"textfeed.txt",
 			"upload.txt",
 			"uploader.txt"

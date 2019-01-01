@@ -31,6 +31,8 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
 <a id = "factorylink" href = "index.php" style = "position:absolute;left:10px;top:10px;z-index:4"><img src = "mapicons/mapfactory.svg" style = "width:50px"></a>
 <img class = "button" src = "mapicons/gobutton.svg" id = "savebutton"/>
 <a id = "jsonlink"></a>
+<a id = "jsonlink2"></a>
+
 <div id = "tablescroll">
   <table id = "maintable">
     <thead>
@@ -62,11 +64,15 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
     
         document.getElementById("jsonlink").href = path;
         document.getElementById("jsonlink").innerHTML = path;
+        document.getElementById("jsonlink2").href = "texteditor.php?filename=" + path;
+        document.getElementById("jsonlink2").innerHTML = "texteditor.php?filename=" + path;
     }
     else{
         pathset = false;
         document.getElementById("jsonlink").href = "json/map.txt";
         document.getElementById("jsonlink").innerHTML = "json/map.txt";
+        document.getElementById("jsonlink2").href = "texteditor.php";
+        document.getElementById("jsonlink2").innerHTML = "texteditor.php";
     }
 
 
@@ -270,6 +276,11 @@ input{
     position:absolute;
     left:50%;
     top:0px;
+}
+#jsonlink2{
+    position:absolute;
+    left:50%;
+    top:1em;
 }
 </style>
 </body>
