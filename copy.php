@@ -40,11 +40,23 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
         After a minute or two you should see a link to "index.php".  Click on it.  You are now in your new instance of Watershed Factory.
     </li>
     <li>
+        If you don't have access to fancy GUI nonsense and are working from a shell command line using something like vi where copy paste are broken, you can type this php file in by hand to create a copy of replicator.php locally.  This file is called metareplicator.php.  You probably want to do something like 
+        <pre>
+            sudo vi metareplicator.php
+            php metareplicator.php
+        </pre>
+        Here it is:
+        <textarea id = "metareplicatorcode"></textarea>
+    </li>
+    <li>
         DO NOT PUT ANYTHING SECRET, PROPRIETARY, PERSONAL, CLASSIFIED, PRIVATE OR OF ANY MONETARY VALUE ON HERE!  This system is based on a "disposable server" model.  That is, on the assumption that the number of web servers is already greater than the number of human minds, and that each server can have thousands of instances of software like this, meaning the number of instances is many thousands per human mind for all of humanity.  This changes how we think of information and ultimately renders moot what is known as "cybersecurity".  However for the time being, as you have information which does need to be protected, keep it off this network or expect it to be copied and destroyed.  
     </li>
+    
 </ol>
+
+
      
- </div>
+</div>
 
 
 <script>
@@ -59,6 +71,17 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
     };
     httpc.open("GET", "fileloader.php?filename=" + currentFile, true);
     httpc.send();
+    
+    currentFile2 = "php/metareplicator.txt";
+    var httpc2 = new XMLHttpRequest();
+    httpc2.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            data = this.responseText;
+            document.getElementById("metareplicatorcode").value = data;
+        }
+    };
+    httpc2.open("GET", "fileloader.php?filename=" + currentFile2, true);
+    httpc2.send();
 
 </script>
 <style>
@@ -79,6 +102,13 @@ body{
     margin:auto;
     width:80%;
     height:35em;
+    font-family:courier;
+}
+#metareplicatorcode{
+    display:block;
+    margin:auto;
+    width:80%;
+    height:10em;
     font-family:courier;
 }
 

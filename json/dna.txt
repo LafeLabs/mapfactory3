@@ -16,6 +16,7 @@
 			"linkfeed.txt",
 			"mapeditor.txt",
 			"mapfeed.txt",
+			"metareplicator.txt",
 			"newmapfactory.txt",
 			"replicator.txt",
 			"text2php.txt",
