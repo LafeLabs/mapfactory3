@@ -46,6 +46,7 @@
 			"image.svg",
 			"markdown.svg",
 			"plot.svg",
+			"pngfeed.svg",
 			"style.svg",
 			"svgfeed.svg",
 			"tree.svg"
