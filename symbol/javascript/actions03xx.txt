@@ -369,4 +369,70 @@
         currentSVG += cpx2.toString() + "," + cpy2.toString() + " ";
         currentSVG += x2.toString() + "," + y2.toString() + "\" fill = \"none\" stroke-width = \"" + (ctx.lineWidth).toString() + "\" stroke = \"" + currentStroke + "\" />";		
     }
-    
+    if(localCommand == 0370){
+        xOne = x;
+        yOne = y;
+        thetaOne = theta;
+        sideOne = side;
+        thetaStepOne = thetaStep;
+        scaleFactorOne = scaleFactor;
+    }
+    if(localCommand == 0371){
+        x = xOne;
+        y = yOne;
+        theta = thetaOne;
+        side = sideOne;
+        thetaStep = thetaStepOne;
+        scaleFactor = scaleFactorOne;
+    }
+    if(localCommand == 0372){
+        xTwo = x;
+        yTwo = y;
+        thetaTwo = theta;
+        sideTwo = side;
+        thetaStepTwo = thetaStep;
+        scaleFactorTwo = scaleFactor;
+    }
+    if(localCommand == 0373){
+        x = xTwo;
+        y = yTwo;
+        theta = thetaTwo;
+        side = sideTwo;
+        thetaStep = thetaStepTwo;
+        scaleFactor = scaleFactorTwo;
+    }
+
+    if(localCommand == 0374){
+        xThree = x;
+        yThree = y;
+        thetaThree = theta;
+        sideThree = side;
+        thetaStepThree = thetaStep;
+        scaleFactorThree = scaleFactor;
+    }
+    if(localCommand == 0375){
+        x = xThree;
+        y = yThree;
+        theta = thetaThree;
+        side = sideThree;
+        thetaStep = thetaStepThree;
+        scaleFactor = scaleFactorThree;
+    }
+    if(localCommand == 0376){
+        xFour = x;
+        yFour = y;
+        thetaFour = theta;
+        sideFour = side;
+        thetaStepFour = thetaStep;
+        scaleFactorFour = scaleFactor;
+    }
+    if(localCommand == 0377){
+        x = xFour;
+        y = yFour;
+        theta = thetaFour;
+        side = sideFour;
+        thetaStep = thetaStepFour;
+        scaleFactor = scaleFactorFour;
+    }
+
+
