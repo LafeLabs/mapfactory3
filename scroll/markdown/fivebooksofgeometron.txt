@@ -1,0 +1,132 @@
+# The Five Books of Geometron
+
+## 1. Action Geometry
+ 
+### Shapes
+ - square
+ - equilateral triangle
+ - golden triangle
+ - golden gnomon
+ - isosceles right
+ - pieces of Seven
+ - hexagon
+ - octagon
+ - 5 pointed star
+ - 6 pointed star
+ 
+### Tools and Methods
+
+ - Plastic shapes/tiles
+ - compass and ruler of classical geometry
+ - strings, sticks, and chalk
+ - HDPE welded plastic
+ - carved stone/brick/tile etc
+ - working with cardboard: thin, thick, glue, tape, artBox
+ - skeletron
+ 
+
+### Solids
+
+ - tetrahedron
+ - octahedron
+ - dodecahedron
+ - cube
+ - icosahedron
+ - prism
+ - antiprism
+ - pyramid
+
+## 2. Map Factory
+
+### Conceptual introduction
+
+### Tutorial of code
+
+### The maps
+
+1. Street: interstate, big road, small street, block, building, spot/camp, or public transit, trains or boat equiv
+2. Watershed: ocean, bay, major river, minor river, stream, drinking water, sewer
+3. Factory: what we make , what we use, what we need, what we can share, networks of actions which transform value in our environment
+4. Language/Geometron
+5. Hyphae/network
+
+### Physical Map Methods
+
+Action cards, laminated maps, painted stone markers of all sizes, caches at locations, urls and digital/analog crossover maps
+
+### Tour of code
+
+## 3. The Geometron Hypercube
+
+### concepts
+
+actions, symbols, underlying philosophy.  Structure, and arrangement of actions: two cubes, one is symbols and one is actions, each is a stack of tablets, each tablet broken into rows.
+
+### Examples and use
+
+The cursor, Hello, world in geometron, connections between action geometry and the actions in the web browser
+
+### Further tutorial
+
+Go through the whole tablet, udnerstand the structure, make useful things, work flow to integrate into other software includig map
+
+### detailed tour of code
+
+full breakdown of code, how to add to it, how to rewrite it in other languages, how to extend it
+
+### Geometron in 3d and beyond
+
+### Geometron for machine control(for trash robot)
+
+## 4. Trash Robot
+
+### summary: 
+the five elements, purpose of the system, how this leads to the technological complete set, how to view this system as a quasi "business" but totally decentralized, concept of horizontal manufacturing and how that scales.
+
+### Build the circuits, test them:
+
+5 circuits: buttons, shield, dual h bridge, relaxation oscillator, gosp board
+
+### Techniques
+
+cardboard and glue, skeletron, boards, upcycling, soldering, desoldering, heat guns, solder without irons or heat guns, pcb upcyling
+
+### Assembly plans for each machine
+
+### Details of Software Control
+
+How Geometron changes how we can relate to machine automation control.  How to do "dumb" GOSP control.  How to do standard GOSP.  How to write your own GOSP protocols.  How to use Geometron to build web based programming for custom applications without any non geometric code.
+
+### Applications
+
+imaging, pumps, cooling, heating, additive mfg, transformative mfg with electrochemistry, chipping at stone, data storage, art, circuit editing, fabrication of active circuits, editing of upcycled circuits, generic vibration and rotation tools, novel electrical and electrochemical devices fabricated with xyzmu, automation on the fly for existing heavy and light industries
+
+### Replication
+
+action cards, maps, this book
+
+### the way forward
+
+how to get from this set to a technologically complete set, replacing the 
+
+
+## 5. Network Cosmology
+
+### Introduction
+
+seizing "cosmology" back from the reductionists and number worshipers. 
+
+### Post Capitalism: What that means
+
+death of binary, transition from number to geometry and topology. Impossibility of total of all money on earth to satisfy needs.  Imposiblity of solving that problem with central bank printing presses.  The absurdity of bitcoin.
+
+### Laws of Geometron and associated Path
+
+
+### Way Geometron and Existing Ideologies and Religions
+
+### How to live
+
+We help to spread language tools which build technology tools which build social tools which allow people to create their own civilizations from scratch over and over building a much more information rich Universe to live in for all human minds, creating a world where all are cared for and where adventure is infinite and ever expanding.
+
+
