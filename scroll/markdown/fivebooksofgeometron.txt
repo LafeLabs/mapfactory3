@@ -20,6 +20,7 @@
  - compass and ruler of classical geometry
  - strings, sticks, and chalk
  - HDPE welded plastic
+ - aluminum sheet from cans
  - carved stone/brick/tile etc
  - working with cardboard: thin, thick, glue, tape, artBox
  - skeletron
@@ -107,7 +108,7 @@ action cards, maps, this book
 
 ### the way forward
 
-how to get from this set to a technologically complete set, replacing the 
+How to get from this set to a technologically complete set, replacing the components with fully upcycled components. Building out the various systems: aluminum oxide systems, housing with a/c and heat, power generation and storage, nanoscale fabrication, micro, mm scale fab, full path from here to complete set.  This is where we have to point to the next Great Works: alchemy, etc.
 
 
 ## 5. Network Cosmology
