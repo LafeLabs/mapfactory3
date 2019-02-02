@@ -7,7 +7,7 @@
     "line1": 5,
     "color2": "red",
     "fill2": "red",
-    "line2": 2,
+    "line2": 1,
     "color3": "#FF7900",
     "fill3": "#FF7900",
     "line3": 2,
@@ -19,7 +19,7 @@
     "line5": 2,
     "color6": "blue",
     "fill6": "blue",
-    "line6": 2,
+    "line6": 1,
     "color7": "purple",
     "fill7": "purple",
     "line7": 2

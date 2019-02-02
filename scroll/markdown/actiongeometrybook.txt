@@ -1,0 +1,113 @@
+# Action Geometry: The Book
+
+
+## 1. The Shapes:
+
+- equilateral triangle 
+- square
+- golden triangle
+- golden gnomon
+- right ososceles triangle
+- 30-60-90 triangle
+- 5 pointed star and pentagon
+- 6 pointed star and hexagon
+
+These all start with a replicator that has the shapes to trace into the initial physical book.  Trace, color.  
+
+## 2. Classical Constructions
+
+history, tools, methods, uses
+
+equilateral triangles, hexagons, 6 pointed stars, bisecting a segment, bisecting angle to get 30-60-90 triangles
+
+perpendicular lines, square
+
+golden ratio from square, golden triangle and gnomon from that, expanding and contracting from that
+
+Methods of making "sacred geometry" graphics with pen, points in varying density, how to make it pretty
+
+## 3. Platonic Solids
+
+basic facts, nets, stats, symbolism, history
+
+cutouts for printing from computer at arbitrary size, choosing the one you need, cutting out and laminating, using for tracing for fab
+
+how to make the models
+
+how to make a wall mount with glue and thick cardboard, fully completed wall hangable art based on platonic solids
+
+## 4. HDPE Dish Fabrication
+
+HDPE: the best thermoplastic for trash magic.  How to harvest and use it, tools to use, plans for the coin dish made from pentagons
+
+
+## 5. ArtBox
+
+tools, feedstock, plans, extensions, how to use rubber bands, applications, how to use in every day life, how to use for this system.
+
+## 6. Skeletron
+
+Tools, feedstock
+
+methods
+
+Exact plans for assembling and perfecting the tetrahedron-octahedron skeletron carrier with each edge as 1 anatomic cubit
+
+the skeletron pod of 3 cubit sticks, using a tree, etc in icosahedron configuration
+
+methods of no-drill skelectron for triangular "tent" shape structures
+
+discussion of scaling
+
+## 7. String and stick large scale geometry
+
+Tools, basic methods, general applications
+
+How to construct a parabola, ellipse
+
+chalk, mud, dirt, sand, what it's all for
+
+Specific plans for Golden Spiral as a general marker, maximal scale
+
+surveying with a straw and cardboard theotolite 
+
+## 8. Aluminum for optics
+
+Harvesting feedstock, dealing with hazards
+
+tools, methods, how to make safe with HDPE, 90 degree based system, 60 degree system for light
+
+USB bike light
+
+giant parabolic reflector to set things on fire
+
+Other uses of aluminum; future work
+
+## 9.  Plastic Shapes
+
+Feedstock, tools, methods, applications.  1-3 mm thick ABS plastic, cut with box cutters, scored on minor lines, painted with paint pens, ground smooth, given away en masse
+
+## 10. Sewing; Binding
+
+First, tools, and fabrication of bag for carrying shapes and distributing them to people
+
+Then, how to make THIS BOOK, what that can be used for, the power of the self replicating blank book.  Minimal BOOK OF SHAPES. Methods for minimalist "Sacred Geometry"
+
+## 11. Terminal: Relationship to Map Factory
+
+Web page replication, terminal construction, how to use, how to expand, how to replicate it all, connection to MAP FACTORY, which has the action cards, markers, maps, scrolls.  
+
+## 12. Replication
+
+How to print this book, bind it, distribute it, how to get it printed in bulk and "sell" with zero added labor.  Cultural directives to spread the Geometry.
+
+
+
+
+
+
+
+
+
+
+
