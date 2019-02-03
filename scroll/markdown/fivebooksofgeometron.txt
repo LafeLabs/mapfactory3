@@ -1,7 +1,9 @@
 # The Five Books of Geometron
 
 ## 1. Action Geometry
- 
+
+[link to scroll](index.php?filename=actiongeometrybook.txt) 
+
 ### Shapes
  - square
  - equilateral triangle
@@ -38,6 +40,8 @@
  - pyramid
 
 ## 2. Map Factory
+
+[link to scroll](index.php?filename=mapfactory.txt)
 
 ### Conceptual introduction
 

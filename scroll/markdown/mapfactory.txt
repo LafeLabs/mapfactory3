@@ -1,0 +1,86 @@
+[back to 5 books](index.php?filename=fivebooksofgeometron.txt)
+
+# Map Factory
+
+## 1. What is a map?  
+
+A map is a combination of geometric and topological information in a human readable form.  
+
+We build maps from multiple media, and link them together both conceptually and physically.
+
+Maps fall into several main categories:
+
+- Laminated paper maps
+- World Wide Web maps
+- The World, one to one Action Map
+
+The World is the literal space we physically inhabit, on which we place a layer of media which changes how we perceive that world.  
+
+## 2. The Media Feeds of Literal Space
+
+- marker stones: mark nodal points based on street, watershed, factory
+- action cards
+- signs, beacons, towers
+- skeletron trash pods
+- server nodes with raspberry pi
+- terminal node with geometron keyboard, ArtBox, rubber band, android phone
+- books
+
+## 3. The Map Web
+
+- basic format: what it is, position, rotation, scale, link/image
+- links
+- text
+- symbols
+- photos and screenshots
+- curve
+- meme construction, generalized memes
+- structure of code, use for other applications
+- a note on "security"
+- virtual reality
+- quantum cyberspace
+
+## 4. Building the Laminated Maps
+
+- methods involving various online tools, google, google maps, wikipedia
+- pacing out buildings manually
+- creative use of smart phones: gps, useful information etc
+- units: some history and methods, a calculator, uncertainties, physics of gps etc.
+- what maps we need, how to make them
+- how to carry and use the maps, with small markers, gamification
+
+## 5. The Map of Maps
+
+Language, Factory, Watershed, Street, Hyphae, 
+
+## 6. The Watershed
+
+- concept, change of focus
+- start small and work up to big
+- move from big down to small, note branches and overall structure
+- Nodes: confluence
+- Symbolism
+- 
+
+## 7. The Street
+
+- Philosophy: Hodos and Dao, why Street matters
+- Start big, move small, go big again
+- Interstates, trucking, flow of goods as non political entity
+
+
+## 8. The Building/block/corner/camp
+
+- here we are.  Where are we?
+- The Strip Mall
+- The Truck Stop
+- The Marina
+- The Enclosed Mall
+- The Factory
+- The Temple/Church
+- The Park
+- The Trash Magic Camp
+
+
+
+
