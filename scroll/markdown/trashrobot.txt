@@ -1,0 +1,53 @@
+[link back to 5 books](index.php?filename=fivebooksofgeometron.txt)
+
+# Book of Trash Robot
+
+Self replicating automation
+
+## Five elements:
+
+1. structure: skeletron, thick cardboard,  sticks with added hardware, simple woodworking from broken shipping pallets
+2. boards: see the five boards
+3. off the shelf parts, arduino, usb,batteries etc, 
+4. component electronics: mostly orders from digikey and samtec
+5. upcycled/scavenged materials: motors, components, buttons, switches, pcb's, eventually *everything* including transistors and microprocessors
+
+
+## five boards:
+
+1. Dual H bridge
+2. 8 button board
+3. GOSP optical pickup board
+4. Relaxation oscillator with audio output and knobs
+5. Generic UNO Shield with many applications
+
+
+## The machines
+
+
+- simple upcycled motor and power supply with knob and buttons control
+- same but with stepper motor
+- simple manual control xy DC motor bang boom config
+- same with steppers
+- xyz dc, steppers
+- how to program, geometron, GOSP system, how to manage the computer side
+- specific xyz for optical stages with small motion in z direction, how to use that for things
+- relaxation oscillator for audio feedback of electrochemical interaction, integration into xyz stepper from optical stages
+- basic vibration motor, large, for smashing/chipping etc
+- various tpyes of vibration motor, of various sizes
+- rotational motor with trash coils
+- coil winding machine
+- rock polishing machine
+- rock or ceramic/brick  or wood chipping/carving machine
+- heated tool with feedback on xyz control for editing plastic, as well as electrochemistry
+- tribo-electric generator for high voltages from rotation
+- water pump
+- air pump
+- vacuum pump
+- Trash Magic stick with light, terminal, server, batteries, etc, 
+- pressure sensor, temperature sensor, gesture sensor, 
+
+how to build it all
+
+where to go from here
+

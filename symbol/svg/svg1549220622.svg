@@ -10,7 +10,7 @@
     "y0": 419,
     "x0rel": 0,
     "y0rel": 0,
-    "glyph": "0306,0335,0201,0335,0335,0201,0335,0201,0335,0201,0335,0201,0335,0201,0335,0201,0335,0333,0335,0335,0342,0334,0334,0342,",
+    "glyph": "0321,0306,0335,0201,0335,0335,0201,0335,0201,0335,0201,0335,0201,0335,0201,0335,0201,0335,0333,0335,0335,0342,0334,0334,0342,",
     "table": [
         "0220:0333,0200,0332,0336,0333,0337,0326,0342,0336,0330,0332,0335,0337,0342,0336,0334,0331,0337,0320,0210,",
         "0221:0220,0220,0220,0220,0220,0220,0220,0220,0211,0211,0211,0211,0211,0211,0211,0211,",
@@ -53,13 +53,13 @@
 }
 </json>
 -->
-    <line x1="125" y1="125" x2="212" y2="75" style="stroke:black;stroke-width:1" />
-    <line x1="212" y1="75" x2="212" y2="175" style="stroke:black;stroke-width:1" />
-    <line x1="212" y1="175" x2="125" y2="225" style="stroke:black;stroke-width:1" />
-    <line x1="125" y1="225" x2="38" y2="175" style="stroke:black;stroke-width:1" />
-    <line x1="38" y1="175" x2="38" y2="75" style="stroke:black;stroke-width:1" />
-    <line x1="38" y1="75" x2="125" y2="25" style="stroke:black;stroke-width:1" />
-    <line x1="125" y1="25" x2="212" y2="75" style="stroke:black;stroke-width:1" />
-    <line x1="125" y1="125" x2="38" y2="75" style="stroke:black;stroke-width:1" />
-    <line x1="125" y1="125" x2="125" y2="225" style="stroke:black;stroke-width:1" />
+    <line x1="125" y1="125" x2="212" y2="75" style="stroke:black;stroke-width:5" />
+    <line x1="212" y1="75" x2="212" y2="175" style="stroke:black;stroke-width:5" />
+    <line x1="212" y1="175" x2="125" y2="225" style="stroke:black;stroke-width:5" />
+    <line x1="125" y1="225" x2="38" y2="175" style="stroke:black;stroke-width:5" />
+    <line x1="38" y1="175" x2="38" y2="75" style="stroke:black;stroke-width:5" />
+    <line x1="38" y1="75" x2="125" y2="25" style="stroke:black;stroke-width:5" />
+    <line x1="125" y1="25" x2="212" y2="75" style="stroke:black;stroke-width:5" />
+    <line x1="125" y1="125" x2="38" y2="75" style="stroke:black;stroke-width:5" />
+    <line x1="125" y1="125" x2="125" y2="225" style="stroke:black;stroke-width:5" />
 </svg>

@@ -1,2 +1,49 @@
-# Introduction to Geometron
+[link up to 5 books](index.php?filename=fivebooksofgeometron.txt)
+
+# Geometron Hypercube
+
+## 1. Introduction
+
+The Geometron Hypercube is a virtual machine.  That is, it is a machine which exists entirely in a conceptual space as we imagine it with cartoons and artistic renderings as well as in the imaginary space created by computer code.  This machine carries out geometric actions to create symbols.  More importantly it creates *systems to make symbols*, or what we might call "symbol factories".  
+
+The ability to create symbols and systems of new symbols is one of the greatest powers in our networked societies.  If we observe the flow of  information and power in society, we see infographics on PowerPoint slides, brand identities built up of whole graphical languages, and the endless sea of icons which we use to navigate around online.  We also see in the physical world a mirroring of this: signs use simple symbolic brands to link from a road to a hamburger restaurant or gas station.  Simple graphical languages we don't ever remember even learning tell us when we're on a Interstate highway, a US Route or a local street.  
+
+positions in discrete space.  Each position links to other positions.  Taken together this builds a language of symbols and actions, which can control machines, particularly the Web Browser but it's more general than that.  
+
+go over the cursor, what the Machine actually does, how it bridges the gap between analog and digital, will be used with robotics, as well as in browser, and eventually in custom bottom-up hardware which replaces existing "computers" with geometron systems
+
+## 2. Quickstart Guide to Software
+
+### Hello, world
+
+### shapes of Action Geometry
+
+### Symbols to build a language
+
+### example with arrows
+
+
+## 3. Structure of the Hypercube
+
+Discussion of base 8, the 8x8x8 cubes, addresses in space, how base 8 fits in with other number systems.
+
+- Symbol and Action Cubes(0xxx and 01xxx)
+- Tablets
+- Rows
+- Root Magic
+- Keyboard
+- Font
+- Symbols
+- Discrete Geometric Actions
+- links, images, 3d shapes or other types of abstract shape, 3d actions and beyond
+
+## 4. The Code
+
+Code structure, the five elements of Geometron Code
+
+
+## 5. Beyond the Browser
+
+- Geometron 3d
+- Quantum Virtual Reality, 
 

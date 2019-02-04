@@ -7,10 +7,10 @@
     "svgheight": 250,
     "unit": 100,
     "x0": 684,
-    "y0": 419,
+    "y0": 469,
     "x0rel": 0,
-    "y0rel": 0,
-    "glyph": "0306,0335,0201,0335,0335,0201,0335,0201,0335,0201,0335,0201,0335,0201,0335,0201,0335,0333,0335,0335,0342,0334,0334,0342,",
+    "y0rel": 50,
+    "glyph": "0321,0336,0336,0330,0337,0330,0332,0335,0337,0306,0201,0335,0335,0201,0335,0335,0201,0335,0201,0335,0335,0201,0201,0335,0335,0201,0201,0335,0335,0201,0331,0334,0350,0335,0312,0336,0313,0337,0201,0335,0335,0201,0335,0335,0201,0335,0335,0201,0335,0335,0201,0335,0335,0201,0335,0335,0335,0313,0336,0312,0337,0330,0334,0334,0334,0336,0342,0335,0337,0331,0334,0334,0334,0334,0334,0336,0342,0334,0334,0334,0334,0337,0334,0330,0335,0336,0342,",
     "table": [
         "0220:0333,0200,0332,0336,0333,0337,0326,0342,0336,0330,0332,0335,0337,0342,0336,0334,0331,0337,0320,0210,",
         "0221:0220,0220,0220,0220,0220,0220,0220,0220,0211,0211,0211,0211,0211,0211,0211,0211,",
@@ -53,13 +53,22 @@
 }
 </json>
 -->
-    <line x1="125" y1="125" x2="212" y2="75" style="stroke:black;stroke-width:1" />
-    <line x1="212" y1="75" x2="212" y2="175" style="stroke:black;stroke-width:1" />
-    <line x1="212" y1="175" x2="125" y2="225" style="stroke:black;stroke-width:1" />
-    <line x1="125" y1="225" x2="38" y2="175" style="stroke:black;stroke-width:1" />
-    <line x1="38" y1="175" x2="38" y2="75" style="stroke:black;stroke-width:1" />
-    <line x1="38" y1="75" x2="125" y2="25" style="stroke:black;stroke-width:1" />
-    <line x1="125" y1="25" x2="212" y2="75" style="stroke:black;stroke-width:1" />
-    <line x1="125" y1="125" x2="38" y2="75" style="stroke:black;stroke-width:1" />
-    <line x1="125" y1="125" x2="125" y2="225" style="stroke:black;stroke-width:1" />
+    <line x1="75" y1="100" x2="175" y2="100" style="stroke:black;stroke-width:5" />
+    <line x1="175" y1="100" x2="125" y2="187" style="stroke:black;stroke-width:5" />
+    <line x1="125" y1="187" x2="75" y2="100" style="stroke:black;stroke-width:5" />
+    <line x1="75" y1="100" x2="125" y2="13" style="stroke:black;stroke-width:5" />
+    <line x1="125" y1="13" x2="175" y2="100" style="stroke:black;stroke-width:5" />
+    <line x1="175" y1="100" x2="225" y2="187" style="stroke:black;stroke-width:5" />
+    <line x1="225" y1="187" x2="125" y2="187" style="stroke:black;stroke-width:5" />
+    <line x1="125" y1="187" x2="25" y2="187" style="stroke:black;stroke-width:5" />
+    <line x1="25" y1="187" x2="75" y2="100" style="stroke:black;stroke-width:5" />
+    <line x1="25" y1="187" x2="25" y2="71" style="stroke:black;stroke-width:5" />
+    <line x1="25" y1="71" x2="125" y2="13" style="stroke:black;stroke-width:5" />
+    <line x1="125" y1="13" x2="225" y2="71" style="stroke:black;stroke-width:5" />
+    <line x1="225" y1="71" x2="225" y2="187" style="stroke:black;stroke-width:5" />
+    <line x1="225" y1="187" x2="125" y2="244" style="stroke:black;stroke-width:5" />
+    <line x1="125" y1="244" x2="25" y2="187" style="stroke:black;stroke-width:5" />
+    <line x1="75" y1="100" x2="25" y2="71" style="stroke:black;stroke-width:5" />
+    <line x1="125" y1="187" x2="125" y2="244" style="stroke:black;stroke-width:5" />
+    <line x1="175" y1="100" x2="225" y2="71" style="stroke:black;stroke-width:5" />
 </svg>

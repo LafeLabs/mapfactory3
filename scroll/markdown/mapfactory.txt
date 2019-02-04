@@ -16,6 +16,19 @@ Maps fall into several main categories:
 
 The World is the literal space we physically inhabit, on which we place a layer of media which changes how we perceive that world.  
 
+What might a map be?
+
+- a place, literally
+- a place, topologically(like a subway map)
+- a dictionary, mapping symbols to other symbols via meaning
+- maps of buildings
+- maps of streets
+- maps of waterways
+- maps of flows of goods through space, literal, or topological
+- maps of perception and of the space of our physical bodies and their direct environments, both literal and figurative
+
+Maps are language.  Maps are also meta language, a system for creating languages.  
+
 ## 2. The Media Feeds of Literal Space
 
 - marker stones: mark nodal points based on street, watershed, factory
@@ -60,7 +73,7 @@ Language, Factory, Watershed, Street, Hyphae,
 - move from big down to small, note branches and overall structure
 - Nodes: confluence
 - Symbolism
-- 
+
 
 ## 7. The Street
 

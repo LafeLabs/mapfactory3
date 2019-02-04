@@ -63,6 +63,8 @@ Action cards, laminated maps, painted stone markers of all sizes, caches at loca
 
 ## 3. The Geometron Hypercube
 
+[link to scroll](index.php?filename=geometron.txt)
+
 ### concepts
 
 actions, symbols, underlying philosophy.  Structure, and arrangement of actions: two cubes, one is symbols and one is actions, each is a stack of tablets, each tablet broken into rows.
@@ -84,6 +86,8 @@ full breakdown of code, how to add to it, how to rewrite it in other languages, 
 ### Geometron for machine control(for trash robot)
 
 ## 4. Trash Robot
+
+[link to scroll](index.php?filename=trashrobot.txt)
 
 ### summary: 
 the five elements, purpose of the system, how this leads to the technological complete set, how to view this system as a quasi "business" but totally decentralized, concept of horizontal manufacturing and how that scales.
