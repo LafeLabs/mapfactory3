@@ -51,3 +51,32 @@ how to build it all
 
 where to go from here
 
+
+### summary: 
+the five elements, purpose of the system, how this leads to the technological complete set, how to view this system as a quasi "business" but totally decentralized, concept of horizontal manufacturing and how that scales.
+
+### Build the circuits, test them:
+
+5 circuits: buttons, shield, dual h bridge, relaxation oscillator, gosp board
+
+### Techniques
+
+cardboard and glue, skeletron, boards, upcycling, soldering, desoldering, heat guns, solder without irons or heat guns, pcb upcyling
+
+### Assembly plans for each machine
+
+### Details of Software Control
+
+How Geometron changes how we can relate to machine automation control.  How to do "dumb" GOSP control.  How to do standard GOSP.  How to write your own GOSP protocols.  How to use Geometron to build web based programming for custom applications without any non geometric code.
+
+### Applications
+
+imaging, pumps, cooling, heating, additive mfg, transformative mfg with electrochemistry, chipping at stone, data storage, art, circuit editing, fabrication of active circuits, editing of upcycled circuits, generic vibration and rotation tools, novel electrical and electrochemical devices fabricated with xyzmu, automation on the fly for existing heavy and light industries
+
+### Replication
+
+action cards, maps, this book
+
+### the way forward
+
+How to get from this set to a technologically complete set, replacing the components with fully upcycled components. Building out the various systems: aluminum oxide systems, housing with a/c and heat, power generation and storage, nanoscale fabrication, micro, mm scale fab, full path from here to complete set.  This is where we have to point to the next Great Works: alchemy, etc.

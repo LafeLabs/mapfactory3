@@ -23,6 +23,8 @@ product: book of shapes
 
 history, tools, methods, uses
 
+Draw your compass and ruler
+
 equilateral triangles, hexagons, 6 pointed stars, bisecting a segment, bisecting angle to get 30-60-90 triangles
 
 perpendicular lines, square
@@ -47,7 +49,15 @@ Product: pages in book hand drawn with nets, simplified drawings of each solid, 
 
 coordinates, role of golden rectangles in building it all up
 
+![](http://localhost:8000/symbol/png/png1549219446.png)
 
+![](http://localhost:8000/symbol/png/png1549219475.png)
+
+![](http://localhost:8000/symbol/png/png1549219513.png)
+
+![](http://localhost:8000/symbol/png/png1549219634.png)
+
+![](http://localhost:8000/symbol/png/png1549220494.png)
 
 ## 4. Artifacts:
 
@@ -119,7 +129,13 @@ Then, how to make THIS BOOK, what that can be used for, the power of the self re
 products: several blank books, bags for shapes and markers
 
 
+### Sequence of actions:
 
+1. trace all the shapes, color them in
+2. construct all the shapes with compass and ruler, decorate with dots and ink
+3. draw the nets of all 5 platonic solids, build the models, draw them, or just draw the simplified symmetric cartoons of them
+4. describe all the artifacts, sketch them if you build them, take notes
+5. Assemble replication kit for the whole system, pass on to next person
 
 
 

@@ -20,7 +20,9 @@ go over the cursor, what the Machine actually does, how it bridges the gap betwe
 
 ### Symbols to build a language
 
-### example with arrows
+### example with arrows: build and use a recycling symbol
+
+### workflow example: build and use an icon
 
 
 ## 3. Structure of the Hypercube
@@ -39,11 +41,13 @@ Discussion of base 8, the 8x8x8 cubes, addresses in space, how base 8 fits in wi
 
 ## 4. The Code
 
-Code structure, the five elements of Geometron Code
+Code structure, the five elements of Geometron Code, how it replicates, study of each element, how to hack and replicate, improve
 
 
 ## 5. Beyond the Browser
 
 - Geometron 3d
-- Quantum Virtual Reality, 
+- Quantum Virtual Reality
+- geometron based robotics
+- geometron hardware as replacement for turing machine, sketch out the architecture, how it works with Trash Robot based upcycling
 
