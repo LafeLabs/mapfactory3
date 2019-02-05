@@ -2,18 +2,20 @@
 
 # Book of Trash Robot
 
+We shall build a trash robot factory.  This is a factory for building factories for building trash robots.  That is not the same as building robots!  We are building the factory to build the factorieS.  A meta-factory.  Minimal product is thus not things like xyzmu robot or vibrational robot, but *elements* and motivation, basic documentation, and most importantly systems of replication: how to build a factory: use of action cards, maps, scrolls, books, etc.  
+
 Self replicating automation
 
 ## Five elements:
 
 1. structure: skeletron, thick cardboard,  sticks with added hardware, simple woodworking from broken shipping pallets
-2. boards: see the five boards
+2. circuit boards: see the five boards
 3. off the shelf parts, arduino, usb,batteries etc, 
 4. component electronics: mostly orders from digikey and samtec
 5. upcycled/scavenged materials: motors, components, buttons, switches, pcb's, eventually *everything* including transistors and microprocessors
 
 
-## five boards:
+## five  circuit boards:
 
 1. Dual H bridge
 2. 8 button board
