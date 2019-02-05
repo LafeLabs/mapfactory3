@@ -61,6 +61,9 @@ coordinates, role of golden rectangles in building it all up
 
 ## 4. Artifacts:
 
+This whole section and subsequent ones are optional, and maybe not part of the book at all
+
+
 - models of the solids
 - HDPE dish
 - ArtBox
@@ -128,14 +131,35 @@ Then, how to make THIS BOOK, what that can be used for, the power of the self re
 
 products: several blank books, bags for shapes and markers
 
+## Book Factory
+
+A factory is a network of entities, which are linked by actions.  The Action Geometry Book Factory is just this, and it produces books, but more importantly it produces readers and writers, or adepts in the System with the minimal number of moves and components.  
+
+### The elements which create books, but not themselves, minimal:
+
+1. blank books, already bound
+2. needle and thread
+3. push pin/thumb tack
+4. ruler
+6. stack of plain white printer paper
+7. pen
+8. compass
+9. colored pencils or crayons
+10. packing tape
+11. scissors 
+12. access to printer or trace shapes from existing shapes
+
+
+Some of these you make some you find around the home/office/school, some you buy.  The self replication is to make sure this list is in each copy of the book, and that the tradition is passed on of finding these things and sharing them with the next person.  The next creator of the Book is not expected to acquire these things, you provide them for that person, then pass along the things or the means to buy/find/make the things, then that person becomes you and they find a new person to become them.  We are the fungi.  We are the insects.  Language is how the mind parses reality.
+
 
 ### Sequence of actions:
 
 1. trace all the shapes, color them in
 2. construct all the shapes with compass and ruler, decorate with dots and ink
 3. draw the nets of all 5 platonic solids, build the models, draw them, or just draw the simplified symmetric cartoons of them
-4. describe all the artifacts, sketch them if you build them, take notes
-5. Assemble replication kit for the whole system, pass on to next person
+4. describe all the artifacts, sketch them if you build them, take notes, OR DON"T< THIS IS OPTIONAL, is part of the map factory economy.  ArtBox is its own SPIME entity, as is skeletron
+5. Bind a new booklet, make more shapes, put together art kit for next person
 
 
 
