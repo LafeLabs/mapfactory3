@@ -162,6 +162,15 @@ Some of these you make some you find around the home/office/school, some you buy
 5. Bind a new booklet, make more shapes, put together art kit for next person
 
 
+### What goes on the website
+
+pdf of a printable book
+svg of each printable shape to cutout and use
+links to embedded youtube videos of all the constructions
+scroll with images of all the varoius components, same images as go in instructables
+link to instructables content, with instructables for each part
+"about" section which puts Action GEometry into context of the other parts, links to the various instructables which are part of AG, relies on instructables for most of those, since they already exist, about also has contact information
+"events" has information on classes, meetups, skype etc., quasi business page, very vague author information
 
 
 

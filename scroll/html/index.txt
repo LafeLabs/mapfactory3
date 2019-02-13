@@ -194,7 +194,9 @@ document.getElementById("texbutton").onclick = function(){
     
     textin = document.getElementById("invisiblescroll").innerHTML;
 
-    textout = "\n\\documentclass[11pt]{article}\n\\usepackage{hyperref}\n\\usepackage{graphicx}\n\\begin{document}\n";
+    textout = "\n\\documentclass[11pt]{article}\n\\usepackage{hyperref}\n\\usepackage{graphicx}\n\\usepackage[paperheight=8.5in,paperwidth=5.5in,margin=1in]{geometry}\n\\begin{document}\n";
+    
+    \usepackage[paperheight=8.5in,paperwidth=5.5in,margin=1in]{geometry}
     
     textout += "\\begin{titlepage}\n\\centering\n\\vspace{4cm}\n{\\huge\\bfseries TITLE \\par}\n\\vspace{2cm}\n{\\Large\\itshape Geometron\\par}\n\\vfill\n{\\large \\today\\par}\n\\end{titlepage}\n"; 
 
