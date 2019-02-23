@@ -33,7 +33,7 @@ ALL CODE IS PUBLIC DOMAIN NO PATENTS NO COPYRIGHTS
     <a href = "keyboardeditor.php">keyboardeditor.php</a>
     <a href = "stylejsoneditor.php">stylejsoneditor.php</a>
     <a href = "vieweditor.php">vieweditor.php</a>
-    
+    <a href = "json2bytecode.php">json2bytecode.php</a>
 
     <a href = "treednagenerator.php">treednagenerator.php</a>
     <a href = "dnagenerator.php">dnagenerator.php</a>
@@ -85,6 +85,7 @@ ALL CODE IS PUBLIC DOMAIN NO PATENTS NO COPYRIGHTS
     <div class = "php file">php/replicator.txt</div>
     <div class = "php file">php/symbol2icon.txt</div>
     <div class = "php file">php/deletefile.txt</div>
+    <div class = "php file">php/json2bytecode.txt</div>
 
     <div class = "json file">json/currentjson.txt</div>
     <div class = "json file">json/stylejson.txt</div>

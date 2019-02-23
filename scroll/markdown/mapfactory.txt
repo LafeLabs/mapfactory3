@@ -1,6 +1,23 @@
-[back to 5 books](index.php?filename=fivebooksofgeometron.txt)
+
 
 # Map Factory
+
+
+![](latex/mapfactory_images/map-symbol.png)
+
+![](latex/mapfactory_images/mapglyph.png)
+
+
+![](latex/mapfactory_images/sign-symbol.png)
+
+![](latex/mapfactory_images/marker-symbol.png)
+
+
+![](latex/mapfactory_images/actioncard-symbol.png)
+
+
+
+![](latex/mapfactory_images/book-symbol.png)
 
 We must have specificity and productivity.  This is a factory. Signs, markers, maps, action card deck, map of The Street, The Watershed, and The Factory, which starts by just creating itself, but is how all factories are made.  This is not just the map factory it is the factory map.
 

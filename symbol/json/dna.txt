@@ -11,6 +11,7 @@
 			"glypheditor.txt",
 			"imageeditor.txt",
 			"index.txt",
+			"json2bytecode.txt",
 			"keyboardeditor.txt",
 			"loadtable.txt",
 			"newdir.txt",

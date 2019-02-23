@@ -171,6 +171,10 @@ document.getElementById("texbutton").onclick = function(){
     httparray = [];
     fileendingarray = [];
     imagesrcarray = [];
+/*old image code:
+
+there was a time when we tried to be clever but it was a fools errand.
+
     for(var index = 0;index < images.length;index++){
         images[index].removeAttribute("alt");
         
@@ -192,14 +196,21 @@ document.getElementById("texbutton").onclick = function(){
         images[index].src = currentFile.split("markdown/")[1].split(".")[0] + "_images/image" + index.toString() + "." + fileendingarray[index];
     }
     
+
+*/
+
+
+
+    for(var index = 0;index < images.length;index++){
+        images[index].removeAttribute("alt");
+        
+    }
+
     textin = document.getElementById("invisiblescroll").innerHTML;
 
     textout = "\n\\documentclass[11pt]{article}\n\\usepackage{hyperref}\n\\usepackage{graphicx}\n\\usepackage[paperheight=8.5in,paperwidth=5.5in,margin=1in]{geometry}\n\\begin{document}\n";
     
-    \usepackage[paperheight=8.5in,paperwidth=5.5in,margin=1in]{geometry}
     
-    textout += "\\begin{titlepage}\n\\centering\n\\vspace{4cm}\n{\\huge\\bfseries TITLE \\par}\n\\vspace{2cm}\n{\\Large\\itshape Geometron\\par}\n\\vfill\n{\\large \\today\\par}\n\\end{titlepage}\n"; 
-
     textout += textin;    
     
     textout+= "\n\\end{document}\n";
@@ -213,10 +224,17 @@ document.getElementById("texbutton").onclick = function(){
     textout = textout.replace(/<h4>/g,"\n\\section{");
     textout = textout.replace(/<\/h4>/g,"}");
 
+    textout = textout.replace(/<li>/g,"\\item\n");
+    textout = textout.replace(/<\/li>/g,"");
+    
+    textout = textout.replace(/<ul>/g,"\\begin{itemize}\n");
+    textout = textout.replace(/<\/ul>/g,"\\end{itemize}");
+
+
     textout = textout.replace(/<p>/g,"\n\n");
     textout = textout.replace(/<\/p>/g,"\n\n");
 
-    textout = textout.replace(/<img src=\"/g,"\n\\includegraphics[width=\\linewidth]{");
+    textout = textout.replace(/<img src=\"latex\//g,"\n\\includegraphics{"); 
     textout = textout.replace(/\">/g,"}");
     
     data = encodeURIComponent(textout);
