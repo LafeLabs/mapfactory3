@@ -177,7 +177,10 @@
         }
     }
 
-    if(localCommand == 024){//convert previous glyph from action to symbol
+    if(localCommand == 024){
+        currentGlyph = actions2symbols(currentGlyph);
+    }
+    if(localCommand == 025){//convert previous glyph from action to symbol
         var glyphSplit = currentGlyph.split(",");
         var cursorIndex = 0;
         for(var index = 0;index < glyphSplit.length;index++){
@@ -194,10 +197,8 @@
                 currentGlyph += glyphSplit[index] + ","; 
             }
         }
-        
+
     }
-    
-    
     
     if(localCommand == 030){
 //<page030>

@@ -1,3 +1,20 @@
+function actions2symbols(localString){
+    var stringArray = localString.split(",");
+    var outString = "";
+    for(var index = 0;index < stringArray.length;index++){
+        if(stringArray[index].length > 0){
+            var localInt = parseInt(stringArray[index],8);
+            if(localInt != 0207 && localInt >= 0200 && localInt <= 0377){
+                outString += (localInt + 01000).toString(8) + ",";
+            }
+            else{
+                outString += stringArray[index] + ",";
+            }
+        }
+    }
+    return outString;
+}
+
 
  function string2byteCode(localString){
     var localByteCode = "";
