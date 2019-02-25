@@ -1,5 +1,4 @@
 
-
  function string2byteCode(localString){
     var localByteCode = "";
     for(var stringIndex = 0;stringIndex < localString.length;stringIndex++){

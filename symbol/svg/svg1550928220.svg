@@ -1,16 +1,16 @@
-<svg width="250" height="250" viewbox = "0 0 250 250"  xmlns="http://www.w3.org/2000/svg">
+<svg width="150" height="150" viewbox = "0 0 150 150"  xmlns="http://www.w3.org/2000/svg">
 
 <!--
 <json>
 {
-    "svgwidth": 250,
-    "svgheight": 250,
-    "unit": 46.650738020973314,
-    "x0": 684,
-    "y0": 430.6626845052433,
-    "x0rel": 0,
-    "y0rel": 11.662684505243305,
-    "glyph": "",
+    "svgwidth": 150,
+    "svgheight": 150,
+    "unit": 38.55432894295315,
+    "x0": 703,
+    "y0": 412,
+    "x0rel": 19,
+    "y0rel": -7,
+    "glyph": "0230,",
     "table": [
         "0220:0313,0336,0310,0350,0334,0336,0362,0203,0335,0335,0335,0336,0305,0334,0335,0313,0337,0334,0311,0337,0203,0363,0335,0335,0362,0203,0334,0304,0336,0335,0335,0313,0336,0310,0350,0334,0337,0203,0364,0335,0335,0335,0335,0337,0313,0334,0337,0313,0304,0335,0313,0304,",
         "0221:0321,0336,0333,0331,0337,0200,0320,0336,0330,0336,0330,0332,0336,0347,0337,0331,0331,0336,0331,0333,0337,0350,0350,0334,0362,0203,0336,0203,0334,0334,0334,0334,0334,0334,0337,0203,0335,0335,0335,0335,0335,0335,0203,0203,0334,0334,0334,0334,0334,0334,0203,0203,0336,0203,0334,0334,0334,0334,0334,0337,0337,0203,0336,0336,0203,0336,0336,0203,0363,0337,0337,0337,0334,0334,0334,0334,0337,0304,0336,0336,0333,0331,0336,0336,0336,0333,0337,0337,0337,0337,0337,0337,0336,0330,0332,0337,",
@@ -63,11 +63,14 @@
         "01247:0333,0200,0336,0330,0332,0337,0247,0336,0333,0331,0337,"
     ],
     "imgurl": "",
-    "imgw": 2.335000000000001,
-    "imgx": -1.3099999999999996,
-    "imgy": -0.5839999999999999,
-    "angle": 0.3141592653589793
+    "imgw": 500,
+    "imgx": 0,
+    "imgy": 0,
+    "angle": 0
 }
 </json>
 -->
-</svg>
+	<path d = "M75 49 L78 45 L82 49 L85 52 L88 49 L88 56 L88 62 L82 62 L75 62 L78 59 L75 56 L71 52 L75 49 Z" stroke = "black" stroke-width = "1" fill = "black" />	<path d = "M75 103 L71 100 L75 96 L78 93 L75 90 L82 90 L88 90 L88 96 L88 103 L85 100 L82 103 L78 107 L75 103 Z" stroke = "black" stroke-width = "1" fill = "black" />	<path d = "M102 76 L97 71 L102 56 Z" stroke = "black" stroke-width = "1" fill = "black" />	<path d = "M102 56 L107 71 L102 76 " stroke = "black" stroke-width = "1" fill = "none" />	<path d = "M102 76 L107 71 L122 76 Z" stroke = "black" stroke-width = "1" fill = "black" />	<path d = "M122 76 L107 81 L102 76 " stroke = "black" stroke-width = "1" fill = "none" />	<path d = "M102 76 L107 81 L102 96 Z" stroke = "black" stroke-width = "1" fill = "black" />	<path d = "M102 96 L97 81 L102 76 " stroke = "black" stroke-width = "1" fill = "none" />	<path d = "M102 76 L97 81 L82 76 Z" stroke = "black" stroke-width = "1" fill = "black" />	<path d = "M82 76 L97 71 L102 76 " stroke = "black" stroke-width = "1" fill = "none" />	<path d = "M63 47 L63 28 L44 28 L44 47 L63 47 Z" stroke = "black" stroke-width = "3" fill = "none" />    <circle cx="59" cy = "33" r = "2.4096455589345718" stroke = "black" stroke-width = "1" fill = "black" />
+	<path d = "M61 45 L59 40 L58 38 L56 42 L55 38 L53 34 L51 38 L49 42 L48 45 L58 45 L60 45 L61 45 Z" stroke = "black" stroke-width = "1" fill = "black" />    <line x1="49" y1="115" x2="54" y2="115" style="stroke:blue;stroke-width:3" />
+	<path d = "M51 112 L51 110 L47 110 L42 110 L42 115 L42 119 L47 119 L51 119 L51 117 " stroke = "blue" stroke-width = "3" fill = "none" />    <line x1="54" y1="115" x2="63" y2="115" style="stroke:blue;stroke-width:3" />
+	<path d = "M61 112 L61 110 L71 110 L71 119 L61 119 L61 117 " stroke = "blue" stroke-width = "3" fill = "none" />	<path d = "M133 134 L133 16 L16 16 L16 134 L133 134 Z" stroke = "black" stroke-width = "3" fill = "none" /></svg>
