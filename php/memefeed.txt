@@ -128,10 +128,12 @@ for(var index = 0;index < imgurls.length; index++){
             bottomImage = currentImage;
             document.getElementById("bottomImage").src = currentImage;
             imageLayer = 1;
+            redraw();
         }
         else{
             topImage = currentImage;
             document.getElementById("topImage").src = currentImage;
+            redraw();
         }
     }
 }
@@ -139,9 +141,11 @@ for(var index = 0;index < imgurls.length; index++){
     
 init();
 function init(){
-    document.getElementById("mainCanvas").width = 0.65*innerWidth;
-    document.getElementById("mainCanvas").height = innerHeight - 250;
-    
+    W = 0.65*innerWidth;
+    H = innerHeight - 200;
+    document.getElementById("mainCanvas").width = W;
+    document.getElementById("mainCanvas").height = H;
+        
     bottomImage = "";
     topImage = "";
     currentImage = "";
@@ -173,6 +177,7 @@ document.getElementById("topImage").onload = function(){
 }
 
 function redraw(){
+    ctx.clearRect(0,0,W,H);
 
     ctx.translate(x0,y0);
     ctx.rotate(theta0);
@@ -188,6 +193,17 @@ function redraw(){
     
 
 }
+
+mc = new Hammer(document.getElementById("mainCanvas"));
+mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+mc.on("panleft panright panup pandown tap press", function(ev) {
+
+    x0 = ev.deltaX;
+    y0 = ev.deltaY;
+    console.log(x0);
+    redraw();
+
+});    
 
 </script>
 <style>
@@ -231,7 +247,7 @@ body{
     position:absolute;
     right:0px;
     top:100px;
-    z-index:-1;
+    z-index:1;
 }
 .bar{
     position:absolute;
