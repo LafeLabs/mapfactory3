@@ -10,7 +10,7 @@
     "y0": 419,
     "x0rel": -100,
     "y0rel": 0,
-    "glyph": "0336,0336,0336,0332,0337,0337,0337,0321,1341,1340,1333,0331,0332,0332,0332,0336,0336,0331,0337,0337,1340,1341,0336,0330,0333,0336,0336,0341,0337,0337,0333,0333,0333,",
+    "glyph": "0321,1341,1333,1341,",
     "table": [
         "0220:0313,0336,0310,0350,0334,0336,0362,0203,0335,0335,0335,0336,0305,0334,0335,0313,0337,0334,0311,0337,0203,0363,0335,0335,0362,0203,0334,0304,0336,0335,0335,0313,0336,0310,0350,0334,0337,0203,0364,0335,0335,0335,0335,0337,0313,0334,0337,0313,0304,0335,0313,0304,",
         "0221:0321,0336,0333,0331,0337,0200,0320,0336,0330,0336,0330,0332,0336,0347,0337,0331,0331,0336,0331,0333,0337,0350,0350,0334,0362,0203,0336,0203,0334,0334,0334,0334,0334,0334,0337,0203,0335,0335,0335,0335,0335,0335,0203,0203,0334,0334,0334,0334,0334,0334,0203,0203,0336,0203,0334,0334,0334,0334,0334,0337,0337,0203,0336,0336,0203,0336,0336,0203,0363,0337,0337,0337,0334,0334,0334,0334,0337,0304,0336,0336,0333,0331,0336,0336,0336,0333,0337,0337,0337,0337,0337,0337,0336,0330,0332,0337,",
@@ -70,11 +70,8 @@
 }
 </json>
 -->
-	<path d = "M91 125 L91 50 L16 50 L16 125 L91 125 Z" stroke = "black" stroke-width = "6" fill = "none" />    <circle cx="53" cy = "87" r = "37.56574004507889" stroke = "black" stroke-width = "6" fill = "none" />
-<circle cx="53" cy = "87" r = "6" stroke = "black" stroke-width = "6" fill = "black" />
-	<path d = "M166 125 L166 50 L91 50 L91 125 L166 125 Z" stroke = "black" stroke-width = "6" fill = "none" /><circle cx="128" cy = "87" r = "6" stroke = "black" stroke-width = "6" fill = "black" />
-	<path d = "M241 125 L241 50 L166 50 L166 125 L241 125 Z" stroke = "black" stroke-width = "6" fill = "none" />	<path d = "M185 97 L185 78 L203 78 L203 69 L213 78 L222 87 L213 97 L203 106 L203 97 L185 97 Z" stroke = "black" stroke-width = "6" fill = "none" />	<path d = "M91 219 L91 144 L16 144 L16 219 L91 219 Z" stroke = "black" stroke-width = "6" fill = "none" /><circle cx="53" cy = "181" r = "6" stroke = "black" stroke-width = "6" fill = "black" />
-	<path d = "M166 219 L166 144 L91 144 L91 219 L166 219 Z" stroke = "black" stroke-width = "6" fill = "none" />    <circle cx="128" cy = "181" r = "37.5657400450789" stroke = "black" stroke-width = "6" fill = "none" />
-<circle cx="128" cy = "181" r = "6" stroke = "black" stroke-width = "6" fill = "black" />
-    <circle cx="203" cy = "181" r = "9.391435011269724" stroke = "black" stroke-width = "6" fill = "none" />
+	<path d = "M100 125 L100 50 L25 50 L25 125 L100 125 Z" stroke = "black" stroke-width = "6" fill = "none" />    <circle cx="63" cy = "87" r = "37.56574004507889" stroke = "black" stroke-width = "6" fill = "none" />
+<circle cx="63" cy = "87" r = "6" stroke = "black" stroke-width = "6" fill = "black" />
+	<path d = "M175 125 L175 50 L100 50 L100 125 L175 125 Z" stroke = "black" stroke-width = "6" fill = "none" />	<path d = "M119 97 L119 78 L138 78 L138 69 L147 78 L156 87 L147 97 L138 106 L138 97 L119 97 Z" stroke = "black" stroke-width = "6" fill = "none" />	<path d = "M250 125 L250 50 L175 50 L175 125 L250 125 Z" stroke = "black" stroke-width = "6" fill = "none" />    <circle cx="213" cy = "87" r = "37.5657400450789" stroke = "black" stroke-width = "6" fill = "none" />
+<circle cx="213" cy = "87" r = "6" stroke = "black" stroke-width = "6" fill = "black" />
 </svg>
