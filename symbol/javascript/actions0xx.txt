@@ -180,24 +180,8 @@
     if(localCommand == 024){
         currentGlyph = actions2symbols(currentGlyph);
     }
-    if(localCommand == 025){//convert previous glyph from action to symbol
-        var glyphSplit = currentGlyph.split(",");
-        var cursorIndex = 0;
-        for(var index = 0;index < glyphSplit.length;index++){
-            if(glyphSplit[index] == "0207"){
-                cursorIndex = index;
-            }
-        }
-        currentGlyph = "";
-        for(var index = 0;index < glyphSplit.length;index++){
-            if(index == cursorIndex - 1){
-                currentGlyph += (parseInt(glyphSplit[index],8) + 01000).toString(8) + ",";
-            }
-            else{
-                currentGlyph += glyphSplit[index] + ","; 
-            }
-        }
-
+    if(localCommand == 025){//save svg/png
+        document.getElementById("savesvg").click();
     }
     
     if(localCommand == 030){
