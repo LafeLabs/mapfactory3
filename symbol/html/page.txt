@@ -72,18 +72,18 @@
 </table>
 <div class = "button" id = "savesvg">SAVE</div>
 
-
+<div id = "showbutton" class = "button">SHOW SHAPE PANEL</div>
 <div id = "shapecontrolpanel">
-    <textarea id = "textio"></textarea>
+    <textarea id = "textIO"></textarea>
     <input id = "urlinput">
     <table id = "shapecontrolbuttons">
         <tr>
-            <td class = "button">HIDE</td>
+            <td class = "button" id = "hidebutton">HIDE</td>
 
-            <td class = "button">SYMBOL/ACTION</td>
-            <td class = "button">GET DATA FROM URL</td>
-            <td class = "button">IMPORT DATA</td>
-            <td class = "button">EXPORT DATA</td>
+            <td class = "button" id = "symbolactionbutton">SYMBOL/ACTION</td>
+            <td class = "button" id = "exportdatabutton">EXPORT DATA</td>
+            <td class = "button" id = "importdatabutton">IMPORT DATA</td>
+            <td class = "button" id = "exturlbutton">GET DATA FROM URL</td>
         </tr>
     </table>
     <table id = "shapetabletable">

@@ -51,6 +51,13 @@ body{
 #shapecontrolbuttons{
     font-size:12px;
 }
+#showbutton{
+    position:absolute;
+    z-index:2;
+    right:0px;
+    top:100px;
+    display:none;
+}
 #keytable{
     position:absolute;
     width:100%;

@@ -381,5 +381,77 @@ document.getElementById("stackInput").onkeypress = function(a){//stack
         this.value = "";
     }
 }
+
+document.getElementById("symbolactionbutton").onclick = function(){
+    if(currentAddress > 01000){
+        currentAddress -= 01000;
+    }
+    else{
+        currentAddress += 01000;
+    }
+    currentGlyph = currentTable[currentAddress] + ",0207,";
+    redraw();
+    
+}
  
- 
+
+document.getElementById("hidebutton").onclick = function(){
+    document.getElementById("shapecontrolpanel").style.display = "none";
+    document.getElementById("showbutton").style.display = "block";
+}
+document.getElementById("showbutton").onclick = function(){
+    document.getElementById("shapecontrolpanel").style.display = "block";
+    document.getElementById("showbutton").style.display = "none";
+}
+
+document.getElementById("exportdatabutton").onclick = function(){
+    bytecodedata = "";
+    for(var index = 0220;index < 0247;index++){
+        if(currentTable[index].length > 1){
+            bytecodedata +=  "0" + index.toString(8) + ":" +  currentTable[index] + "\n";   
+        }
+    }
+    for(var index = 01220;index < 01247;index++){
+        if(currentTable[index].length > 1){
+            bytecodedata +=  "0" + index.toString(8) + ":" + currentTable[index] + "\n";   
+        }
+    }
+    document.getElementById("textIO").value = bytecodedata;    
+
+}
+
+document.getElementById("importdatabutton").onclick = function(){
+    //this is either json or bytecode, test for both.  only json will have {.
+    var localstring = document.getElementById("textIO").value;
+    if(localstring.search("{") == -1){
+        var inputbytecode = localstring;
+        var bytecodearray = inputbytecode.split("\n");
+        for(var index = 0;index < bytecodearray.length;index++){
+            if(bytecodearray[index].includes(":")){
+                var localBytecode = bytecodearray[index].split(":");
+                var localAddress = parseInt(localBytecode[0],8);
+                currentTable[localAddress] = localBytecode[1];
+            }
+        }
+    }
+    else{
+        for(var index = 0;index < currentJSON.table.length;index++){
+            var localaddr = parseInt(currentJSON.table[index].split(":")[0],8);    
+            currentTable[localaddr] = currentJSON.table[index].split(":")[1];
+        }
+    }
+    currentAddress = 0250;
+    shapetableindex = (currentAddress&0777) - 0220;
+    currentGlyph = currentJSON.glyph + "0207,";
+    //unit = 100;
+    //x0 =  0.5*innerWidth;
+    //y0 = 0.5*innerHeight;
+    unit = currentJSON.unit;
+    x0 =  0.5*innerWidth + currentJSON.x0rel;
+    y0 = 0.5*innerHeight + currentJSON.y0rel;
+
+    document.getElementById("backgroundimage").src = currentJSON.imgurl;
+
+    redraw();
+    
+}
