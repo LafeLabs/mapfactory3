@@ -70,6 +70,8 @@ EGO DEATH:
 </table>
 
 <pre>
+cd scroll
+cd bookfactory
 php ../getscroll.php
 pdflatex scroll.tex
 pdfbook scroll.pdf
@@ -99,8 +101,9 @@ pre{
     font-size:16px;
     font-family:courier;
     width:20em;
-    height:4em;
+    height:8em;
     display:block;
+    padding:2em 2em 2em 2em;
 }
 </style>
 </body>

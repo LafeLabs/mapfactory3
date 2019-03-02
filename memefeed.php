@@ -142,7 +142,7 @@ for(var index = 0;index < imgurls.length; index++){
 init();
 function init(){
     W = 0.65*innerWidth;
-    H = innerHeight - 250;
+    H = innerHeight - 200;
     document.getElementById("mainCanvas").width = W;
     document.getElementById("mainCanvas").height = H;
         

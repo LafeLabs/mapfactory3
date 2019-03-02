@@ -50,9 +50,36 @@ echo $listtext;
 
 <a href = "index.php" style = "position:absolute;left:10px;top:10px;z-index:4"><img src = "mapicons/mapfactory.svg" style = "width:50px"></a>
 
+<table id = "newmaptable">
+    <tr>
+        <td>
+            NEW MAP NAME:
+        </td>
+        <td>
+            <input id = "newmapname"/>
+        </td>
+    </tr>
+    <tr id = "newmaprow">
+        <td>
+            LINK TO NEW MAP LINKER:
+        </td>
+        <td><a id = "newmaplink"></a></td>
+    </tr>
+</table>
+
 <div id = "memefeed"></div>
 
 <script>
+
+document.getElementById("newmapname").onchange = function(){
+    var newname = this.value;
+    if(newname.substr(-4) != ".txt"){
+        newname += ".txt";
+    }
+    document.getElementById("newmaprow").style.display = "block";
+    document.getElementById("newmaplink").innerHTML = "linker.php?path=maps/" + newname;
+    document.getElementById("newmaplink").href = "linker.php?path=maps/" + newname;
+}
 
 memes = JSON.parse(document.getElementById("datadiv").innerHTML);
 files = document.getElementById("filesdiv").innerHTML.split(",");
@@ -126,7 +153,17 @@ body{
 .deletebutton img{
     width:100%;
 }
-
+#newmaptable{
+    position:absolute;
+    left:200px;
+    top:10px;
+}
+#newmapname{
+    width:10em;
+}
+#newmaprow{
+    display:none;
+}
 </style>
 </body>
 </html>
