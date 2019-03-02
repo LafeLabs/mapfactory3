@@ -5,7 +5,7 @@
 commands to get from this to final printable pdf:
 
 php ../getscroll.php
-pdflatex scrool.tex
+pdflatex scroll.tex
 pdfbook scroll.pdf
 
 
@@ -24,16 +24,27 @@ $foo = explode("![](",$scroll);
 
 $index = 0;
 
-$imagelist = "";
+$indexhtml = "<html><body>\n";
+
+$indexhtml .= "<ul>\n";
+$indexhtml .= "<li><a href = \"../\">back up a level</a></li>";
+$indexhtml .= "<li><a href = \"scroll.tex\">scroll.tex</a></li>";
+$indexhtml .= "<li><a href = \"scroll.pdf\">scroll.pdf</a></li>";
+$indexhtml .= "<li><a href = \"scroll-book.pdf\">scroll-book.pdf</a></li>";
+
 foreach($foo as $value){
     if($index > 0){
         $imgurl = explode(")",$value)[0];
         copy($imgurl,"image".strval($index).".png");
         $scroll = str_replace("![](".$imgurl.")","\\begin{figure}\n\\includegraphics[scale=0.3]{image".strval($index).".png}\n\\end{figure}",$scroll);
-        $imagelist .= "<img src = \"image".strval($index).".png\"/>\n";
+        
+        $indexhtml .= "<li><a href = \"image".strval($index).".png\"><img src = \"image".strval($index).".png\"/></a></li>\n";
     }
     $index++;
 }
+
+$indexhtml .= "</ul>\n</body></html>";
+file_put_contents("index.html",$indexhtml);
 
 $scroll = $textop.$scroll.$texbottom;
 

@@ -51,7 +51,14 @@ EGO DEATH:
         <td><a href = "editor.php">
             <img style = "width:80px;" src = "icons/editor.svg"/>
         </a></td>
+        <td><a href = "../"><img style = "width:80px;" src = "../mapicons/scroll.svg"/></a></td>
+        <td>
+            <a href = "bookfactory/">
+                <img style = "width:80px;" src = "icons/bookfactory.svg"/>  
+            </a>
+        </td>
     </tr>
+
 </table>
 
 <input id = "urlinput"/>
