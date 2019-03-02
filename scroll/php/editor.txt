@@ -29,7 +29,7 @@ EGO DEATH:
     <a href = "index.php">index.php</a>
     <a href = "textfeed.php">textfeed.php</a>
     <a href = "texeditor.php">texeditor.php</a>
-
+    <a href = "bookfactory.php">bookfactory.php</a>
 </div>
 <div id = "namediv"></div>
 <div id="maineditor" contenteditable="true" spellcheck="false"></div>
@@ -46,8 +46,8 @@ EGO DEATH:
     <div class = "php file">php/tree.txt</div>
     <div class = "php file">php/treereplicator.txt</div>
     <div class = "php file">php/treednagenerator.txt</div>
-
-    <div class = "php file">bookfactory/getscroll.php</div>
+    <div class = "php file">php/getscroll.txt</div>
+    <div class = "php file">php/bookfactory.txt</div>
 
     <div class = "php file">php/texeditor.txt</div>
     <div class = "php file">php/textfeed.txt</div>

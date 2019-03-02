@@ -2,6 +2,7 @@
 	{
 		"path":"php",
 		"files":[
+			"bookfactory.txt",
 			"copy.txt",
 			"copyimage.txt",
 			"deletefile.txt",
@@ -9,6 +10,7 @@
 			"editor.txt",
 			"fileloader.txt",
 			"filesaver.txt",
+			"getscroll.txt",
 			"index.txt",
 			"mkdir.txt",
 			"pdflatex.txt",
