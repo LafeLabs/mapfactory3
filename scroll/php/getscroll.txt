@@ -27,7 +27,7 @@ $index = 0;
 $indexhtml = "<html><body>\n";
 
 $indexhtml .= "<ul>\n";
-$indexhtml .= "<li><a href = \"../\">back up a level</a></li>";
+$indexhtml .= "<li><a href = \"../bookfactory.php\">back to book factory</a></li>";
 $indexhtml .= "<li><a href = \"scroll.tex\">scroll.tex</a></li>";
 $indexhtml .= "<li><a href = \"scroll.pdf\">scroll.pdf</a></li>";
 $indexhtml .= "<li><a href = \"scroll-book.pdf\">scroll-book.pdf</a></li>";

@@ -51,21 +51,29 @@ EGO DEATH:
         <td><a href = "editor.php">
             <img style = "width:80px;" src = "icons/editor.svg"/>
         </a></td>
-        <td><a href = "../"><img style = "width:80px;" src = "../mapicons/scroll.svg"/></a></td>
+        <td><a href = "index.php"><img style = "width:80px;" src = "../mapicons/scroll.svg"/></a></td>
         <td>
             <a href = "bookfactory/">
                 <img style = "width:80px;" src = "icons/bookfactory.svg"/>  
             </a>
         </td>
     </tr>
-
+<tr>
+</table>
+<table>
+<tr>
+    <td>Enter URL of SCROLL:</td>
+    <td>
+        <input id = "urlinput"/>
+    </td>
+</tr>
 </table>
 
-<input id = "urlinput"/>
-
-<div id = "imagescroll">
-    
-</div>
+<pre>
+php ../getscroll.php
+pdflatex scroll.tex
+pdfbook scroll.pdf
+</pre>
 
 <script>
 
@@ -81,6 +89,20 @@ document.getElementById("urlinput").onchange = function(){
 }
 
 </script>
+<style>
+#urlinput{
+    width:20em;
+}
+pre{
+    background-color:black;
+    color:#00ff00;
+    font-size:16px;
+    font-family:courier;
+    width:20em;
+    height:4em;
+    display:block;
+}
+</style>
 </body>
 </html>
 
