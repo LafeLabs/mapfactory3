@@ -38,6 +38,7 @@
 	{
 		"path":"icons",
 		"files":[
+			"bookfactory.svg",
 			"delete.svg",
 			"editor.svg",
 			"mapfactory.svg",

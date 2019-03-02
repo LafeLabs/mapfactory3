@@ -14,6 +14,9 @@ EGO DEATH:
     LOOK TO THE INSECTS
     LOOK TO THE FUNGI
     LANGUAGE IS HOW THE MIND PARSES REALITY
+    
+to convert a pdf to a book format use
+"pdfbook" command line utility
 -->
 <!--Stop Google:-->
 <META NAME="robots" CONTENT="noindex,nofollow">

@@ -14,6 +14,7 @@
     mkdir("latex");
     mkdir("symbol");
     mkdir("icons");
+    mkdir("bookfactory");
     mkdir("textfeed");    
     
     foreach($dna as $dirs){
