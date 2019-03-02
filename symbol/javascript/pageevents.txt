@@ -200,7 +200,49 @@ document.getElementById("actionInput").onkeydown = function(e) {
             arrowkey = true;
 
         }
+        
+        if(charCode == 046){//   doTheThing(023);
+            if(shapetableindex != 030){
+                shapekeys[shapetableindex].style.borderColor = "black";
+            }
+            currentAddress++;
+            if(currentAddress > 0250 && currentAddress < 01000){
+                currentAddress = 0220;
+            }
+            if(currentAddress > 01247){
+                currentAddress = 01220;
+            }
 
+            currentGlyph = currentTable[currentAddress] + ",0207,";
+            redraw();
+            arrowkey = true;
+            shapetableindex = (currentAddress&0777) - 0220;
+            if(shapetableindex != 030){
+                shapekeys[shapetableindex].style.borderColor = "green";
+            }
+        }
+        if(charCode == 050){//    doTheThing(022);
+            if(shapetableindex != 030){
+                shapekeys[shapetableindex].style.borderColor = "black";
+            }
+
+            currentAddress--;
+            if(currentAddress < 0220){
+                currentAddress = 0250;
+            }
+            if(currentAddress > 01000 && currentAddress < 01220){
+                currentAddress = 01247;
+            }
+            currentGlyph = currentTable[currentAddress] + ",0207,";
+            redraw();
+            arrowkey = true;
+            shapetableindex = (currentAddress&0777) - 0220;
+
+            if(shapetableindex != 030){
+                shapekeys[shapetableindex].style.borderColor = "green";
+            }
+
+        }        
     }
     
     
@@ -217,7 +259,7 @@ document.getElementById("actionInput").onkeypress = function(a){//action
     //console.log(a.which.toString(8));
     if(charCode != 010 && charCode != 047 && charCode != 050 && !arrowkey){
             
-        if(parseInt(currentTable[charCode],8) >= 0200){
+        if(parseInt(currentTable[charCode],8) >= 0200 && parseInt(currentTable[charCode],8) != currentAddress){
             var glyphSplit = currentGlyph.split(",");
             currentGlyph = "";
             for(var index = 0;index < glyphSplit.length;index++){
@@ -243,6 +285,9 @@ document.getElementById("actionInput").onkeypress = function(a){//action
         }
         this.value = "";
     }
+    
+
+
 }
     
     

@@ -72,6 +72,54 @@
 </table>
 <div class = "button" id = "savesvg">SAVE</div>
 
+
+<div id = "shapecontrolpanel">
+    <textarea id = "textio"></textarea>
+    <input id = "urlinput">
+    <table id = "shapecontrolbuttons">
+        <tr>
+            <td class = "button">HIDE</td>
+
+            <td class = "button">SYMBOL/ACTION</td>
+            <td class = "button">GET DATA FROM URL</td>
+            <td class = "button">IMPORT DATA</td>
+            <td class = "button">EXPORT DATA</td>
+        </tr>
+    </table>
+    <table id = "shapetabletable">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+            <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+
 <canvas id="invisibleCanvas" style="display:none"></canvas>
 <canvas id="mainCanvas"></canvas>
 

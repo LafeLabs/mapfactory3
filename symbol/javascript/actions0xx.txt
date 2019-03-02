@@ -34,7 +34,7 @@
     currentHTML = "";
     currentStyle = "";
     latex = true;
-    currentAddress = 0260;
+    currentAddress = 0250;
     currentDeck = 0400;
     currentGlyph = "0300,";
     resetColor = "#000000";

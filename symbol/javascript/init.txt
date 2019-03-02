@@ -39,6 +39,7 @@ else{
 }
 
 
+
 currentGlyph = currentJSON.glyph + "0207,";
     
 for(var index = 0;index < currentJSON.table.length;index++){
@@ -59,7 +60,9 @@ document.getElementById("actionInput").select();
 
 
 softkeys = JSON.parse(document.getElementById("softkeydata").innerHTML);
-    
+
+keySize = 50;
+
 for(var index = 0;index < softkeys.length;index++){
     var newtr = document.createElement("TR");
     var keyarray = softkeys[index].split(",");
@@ -68,16 +71,18 @@ for(var index = 0;index < softkeys.length;index++){
             var newtd = document.createElement("TD");
             newtr.appendChild(newtd);
             newtd.classList.add("button","softkey");
+            newtd.style.width = keySize + "px";
+            newtd.style.height = keySize + "px";
             var newcan = document.createElement("CANVAS");
-            newcan.width = 45;
-            newcan.height = 45;
+            newcan.width = keySize - 4;
+            newcan.height = keySize - 4;
             newtd.appendChild(newcan);
             ctx = newcan.getContext("2d");
-            ctx.clearRect(0,0,45,45);
-            side = 40;
-            unit = 40;
+            ctx.clearRect(0,0,keySize - 4,keySize - 4);
+            side = keySize - 6;
+            unit = keySize - 6;
             x0 = 2;
-            y0 = 43;
+            y0 = keySize - 6;
             doTheThing(0300);
             newtd.id = "key" + keyarray[keyindex];
             
@@ -124,7 +129,61 @@ for(var index = 0;index < softkeys.length;index++){
 }
 
 document.getElementById("keytable").style.display = "none";
+    
+currentAddress = 0250;
+shapetableindex = (currentAddress&0777) - 0220;
 
+shapekeys = document.getElementById("shapetabletable").getElementsByTagName("TD");
+
+for(var index = 0;index < shapekeys.length;index++){
+    shapekeys[index].classList.add("button","softkey");
+    shapekeys[index].style.width = keySize + "px";
+    shapekeys[index].style.height = keySize + "px";
+    var newcan = document.createElement("CANVAS");
+    newcan.width = keySize - 4;
+    newcan.height = keySize - 4;
+    shapekeys[index].appendChild(newcan);
+    ctx = newcan.getContext("2d");
+    ctx.clearRect(0,0,keySize - 4,keySize - 4);
+    side = keySize - 6;
+    unit = keySize - 6;
+    x0 = 2;
+    y0 = keySize - 6;
+    doTheThing(0300);
+    shapekeys[index].id = "shapekey" + (index + 0220).toString(8);
+    ctx.lineWidth = 2;
+
+    doTheThing(01220 + index);
+
+    shapekeys[index].onclick = function(){
+        var localkey = this.id.substring(8);
+        var localaction = parseInt(localkey,8);
+        if(localaction != currentAddress){
+            var glyphSplit = currentGlyph.split(",");
+            currentGlyph = "";
+            for(var index = 0;index < glyphSplit.length;index++){
+                if(glyphSplit[index].length > 0 && glyphSplit[index] != "0207"){
+                    currentGlyph += glyphSplit[index] + ",";
+                }
+                if(glyphSplit[index] == "0207"){
+                    currentGlyph += localkey + ",0207,";
+                }
+            }
+            var glyphSplit = currentGlyph.split(",");
+            currentGlyph = "";
+            for(var index = 0;index < glyphSplit.length;index++){
+                if(glyphSplit[index].length > 0  && parseInt(glyphSplit[index]) >= 040){
+                    currentGlyph += glyphSplit[index] + ",";
+                }
+            }
+            redraw();
+
+        }
+    }
+
+}
+
+currentTable[0250] = currentJSON.glyph;
 currentGlyph = currentJSON.glyph + "0207,";
 //unit = 100;
 //x0 =  0.5*innerWidth;

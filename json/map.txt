@@ -79,5 +79,23 @@
         "src": "",
         "href": "",
         "text": "$\\phi \\equiv \\frac{\\sqrt{5} + 1}{2}$"
+    },
+    {
+        "w": 0.1065789473684211,
+        "x": 0.2832655826558266,
+        "y": 0.38471687348452427,
+        "angle": 0,
+        "src": "http://localhost:8000/uploadimages/image4.png",
+        "href": "",
+        "text": ""
+    },
+    {
+        "w": 0.1,
+        "x": 0.5,
+        "y": 0.25,
+        "angle": 0,
+        "src": "http://localhost:8000/symbol/svg/svg1541364415.svg",
+        "href": "",
+        "text": ""
     }
 ]
