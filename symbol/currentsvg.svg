@@ -10,12 +10,11 @@
     "y0": 419,
     "x0rel": 0,
     "y0rel": 0,
-    "glyph": "1330,1331,1332,1333,1330,1331,1332,1333,",
+    "glyph": "",
     "table": [
         "0220:0341,",
         "0244:0243,0243,0243,0243,",
         "0247:0341,0333,0336,0332,0341,",
-        "0250:1330,1331,1332,1333,1330,1331,1332,1333,",
         "01220:0333,0200,0336,0332,0330,0220,0333,0331,0337,",
         "01221:0333,0200,0336,0330,0332,0221,0335,0335,0331,0333,",
         "01222:0333,0200,0336,0332,0330,0332,0222,0336,0333,0333,0333,0333,0331,0331,0337,0337,",
@@ -75,4 +74,4 @@
 }
 </json>
 -->
-	<path d = "M225 125 L225 25 L125 25 L125 125 L225 125 Z" stroke = "black" stroke-width = "1" fill = "none" />	<path d = "M188 100 L163 100 L163 75 L150 75 L163 62 L175 50 L188 62 L200 75 L188 75 L188 100 Z" stroke = "black" stroke-width = "1" fill = "none" />	<path d = "M325 125 L325 25 L225 25 L225 125 L325 125 Z" stroke = "black" stroke-width = "1" fill = "none" />	<path d = "M263 50 L288 50 L288 75 L300 75 L288 87 L275 100 L263 87 L250 75 L263 75 L263 50 Z" stroke = "black" stroke-width = "1" fill = "none" />	<path d = "M425 125 L425 25 L325 25 L325 125 L425 125 Z" stroke = "black" stroke-width = "1" fill = "none" />	<path d = "M400 62 L400 87 L375 87 L375 100 L363 87 L350 75 L363 62 L375 50 L375 62 L400 62 Z" stroke = "black" stroke-width = "1" fill = "none" />	<path d = "M525 125 L525 25 L425 25 L425 125 L525 125 Z" stroke = "black" stroke-width = "1" fill = "none" />	<path d = "M450 87 L450 62 L475 62 L475 50 L488 62 L500 75 L488 87 L475 100 L475 87 L450 87 Z" stroke = "black" stroke-width = "1" fill = "none" />	<path d = "M625 125 L625 25 L525 25 L525 125 L625 125 Z" stroke = "black" stroke-width = "1" fill = "none" />	<path d = "M588 100 L563 100 L563 75 L550 75 L563 62 L575 50 L588 62 L600 75 L588 75 L588 100 Z" stroke = "black" stroke-width = "1" fill = "none" />	<path d = "M725 125 L725 25 L625 25 L625 125 L725 125 Z" stroke = "black" stroke-width = "1" fill = "none" />	<path d = "M663 50 L688 50 L688 75 L700 75 L688 87 L675 100 L663 87 L650 75 L663 75 L663 50 Z" stroke = "black" stroke-width = "1" fill = "none" />	<path d = "M825 125 L825 25 L725 25 L725 125 L825 125 Z" stroke = "black" stroke-width = "1" fill = "none" />	<path d = "M800 63 L800 88 L775 88 L775 100 L763 88 L750 75 L763 63 L775 50 L775 63 L800 63 Z" stroke = "black" stroke-width = "1" fill = "none" />	<path d = "M925 125 L925 25 L825 25 L825 125 L925 125 Z" stroke = "black" stroke-width = "1" fill = "none" />	<path d = "M850 88 L850 63 L875 63 L875 50 L888 63 L900 75 L888 88 L875 100 L875 88 L850 88 Z" stroke = "black" stroke-width = "1" fill = "none" /></svg>
+</svg>
