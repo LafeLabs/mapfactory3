@@ -4,7 +4,7 @@
     "line0": 1,
     "color1": "black",
     "fill1": "black",
-    "line1": 6,
+    "line1": 3,
     "color2": "red",
     "fill2": "red",
     "line2": 1,
@@ -19,7 +19,7 @@
     "line5": 1,
     "color6": "blue",
     "fill6": "blue",
-    "line6": 8,
+    "line6": 1,
     "color7": "purple",
     "fill7": "purple",
     "line7": 1

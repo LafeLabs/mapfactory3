@@ -36,11 +36,21 @@ body{
 #linkTable img{
     width:80px;
 }
+.linktable img{
+    width:50px;
+}
 #savesvg{
         position:absolute;
         z-index:2;
         right:0px;
         top:0px;
+}
+#remoteurltable{
+    font-family:courier;
+    font-size:14px;
+}
+#importexporttable td{
+    padding: 5px 5px 5px 5px;
 }
 #shapecontrolpanel{
     position:absolute;

@@ -1,10 +1,33 @@
 doTheThing(06);//import embedded hypercube in this .html doc
 doTheThing(07);//initialize Geometron global variables
 
-currentJSON = JSON.parse(document.getElementById("datadiv").innerHTML);
-styleJSON = JSON.parse(document.getElementById("stylejsondiv").innerHTML);
-
 path = document.getElementById("pathdiv").innerHTML;
+
+currentJSON = JSON.parse(document.getElementById("datadiv").innerHTML);
+
+if(currentJSON.styleJSON != undefined){
+    styleJSON = currentJSON.styleJSON;
+    
+    //save the json style file
+    
+    if(path.length > 1){
+        jsonstylefile =  "symbols/"  +  path + "json/stylejson.txt";
+    }    
+    else{
+        jsonstylefile = "json/stylejson.txt";
+    }
+    data = encodeURIComponent(JSON.stringify(styleJSON,null,"    "));
+    var httpc = new XMLHttpRequest();
+    var url = "filesaver.php";        
+    httpc.open("POST", url, true);
+    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+    httpc.send("data="+data+"&filename="+jsonstylefile);//send text to filesaver.php
+
+}
+else{
+    styleJSON = JSON.parse(document.getElementById("stylejsondiv").innerHTML);
+}
+
 
 if(path.length > 0){
     document.getElementById("stylelink").href = "stylejsoneditor.php?path=" + path;

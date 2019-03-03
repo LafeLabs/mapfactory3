@@ -74,16 +74,34 @@
 
 <div id = "showbutton" class = "button">SHOW SHAPE PANEL</div>
 <div id = "shapecontrolpanel">
-    <textarea id = "textIO"></textarea>
-    <input id = "urlinput">
-    <table id = "shapecontrolbuttons">
+    <table id = "remoteurltable">
         <tr>
-            <td class = "button" id = "hidebutton">HIDE</td>
-
-            <td class = "button" id = "symbolactionbutton">SYMBOL/ACTION</td>
-            <td class = "button" id = "exportdatabutton">EXPORT DATA</td>
-            <td class = "button" id = "importdatabutton">IMPORT DATA</td>
-            <td class = "button" id = "exturlbutton">GET DATA FROM URL</td>
+            <td>REMOTE URL:</td>
+            <td><input id = "urlinput"></td>
+        </tr>
+    </table>
+    
+    <table class = "linktable" id = "importexporttable">
+        <tr>
+            <td class = "button" id = "exportdatabutton">
+                <img src = "icons/rightarrow.svg"/>
+            </td>
+            <td>
+                <textarea id = "textIO"></textarea>
+            </td>
+            <td class = "button" id = "importdatabutton">
+                <img src = "icons/rightarrow.svg"/>
+            </td>
+        </tr>
+    </table>
+    <table id = "shapecontrolbuttons" class = "linktable">
+        <tr>
+            <td class = "button" id = "hidebutton">
+                <img src = "icons/hide.svg"/>    
+            </td>
+            <td class = "button" id = "symbolactionbutton">
+                <img src = "icons/symbolaction.svg"/>
+            </td>
         </tr>
     </table>
     <table id = "shapetabletable">

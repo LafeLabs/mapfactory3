@@ -65,6 +65,21 @@ else{
 }
 
 currentJSON.table = [];
+for(var index = 0220;index < 0277;index++){
+    if(currentTable[index].length > 3){
+        var tableline = "0" + index.toString(8) + ":" + currentTable[index];
+        currentJSON.table.push(tableline);
+    }
+}
+for(var index = 01220;index < 01277;index++){
+    if(currentTable[index].length > 3){
+        var tableline = "0" + index.toString(8) + ":" + currentTable[index];
+        currentJSON.table.push(tableline);
+    }
+}
+
+currentJSON.styleJSON = styleJSON;
+
 data = encodeURIComponent(JSON.stringify(currentJSON,null, "    "));
 var httpc = new XMLHttpRequest();
 var url = "filesaver.php";        

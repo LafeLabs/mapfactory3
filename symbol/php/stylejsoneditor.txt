@@ -25,6 +25,7 @@ ALL CODE IS PUBLIC DOMAIN NO PATENTS NO COPYRIGHTS
         echo $_GET['path'];
     }
 ?></div>
+
 <div style = "display:none" id = "datadiv"><?php
     if(isset($_GET['path'])){
         echo file_get_contents("symbols/".$_GET['path']."json/stylejson.txt");
@@ -33,6 +34,15 @@ ALL CODE IS PUBLIC DOMAIN NO PATENTS NO COPYRIGHTS
         echo file_get_contents("json/stylejson.txt");
     }
 ?></div>    
+<div style = "display:none" id = "jsondatadiv"><?php
+    if(isset($_GET['path'])){
+        echo file_get_contents("symbols/".$_GET['path']."json/currentjson.txt");
+    }
+    else{
+        echo file_get_contents("json/currentjson.txt");
+    }
+?></div>    
+
 <a href = "index.php" id = "indexlink"><img style = "width:100px" src = "icons/symbol.svg"/></a>
 
 <table id = "maintable">
@@ -111,31 +121,33 @@ ALL CODE IS PUBLIC DOMAIN NO PATENTS NO COPYRIGHTS
 </table>
 <script>
 
+jsonmode = false;
+if(document.getElementById("jsondatadiv").innerHTML.length > 10){
+    currentJSON = JSON.parse(document.getElementById("jsondatadiv").innerHTML);
+    stylejson = currentJSON.styleJSON;
+    jsonmode = true;
+}
+else{
+    stylejson = JSON.parse(document.getElementById("datadiv").innerHTML);
+}
 
 path = document.getElementById("pathdiv").innerHTML;
 if(path.length>1){
     currentFile = "symbols/" + path + "json/stylejson.txt";
+    currentFile2 = "symbols/" + path + "json/currentjson.txt";
     document.getElementById("indexlink").href = "index.php?path=" + path; 
 }
 else{
     currentFile = "json/stylejson.txt";
+    currentFile2 = "json/currentjson.txt";
 }
 
 canvaswidth = 100;
 canvasheight = 20;
-
-var httpc = new XMLHttpRequest();
-httpc.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        filedata = this.responseText;
-        stylejson = JSON.parse(filedata);
-        init();
-    }
-};
-httpc.open("GET", "fileloader.php?filename=" + currentFile, true);
-httpc.send();
-
 inputs = document.getElementById("maintable").getElementsByTagName("input");
+
+init();
+
 
 function init(){
     
@@ -175,11 +187,19 @@ function redraw(){
     document.getElementById("datadiv").innerHTML = JSON.stringify(stylejson,null,"    ");
     
     data = encodeURIComponent(JSON.stringify(stylejson,null,"    "));
+    data2 = encodeURIComponent(JSON.stringify(currentJSON,null,"    "));
+    
     var httpc = new XMLHttpRequest();
     var url = "filesaver.php";        
     httpc.open("POST", url, true);
     httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
     httpc.send("data="+data+"&filename="+currentFile);//send text to filesaver.php
+
+    var httpc2 = new XMLHttpRequest();
+    var url = "filesaver.php";        
+    httpc2.open("POST", url, true);
+    httpc2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+    httpc2.send("data="+data2+"&filename="+currentFile2);//send text to filesaver.php
 
 }
 
