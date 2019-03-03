@@ -457,5 +457,75 @@ document.getElementById("importdatabutton").onclick = function(){
 }
 
 
+document.getElementById("urlinput").onchange = function(){
+    var localurl = this.value;
+    
+    var httpc = new XMLHttpRequest();
+    httpc.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            localstring = this.responseText;
+            document.getElementById("textIO").value = localstring;
+            if(localurl.substr(-4) == ".svg"){
+                localstring = localstring.split("<json>")[1].split("</json>")[0];
+            }
+            if(localstring.search("{") == -1){
+                var inputbytecode = localstring;
+                var bytecodearray = inputbytecode.split("\n");
+                for(var index = 0;index < bytecodearray.length;index++){
+                    if(bytecodearray[index].includes(":")){
+                        var localBytecode = bytecodearray[index].split(":");
+                        var localAddress = parseInt(localBytecode[0],8);
+                        currentTable[localAddress] = localBytecode[1];
+                    }
+                }
+            }
+            else{
+                currentJSON = JSON.parse(localstring);
+                for(var index = 0;index < currentJSON.table.length;index++){
+                    var localaddr = parseInt(currentJSON.table[index].split(":")[0],8);    
+                    currentTable[localaddr] = currentJSON.table[index].split(":")[1];
+                }
+            }
+            currentAddress = 0250;
+            shapetableindex = (currentAddress&0777) - 0220;
+            currentGlyph = currentJSON.glyph + "0207,";
+            //unit = 100;
+            //x0 =  0.5*innerWidth;
+            //y0 = 0.5*innerHeight;
+            unit = currentJSON.unit;
+            x0 =  0.5*innerWidth + currentJSON.x0rel;
+            y0 = 0.5*innerHeight + currentJSON.y0rel;
+
+            document.getElementById("backgroundimage").src = currentJSON.imgurl;
+            if(currentJSON.styleJSON != undefined){
+                styleJSON = currentJSON.styleJSON;
+                //save the json style file
+    
+                if(path.length > 1){
+                    jsonstylefile =  "symbols/"  +  path + "json/stylejson.txt";
+                }    
+                else{
+                    jsonstylefile = "json/stylejson.txt";
+                }
+                data = encodeURIComponent(JSON.stringify(styleJSON,null,"    "));
+                var httpc2 = new XMLHttpRequest();
+                var url = "filesaver.php";        
+                httpc2.open("POST", url, true);
+                httpc2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+                httpc2.send("data="+data+"&filename="+jsonstylefile);//send text to filesaver.php
+
+            }
+
+            redraw();
+
+        }
+    };
+    httpc.open("GET", "fileloader.php?filename=" + localurl, true);
+    httpc.send();
+
+    
+    
+    
+}
 
 
