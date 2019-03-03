@@ -456,30 +456,6 @@ document.getElementById("importdatabutton").onclick = function(){
     
 }
 
-document.getElementById("exturlbutton").onclick = function(){
-    var localurl = document.getElementByid("urlinput").value;
-    var httpc = new XMLHttpRequest();
-    httpc.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            filedata = this.responseText;
 
-        };
-    }
-    httpc.open("GET", "fileloader.php?filename=" + localurl, true);
-    httpc.send();
-    var httpc = new XMLHttpRequest();
-    httpc.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            filedata = this.responseText;
-            editor.setValue(filedata);
-            var fileType = currentFile.split("/")[0]; 
-            var fileName = currentFile.split("/")[1];
-          
-        }
-    };
-    httpc.open("GET", "fileloader.php?filename=" + currentFile, true);
-    httpc.send();
-
-}
 
 

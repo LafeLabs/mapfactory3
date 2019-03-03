@@ -5,16 +5,15 @@
 {
     "svgwidth": 250,
     "svgheight": 250,
-    "unit": 100,
+    "unit": 82.64462809917354,
     "x0": 684,
     "y0": 419,
     "x0rel": 0,
     "y0rel": 0,
-    "glyph": "",
+    "glyph": "0331,0332,0337,0321,01023,",
     "table": [
-        "0220:0341,",
         "0244:0243,0243,0243,0243,",
-        "0247:0341,0333,0336,0332,0341,",
+        "0250:0331,0332,0337,0321,01023,",
         "01220:0333,0200,0336,0332,0330,0220,0333,0331,0337,",
         "01221:0333,0200,0336,0330,0332,0221,0335,0335,0331,0333,",
         "01222:0333,0200,0336,0332,0330,0332,0222,0336,0333,0333,0333,0333,0331,0331,0337,0337,",
@@ -74,4 +73,7 @@
 }
 </json>
 -->
+	<path d = "M208 208 L208 42 L42 42 L42 208 L208 208 Z" stroke = "black" stroke-width = "3" fill = "none" />	<path d = "M104 104 L104 63 L63 63 L63 104 L104 104 Z" stroke = "black" stroke-width = "3" fill = "none" />	<path d = "M146 104 L146 63 L104 63 L104 104 L146 104 Z" stroke = "black" stroke-width = "3" fill = "none" />	<path d = "M187 104 L187 63 L146 63 L146 104 L187 104 Z" stroke = "black" stroke-width = "3" fill = "none" />	<path d = "M104 187 L104 146 L63 146 L63 187 L104 187 Z" stroke = "black" stroke-width = "3" fill = "none" />	<path d = "M146 187 L146 146 L104 146 L104 187 L146 187 Z" stroke = "black" stroke-width = "3" fill = "none" />	<path d = "M187 187 L187 146 L146 146 L146 187 L187 187 Z" stroke = "black" stroke-width = "3" fill = "none" />    <line x1="125" y1="104" x2="125" y2="146" style="stroke:black;stroke-width:3" />
+    <line x1="125" y1="146" x2="110" y2="131" style="stroke:black;stroke-width:3" />
+    <line x1="125" y1="146" x2="140" y2="131" style="stroke:black;stroke-width:3" />
 </svg>

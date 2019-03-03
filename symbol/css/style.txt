@@ -57,6 +57,7 @@ body{
     right:0px;
     top:100px;
     z-index:2;
+    display:none;
 }
 #shapecontrolbuttons{
     font-size:12px;
@@ -66,7 +67,7 @@ body{
     z-index:2;
     right:0px;
     top:100px;
-    display:none;
+    display:block;
 }
 #keytable{
     position:absolute;

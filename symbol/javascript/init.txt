@@ -71,16 +71,13 @@ for(var index = 0;index < currentJSON.table.length;index++){
 }
 
 
-
 cleanGlyph = "";
 //currentGlyph = ",0207,";
 glyphEditMode = true;
 shapeTableEditMode = false;
 spellMode = false;
 
-
 document.getElementById("actionInput").select();
-
 
 softkeys = JSON.parse(document.getElementById("softkeydata").innerHTML);
 

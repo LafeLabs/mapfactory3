@@ -92,16 +92,25 @@
             <td class = "button" id = "importdatabutton">
                 <img src = "icons/rightarrow.svg"/>
             </td>
+            <td class = "button" id = "hidebutton">
+                <img src = "icons/hide.svg"/>    
+            </td>
+
         </tr>
     </table>
     <table id = "shapecontrolbuttons" class = "linktable">
         <tr>
-            <td class = "button" id = "hidebutton">
-                <img src = "icons/hide.svg"/>    
-            </td>
             <td class = "button" id = "symbolactionbutton">
                 <img src = "icons/symbolaction.svg"/>
             </td>
+            
+            <td class = "button" onclick = "doTheThing(022)">
+                <img src = "icons/glyph01022.svg"/>
+            </td>
+            <td class = "button" onclick = "doTheThing(023)">
+                <img src = "icons/glyph01023.svg"/>
+            </td>
+
         </tr>
     </table>
     <table id = "shapetabletable">

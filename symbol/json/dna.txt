@@ -59,6 +59,8 @@
 			"delete.svg",
 			"editor.svg",
 			"factory.svg",
+			"glyph01022.svg",
+			"glyph01023.svg",
 			"hide.svg",
 			"image.svg",
 			"keyboard.svg",

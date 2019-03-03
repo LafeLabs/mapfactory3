@@ -164,17 +164,58 @@
         }
 
     }
-    if(localCommand == 022){//previous glyph in table
-        if(shapeTableEditMode){
+    if(localCommand == 023){//previous glyph in table
+//        if(shapeTableEditMode){
+  //          currentAddress--;
+    //        currentGlyph = currentTable[currentAddress] + ",0207,";
+      //  }
+            if(shapetableindex != 030){
+                shapekeys[shapetableindex].style.borderColor = "black";
+            }
+
             currentAddress--;
+            if(currentAddress < 0220){
+                currentAddress = 0250;
+            }
+            if(currentAddress > 01000 && currentAddress < 01220){
+                currentAddress = 01247;
+            }
             currentGlyph = currentTable[currentAddress] + ",0207,";
-        }
+            redraw();
+            arrowkey = true;
+            shapetableindex = (currentAddress&0777) - 0220;
+
+            if(shapetableindex != 030){
+                shapekeys[shapetableindex].style.borderColor = "green";
+            }
+
+      
+      
     }
-    if(localCommand == 023){//next glyph in table
-        if(shapeTableEditMode){
-            currentAddress++;
-            currentGlyph = currentTable[currentAddress] + ",0207,";
+    if(localCommand == 022){//next glyph in table
+//        if(shapeTableEditMode){
+  //          currentAddress++;
+    //        currentGlyph = currentTable[currentAddress] + ",0207,";
+      //  }
+        if(shapetableindex != 030){
+            shapekeys[shapetableindex].style.borderColor = "black";
         }
+        currentAddress++;
+        if(currentAddress > 0250 && currentAddress < 01000){
+            currentAddress = 0220;
+        }
+        if(currentAddress > 01247){
+            currentAddress = 01220;
+        }
+    
+        currentGlyph = currentTable[currentAddress] + ",0207,";
+        redraw();
+        arrowkey = true;
+        shapetableindex = (currentAddress&0777) - 0220;
+        if(shapetableindex != 030){
+            shapekeys[shapetableindex].style.borderColor = "green";
+        }
+    
     }
 
     if(localCommand == 024){
