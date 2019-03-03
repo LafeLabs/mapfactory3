@@ -7,9 +7,9 @@
     "svgheight": 479,
     "unit": 313.84283767210036,
     "x0": 471.6934516351377,
-    "y0": 237.29432820000045,
+    "y0": 587.2943282000005,
     "x0rel": -212.3065483648623,
-    "y0rel": -181.70567179999955,
+    "y0rel": 193.79432820000045,
     "glyph": "0234,",
     "table": [
         "0220:0200,0306,0335,0311,0336,0201,0334,0337,0201,0334,0334,0336,0342,0335,0337,0350,0334,0201,0334,0336,0201,0335,0335,0335,0335,0337,0331,0304,0333,0313,",
@@ -24,7 +24,7 @@
         "0231:0336,0336,0336,0331,1300,0333,0333,0333,1304,1305,1306,0331,0332,0332,0332,0332,0332,0332,0332,1310,1311,1312,1313,1314,1316,0333,0331,0332,0332,0332,0332,0332,0332,0332,1320,1321,1322,1323,1324,1325,1326,1327,0331,0332,0332,0332,0332,0332,0332,0332,0332,1330,1331,1332,1333,1334,1335,1336,1337,0330,0330,0201,0201,0334,0201,0201,0201,0201,0201,0201,0201,0201,0335,0333,0333,0333,0333,0333,0333,0331,0333,0333,0331,0331,0331,0337,0337,0332,0332,0337,",
         "0232:0336,0336,0336,0331,01340,01341,01342,01343,01344,01345,01346,01347,0331,0332,0332,0332,0332,0332,0332,0332,0332,01350,01351,01352,01353,01354,01355,01356,01357,0331,0332,0332,0332,0332,0332,01360,01361,01362,01363,01364,01365,01366,01367,0331,0332,0332,0332,0332,0332,0332,0332,0332,01370,01371,01372,01373,01374,01375,01376,01377,0337,0337,0337,0332,",
         "0233:0231,0232,",
-        "0234:0331,226,0336,0331,0337,0332,0226,0330,0332,0336,0330,0336,0336,0331,0336,0336,0330,0333,0337,0333,0333,041,0365,0333,0333,042,0365,0333,0333,043,0365,0333,0333,044,0365,0333,0333,045,0365,0333,0333,046,0365,0333,0333,047,0365,0331,0331,0337,0337,0337,0332,0332,0336,0336,0333,0336,050,0365,0333,0333,051,0365,0333,0333,052,0365,0333,0333,053,0365,0333,0333,054,0365,0333,0333,055,0365,0333,0333,056,0365,0333,0333,057,0365,0331,0331,0337,0337,0337,0337,0332,0336,0336,0336,0333,0336,060,0365,0333,0333,061,0365,0333,0333,062,0365,0333,0333,063,0365,0333,0333,064,0365,0333,0333,065,0365,0333,0333,066,0365,0333,0333,067,0365,0331,0331,0337,0337,0337,0337,0332,0336,0336,0336,0333,0336,070,0365,0333,0333,071,0365,0333,0333,072,0365,0333,0333,073,0365,0333,0333,074,0365,0333,0333,075,0365,0333,0333,076,0365,0333,0333,077,0365,0337,0337,0337,0337,0332,0336,0330,0336,0336,0333,0336,0336,0331,0332,0337,0337,0337,0337,0337,",
+        "0234:226,0336,0331,0337,0332,0226,0330,0332,0336,0330,0336,0336,0331,0336,0336,0330,0333,0337,0333,0333,041,0365,0333,0333,042,0365,0333,0333,043,0365,0333,0333,044,0365,0333,0333,045,0365,0333,0333,046,0365,0333,0333,047,0365,0331,0331,0337,0337,0337,0332,0332,0336,0336,0333,0336,050,0365,0333,0333,051,0365,0333,0333,052,0365,0333,0333,053,0365,0333,0333,054,0365,0333,0333,055,0365,0333,0333,056,0365,0333,0333,057,0365,0331,0331,0337,0337,0337,0337,0332,0336,0336,0336,0333,0336,060,0365,0333,0333,061,0365,0333,0333,062,0365,0333,0333,063,0365,0333,0333,064,0365,0333,0333,065,0365,0333,0333,066,0365,0333,0333,067,0365,0331,0331,0337,0337,0337,0337,0332,0336,0336,0336,0333,0336,070,0365,0333,0333,071,0365,0333,0333,072,0365,0333,0333,073,0365,0333,0333,074,0365,0333,0333,075,0365,0333,0333,076,0365,0333,0333,077,0365,0337,0337,0337,0337,0332,0336,0330,0336,0336,0333,0336,0336,0331,0332,0337,0337,0337,0337,0337,",
         "0235:0332,0321,0337,0362,0203,0335,0311,0337,0203,0335,0336,0203,0335,0337,0203,0354,0335,0336,0333,0200,0350,0334,0343,0335,0330,0336,0331,0335,0343,0335,0342,0334,0335,0330,0336,0331,0335,0343,0335,0342,0330,0336,0331,0335,0343,0335,0342,0330,0336,0331,0335,0343,0335,0342,0330,0336,0331,0335,0343,0335,0342,0334,0334,0330,0337,0331,0335,0335,0331,0334,0334,0337,0331,0335,0335,0337,0337,0337,0331,0334,0334,0304,0313,0336,0333,0320,",
         "0236:0335,0331,0337,0321,0305,0362,0203,0335,0335,0203,0335,0335,0203,0335,0335,0203,0335,0335,0203,0354,0335,0350,0335,0311,0336,0362,0203,0335,0335,0203,0335,0335,0203,0335,0335,0203,0335,0335,0203,0354,0335,0335,0335,0337,0313,0336,0330,0304,0334,0320,",
         "0237:0330,0306,0335,0335,0321,0362,0203,0335,0203,0335,0203,0335,0203,0335,0203,0335,0203,0335,0354,0330,0335,0335,0350,0335,0312,0337,0362,0203,0334,0334,0334,0334,0203,0334,0334,0334,0334,0203,0354,0334,0336,0331,0334,0337,0362,0203,0334,0334,0334,0334,0203,0334,0334,0334,0334,0203,0354,0334,0336,0331,0334,0334,0330,0304,0313,0320,",
@@ -49,7 +49,7 @@
         "01231:0333,0200,0332,0336,0330,0330,0337,0231,0333,0336,0331,0337,",
         "01232:0333,0200,0336,0330,0332,0332,0337,0232,0333,",
         "01233:0333,0200,0330,0332,0233,0333,",
-        "01234:0330,0234,0333,0331,",
+        "01234:0333,0200,0336,0234,0337,",
         "01235:0333,0200,0336,0332,0336,0330,0332,0235,0333,0333,0333,0336,0336,0331,0331,0331,0331,0337,0337,0337,0337,",
         "01236:0333,0200,0336,0330,0330,0332,0336,0331,0337,0236,0333,0331,0331,0336,0330,0337,0337,",
         "01237:0333,0200,0336,0330,0332,0237,0333,0331,0337,",
@@ -96,37 +96,63 @@
 }
 </json>
 -->
-	<path d = "M412 372 L412 58 L98 58 L98 372 L412 372 Z" stroke = "black" stroke-width = "1" fill = "none" />    <line x1="137" y1="372" x2="137" y2="58" style="stroke:black;stroke-width:1" />
-    <line x1="177" y1="372" x2="177" y2="58" style="stroke:black;stroke-width:1" />
-    <line x1="216" y1="372" x2="216" y2="58" style="stroke:black;stroke-width:1" />
-    <line x1="255" y1="372" x2="255" y2="58" style="stroke:black;stroke-width:1" />
-    <line x1="294" y1="372" x2="294" y2="58" style="stroke:black;stroke-width:1" />
-    <line x1="334" y1="372" x2="334" y2="58" style="stroke:black;stroke-width:1" />
-    <line x1="373" y1="372" x2="373" y2="58" style="stroke:black;stroke-width:1" />
-    <line x1="412" y1="332" x2="98" y2="332" style="stroke:black;stroke-width:1" />
-    <line x1="412" y1="293" x2="98" y2="293" style="stroke:black;stroke-width:1" />
-    <line x1="412" y1="254" x2="98" y2="254" style="stroke:black;stroke-width:1" />
-    <line x1="412" y1="215" x2="98" y2="215" style="stroke:black;stroke-width:1" />
-    <line x1="412" y1="175" x2="98" y2="175" style="stroke:black;stroke-width:1" />
-    <line x1="412" y1="136" x2="98" y2="136" style="stroke:black;stroke-width:1" />
-    <line x1="412" y1="97" x2="98" y2="97" style="stroke:black;stroke-width:1" />
-	<path d = "M412 529 L412 215 L98 215 L98 529 L412 529 Z" stroke = "black" stroke-width = "1" fill = "none" />    <line x1="137" y1="529" x2="137" y2="215" style="stroke:black;stroke-width:1" />
-    <line x1="177" y1="529" x2="177" y2="215" style="stroke:black;stroke-width:1" />
-    <line x1="216" y1="529" x2="216" y2="215" style="stroke:black;stroke-width:1" />
-    <line x1="255" y1="529" x2="255" y2="215" style="stroke:black;stroke-width:1" />
-    <line x1="294" y1="529" x2="294" y2="215" style="stroke:black;stroke-width:1" />
-    <line x1="334" y1="529" x2="334" y2="215" style="stroke:black;stroke-width:1" />
-    <line x1="373" y1="529" x2="373" y2="215" style="stroke:black;stroke-width:1" />
-    <line x1="412" y1="489" x2="98" y2="489" style="stroke:black;stroke-width:1" />
-    <line x1="412" y1="450" x2="98" y2="450" style="stroke:black;stroke-width:1" />
-    <line x1="412" y1="411" x2="98" y2="411" style="stroke:black;stroke-width:1" />
-    <line x1="412" y1="372" x2="98" y2="372" style="stroke:black;stroke-width:1" />
-    <line x1="412" y1="332" x2="98" y2="332" style="stroke:black;stroke-width:1" />
-    <line x1="412" y1="293" x2="98" y2="293" style="stroke:black;stroke-width:1" />
-    <line x1="412" y1="254" x2="98" y2="254" style="stroke:black;stroke-width:1" />
-    <text x="147" y = "87" fill = "black" font-size = "19.615177354506272px" font-family = "arial">!</text>
-    <text x="186" y = "87" fill = "black" font-size = "19.615177354506272px" font-family = "arial">"</text>
-    <text x="226" y = "87" fill = "black" font-size = "19.615177354506272px" font-family = "arial">#</text>
-    <text x="265" y = "87" fill = "black" font-size = "19.615177354506272px" font-family = "arial">$</text>
-    <text x="304" y = "87" fill = "black" font-size = "19.615177354506272px" font-family = "arial">%</text>
-    <text x="343" y = "87" fill = "black" font-size = "19.615177354506272px" font-family = "arial">
+	<path d = "M412 433 L412 119 L98 119 L98 433 L412 433 Z" stroke = "black" stroke-width = "1" fill = "none" />    <line x1="137" y1="433" x2="137" y2="119" style="stroke:black;stroke-width:1" />
+    <line x1="177" y1="433" x2="177" y2="119" style="stroke:black;stroke-width:1" />
+    <line x1="216" y1="433" x2="216" y2="119" style="stroke:black;stroke-width:1" />
+    <line x1="255" y1="433" x2="255" y2="119" style="stroke:black;stroke-width:1" />
+    <line x1="294" y1="433" x2="294" y2="119" style="stroke:black;stroke-width:1" />
+    <line x1="334" y1="433" x2="334" y2="119" style="stroke:black;stroke-width:1" />
+    <line x1="373" y1="433" x2="373" y2="119" style="stroke:black;stroke-width:1" />
+    <line x1="412" y1="394" x2="98" y2="394" style="stroke:black;stroke-width:1" />
+    <line x1="412" y1="355" x2="98" y2="355" style="stroke:black;stroke-width:1" />
+    <line x1="412" y1="316" x2="98" y2="316" style="stroke:black;stroke-width:1" />
+    <line x1="412" y1="276" x2="98" y2="276" style="stroke:black;stroke-width:1" />
+    <line x1="412" y1="237" x2="98" y2="237" style="stroke:black;stroke-width:1" />
+    <line x1="412" y1="198" x2="98" y2="198" style="stroke:black;stroke-width:1" />
+    <line x1="412" y1="159" x2="98" y2="159" style="stroke:black;stroke-width:1" />
+	<path d = "M412 590 L412 276 L98 276 L98 590 L412 590 Z" stroke = "black" stroke-width = "1" fill = "none" />    <line x1="137" y1="590" x2="137" y2="276" style="stroke:black;stroke-width:1" />
+    <line x1="177" y1="590" x2="177" y2="276" style="stroke:black;stroke-width:1" />
+    <line x1="216" y1="590" x2="216" y2="276" style="stroke:black;stroke-width:1" />
+    <line x1="255" y1="590" x2="255" y2="276" style="stroke:black;stroke-width:1" />
+    <line x1="294" y1="590" x2="294" y2="276" style="stroke:black;stroke-width:1" />
+    <line x1="334" y1="590" x2="334" y2="276" style="stroke:black;stroke-width:1" />
+    <line x1="373" y1="590" x2="373" y2="276" style="stroke:black;stroke-width:1" />
+    <line x1="412" y1="551" x2="98" y2="551" style="stroke:black;stroke-width:1" />
+    <line x1="412" y1="512" x2="98" y2="512" style="stroke:black;stroke-width:1" />
+    <line x1="412" y1="473" x2="98" y2="473" style="stroke:black;stroke-width:1" />
+    <line x1="412" y1="433" x2="98" y2="433" style="stroke:black;stroke-width:1" />
+    <line x1="412" y1="394" x2="98" y2="394" style="stroke:black;stroke-width:1" />
+    <line x1="412" y1="355" x2="98" y2="355" style="stroke:black;stroke-width:1" />
+    <line x1="412" y1="316" x2="98" y2="316" style="stroke:black;stroke-width:1" />
+    <text x="147" y = "149" fill = "black" font-size = "19.615177354506272px" font-family = "arial">!</text>
+    <text x="186" y = "149" fill = "black" font-size = "19.615177354506272px" font-family = "arial">"</text>
+    <text x="226" y = "149" fill = "black" font-size = "19.615177354506272px" font-family = "arial">#</text>
+    <text x="265" y = "149" fill = "black" font-size = "19.615177354506272px" font-family = "arial">$</text>
+    <text x="304" y = "149" fill = "black" font-size = "19.615177354506272px" font-family = "arial">%</text>
+    <text x="343" y = "149" fill = "black" font-size = "19.615177354506272px" font-family = "arial">&amp;</text>
+    <text x="383" y = "149" fill = "black" font-size = "19.615177354506272px" font-family = "arial">'</text>
+    <text x="108" y = "188" fill = "black" font-size = "19.615177354506272px" font-family = "arial">(</text>
+    <text x="147" y = "188" fill = "black" font-size = "19.615177354506272px" font-family = "arial">)</text>
+    <text x="186" y = "188" fill = "black" font-size = "19.615177354506272px" font-family = "arial">*</text>
+    <text x="226" y = "188" fill = "black" font-size = "19.615177354506272px" font-family = "arial">+</text>
+    <text x="265" y = "188" fill = "black" font-size = "19.615177354506272px" font-family = "arial">,</text>
+    <text x="304" y = "188" fill = "black" font-size = "19.615177354506272px" font-family = "arial">-</text>
+    <text x="343" y = "188" fill = "black" font-size = "19.615177354506272px" font-family = "arial">.</text>
+    <text x="383" y = "188" fill = "black" font-size = "19.615177354506272px" font-family = "arial">/</text>
+    <text x="108" y = "227" fill = "black" font-size = "19.615177354506272px" font-family = "arial">0</text>
+    <text x="147" y = "227" fill = "black" font-size = "19.615177354506272px" font-family = "arial">1</text>
+    <text x="186" y = "227" fill = "black" font-size = "19.615177354506272px" font-family = "arial">2</text>
+    <text x="226" y = "227" fill = "black" font-size = "19.615177354506272px" font-family = "arial">3</text>
+    <text x="265" y = "227" fill = "black" font-size = "19.615177354506272px" font-family = "arial">4</text>
+    <text x="304" y = "227" fill = "black" font-size = "19.615177354506272px" font-family = "arial">5</text>
+    <text x="343" y = "227" fill = "black" font-size = "19.615177354506272px" font-family = "arial">6</text>
+    <text x="383" y = "227" fill = "black" font-size = "19.615177354506272px" font-family = "arial">7</text>
+    <text x="108" y = "267" fill = "black" font-size = "19.615177354506272px" font-family = "arial">8</text>
+    <text x="147" y = "267" fill = "black" font-size = "19.615177354506272px" font-family = "arial">9</text>
+    <text x="186" y = "267" fill = "black" font-size = "19.615177354506272px" font-family = "arial">:</text>
+    <text x="226" y = "267" fill = "black" font-size = "19.615177354506272px" font-family = "arial">;</text>
+    <text x="265" y = "267" fill = "black" font-size = "19.615177354506272px" font-family = "arial">&lt;</text>
+    <text x="304" y = "267" fill = "black" font-size = "19.615177354506272px" font-family = "arial">=</text>
+    <text x="343" y = "267" fill = "black" font-size = "19.615177354506272px" font-family = "arial">&gt;</text>
+    <text x="383" y = "267" fill = "black" font-size = "19.615177354506272px" font-family = "arial">?</text>
+</svg>

@@ -129,4 +129,30 @@
     <text x="226" y = "87" fill = "black" font-size = "19.615177354506272px" font-family = "arial">#</text>
     <text x="265" y = "87" fill = "black" font-size = "19.615177354506272px" font-family = "arial">$</text>
     <text x="304" y = "87" fill = "black" font-size = "19.615177354506272px" font-family = "arial">%</text>
-    <text x="343" y = "87" fill = "black" font-size = "19.615177354506272px" font-family = "arial">
+    <text x="343" y = "87" fill = "black" font-size = "19.615177354506272px" font-family = "arial">&amp;</text>
+    <text x="383" y = "87" fill = "black" font-size = "19.615177354506272px" font-family = "arial">'</text>
+    <text x="108" y = "126" fill = "black" font-size = "19.615177354506272px" font-family = "arial">(</text>
+    <text x="147" y = "126" fill = "black" font-size = "19.615177354506272px" font-family = "arial">)</text>
+    <text x="186" y = "126" fill = "black" font-size = "19.615177354506272px" font-family = "arial">*</text>
+    <text x="226" y = "126" fill = "black" font-size = "19.615177354506272px" font-family = "arial">+</text>
+    <text x="265" y = "126" fill = "black" font-size = "19.615177354506272px" font-family = "arial">,</text>
+    <text x="304" y = "126" fill = "black" font-size = "19.615177354506272px" font-family = "arial">-</text>
+    <text x="343" y = "126" fill = "black" font-size = "19.615177354506272px" font-family = "arial">.</text>
+    <text x="383" y = "126" fill = "black" font-size = "19.615177354506272px" font-family = "arial">/</text>
+    <text x="108" y = "166" fill = "black" font-size = "19.615177354506272px" font-family = "arial">0</text>
+    <text x="147" y = "166" fill = "black" font-size = "19.615177354506272px" font-family = "arial">1</text>
+    <text x="186" y = "166" fill = "black" font-size = "19.615177354506272px" font-family = "arial">2</text>
+    <text x="226" y = "166" fill = "black" font-size = "19.615177354506272px" font-family = "arial">3</text>
+    <text x="265" y = "166" fill = "black" font-size = "19.615177354506272px" font-family = "arial">4</text>
+    <text x="304" y = "166" fill = "black" font-size = "19.615177354506272px" font-family = "arial">5</text>
+    <text x="343" y = "166" fill = "black" font-size = "19.615177354506272px" font-family = "arial">6</text>
+    <text x="383" y = "166" fill = "black" font-size = "19.615177354506272px" font-family = "arial">7</text>
+    <text x="108" y = "205" fill = "black" font-size = "19.615177354506272px" font-family = "arial">8</text>
+    <text x="147" y = "205" fill = "black" font-size = "19.615177354506272px" font-family = "arial">9</text>
+    <text x="186" y = "205" fill = "black" font-size = "19.615177354506272px" font-family = "arial">:</text>
+    <text x="226" y = "205" fill = "black" font-size = "19.615177354506272px" font-family = "arial">;</text>
+    <text x="265" y = "205" fill = "black" font-size = "19.615177354506272px" font-family = "arial">&lt;</text>
+    <text x="304" y = "205" fill = "black" font-size = "19.615177354506272px" font-family = "arial">=</text>
+    <text x="343" y = "205" fill = "black" font-size = "19.615177354506272px" font-family = "arial">&gt;</text>
+    <text x="383" y = "205" fill = "black" font-size = "19.615177354506272px" font-family = "arial">?</text>
+</svg>
