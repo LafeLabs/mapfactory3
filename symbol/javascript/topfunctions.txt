@@ -73,14 +73,18 @@ function spellGlyph(localString){
 
         doTheThing(parseInt(tempArray[index],8) + 01000);
         if(parseInt(tempArray[index],8) > 01000){
-            doTheThing(01060);
-            doTheThing(01061);
+//            doTheThing(01060);
+  //          doTheThing(01061);
             var sixtyfours = (parseInt(tempArray[index],8) & 0700) >> 6;
             var eights = (parseInt(tempArray[index],8) & 070) >> 3;
             var ones = parseInt(tempArray[index],8) & 07;
-            doTheThing(01060 + sixtyfours);            
-            doTheThing(01060 + eights);            
-            doTheThing(01060 + ones);            
+    //        doTheThing(01060 + sixtyfours);            
+      //      doTheThing(01060 + eights);            
+        //    doTheThing(01060 + ones);
+            var localnumberglyph = "060,061,0" + (060 + sixtyfours).toString(8) + ",0" + (060 + eights).toString(8) + ",0" + (060 + ones).toString(8);
+            console.log(localnumberglyph);
+
+            drawGlyph("0333,0200,0332,0336,0330,0336,0336,0333,0337,"+ localnumberglyph +",0365,0333,0333,0333,0331,0331,0336,0333,0337,0337,0337,");
         }
     }
 }
