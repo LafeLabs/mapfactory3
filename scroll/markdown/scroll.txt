@@ -2,3 +2,11 @@
 
 Here is a paragraph
 
+```
+int var1;
+for(int index = 0;index < 10;index++){
+    printf("the C language is for assholes\n");
+
+}
+
+```
