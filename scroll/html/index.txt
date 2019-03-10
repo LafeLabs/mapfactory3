@@ -48,6 +48,7 @@ document.getElementById("editor").style.height = (innerHeight - 110).toString() 
 var converter = new showdown.Converter();
 
 converter.setOption('literalMidWordUnderscores', 'true');
+converter.setOption('tables', 'true');
 
 //currentFile = "markdown/scroll.txt";
 currentFile = "markdown/" + document.getElementById("filenamediv").innerHTML;
@@ -207,8 +208,8 @@ there was a time when we tried to be clever but it was a fools errand.
     }
 
     textin = document.getElementById("invisiblescroll").innerHTML;
-
-    textout = "\n\\documentclass[11pt]{article}\n\\usepackage{hyperref}\n\\usepackage{graphicx}\n\\usepackage[paperheight=8.5in,paperwidth=5.5in,margin=1in]{geometry}\n\\begin{document}\n";
+console.log(textin);
+    textout = "\n\\documentclass[11pt]{article}\n\\usepackage{hyperref}\n\\usepackage{graphicx}\n\\usepackage{listings}\n\\usepackage[paperheight=8.5in,paperwidth=5.5in,margin=1in]{geometry}\n\\begin{document}\n";
     
     
     textout += textin;    
@@ -230,6 +231,11 @@ there was a time when we tried to be clever but it was a fools errand.
     textout = textout.replace(/<ul>/g,"\\begin{itemize}\n");
     textout = textout.replace(/<\/ul>/g,"\\end{itemize}");
 
+    textout = textout.replace(/<pre><code>/g,"\\begin{lstlisting}\n");
+    textout = textout.replace(/<\/code><\/pre>/g,"\\end{lstlisting}");
+
+// arduino code highlight:  
+// https://github.com/trihedral/ArduinoLatexListing
 
     textout = textout.replace(/<p>/g,"\n\n");
     textout = textout.replace(/<\/p>/g,"\n\n");

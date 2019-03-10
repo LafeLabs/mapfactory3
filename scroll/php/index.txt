@@ -42,6 +42,8 @@ EGO DEATH:
 </script>
 
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.6/showdown.js"></script>
+
+
 </head>
 <body>
 <div id = "textdatadiv" style = "display:none" class = "no-mathjax"><?php
