@@ -28,6 +28,8 @@ cd bookfactory
 cd mynewfilename
 pdflatex scroll.tex
 pdfbook scroll.pdf
+cp scroll-book.pdf ../mynewfilename-book.pdf
+
 </pre>
 
 <div id = "linklist"></div>
