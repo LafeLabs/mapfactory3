@@ -27,6 +27,7 @@
 	{
 		"path":"html",
 		"files":[
+			"bookfactory.txt",
 			"index.txt"
 		]
 	},
