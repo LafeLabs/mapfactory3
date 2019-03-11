@@ -25,7 +25,7 @@
 <pre>
 cd scroll
 cd bookfactory
-php ../getscroll.php
+cd mynewfilename
 pdflatex scroll.tex
 pdfbook scroll.pdf
 </pre>
