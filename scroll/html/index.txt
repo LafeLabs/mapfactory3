@@ -163,8 +163,6 @@ MathJax.Hub.Typeset();//tell Mathjax to update the math
 document.getElementById("texbutton").onclick = function(){
 
     
-    
-    
     document.getElementById("invisiblescroll").innerHTML = converter.makeHtml(document.getElementById("editor").value);
 
     invisiblechildren = document.getElementById("invisiblescroll").childNodes;
@@ -216,7 +214,7 @@ there was a time when we tried to be clever but it was a fools errand.
 
     textin = document.getElementById("invisiblescroll").innerHTML;
 
-    console.log(textin);
+//    console.log(textin);
 
     textout = "\n\\documentclass[11pt]{article}\n\\usepackage{hyperref}\n\\usepackage{graphicx}\n\\usepackage{listings}\n\\usepackage[paperheight=8.5in,paperwidth=5.5in,margin=1in]{geometry}\n\\begin{document}\n";
     
@@ -253,7 +251,17 @@ there was a time when we tried to be clever but it was a fools errand.
     textout = textout.replace(/\">/g,"}");
     
     data = encodeURIComponent(textout);
-    texfile = "latex/" + currentFile.split("markdown/")[1].split(".")[0] + ".tex";
+
+    texfile = "scroll.tex";
+    if(!currentFile.includes("bookfactory")){
+        texfile = "latex/" + currentFile.split("markdown/")[1].split(".")[0] + ".tex";        
+    }
+    if(currentFile.includes("bookfactory")){
+        var localurlarray = currentFile.split("/");
+        txtfile = localurlarray[localurlarray.length - 2];
+        texfile = "bookfactory/" + txtfile.split(".txt")[0] + "/scroll.tex";
+    }    
+    
     var httpc = new XMLHttpRequest();
     var url = "filesaver.php";
     httpc.open("POST", url, true);
@@ -261,14 +269,17 @@ there was a time when we tried to be clever but it was a fools errand.
     httpc.send("data="+data+"&filename="+ texfile);//send text to filesaver.php
    
    
-    var httpc = new XMLHttpRequest();
-    var url = "mkdir.php";
-    httpc.open("POST", url, true);
-    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
-    dirname = "latex/" + currentFile.split("markdown/")[1].split(".")[0] + "_images";
-    httpc.send("dirname="+dirname);//send text to mkdir.php   
-    
-    
+    if(!currentFile.includes("bookfactory")){
+
+        var httpc = new XMLHttpRequest();
+        var url = "mkdir.php";
+        httpc.open("POST", url, true);
+        httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+        dirname = "latex/" + currentFile.split("markdown/")[1].split(".")[0] + "_images";
+       httpc.send("dirname="+dirname);//send text to mkdir.php   
+
+    }
+ 
 }
 
 

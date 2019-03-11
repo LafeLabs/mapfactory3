@@ -39,7 +39,7 @@ for(var index = 0;index < dirs.length - 1;index++){
     var newp = document.createElement("P");
     var newa = document.createElement("A");
     newa.href = "index.php?filename=../bookfactory/" + dirs[index] + "/scroll.txt";
-    newa.innerHTML = dirs[index];
+    newa.innerHTML = "bookfactory/" + dirs[index] + "/";
     newp.appendChild(newa);
     document.getElementById("linklist").appendChild(newp);
 }
