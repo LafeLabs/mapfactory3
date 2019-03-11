@@ -1,0 +1,105 @@
+<div id = "invisiblescroll" class = "no-mathjax" style = "display:none;"></div>
+
+<div id = "visiblescroll"></div>
+<a id = "texeditlink"></a>
+<a id = "scrolleditlink"></a>
+<table>
+    <tr>
+        <td><a href = "editor.php">
+            <img style = "width:80px;" src = "icons/editor.svg"/>
+        </a></td>
+        <td><a href = "index.php"><img style = "width:80px;" src = "../mapicons/scroll.svg"/></a></td>
+
+    </tr>
+<tr>
+</table>
+<table>
+<tr>
+    <td>Enter URL of SCROLL:</td>
+    <td>
+        <input id = "urlinput"/>
+    </td>
+</tr>
+</table>
+
+<pre>
+cd scroll
+cd bookfactory
+php ../getscroll.php
+pdflatex scroll.tex
+pdfbook scroll.pdf
+</pre>
+
+<div id = "linklist"></div>
+
+<script>
+
+dirs = document.getElementById("booklist").innerHTML.split("\n");
+for(var index = 0;index < dirs.length - 1;index++){
+    var newp = document.createElement("P");
+    var newa = document.createElement("A");
+    newa.href = "index.php?filename=../bookfactory/" + dirs[index] + "/scroll.txt";
+    newa.innerHTML = dirs[index];
+    newp.appendChild(newa);
+    document.getElementById("linklist").appendChild(newp);
+}
+
+document.getElementById("urlinput").onchange = function(){
+    scrollurl = this.value;
+
+    var scrollurlarray = scrollurl.split("/");
+    newfilename = scrollurlarray[scrollurlarray.length - 1];
+    newfilename = newfilename.split(".txt")[0];
+
+    var httpc = new XMLHttpRequest();
+    var url = "getscroll.php";        
+
+    httpc.open("POST", url, true);
+    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+    httpc.send("scrollurl="+scrollurl);//send text to getscroll.php
+    
+    document.getElementById("texeditlink").href = "index.php?filename=../bookfactory/" + newfilename + "/scroll.txt";
+    document.getElementById("texeditlink").innerHTML = "index.php?filename=../bookfactory/" + newfilename + "/scroll.txt"    
+    //this needs to deal with possibiltiuy that the link is to the edit url with index.php?filename = or whatever
+    //when a new filename comes in, it needs to create a sub  folder to bookfactory/ with that name minus .txt, then get the data from the webpage, save it to scroll.txt, convert to html and put that in invisiblescroll as well as visible scroll, and save the html as bookfactory/filename/index.html so this thing has to first save the files then call the php script that goes and gets all the png's and puts them next to bookfactory/filename/scroll.*  
+    
+    //getscroll.php is called here with the global filename
+    
+    
+}
+
+
+
+</script>
+<style>
+#urlinput{
+    width:20em;
+}
+pre{
+    background-color:black;
+    color:#00ff00;
+    font-size:16px;
+    font-family:courier;
+    width:20em;
+    height:8em;
+    display:block;
+    padding:2em 2em 2em 2em;
+}
+.button{
+    border:solid;
+    border-radius:10px;
+    font-size:36px;
+    border-width:4px;
+    text-align:center;
+    cursor:pointer;
+}
+.button:hover{
+    background-color:green;
+}
+.button:active{
+    background-color:yellow;
+}
+</style>
+
+
+

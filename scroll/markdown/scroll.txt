@@ -11,6 +11,7 @@ for(int index = 0;index < 10;index++){
 
 ```
 
+
 | Tables        | Are           | Cool  |
 | ------------- |:-------------:| -----:|
 | **col 3 is**  | right-aligned | $1600 |
@@ -18,4 +19,7 @@ for(int index = 0;index < 10;index++){
 | zebra stripes | ~~are neat~~  |    $1 |
 
 
+
+![](http://localhost:8000/symbol/png/png1549066585.png)
+caption for the above graphics
 
