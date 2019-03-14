@@ -16,15 +16,13 @@
         <td><a href = "textfeed.php">
             <img style = "width:80px;" src = "icons/textfeed.svg"/>
         </a></td>
-        <td id = "texbutton" class = "button">
-            $\LaTeX$
-        </td>
-        
         <td><a href = "bookfactory.php">
             <img style = "width:80px;" src = "icons/bookfactory.svg"/>
         </a></td>
-        
-        <td style = "border:solid;border-radius:10px">
+        <td id = "texbutton" class = "button">
+            $\LaTeX$
+        </td>
+        <td id = "texeditbutton" style = "border:solid;border-radius:10px">
             <a id =  "texedit" href = "texeditor.php">
             <img style = "width:40px;display:block;margin:auto" src = "icons/editor.svg"/>
             $\TeX$
@@ -39,28 +37,6 @@
 <div id = "imagescroll"></div>
 <div id = "invisiblescroll" style = "display:none"></div>
 <script>
-
-//search and replace a pair of tags:
-//e.g. text = sr2x("<h1>","</h1>","\\section{","}",text);
-function sr2x(old1,old2,new1,new2,inputtext){
-    if(inputtext.includes(old1) && inputtext.includes(old2)){
-        var old1array = inputtext.split(old1);
-        var outputtext = old1array[0];
-        for(var index = 1;index < old1array.length;index++){
-            outputtext += new1;
-            outputtext += old1array[index].split(old2)[0];
-            outputtext += new2;
-            if(index == old1array.length - 1){
-                outputtext += old1array[index].split(old2)[1];
-            }
-        }
-        return outputtext;
-    }
-    else{
-        return inputtext;
-    }
-}
-
 
 
 if(document.getElementById("filenamediv").innerHTML.length > 1){
@@ -84,18 +60,21 @@ if(currentFile.includes("bookfactory")){
     filenamearray = currentFile.split("/");
     bookname = filenamearray[filenamearray.length - 2];
 }
+else{
+    document.getElementById("texbutton").style.display = "none";
+    document.getElementById("texeditbutton").style.display = "none";
+}
 
-
-notexhtml = "";
+rawhtml = "";
 var httpc = new XMLHttpRequest();
 httpc.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         filedata = this.responseText;
         document.getElementById("editor").value = filedata;
-        document.getElementById("scroll").innerHTML = converter.makeHtml(filedata);
-        notexhtml = document.getElementById("scroll").innerHTML;
+        rawhtml = converter.makeHtml(filedata);
+        document.getElementById("scroll").innerHTML = rawhtml;
+        document.getElementById("invisiblescroll").innerHTML = rawhtml;
         MathJax.Hub.Typeset();//tell Mathjax to update the math
-
     }
 };
 httpc.open("GET", "fileloader.php?filename=" + currentFile, true);
@@ -105,9 +84,7 @@ httpc.send();
 document.getElementById("editor").onkeyup = function(){
     rawhtml = converter.makeHtml(this.value);
     document.getElementById("scroll").innerHTML = rawhtml;
-    
-    notexhtml = document.getElementById("scroll").innerHTML;
-
+    document.getElementById("invisiblescroll").innerHTML = rawhtml;
     MathJax.Hub.Typeset();//tell Mathjax to update the math
     data = encodeURIComponent(this.value);
     var httpc = new XMLHttpRequest();
@@ -116,7 +93,6 @@ document.getElementById("editor").onkeyup = function(){
     httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
     httpc.send("data="+data+"&filename="+currentFile);//send text to filesaver.php
     
-
 }
     
 editmode = true;
@@ -194,30 +170,33 @@ MathJax.Hub.Typeset();//tell Mathjax to update the math
 
 document.getElementById("texbutton").onclick = function(){
 
-    
     rawhtml = converter.makeHtml(document.getElementById("editor").value);
-
     document.getElementById("invisiblescroll").innerHTML = rawhtml;
-
-    invisiblechildren = document.getElementById("invisiblescroll").childNodes;
-    
-    for(var index = 0;index < invisiblechildren.length;index++){
-        if(invisiblechildren[index].tagName == "H1" || invisiblechildren[index].tagName == "H2" || invisiblechildren[index].tagName == "H3" || invisiblechildren[index].tagName == "H4"){
-                invisiblechildren[index].removeAttribute("id");
-        }
-    }
     images = document.getElementById("invisiblescroll").getElementsByTagName("img");
-    
-    httparray = [];
-    fileendingarray = [];
-    imagesrcarray = [];
 
+    for(var index = 0;index < images.length;index++){
+
+    
+        var localgraphictext = "";
+        localgraphictext += "\n\\includegraphics";
+        if(images[index].width > 400){
+            localgraphictext += "[width=4in]";
+        }
+        localgraphictext += "}";
+        localgraphictext += images[index].src.split("bookfactory/" + bookname + "/")[1];
+        localgraphictext += "}\n";
+        var newtextnode = document.createTextNode(localgraphictext);    
+        images[index].parentNode.insertBefore(newtextnode,images[index]);
+
+            
+    }
+    
 
     for(var index = 0;index < images.length;index++){
         images[index].removeAttribute("alt");
-        var localimgsrc = images[index].src;
-        images[index].src = localimgsrc.split("bookfactory/" + bookname + "/")[1];
+        images[index].removeAttribute("src");
     }
+    
 
     textin = document.getElementById("invisiblescroll").innerHTML;
 
@@ -229,6 +208,8 @@ document.getElementById("texbutton").onclick = function(){
     textout += textin;    
     
     textout+= "\n\\end{document}\n";
+
+    textout = textout.replace(/<img>/g,"");
  
     textout = textout.replace(/<h1>/g,"\n\\section{");
     textout = textout.replace(/<\/h1>/g,"}");
@@ -245,6 +226,9 @@ document.getElementById("texbutton").onclick = function(){
     textout = textout.replace(/<ul>/g,"\\begin{itemize}\n");
     textout = textout.replace(/<\/ul>/g,"\\end{itemize}");
 
+    textout = textout.replace(/<ol>/g,"\\begin{enumerate}\n");
+    textout = textout.replace(/<\/ol>/g,"\\end{enumerate}");
+
     textout = textout.replace(/<pre><code>/g,"\\begin{lstlisting}\n");
     textout = textout.replace(/<\/code><\/pre>/g,"\\end{lstlisting}");
 
@@ -257,12 +241,12 @@ document.getElementById("texbutton").onclick = function(){
     textout = textout.replace(/<p>/g,"\n\n");
     textout = textout.replace(/<\/p>/g,"\n\n");
 
-    textout = textout.replace(/<img src=\"latex\//g,"\n\\includegraphics{"); 
+//    textout = textout.replace(/<img src=\"latex\//g,"\n\\includegraphics{"); 
 
 
-    textout = textout.replace(/<img src=\"/g,"\n\\includegraphics[width=3in]{"); 
+  //  textout = textout.replace(/<img src=\"/g,"\n\\includegraphics[width=3in]{"); 
     
-    textout = textout.replace(/\">/g,"}");
+//    textout = textout.replace(/\">/g,"}");
     
 
 // \href{http://www.latex-tutorial.com}{LaTeX-Tutorial}
@@ -289,11 +273,9 @@ document.getElementById("texbutton").onclick = function(){
     
     data = encodeURIComponent(textout);
 
+
     texfile = "scroll.tex";
-    if(!currentFile.includes("bookfactory")){
-        texfile = "latex/" + currentFile.split("markdown/")[1].split(".")[0] + ".tex";        
-    }
-    
+
     if(currentFile.includes("bookfactory")){
         var localurlarray = currentFile.split("/");
         txtfile = localurlarray[localurlarray.length - 2];
@@ -307,62 +289,11 @@ document.getElementById("texbutton").onclick = function(){
     httpc.send("data="+data+"&filename="+ texfile);//send text to filesaver.php
    
    
-    if(!currentFile.includes("bookfactory")){
 
-        var httpc = new XMLHttpRequest();
-        var url = "mkdir.php";
-        httpc.open("POST", url, true);
-        httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
-        dirname = "latex/" + currentFile.split("markdown/")[1].split(".")[0] + "_images";
-       httpc.send("dirname="+dirname);//send text to mkdir.php   
-
-    }
  
 }
 
 
-
-function html2tex(){
-
-//https://www.latex-tutorial.com/tutorials/first-document/
-
-
-
-
-
-    textout = textout.replace(/<h2>/g,"\n\\section{\n");
-    textout = textout.replace(/<\/h2>/g,"}");
-    textout = textout.replace(/<figure>/g,"\n\\begin{figure}");
-    textout = textout.replace(/<\/figure>/g,"\\end{figure}\n");
-    textout = textout.replace(/<figcaption>/g,"\\caption{");
-    textout = textout.replace(/<\/figcaption>/g,"\}");
-
-
-    textout = textout.replace(/<img src = "/g,"\n\\includegraphics[width=\\linewidth]{../");
-    textout = textout.replace(/"\/><!--img-->/g,"\}\n");
-    
-    
-
-    textout = textout.replace(/<li>/g,"\\item\n");
-    textout = textout.replace(/<\/li>/g,"");
-    
-    
-    textout = textout.replace(/<ul>/g,"\\begin{itemize}\n");
-    textout = textout.replace(/<\/ul>/g,"\\end{itemize}");
-
-    textout = textout.replace(/<ol>/g,"\\begin{enumerate}\n");
-    textout = textout.replace(/<\/ol>/g,"\\end{enumerate}");
-
-    textout = textout.replace(/<em>/g,"\\textit{\n");
-    textout = textout.replace(/<\/em>/g,"}");
-    
-    
-    textout+= "\n\\end{document}\n";
-
-    
-    //save tex file 
-    
-}
 </script>
 <style>
 body{

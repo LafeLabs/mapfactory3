@@ -1,8 +1,9 @@
 [foo](barzzzzzz)
 
-![](bookfactory/hypercube/image1.png)
+![](bookfactory/hypercube/image1.png) Caption for this image
 
 ![](bookfactory/hypercube/image2.png)
+Caption for the second image
 ![](bookfactory/hypercube/image3.png)
 
 ![](bookfactory/hypercube/image4.png)

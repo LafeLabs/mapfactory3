@@ -1,5 +1,14 @@
 # This is a Document 
 
+here is a test of the editing, with some math:
+
+$$
+\frac{-\hbar^2}{2m}\nabla^2\Psi + V\Psi = E\Psi
+$$
+
+![](http://localhost:8000/symbol/png/png1549494670.png)
+![](https://upload.wikimedia.org/wikipedia/commons/c/c2/DeeHieroglyph.gif)
+
 [trash robot link](http://www.trashrobot.org)
 
 [trash robot link](http://www.trashrobot.org)
