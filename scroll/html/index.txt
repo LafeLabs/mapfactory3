@@ -175,28 +175,42 @@ document.getElementById("texbutton").onclick = function(){
     images = document.getElementById("invisiblescroll").getElementsByTagName("img");
 
     for(var index = 0;index < images.length;index++){
-
-    
+        
+        
         var localgraphictext = "";
         localgraphictext += "\n\\includegraphics";
         if(images[index].width > 400){
             localgraphictext += "[width=4in]";
         }
-        localgraphictext += "}";
+        localgraphictext += "{";
         localgraphictext += images[index].src.split("bookfactory/" + bookname + "/")[1];
         localgraphictext += "}\n";
-        var newtextnode = document.createTextNode(localgraphictext);    
-        images[index].parentNode.insertBefore(newtextnode,images[index]);
+ 
+        var localp = images[index].parentNode;
 
-            
+        if(localp.getElementsByTagName("IMG").length == 1){
+            //ony one image in this paragraph
+            localp.removeChild(images[index]);
+            var localtop = "\\begin{figure}[h]";
+            var localcaption = "\n\\caption{" + localp.innerHTML + "}";
+            var localbottom = "\n\\end{figure}\n";
+            localgraphictext = localtop + localgraphictext + localcaption + localbottom;
+            localp.innerHTML = localgraphictext;
+        }
+        else{
+            localp.innerHTML += localgraphictext;
+        }
+        
+
+ 
+        //images[index].parentNode.insertBefore(newtextnode,images[index]);
+        
     }
     
-
     for(var index = 0;index < images.length;index++){
         images[index].removeAttribute("alt");
         images[index].removeAttribute("src");
     }
-    
 
     textin = document.getElementById("invisiblescroll").innerHTML;
 
@@ -208,9 +222,8 @@ document.getElementById("texbutton").onclick = function(){
     textout += textin;    
     
     textout+= "\n\\end{document}\n";
-
-    textout = textout.replace(/<img>/g,"");
  
+    textout = textout.replace(/<img>/g,"");
     textout = textout.replace(/<h1>/g,"\n\\section{");
     textout = textout.replace(/<\/h1>/g,"}");
     textout = textout.replace(/<h2>/g,"\n\\section{");
@@ -241,10 +254,10 @@ document.getElementById("texbutton").onclick = function(){
     textout = textout.replace(/<p>/g,"\n\n");
     textout = textout.replace(/<\/p>/g,"\n\n");
 
-//    textout = textout.replace(/<img src=\"latex\//g,"\n\\includegraphics{"); 
+   // textout = textout.replace(/<img src=\"latex\//g,"\n\\includegraphics{"); 
 
 
-  //  textout = textout.replace(/<img src=\"/g,"\n\\includegraphics[width=3in]{"); 
+//    textout = textout.replace(/<img src=\"/g,"\n\\includegraphics[width=3in]{"); 
     
 //    textout = textout.replace(/\">/g,"}");
     
@@ -273,9 +286,11 @@ document.getElementById("texbutton").onclick = function(){
     
     data = encodeURIComponent(textout);
 
-
     texfile = "scroll.tex";
-
+    if(!currentFile.includes("bookfactory")){
+        texfile = "latex/" + currentFile.split("markdown/")[1].split(".")[0] + ".tex";        
+    }
+    
     if(currentFile.includes("bookfactory")){
         var localurlarray = currentFile.split("/");
         txtfile = localurlarray[localurlarray.length - 2];
@@ -289,7 +304,16 @@ document.getElementById("texbutton").onclick = function(){
     httpc.send("data="+data+"&filename="+ texfile);//send text to filesaver.php
    
    
+    if(!currentFile.includes("bookfactory")){
 
+        var httpc = new XMLHttpRequest();
+        var url = "mkdir.php";
+        httpc.open("POST", url, true);
+        httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+        dirname = "latex/" + currentFile.split("markdown/")[1].split(".")[0] + "_images";
+       httpc.send("dirname="+dirname);//send text to mkdir.php   
+
+    }
  
 }
 

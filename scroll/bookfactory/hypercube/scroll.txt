@@ -1,10 +1,18 @@
 [foo](barzzzzzz)
 
-![](bookfactory/hypercube/image1.png) Caption for this image
+![](bookfactory/hypercube/image1.png)
+Caption for this image
+
+
 
 ![](bookfactory/hypercube/image2.png)
 Caption for the second image
+
+
 ![](bookfactory/hypercube/image3.png)
+
+
+not a caption
 
 ![](bookfactory/hypercube/image4.png)
 
@@ -61,5 +69,10 @@ Caption for the second image
 ![](bookfactory/hypercube/image39.png)
 
 ![](bookfactory/hypercube/image40.png)
+
 ![](bookfactory/hypercube/image41.png)
+
 ![](bookfactory/hypercube/image42.png)
+caption
+
+not a caption
