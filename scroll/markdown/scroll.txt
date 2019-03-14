@@ -1,5 +1,9 @@
 # This is a Document 
 
+[trash robot link](http://www.trashrobot.org)
+
+[trash robot link](http://www.trashrobot.org)
+
 Here is a paragraph
 
 ```
@@ -12,11 +16,11 @@ for(int index = 0;index < 10;index++){
 ```
 
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| **col 3 is**  | right-aligned | $1600 |
-| col 2 is      | *centered*    |   $12 |
-| zebra stripes | ~~are neat~~  |    $1 |
+| Tables        | Are         | Cool  |
+| ------------- |-------------|-----|
+| col 3 is  | right-aligned | $1600 |
+| col 2 is      | centered    |   $12 |
+|  zebra     | are neat    |    $1 |
 
 
 

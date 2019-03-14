@@ -1,0 +1,6 @@
+
+
+| HTML open |HTML close | $\LaTeX$  open| $\LaTeX$ close|
+| -----|-----|----|---|
+| &lt;h1&gt; | &lt;/h1&gt;| section{   | }  |
+| ||

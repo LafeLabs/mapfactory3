@@ -40,6 +40,28 @@
 <div id = "invisiblescroll" style = "display:none"></div>
 <script>
 
+//search and replace a pair of tags:
+//e.g. text = sr2x("<h1>","</h1>","\\section{","}",text);
+function sr2x(old1,old2,new1,new2,inputtext){
+    if(inputtext.includes(old1) && inputtext.includes(old2)){
+        var old1array = inputtext.split(old1);
+        var outputtext = old1array[0];
+        for(var index = 1;index < old1array.length;index++){
+            outputtext += new1;
+            outputtext += old1array[index].split(old2)[0];
+            outputtext += new2;
+            if(index == old1array.length - 1){
+                outputtext += old1array[index].split(old2)[1];
+            }
+        }
+        return outputtext;
+    }
+    else{
+        return inputtext;
+    }
+}
+
+
 
 if(document.getElementById("filenamediv").innerHTML.length > 1){
     document.getElementById("texedit").href += "?filename=" + document.getElementById("filenamediv").innerHTML.split(".txt")[0] + ".tex";
@@ -81,9 +103,11 @@ httpc.send();
 
 
 document.getElementById("editor").onkeyup = function(){
-    document.getElementById("scroll").innerHTML = converter.makeHtml(this.value);
-    notexhtml = document.getElementById("scroll").innerHTML;
+    rawhtml = converter.makeHtml(this.value);
+    document.getElementById("scroll").innerHTML = rawhtml;
     
+    notexhtml = document.getElementById("scroll").innerHTML;
+
     MathJax.Hub.Typeset();//tell Mathjax to update the math
     data = encodeURIComponent(this.value);
     var httpc = new XMLHttpRequest();
@@ -92,6 +116,7 @@ document.getElementById("editor").onkeyup = function(){
     httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
     httpc.send("data="+data+"&filename="+currentFile);//send text to filesaver.php
     
+
 }
     
 editmode = true;
@@ -170,8 +195,9 @@ MathJax.Hub.Typeset();//tell Mathjax to update the math
 document.getElementById("texbutton").onclick = function(){
 
     
-    document.getElementById("invisiblescroll").innerHTML = converter.makeHtml(document.getElementById("editor").value);
+    rawhtml = converter.makeHtml(document.getElementById("editor").value);
 
+    document.getElementById("invisiblescroll").innerHTML = rawhtml;
 
     invisiblechildren = document.getElementById("invisiblescroll").childNodes;
     
@@ -197,9 +223,9 @@ document.getElementById("texbutton").onclick = function(){
 
 //    console.log(textin);
 
-    textout = "\n\\documentclass[11pt]{article}\n\\usepackage{hyperref}\n\\usepackage{graphicx}\n\\usepackage{listings}\n\\usepackage[paperheight=8.5in,paperwidth=5.5in,margin=1in]{geometry}\n\\begin{document}\n";
+    textout = "\n\\documentclass[11pt]{article}\n\\usepackage{hyperref}\n\\usepackage{graphicx}\n\\usepackage{hyperref}\n\\usepackage{listings}\n\\usepackage[paperheight=8.5in,paperwidth=5.5in,margin=1in]{geometry}\n\\begin{document}\n";
     
-    
+
     textout += textin;    
     
     textout+= "\n\\end{document}\n";
@@ -222,6 +248,9 @@ document.getElementById("texbutton").onclick = function(){
     textout = textout.replace(/<pre><code>/g,"\\begin{lstlisting}\n");
     textout = textout.replace(/<\/code><\/pre>/g,"\\end{lstlisting}");
 
+//links are \href{href}{innerHTML}
+
+
 // arduino code highlight:  
 // https://github.com/trihedral/ArduinoLatexListing
 
@@ -234,6 +263,29 @@ document.getElementById("texbutton").onclick = function(){
     textout = textout.replace(/<img src=\"/g,"\n\\includegraphics[width=3in]{"); 
     
     textout = textout.replace(/\">/g,"}");
+    
+
+// \href{http://www.latex-tutorial.com}{LaTeX-Tutorial}
+
+// replace <a href = "href">innerHTML</a>
+//         \href{href}{innerHTML}
+
+// <a href = \" --> \href{
+// \"> --> }{
+// </a> -- }   
+
+    aarray = textout.split("<a href=\"");
+    var temptextout = aarray[0];
+    for(var index = 1;index < aarray.length;index++){
+        temptextout += "\\href{";
+        temptextout += aarray[index].split("}")[0];
+        temptextout += "}{";
+        temptextout += aarray[index].split("}")[1].split("</a>")[0];
+        temptextout += "}";
+        temptextout += aarray[index].split("</a>")[1];
+    }
+    //textout = temptextout;
+   // console.log(temptextout);
     
     data = encodeURIComponent(textout);
 
@@ -274,7 +326,8 @@ function html2tex(){
 
 //https://www.latex-tutorial.com/tutorials/first-document/
 
-// \href{http://www.latex-tutorial.com}{LaTeX-Tutorial}
+
+
 
 
     textout = textout.replace(/<h2>/g,"\n\\section{\n");

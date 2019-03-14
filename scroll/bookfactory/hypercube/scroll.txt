@@ -1,3 +1,5 @@
+[foo](barzzzzzz)
+
 ![](bookfactory/hypercube/image1.png)
 
 ![](bookfactory/hypercube/image2.png)

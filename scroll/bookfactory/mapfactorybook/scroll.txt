@@ -1,0 +1,31 @@
+
+
+![](bookfactory/mapfactorybook/image1.png)
+upload image
+![](bookfactory/mapfactorybook/image2.png)
+symbol for geometron/action geometry editor
+![](bookfactory/mapfactorybook/image3.png)
+feed of links to images from around the Web
+![](bookfactory/mapfactorybook/image4.png)
+Feed of text fragments: words, phrases and math
+![](bookfactory/mapfactorybook/image5.png)
+scroll
+![](bookfactory/mapfactorybook/image6.png)
+book factory
+![](bookfactory/mapfactorybook/image7.png)
+![](bookfactory/mapfactorybook/image8.png)
+map factory
+![](bookfactory/mapfactorybook/image9.png)
+linker: insert new link, image, or text into a map
+![](bookfactory/mapfactorybook/image10.png)
+The Street
+![](bookfactory/mapfactorybook/image11.png)
+Map editor: raw data edits
+![](bookfactory/mapfactorybook/image12.png)
+Map Feed
+![](bookfactory/mapfactorybook/image13.png)
+Aligner: change
+![](bookfactory/mapfactorybook/image14.png)
+watershed
+![](bookfactory/mapfactorybook/image15.png)
+tree

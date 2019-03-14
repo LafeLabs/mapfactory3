@@ -1,0 +1,10 @@
+# To Do
+
+- make tables conversion to latex work
+- add links in pdf to conversion to latex
+- fix image size handling in conversion to latex
+- come up with smoother handling of glyph spelling conversion
+- add button with exec() command in php to run pdflatex and pdfbook from browser without command line
+- add links to all the pdf's from book factory for instant download
+- put book factory on a raspberry pi zero node and test
+- improve replicator/propagator link
