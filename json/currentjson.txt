@@ -1,16 +1,28 @@
 {
-    "svgwidth": 73,
-    "svgheight": 250,
-    "unit": 90.9090909090909,
-    "x0": 684,
-    "y0": 399,
-    "x0rel": 0,
-    "y0rel": 0,
-    "glyph": "0341,0336,0341,0333,0341,",
-    "table": [],
-    "imgurl": "https://i.imgur.com/2nIEVFg.jpg",
-    "imgx": 0,
-    "imgy": 0,
-    "imgw": 400,
-    "angle": 0
+    "constants": {},
+    "YofXstring": "Y =  (1/Math.PI)*0.5/(X*X + 0.25);",
+    "style": {
+        "linewidth": 4,
+        "color": "blue",
+        "fill": "none"
+    },
+    "plotparams": {
+        "G": 103.42365531743322,
+        "g": 0.054942153364123114,
+        "duration": 450.78888054094654,
+        "plotwidth": 500,
+        "plotheight": 310,
+        "x0": 24,
+        "y0": 114
+    },
+    "funcparams": {},
+    "image": {
+        "url": "",
+        "xoverw": 0.02046783625730994,
+        "yoverw": 0.005847953216374269,
+        "woverw": 0.996639307336601,
+        "angle": "0"
+    },
+    "A": 10.169742146064136,
+    "B": 1
 }

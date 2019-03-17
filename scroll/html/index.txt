@@ -171,16 +171,17 @@ MathJax.Hub.Typeset();//tell Mathjax to update the math
 document.getElementById("texbutton").onclick = function(){
 
     rawhtml = converter.makeHtml(document.getElementById("editor").value);
+    
+    console.log(rawhtml);
     document.getElementById("invisiblescroll").innerHTML = rawhtml;
     images = document.getElementById("invisiblescroll").getElementsByTagName("img");
 
     for(var index = 0;index < images.length;index++){
         
-        
         var localgraphictext = "";
         localgraphictext += "\n\\includegraphics";
-        if(images[index].width > 400){
-            localgraphictext += "[width=4in]";
+        if(images[index].width > 300){
+            localgraphictext += "[width=3.5in]";
         }
         localgraphictext += "{";
         localgraphictext += images[index].src.split("bookfactory/" + bookname + "/")[1];
@@ -188,7 +189,7 @@ document.getElementById("texbutton").onclick = function(){
  
         var localp = images[index].parentNode;
 
-        if(localp.getElementsByTagName("IMG").length == 1){
+        if(localp.getElementsByTagName("IMG").length == 1 || localp.getElementsByTagName("IMG").length == 0){
             //ony one image in this paragraph
             localp.removeChild(images[index]);
             var localtop = "\\begin{figure}[h]";
@@ -201,10 +202,6 @@ document.getElementById("texbutton").onclick = function(){
             localp.innerHTML += localgraphictext;
         }
         
-
- 
-        //images[index].parentNode.insertBefore(newtextnode,images[index]);
-        
     }
     
     for(var index = 0;index < images.length;index++){
@@ -216,12 +213,13 @@ document.getElementById("texbutton").onclick = function(){
 
 //    console.log(textin);
 
-    textout = "\n\\documentclass[11pt]{article}\n\\usepackage{hyperref}\n\\usepackage{graphicx}\n\\usepackage{hyperref}\n\\usepackage{listings}\n\\usepackage[paperheight=8.5in,paperwidth=5.5in,margin=1in]{geometry}\n\\begin{document}\n";
+    textout = "\n\\documentclass[11pt]{article}\n\\usepackage{hyperref}\n\\usepackage{graphicx}\n\\usepackage{hyperref}\n\\usepackage{listings}\n\\usepackage[paperheight=8.5in,paperwidth=5.5in,margin=0.5in]{geometry}\n\\begin{document}\n";
     
 
     textout += textin;    
     
     textout+= "\n\\end{document}\n";
+
  
     textout = textout.replace(/<img>/g,"");
     textout = textout.replace(/<h1>/g,"\n\\section{");
@@ -283,7 +281,8 @@ document.getElementById("texbutton").onclick = function(){
     }
     //textout = temptextout;
    // console.log(temptextout);
-    
+
+
     data = encodeURIComponent(textout);
 
     texfile = "scroll.tex";
