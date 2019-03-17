@@ -83,11 +83,27 @@ $files = scandir(getcwd()."/curve/svg");
 $listtext = "";
 foreach($files as $value){
     if(substr($value,-4) == ".svg"){
-        $listtext .= $value.",";
+        $listtext .= "curve/svg/".$value.",";
     }
 }
 echo $listtext;
     
+
+$dirs = scandir(getcwd()."/curve/curves");
+foreach($dirs as $symboldir){
+    if($symboldir != "." && $symboldir != ".."){
+        $files = scandir(getcwd()."/curve/curves/".$symboldir."/svg");
+        $listtext = "";
+        foreach($files as $value){
+            if(substr($value,-4) == ".svg"){
+                $listtext .= "curve/curves/".$symboldir."/svg/".$value.",";
+            }
+        }
+        echo $listtext;
+    }
+}
+
+
 ?></div>
 <div id = "maps" style = "display:none;"><?php
 
@@ -314,10 +330,12 @@ input{
     for(var index = 0;index < symbols.length - 1;index++){
         imgurls.push(symbols[index]);
     }
+    
     curves = document.getElementById("curves").innerHTML.split(",");
     for(var index = 0;index < curves.length - 1;index++){
-        imgurls.push("curve/svg/" + curves[index]);
+        imgurls.push(curves[index]);
     }
+    
     for(var index = 0;index < mapicons.length - 1;index++){
         imgurls.push("mapicons/" + mapicons[index]);
     }
