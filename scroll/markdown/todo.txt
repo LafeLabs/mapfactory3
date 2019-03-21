@@ -8,3 +8,11 @@
 - add links to all the pdf's from book factory for instant download
 - put book factory on a raspberry pi zero node and test
 - improve replicator/propagator link
+- build trash robot with replicator action cards
+- build action card deck for whole system as it exists
+- write Path Of Geometron
+- develop further the propagator of AG so that it's flexible, where each new person who is looped in builds their own creation which is unique and has its own name--but AG is the name of the system
+- create a standard geometron library of shapes and fonts which is in the standard replicator, as well as a standard factory map, a standard meme factory, and standard templates for street and watershed
+- put all elements of Geometron into a SINGLE github repository and replicator: map factory, trash robot with GOSP, three,standard scrolls as templates for book, full propagator scrolls for the online system including the 000webhost, rpi zero and a domain from hostinger, with full replication setup in that: rpi has arduino and sd card writer
+- add das blinkenlights to the rpi zero standard unit
+- finish building out the docking station for the pizerow unit
