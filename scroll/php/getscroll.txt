@@ -50,5 +50,12 @@ file_put_contents("bookfactory/".$newfilename."/index.html",$indexhtml);
 
 file_put_contents("bookfactory/".$newfilename."/scroll.txt",$scroll);
 
+$latexphp = "<?php\nexec(\"pdflatex scroll.tex\");\n";
+$latexphp .= "exec(\"pdfbook scroll.pdf\");\n";
+$latexphp .= "exec(\"cp scroll-book.pdf ../".$newfilename."-book.pdf\");\n";
+$latexphp .= "?>\n";
+
+file_put_contents("bookfactory/".$newfilename."/makebook.php",$latexphp);
+
 
 ?>
