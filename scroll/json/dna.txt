@@ -48,6 +48,7 @@
 			"editor.svg",
 			"mapfactory.svg",
 			"markdown.svg",
+			"savehtml.svg",
 			"scrollmode.svg",
 			"symbol.svg",
 			"textfeed.svg",
