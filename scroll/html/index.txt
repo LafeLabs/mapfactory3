@@ -338,12 +338,18 @@ document.getElementById("savehtmlbutton").onclick = function(){
     
     htmlbottom = "</div>\n<style>\n";
     
-    htmlbottom += "p{margin:3em;text-align:justify;}h1,h2{left:0px;right:0px;text-align:center;}body{font-family:Helvetica;}img{display:block;margin:auto;text-align:center}";//style here   
+    htmlbottom += "p{margin:3em;text-align:justify;}h1,h2{left:0px;right:0px;text-align:center;}body{font-family:Helvetica;}img{display:block;margin:auto;text-align:center;max-width:90%;}";//style here   
     htmlbottom += "@media screen and (max-width: 400px) {img {width: 400px;}}";
     
+    htmlbottom += "\n</style>";
+    htmlbottom += "<";
+    htmlbottom += "/";
+    htmlbottom += "bo";
+    htmlbottom += "dy";
+    htmlbottom += ">";
+    htmlbottom += "\n</html>";
+    //if the body tag is closed, 000webhost inserts a ton of nonsense. this code avoids that in this particular file as it breakds the javascript--ad should still get added in final html later
 
-    htmlbottom += "\n</style>\n</html>";//if the body tag is closed, 000webhost inserts a ton of nonsense. avoid? or go around with some variables or something?for now just leave the thing open
-    
     htmlfulldata = encodeURIComponent(htmltop + scrolldata + htmlbottom);
 
     var httpc = new XMLHttpRequest();

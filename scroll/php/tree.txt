@@ -32,7 +32,16 @@ foreach($files as $value){
 }
 
 ?></div>
+<div id = "htmlfilelistdiv" style = "display:none"><?php
 
+$files = scandir(getcwd());
+foreach($files as $value){
+    if(substr($value,-5) == ".html"){
+        echo $value.",";
+    }
+}
+
+?></div>
 <table id  = "linktable">
     <tr>
         <td><a href = "editor.php">
@@ -59,6 +68,9 @@ foreach($files as $value){
 <ul id = "dirlinklist">
     
 </ul>
+<ul id = "htmllinklist">
+    
+</ul>
 
 <script>
 
@@ -69,13 +81,19 @@ for(var index = 0;index < dirlist.length - 1;index++){
     newa.innerHTML = dirlist[index];
     newa.href = "index.php?filename=" + dirlist[index];
     newli.appendChild(newa);
-    var newa2 = document.createElement("A");
-    newa2.innerHTML = " [full screen scroll] ";
-    newa2.href = "purescroll.php?filename=" + dirlist[index];
-    newli.appendChild(newa2);
-
     document.getElementById("dirlinklist").appendChild(newli);
 }
+
+htmlfilelist = document.getElementById("htmlfilelistdiv").innerHTML.split(",");
+for(var index = 0;index < htmlfilelist.length - 1;index++){
+    var newli = document.createElement("LI");
+    var newa = document.createElement("A");
+    newa.innerHTML = htmlfilelist[index];
+    newa.href = htmlfilelist[index];
+    newli.appendChild(newa);
+    document.getElementById("htmllinklist").appendChild(newli);
+}
+
 
 
 document.getElementById("newbutton").onclick = function(){

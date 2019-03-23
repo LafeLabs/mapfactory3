@@ -1,5 +1,7 @@
 # This is a Document 
 
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Denver_Colorado_1898_-_LOC_-_restoration1.jpg/2880px-Denver_Colorado_1898_-_LOC_-_restoration1.jpg)
+
 here is a test of the editing, with some math:
 
 $$
