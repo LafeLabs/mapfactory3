@@ -49,6 +49,7 @@ EGO DEATH:
     <div class = "php file">php/treednagenerator.txt</div>
     <div class = "php file">php/getscroll.txt</div>
     <div class = "php file">php/bookfactory.txt</div>
+    <div class = "php file">php/purescroll.txt</div>
 
     <div class = "php file">php/texeditor.txt</div>
     <div class = "php file">php/textfeed.txt</div>

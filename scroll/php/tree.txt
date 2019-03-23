@@ -69,6 +69,11 @@ for(var index = 0;index < dirlist.length - 1;index++){
     newa.innerHTML = dirlist[index];
     newa.href = "index.php?filename=" + dirlist[index];
     newli.appendChild(newa);
+    var newa2 = document.createElement("A");
+    newa2.innerHTML = " [full screen scroll] ";
+    newa2.href = "purescroll.php?filename=" + dirlist[index];
+    newli.appendChild(newa2);
+
     document.getElementById("dirlinklist").appendChild(newli);
 }
 
