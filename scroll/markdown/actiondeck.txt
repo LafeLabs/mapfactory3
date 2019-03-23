@@ -1,0 +1,37 @@
+## Action Cards are a Deck
+
+
+- clone a raspberry pi zero w web server, put on local wifi
+- clone a terminal setup around a pi zero w, with screen, keyboard, mouse, usb and power
+- buy and decorate a geometron symbol keyboard, with OTG and cardboard phone terminal
+- buy all the circuit boards
+- buy the parts for the circuit boards
+- stuff all the circuit boards
+- assemble the trash robot basis set:
+    - motor knob, dc
+    - knob controlled temperature with heater
+    - setup with pressure sense and neopixel and buzz motor
+    - knob controls a single stepper/stage
+    - three coil vibration motor
+    - xyz manipulator with external output to other drivers, GOSP geometron programming, along with an instance of trashrobot code on the server side, also 8x button board
+    - self contained audio output slimezistor EC probe, serial out, along with software
+    - specific action sub-deck for the basis set
+    - book of trash robot(book 4, fire elemental)
+    - map of the trash robot System as part of map factory
+    - sub-deck of action cards for this sub set of overall action deck
+ 
+- create a new action deck: find cards, trace and cut them assemble art supplies, build a deck holder and deck making kit which is fully portable/wearable   
+- clone action geometry book (book 1, air elemental)
+- clone construction kit for action geometry book(pens, crayons, push pin, compass, ruler, shape set, action card, pencil, colored pencils, extra paper, scissors, 
+- create a book of the symbol factory, publish online, publish the printed and bound version(book 2, earth elemental). Process of creation means building languages, sharing them via symbols, fonts, symbols of all kinds, a book is a class of objects not an object, e.g. a book might be just one specific system of symbols, or a set of them for an application, but the THING that is cloned is the book, and the ACTION is always cloning/replication/propagation
+- create a book of the map factory, publish online, publish the printed bound version(book 3, water elemental)
+- create a local meme factory (upload local photo, embed a photo from wikipedia), learn each type of link injection
+- map out a shopping center with links to each business, and sub maps for some(this is a place to learn to insert the different links: symbols, urls, text)
+- build a local cosmology with a factory, street, and watershed, which is both online and in laminated paper maps, and which leads to dropping markers(see next)
+- create and drop geometron markers at nodes of network: factory, street, watershed
+- set up a station with a sign and loop a new person into some action card or another
+- create a curve meme, normally the Golden Spiral
+- create a symbol meme, normally a bunch of circles, golden rectangle, pentagram, arrow, cartoon of some kind...
+- buy a domain and get a hosting account at hostinger, with some locally relevant new domain, connect it up to the proper people
+- create a new instance of geometron on a free 000webhost account
+- propagate out a new instance of geometron on an existing domain using newmapfactory.php
