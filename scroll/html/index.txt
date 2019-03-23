@@ -13,6 +13,9 @@
         <td id = "modebutton">
             <img style = "width:80px" src = "icons/scrollmode.svg"/>
         </td>
+        <td id = "savehtmlbutton" class = "button">
+            <img style = "width:80px;" src = "icons/savehtml.svg"/>
+        </td>
         <td><a href = "textfeed.php">
             <img style = "width:80px;" src = "icons/textfeed.svg"/>
         </a></td>
@@ -28,6 +31,7 @@
             $\TeX$
             </a>
         </td>
+        <td><a id = "htmllink"></a></td>
     </tr>
 </table>
 <input id = "linkinput" class = "no-mathjax"/>
@@ -316,6 +320,41 @@ document.getElementById("texbutton").onclick = function(){
  
 }
 
+document.getElementById("savehtmlbutton").onclick = function(){
+    htmlfilename = currentFile.split("/")[1].split(".")[0] + ".html";
+    scrolldata = document.getElementById("scroll").innerHTML;
+    htmltop = "<!doctype html>\n";
+    htmltop += "<html  lang=\"en\">\n";
+    htmltop += "<head>\n";
+    htmltop += "<meta charset=\"utf-8\">\n";
+    htmltop += "<title>" + htmlfilename + "</title>\n";
+    htmltop += "<link href=\"data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADf+wAA3/sAAAfgAACv9QAAoAUAAK/1AACv9QAAqBUAAK/1AACoFQAAr/UAAKAFAACv9QAAB+AAAN/7AADf+wAA\" rel=\"icon\" type=\"image/x-icon\" />\n";
+    htmltop += "<META NAME=\"robots\" CONTENT=\"noindex,nofollow\">\n";
+    
+    htmltop += "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">";
+    htmltop += "<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">";
+    htmltop += "</head>\n<body>\n";
+    htmltop += "<div class=\"container-fluid\">";
+    
+    htmlbottom = "</div>\n<style>\n";
+    
+    htmlbottom += "p{margin:3em;text-align:justify;}h1,h2{left:0px;right:0px;text-align:center;}body{font-family:Helvetica;}";//style here   
+    htmlbottom += "@media screen and (max-width: 400px) {img {width: 400px;}}";
+    
+    htmlbottom += "\n</style>\n</body>\n</html>";
+    
+    htmlfulldata = encodeURIComponent(htmltop + scrolldata + htmlbottom);
+
+    var httpc = new XMLHttpRequest();
+    var url = "filesaver.php";        
+    httpc.open("POST", url, true);
+    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+    httpc.send("data="+htmlfulldata+"&filename="+htmlfilename);//send text to filesaver.php
+
+    document.getElementById("htmllink").href = htmlfilename;
+    document.getElementById("htmllink").innerHTML = htmlfilename;
+    
+}
 
 </script>
 <style>
@@ -409,5 +448,10 @@ body{
     .scrollelement:hover{
         background-color:green;
     }
-
+    .button{
+        cursor:pointer;
+    }
+    .button:active{
+        background-color:yellow;
+    }
 </style>
