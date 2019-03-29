@@ -60,6 +60,37 @@ Litteralism is evil. We pretend that our language is just a thin veil we peer th
 ### Methods of Geometron
 
 - we are not a company
+- no owned property, domains are "owned" by participants separately
+- no patents, no trademarks, no copyrights, no equity not debt
+- no employees, no corporate structure including non profit
+- everything is done by people who are also whatever else they are if they are in a System of some kind--people have jobs, homes etc, that is what it is, but this is all free and on top of that and in on and around that
+- we don't buy and sell things as an entity, just as individuals and camps, or as existing organizations like schools, churches, businesses, etc. Geometron does not exist
+
+
+## Living without money
+
+
+We create value.  Networking creates value.  Redirecting materials which were going to the trash into productive products creates value.  Building robots that can produce manufactured products creates value.  Teaching people useful know how creates value.  
+
+Under the money system, creators of value require money from those who already have it in order to reap the benefit of that value.  All money comes from miners or bankers originally under the money system.  Thus, given a fixed amount of created new money, those who create value from nothing have two choices.  We can be under compensated, or we can suck out all the value eventually from those who do not create value from nothing.  In practice we see both of these in modern society: people who create vast productive output but do not benefit from it at all(people who do the unpaid labor of keeping ), and people who turn into super-landlords sucking out all value from society based on their network-value creation(e.g. tech companies).
+
+
+As geometron practitioners we create vast value from nothing, amplifying existing value using network effects more and more until we can build up a whole economy from scratch. And yet with money as the driving force in society this cannot grow without sucking money out of the rest of the system, it cannot get the true value of its increase value.  All this is due fundamentally to what money is: a number. Even under the very aggressive pro-inflation policy of central banks, we can never create numerical value fast enough to make pace with how fast actual value can scale in a networked system(exponentially with a very steep exponent).  This is why the center of power for our economy has shifted how it has over time: railroads, banking, media, software etc.  The power tracks where value can be exponentially built up from nothing.  A capitalist would just call this "capitalism".  Perhaps.  But what is capitalism? 
+
+Capitalism could be thought of as a model of the universe, a religion or belief system, an "economic" system, or a philosophy.  I think of it primarily as a theory of the world: that value is represented by numbers.  What we propose as an alternative is a system based not on static numerical value but on the flows of value. 
+
+For example in capitalism, a classical "product" such as a blueberry muffin is "sold" for a "price".  The materials are bought at a price, etc. going back to various farmers, by way of truckers, bakers, etc.  
+
+In Geometron, we don't focus on static value.  Rather, we focus on how things such as energy, information and materials *flow* through our systems.  Thus, rather than truncate the whole universe of that blueberry muffin into a price of $3.99, we primarily view the muffin as a flow from farmer through trucker and baker through eater of muffin to whatever that person does and how they dispose of their personal solid waste, which also has value.  We live in a vast universe then consisting of all these intersecting flows of value.
+
+How does one parse this and why is it more useful than money?  We parse it by organizing this whole world into a Universe we build up using the various language tools of geometron.  This language set is a combination of online tools and physical artifacts we build and exchange, much like physical currency under capitalism.  The skeptic will again ask what this adds, why bother to add all this complexity.  There are several answers. 
+
+One answer is we are enabling the creation of value which can grow exponentially with a much steeper exponent than would otherwise be possible.  Also, rather than money or some kind of barter token specific to the value of a thing, our physical data which replaces currency carries the information required to actually take actions to continue the path of value.  For instance an action card which has the detailed instructions to build 100 units of a robot can pass around to 100 people in a week, and 10,000 robots will get built.  Suppose those robots are "worth" the equivalent of 100 dollars each in money.  That is 1 million dollars built up in value in a week from nothing.  That kind of steep value creation(starting from zero) cannot be supported by the tools of capitalism because the "cost of capital" will always limit how fast you can buy the inventory to ramp up.  
+
+We will build up a new economy from nothing, which can grow and create value vastly faster than is possible in the monetary system.  In this system the existing resources we have access to are based on what we "loop in" or "metabolize".  
+
+
+
 
 
 

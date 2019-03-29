@@ -35,3 +35,4 @@
 - buy a domain and get a hosting account at hostinger, with some locally relevant new domain, connect it up to the proper people
 - create a new instance of geometron on a free 000webhost account
 - propagate out a new instance of geometron on an existing domain using newmapfactory.php
+- replicate book 5, the path of geometron, physical and scroll, and bind it all up together in a 5 volume physical hard bound book of geometron
