@@ -72,7 +72,7 @@ Litteralism is evil. We pretend that our language is just a thin veil we peer th
 
 We create value.  Networking creates value.  Redirecting materials which were going to the trash into productive products creates value.  Building robots that can produce manufactured products creates value.  Teaching people useful know how creates value.  
 
-Under the money system, creators of value require money from those who already have it in order to reap the benefit of that value.  All money comes from miners or bankers originally under the money system.  Thus, given a fixed amount of created new money, those who create value from nothing have two choices.  We can be under compensated, or we can suck out all the value eventually from those who do not create value from nothing.  In practice we see both of these in modern society: people who create vast productive output but do not benefit from it at all(people who do the unpaid labor of keeping ), and people who turn into super-landlords sucking out all value from society based on their network-value creation(e.g. tech companies).
+Under the money system, creators of value require money from those who already have it in order to reap the benefit of that value.  All money comes from miners or bankers originally under the money system.  Thus, given a fixed amount of created new money, those who create value from nothing have two choices.  We can be under compensated, or we can suck out all the value eventually from those who do not create value from nothing.  In practice we see both of these in modern society: people who create vast productive output but do not benefit from it at all(people who do unpaid labor), and people who turn into super-landlords sucking out all value from society based on their network-value creation(e.g. tech companies).
 
 
 As geometron practitioners we create vast value from nothing, amplifying existing value using network effects more and more until we can build up a whole economy from scratch. And yet with money as the driving force in society this cannot grow without sucking money out of the rest of the system, it cannot get the true value of its increase value.  All this is due fundamentally to what money is: a number. Even under the very aggressive pro-inflation policy of central banks, we can never create numerical value fast enough to make pace with how fast actual value can scale in a networked system(exponentially with a very steep exponent).  This is why the center of power for our economy has shifted how it has over time: railroads, banking, media, software etc.  The power tracks where value can be exponentially built up from nothing.  A capitalist would just call this "capitalism".  Perhaps.  But what is capitalism? 
@@ -87,9 +87,42 @@ How does one parse this and why is it more useful than money?  We parse it by or
 
 One answer is we are enabling the creation of value which can grow exponentially with a much steeper exponent than would otherwise be possible.  Also, rather than money or some kind of barter token specific to the value of a thing, our physical data which replaces currency carries the information required to actually take actions to continue the path of value.  For instance an action card which has the detailed instructions to build 100 units of a robot can pass around to 100 people in a week, and 10,000 robots will get built.  Suppose those robots are "worth" the equivalent of 100 dollars each in money.  That is 1 million dollars built up in value in a week from nothing.  That kind of steep value creation(starting from zero) cannot be supported by the tools of capitalism because the "cost of capital" will always limit how fast you can buy the inventory to ramp up.  
 
-We will build up a new economy from nothing, which can grow and create value vastly faster than is possible in the monetary system.  In this system the existing resources we have access to are based on what we "loop in" or "metabolize".  
+We will build up a new economy from nothing, which can grow and create value vastly faster than is possible in the monetary system.  In this system the existing resources we have access to are based on what we "loop in" or "metabolize".  So depending on  need we must metabolize certain things as quickly as possible: shelter, food, and medicine.  Thus building Geometron nodes near medical facilities is a imperative, so that doctors, nurses and pharmacists may be looped in.  Building the equivalent of millions of dollars of value into a hospital should be enough to loop in the people in the invading Geometron camp, leading to health care for all. As people are metabolized in the organization, they'll spread to other similar organizations, build new camps, and spread value back down into the other camps we build separately.  Shopping centers are one of the default patterns we'll tend to metabolize.  Networked flow of value in a shopping center can create the same kinds of exponential growth leveraged by large companies today, but locally focused.  Religious institutions are also a mainstay of our network.  We should be able to find land we can camp on and a ready and willing set of believers who can incorporate our language tools into their existing faith, and hence into their charitable works, directing metabolization out into the populace to whom they minister.
 
 
+## Cosmology
+
+
+The central cosmology is simply the language built up from the Nine Laws.  The structure that is arranged symbolically around that structure are the three corners of the Triangle: the Factory, the Watershed and the Street.
+
+### The Watershed
+
+We are all always in a watershed.  Water is pushed by the sun from the Sea to the Sky.  From there it flows down via rain through all the various habitats we live in. The watershed is part of our Universe, more fundamental than anything else: particle physics and astronomy don't matter compared to the flow of water.  This is literally life.  We must start to think of our lives as a path long waterways.  There is an ocean we live near, a biggest-river, a tributary, streams, ponds, aquafers etc..  Then in addition to this there is the artificial flow which defines how we move water through our society: reservoirs, water treatment facilities, sewage plants, storms sewers, aquaducts, etc.  Our network of information recognizes nodes in the watershed network as having meaning, and we organize communities in the network accordingly.
+
+
+### The Street
+
+Hodos.  Dao.  The Path.  Many words, one over arching idea: that as humans we walk along paths which define us.  Those paths can be just ideas, and sets of actions. Or they can be very literal paved streets, driven on by trucks and cars, or walked along the side of.
+
+The Street is the heierarchy of our world based entirely on the physical streets, ignoring politics.  Thus the top level of that world might be something like "the Interstate 95 corridor".  The lowest level might be the sidewalk on a particular corner where we have set up a temporary camp with a Geometron node.
+
+### The Factory
+
+The Factory in Geometron is a structure which consists of a sequence of actions and the infrastrcutre to support those actions which create a useful product of some kind.  The factories of the basis set of geometron include:
+
+- book factory
+- trash robot factory
+- action geometry factory
+- cardboard factory
+- symbol factory(and markers)
+- map factory(html and paper)
+- curve factory
+- scroll factory
+- skeletron factory
+- pi server factory
+- pi server factory factory
+- action deck factory
+- artbox
 
 
 
