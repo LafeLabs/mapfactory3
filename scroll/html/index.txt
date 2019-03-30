@@ -338,9 +338,10 @@ document.getElementById("savehtmlbutton").onclick = function(){
     
     htmlbottom = "</div>\n<style>\n";
     
-    htmlbottom += "p{margin:1.5em;text-align:justify;}h1,h2{left:0px;right:0px;text-align:center;}body{font-family:Helvetica;font-size:22px}img{display:block;margin:auto;text-align:center;max-width:90%;}";//style here   
+    htmlbottom += "p{margin:1.5em;text-align:justify;}h1,h2{left:0px;right:0px;text-align:center;}body{font-family:Helvetica;}img{display:block;margin:auto;text-align:center;max-width:90%;}";//style here   
     htmlbottom += "@media screen and (max-width: 400px) {img {width: 400px;}}";
-    
+    htmlbottom += "@media screen and (min-width: 768px) {body{font-size:22px;}}";
+
     htmlbottom += "\n</style>";
     htmlbottom += "<";
     htmlbottom += "/";
