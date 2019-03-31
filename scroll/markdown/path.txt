@@ -133,10 +133,38 @@ Why now?  If all that is needed to replace capitalism with a just system, why ha
 
 ## Geometron Basis set
 
-The basis set replicates itself.  Every
 
+The basis set replicates itself.  The set has all information needed to make every element of itself.  "Replication" can mean several things here.  It might mean buying an off the shelf component of which there are an effectively infinite number(number purchased can scale up with existing corporate infrastructure, not in some "geometron incorporated", which will never exist.  In many cases it will mean making needed connections for things to be done in a place.  For instance, we might start working on soldering circuit boards for Trash Robot in the maker space of a local public library, then teach more and more people to solder and ramp up production capacity.  Again as with buying off the shelf parts, we must scale horizontally.  It never makes sense to simply ramp up the soldering in one space, rather we scale by finding new spaces to solder in.  
 
+###The components of the Basis Set are:
 
+- action cards: these can in principle build the whole rest of the set in absence of other components, as they describe actions which build or find everything
+- The Book of Geometron: hardbound, five volumes.  also ebook scrolls. This consists of:
+      - Action Geometry
+      - Symbol Factory
+      - Map Factory
+      - Trash Robot
+      - The Path of Geometron
+- Skeletron with octohedron and tetrahedron with about 18-24 inch sticks as main backpack to carry everything
+- Book factory kit for Action Geometry with art supplies, sewing kit, a stack of partially made books and fully completed books, all in a modular cardboard carrying case which can be carried alone for working on art without the full system
+- Trash Robot:
+      - audio EC probe unit
+      - generic UNO unit for sensors, touch sense, neopixel drive, temp controlled heater, motion sensor, light sensor
+      - dual h bridge UNO drive: stepper stage, stepper run, four phase vibrator motor, dc motor run, example of each in kit
+      - xyz robot with GOSP(Geometron Optical Serial Protocool) board to program, and 8 button board to control, 3 dual h bridges to drive and external outputs to drive other robot components
+      - modular case for whole robot which fits in or on skeletron
+      - power system with batteries, wall chargers, usb's for both power and programming, solar panels 
+      - action cards, physical maps and online maps for all parts
+- physical map stack of laminated maps which represent the entire local cosmology of the Geometron instance: street, factory, watershed, the language used, and fractal descent into all of these
+- box factory, integrated into the skeletron: box cutters, duct tape, packing tape, scissors, elmers glue or wheat paste components
+-pi zero w web server with geometron instance on apache/php, off button and a USB battery
+-geometron instances on a very locally oriented domain name owned by someone local, registered via Hostinger, e.g. www.street1-street2.net or www.21xxblock-streetname.net etc.
+- geometron instance on a 000webhost free page-built by each indivical human
+- sewn bags with painted stones and painted bits of geometric trash, shapes from action geometry cut out of sheets of plastic
+- artBox terminal: art supplies on inside, Geometron language keyboard, OTG cable, rubber bands to hold phones or tablets, and one of those to use
+- pi factory with needed components to replicate and edit the pi web server: hdmi screen, keyboard, mouse, battery, usb hub which connects to pi zero 
+- meme factory, a smooth existing online system for creating local memes in a local place
+- full online map of Universe of local cosmology, which includes local businesses, local people, local objects, streams, ponds, trees, etc.
 
 
 
