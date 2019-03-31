@@ -159,13 +159,13 @@ The basis set replicates itself.  The set has all information needed to make eve
 - box factory, integrated into the skeletron: box cutters, duct tape, packing tape, scissors, elmers glue or wheat paste components
 -pi zero w web server with geometron instance on apache/php, off button and a USB battery
 -geometron instances on a very locally oriented domain name owned by someone local, registered via Hostinger, e.g. www.street1-street2.net or www.21xxblock-streetname.net etc.
-- geometron instance on a 000webhost free page-built by each indivical human
+- geometron instance on a 000webhost free page-built by each individual human
 - sewn bags with painted stones and painted bits of geometric trash, shapes from action geometry cut out of sheets of plastic
 - artBox terminal: art supplies on inside, Geometron language keyboard, OTG cable, rubber bands to hold phones or tablets, and one of those to use
-- pi factory with needed components to replicate and edit the pi web server: hdmi screen, keyboard, mouse, battery, usb hub which connects to pi zero 
+- pi factory with needed components to replicate and edit the pi web server: hdmi screen, keyboard, mouse, battery, usb hub which connects to pi zero, sd cards, sd card writer, action cards, stand for screen, carrying enclosure for whole System 
 - meme factory, a smooth existing online system for creating local memes in a local place
 - full online map of Universe of local cosmology, which includes local businesses, local people, local objects, streams, ponds, trees, etc.
-
+- beacon: blinking lights and sign for skeletron to attract people to interact with it
 
 
 
