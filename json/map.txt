@@ -7,5 +7,14 @@
         "src": "",
         "href": "scroll/index.php?filename=todo.txt",
         "text": ""
+    },
+    {
+        "w": 0.29371345029239765,
+        "x": 0.021929824561403508,
+        "y": 0.12353801169590643,
+        "angle": 0,
+        "src": "",
+        "href": "scroll/index.php?filename=path.txt",
+        "text": ""
     }
 ]

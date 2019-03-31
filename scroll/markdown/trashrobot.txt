@@ -1,6 +1,179 @@
-[link back to 5 books](index.php?filename=fivebooksofgeometron.txt)
 
 # Book of Trash Robot
+
+
+## Get parts, assemble
+
+###  Buy all the Arduino stuff
+
+### Buy the circuit boards from pcbway
+
+5 boards:
+- water: uno shield
+- fire: dual h bridge
+- earth: buttons
+- air: GOSP
+- aether: EC probe relaxation oscillator
+
+### buy digikey parts
+
+links to shopping carts(1,2,3,4,5, and all together)
+
+linked markdown bom tables
+
+### buy samtec parts
+
+linked markdown bom tables, photos, and detailed part number documentation for figuring out lengths of cables, types of connector etc. 
+
+### buy random stuff from adafruit, amazon, sparkfun
+
+sensors, neopixel arrays, ADC's, other arduinos, solder paste, solder, flux, soldering irons, solder hot air rework station, heater wire, thermometers, 
+
+### find upcycled parts for robots/machines
+
+### Assemble circuit boards
+
+### Assemble robots/machines
+
+### program, test and deploy robots/machines
+
+here is where all the code goes
+
+```
+
+/*
+www.trashrobot.org
+FREE, PUBLIC DOMAIN
+NO COPYRIGHT
+
+STEPPER KNOB VELOCITY
+
+
+this code has some mysterious memory problem and freezes after a minute or two. fix!
+
+*/
+
+int pinArray[] = {10,12,11,13};
+int pinIndex = 0;
+int pulseTime = 10;//ms
+int knob = 512;
+int x = 512;
+
+int maxTime = 100;
+int minTime = 10;
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(pinArray[0],OUTPUT);
+  pinMode(pinArray[1],OUTPUT); 
+  pinMode(pinArray[2],OUTPUT); 
+  pinMode(pinArray[3],OUTPUT);
+  digitalWrite(pinArray[0],LOW);
+  digitalWrite(pinArray[1],LOW);
+  digitalWrite(pinArray[2],LOW);
+  digitalWrite(pinArray[3],LOW);
+  knob = analogRead(A2);  
+}
+
+void loop() {
+  knob = analogRead(A2);  
+  if(knob > 612){
+     pulseTime = maxTime - (maxTime - minTime)*(knob - 612.0)/412.0;
+     x++;
+     digitalWrite(pinArray[x%4],HIGH);
+     delay(pulseTime);
+     digitalWrite(pinArray[x%4],LOW);
+     Serial.println(pinArray[x%4]);  
+
+  }
+  if(knob < 412){
+     pulseTime = maxTime - (maxTime - minTime)*(412.0 - knob)/412.0;
+     x--;
+     digitalWrite(pinArray[x%4],HIGH);
+     delay(pulseTime);
+     digitalWrite(pinArray[x%4],LOW);
+     Serial.println(pinArray[x%4]);  
+  }
+  
+  if(x > 1024){
+    x = 0;
+  }
+  if(x < -1024){
+    x = 0;
+  }
+}
+ 
+  
+```
+
+
+#### Stepper knob direct drive
+
+```
+
+/*
+www.trashrobot.org
+FREE, PUBLIC DOMAIN
+NO COPYRIGHT
+
+STEPPER KNOB DIRECT DRIVE
+
+*/
+
+int pinArray[] = {10,12,11,13};
+int pinIndex = 0;
+int pulseTime = 10;//ms
+int knob = 512;
+int x = 512;
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(pinArray[0],OUTPUT);
+  pinMode(pinArray[1],OUTPUT); 
+  pinMode(pinArray[2],OUTPUT); 
+  pinMode(pinArray[3],OUTPUT);
+  digitalWrite(pinArray[0],LOW);
+  digitalWrite(pinArray[1],LOW);
+  digitalWrite(pinArray[2],LOW);
+  digitalWrite(pinArray[3],LOW);
+  knob = analogRead(A2);  
+  x = knob;
+}
+
+void loop() {
+  knob = analogRead(A2);  
+
+  if(abs(x - knob) > 5){
+     if(x > knob){
+        x = x - 5;
+     }
+     else{
+        x = x + 5;
+     }
+     digitalWrite(pinArray[x%4],HIGH);
+     delay(pulseTime);
+     digitalWrite(pinArray[x%4],LOW);
+     delay(pulseTime);
+     Serial.println(pinArray[x%4]);  
+  }
+ 
+ //    Serial.println(knob); 
+ 
+  //Serial.print(","); 
+  //Serial.println(x); 
+  //delay(20);
+  
+}
+```
+
+### details of the GOSP
+
+### Extensions, applications
+
+### Path of robot factory
+
+
+
 
 We shall build a trash robot factory.  This is a factory for building factories for building trash robots.  That is not the same as building robots!  We are building the factory to build the factorieS.  A meta-factory.  Minimal product is thus not things like xyzmu robot or vibrational robot, but *elements* and motivation, basic documentation, and most importantly systems of replication: how to build a factory: use of action cards, maps, scrolls, books, etc.  
 
