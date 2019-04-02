@@ -101,6 +101,12 @@
         ]
     },
     {
+        "path":"three",
+        "files":[
+            "replicator.php"
+        ]
+    },
+    {
         "path":"scroll",
         "files":[
             "replicator.php"
