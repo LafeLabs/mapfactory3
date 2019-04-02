@@ -6,6 +6,7 @@
     $baseurl = explode("json",$url)[0];
 
     mkdir("maps");
+    mkdir("three");
     mkdir("symbol");
     mkdir("scroll");
     mkdir("curve");

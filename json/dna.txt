@@ -16,6 +16,7 @@
 			"linkfeed.txt",
 			"mapeditor.txt",
 			"mapfeed.txt",
+			"memefeed.txt",
 			"metareplicator.txt",
 			"newmapfactory.txt",
 			"replicator.txt",
@@ -49,6 +50,7 @@
 		"files":[
 			"aligner.svg",
 			"back.svg",
+			"bookfeed.svg",
 			"combiner.svg",
 			"copy.svg",
 			"curve.svg",
