@@ -3,6 +3,9 @@
 <table id = "linktable">
     <tr>
         <td>
+            <img class = "button" id = "hidebutton" src = "mapicons/hidetable.svg"/>
+        </td>
+        <td>
             <a href = "editor.php">
                 <img src = "mapicons/editor.svg"/>
             </a>
@@ -10,6 +13,11 @@
         <td>
             <a href = "scroll/">
                 <img src = "mapicons/scroll.svg"/>
+            </a>
+        </td>
+        <td>
+            <a href = "textfeed.php">
+                <img src = "mapicons/textfeed.svg"/>
             </a>
         </td>
         <td>
@@ -27,11 +35,11 @@
                 <img src = "mapicons/imagefeed.svg"/>
             </a>
         </td>
-        <td>
+<!--        <td>
             <a href = "curve/">
                 <img src = "mapicons/curve.svg"/>
             </a>
-        </td>
+        </td>  -->
         <td>
             <a href = "symbol/">
                 <img src = "mapicons/geometron.svg"/>
@@ -57,19 +65,11 @@
                 <img src = "mapicons/mapfeed.svg"/>
             </a>
         </td>
-        <td>
-            <a href = "textfeed.php">
-                <img src = "mapicons/textfeed.svg"/>
-            </a>
-        </td>
-        <td>
+<!--        <td>
             <a href = "copy.php">
                 <img src = "mapicons/copy.svg"/>
             </a>
-        </td>
-        <td>
-            <img class = "button" id = "hidebutton" src = "mapicons/hidetable.svg"/>
-        </td>
+        </td>-->
     </tr>
 </table>
 </div>
@@ -318,10 +318,15 @@ document.getElementById("unhidebutton").onclick = function(){
     this.style.display = "none";
 }
 
+
 document.getElementById("hidebutton").onclick = function(){
     document.getElementById("linktable").style.display = "none";
     document.getElementById("unhidebutton").style.display = "block";
 }
+
+    document.getElementById("linktable").style.display = "none";
+    document.getElementById("unhidebutton").style.display = "block";
+
 </script>
 <style>
 body{
