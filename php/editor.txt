@@ -70,6 +70,8 @@ EGO DEATH:
     <div class = "php file">php/textfeed.txt</div>
     <div class = "php file">php/deletefile.txt</div>
 
+    <div class = "php file">php/flow.txt</div>
+
     <div class = "php file">symbol/replicator.php</div>
     <div class = "php file">scroll/replicator.php</div>
     <div class = "php file">curve/replicator.php</div>
@@ -82,6 +84,8 @@ EGO DEATH:
     <div class = "json file">json/links.txt</div>
     <div class = "json file">json/listoflists.txt</div>
     <div class = "json file">json/imgurls.txt</div>
+    <div class = "json file">json/inflow.txt</div>
+    <div class = "json file">json/outflow.txt</div>
 
 </div>
 

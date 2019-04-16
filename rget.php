@@ -1,5 +1,5 @@
 <?php
-//  rget.php?url=lafelabs.org/artbox/artbox.php
+//  rget.php?url=http://www.lafelabs.org/artbox/php/artbox.txt
 
     if(isset($_GET['url'])){
         $url = $_GET['url'];

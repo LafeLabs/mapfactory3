@@ -10,6 +10,7 @@
 			"editor.txt",
 			"fileloader.txt",
 			"filesaver.txt",
+			"flow.txt",
 			"imagefeed.txt",
 			"index.txt",
 			"linker.txt",
@@ -41,9 +42,11 @@
 			"dna.txt",
 			"factory.txt",
 			"imgurls.txt",
+			"inflow.txt",
 			"links.txt",
 			"listoflists.txt",
-			"map.txt"
+			"map.txt",
+			"outflow.txt"
 		]
 	},
 	{
