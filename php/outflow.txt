@@ -98,8 +98,7 @@ echo $listtext;
     inflow = JSON.parse(document.getElementById("outflow").innerHTML);
     scrolls = document.getElementById("scrolls").innerHTML.split(",");
 
-    currentthing = [];
-    
+
     for(var index = 0;index < scrolls.length - 1;index++){
         var newp = document.createElement("p");
         newp.innerHTML = "scroll/markdown/" + scrolls[index];
@@ -108,7 +107,10 @@ echo $listtext;
         document.getElementById("scrollscroll").appendChild(newp);
         newp.onclick = function(){
             var newp = document.createElement("p");
-            newp.innerHTML = this.innerHTML;
+            var newspan = document.createElement("span");
+            newspan.innerHTML =  this.innerHTML;
+            newspan.className = "scrollspan";
+            newp.appendChild(newspan);
             document.getElementById("thingscroll").appendChild(newp);
             var newimg = document.createElement("IMG");
             newimg.classList.add("deletebutton");
@@ -130,6 +132,8 @@ echo $listtext;
             var newp = document.createElement("P");
             newp.classList.add("symbolp");
             var newimg = document.createElement("IMG");
+            newimg.className = "thingsymbol";
+
             newimg.src = this.src;
             newp.appendChild(newimg);
             document.getElementById("thingscroll").appendChild(newp);
@@ -152,7 +156,11 @@ echo $listtext;
         document.getElementById("mapscroll").appendChild(newp);
         newp.onclick = function(){
             var newp = document.createElement("p");
-            newp.innerHTML = this.innerHTML;
+            var newspan = document.createElement("span");
+            newspan.innerHTML =  this.innerHTML;
+            newspan.className = "mapspan";
+            newp.appendChild(newspan);
+
             document.getElementById("thingscroll").appendChild(newp);
             var newimg = document.createElement("IMG");
             newimg.classList.add("deletebutton");
@@ -165,6 +173,39 @@ echo $listtext;
     }
 
 document.getElementById("gobutton").onclick = function(){
+    var thingscrolls = document.getElementById("thingscroll").getElementsByClassName("scrollspan");
+    var thingmaps = document.getElementById("thingscroll").getElementsByClassName("mapspan");
+    var thingsymbols = document.getElementById("thingscroll").getElementsByClassName("thingsymbol");
+        
+    var thisthing = {};
+    thisthing.name = document.getElementById("thingname").value;
+    thisthing.scrolls = [];
+    thisthing.maps = [];
+    thisthing.symbols = [];
+
+    for(var index = 0;index < thingscrolls.length;index++){
+        thisthing.scrolls.push(thingscrolls[index].innerHTML);
+    }
+    for(var index = 0;index < thingmaps.length;index++){
+        thisthing.maps.push(thingmaps[index].innerHTML);
+    }
+    for(var index = 0;index < thingsymbols.length;index++){
+        thisthing.symbols.push(thingsymbols[index].src);
+    }
+    
+    outflow.push(thisthing);
+    
+    var newp = document.createElement("P");
+    newp.innerHTML = thisthing.name;
+    document.getElementById("outscroll").appendChild(newp);
+    
+    data = encodeURIComponent(JSON.stringify(outflow,null,"    "));
+    var httpc = new XMLHttpRequest();
+    var url = "filesaver.php";        
+    httpc.open("POST", url, true);
+    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+    httpc.send("data=" + data + "&filename=" + "json/outflow.txt");//send text to filesaver.php
+    
     
 }
 
