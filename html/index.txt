@@ -65,6 +65,12 @@
                 <img src = "mapicons/mapfeed.svg"/>
             </a>
         </td>
+        <td>
+            <a href = "outflow.php">
+                <img src = "mapicons/outflow.svg"/>
+            </a>
+        </td>
+
 <!--        <td>
             <a href = "copy.php">
                 <img src = "mapicons/copy.svg"/>

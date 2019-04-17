@@ -94,10 +94,38 @@ echo $listtext;
 
 <script>
 
-    outflow = JSON.parse(document.getElementById("inflow").innerHTML);
-    inflow = JSON.parse(document.getElementById("outflow").innerHTML);
-    scrolls = document.getElementById("scrolls").innerHTML.split(",");
+    outflow = JSON.parse(document.getElementById("outflow").innerHTML);
 
+    for(var index = 0;index < outflow.length;index++){
+        var newp = document.createElement("p");
+        var newspan = document.createElement("SPAN");
+        newspan.innerHTML = outflow[index].name;
+        newp.appendChild(newspan);
+        document.getElementById("outscroll").appendChild(newp);
+        var newimg = document.createElement("IMG");
+        newimg.classList.add("deletebutton");
+        newp.appendChild(newimg);
+        newimg.src = "mapicons/deletex.svg"; 
+        newimg.onclick = function(){
+            document.getElementById("outscroll").removeChild(this.parentNode);
+            var localname = this.parentNode.getElementsByTagName("SPAN")[0].innerHTML;
+            var outflowlocal = [];    
+            for(var index = 0;index < outflow.length;index++){
+                if(outflow[index].name != localname){
+                    outflowlocal.push(outflow[index]);
+                }
+            }
+            outflow = outflowlocal;
+            data = encodeURIComponent(JSON.stringify(outflow,null,"    "));
+            var httpc = new XMLHttpRequest();
+            var url = "filesaver.php";        
+            httpc.open("POST", url, true);
+            httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+            httpc.send("data=" + data + "&filename=" + "json/outflow.txt");//send text to filesaver.php
+        }
+    }
+        
+    scrolls = document.getElementById("scrolls").innerHTML.split(",");
 
     for(var index = 0;index < scrolls.length - 1;index++){
         var newp = document.createElement("p");

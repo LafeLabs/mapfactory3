@@ -76,6 +76,7 @@
 			"mapfactory.svg",
 			"mapfeed.svg",
 			"memefactory.svg",
+			"outflow.svg",
 			"pngfeed.svg",
 			"scroll.svg",
 			"street.svg",
