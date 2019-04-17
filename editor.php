@@ -34,6 +34,7 @@ EGO DEATH:
     <a href = "imagefeed.php">imagefeed.php</a>
     <a href = "mapeditor.php">mapeditor.php</a>
     <a href = "duality.php">duality.php</a>
+    <a href = "outflow.php">outflow.php</a>
     <a href = "texteditor.php">texteditor.php</a>
 
     <a href = "dnagenerator.php">dnagenerator.php</a>
@@ -71,6 +72,7 @@ EGO DEATH:
     <div class = "php file">php/deletefile.txt</div>
 
     <div class = "php file">php/flow.txt</div>
+    <div class = "php file">php/outflow.txt</div>
 
     <div class = "php file">symbol/replicator.php</div>
     <div class = "php file">scroll/replicator.php</div>

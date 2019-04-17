@@ -20,6 +20,7 @@
 			"memefeed.txt",
 			"metareplicator.txt",
 			"newmapfactory.txt",
+			"outflow.txt",
 			"replicator.txt",
 			"rget.txt",
 			"text2php.txt",
