@@ -1,3 +1,4 @@
 [
-    "http://cherrytreemaryland.xyz"
+    "http://cherrytreemaryland.xyz/json/outflow.txt",
+    "http://geometron.000webhostapp.com/json/outflow.txt"
 ]

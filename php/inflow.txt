@@ -19,10 +19,17 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
 <div id = "thingsdiv" style = "display:none;"><?php
     $inflow = json_decode(file_get_contents("json/inflow.txt"));
     foreach($inflow as $source){
-        $source = json_decode(file_get_contents($source."/json/outflow.txt"));
-        foreach($source as $thing){
+        //$source = json_decode(file_get_contents($source."/json/outflow.txt"));
+        $sourcejson = json_decode(file_get_contents($source));
+        foreach($sourcejson as $thing){
+//fget.php?baseurl=" + baseurl;
+  //      fgetlink += "&thingname=" + thingname;
+        
+            echo "fget.php?baseurl=";
+            echo $source;
+            echo "&thingname=";
             echo $thing->name;
-            echo ",";
+            echo "\n";
         }
     }
 ?></div>
@@ -52,14 +59,35 @@ inflow = JSON.parse(document.getElementById("inflow").innerHTML);
 
 for(var index = 0;index < inflow.length;index++){
     var newp = document.createElement("P");
-    newp.innerHTML = inflow[index];
+    var newa = document.createElement("A");
+    newa.innerHTML = inflow[index];
+    newa.href = inflow[index];
+    newp.appendChild(newa);
     document.getElementById("sourcesscroll").appendChild(newp);
     
 }
 
+inthings = document.getElementById("thingsdiv").innerHTML.split("\n");
+for(var index = 0;index < inthings.length;index++){
+    if(inthings[index].length > 0){
+        var newp = document.createElement("P");
+        var newa = document.createElement("A");
+        newa.innerHTML = inthings[index];
+        newa.href = inthings[index];
+        newp.appendChild(newa);
+        document.getElementById("thingscroll").appendChild(newp);
+    }
+}
 
 document.getElementById("gobutton").onclick = function(){
-
+    var newsource = document.getElementById("thingname").value;
+    inflow.push(newsource);
+    data = encodeURIComponent(JSON.stringify(inflow,null,"    "));
+    var httpc = new XMLHttpRequest();
+    var url = "filesaver.php";        
+    httpc.open("POST", url, true);
+    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+    httpc.send("data=" + data + "&filename=" + "json/inflow.txt");//send text to filesaver.php
 }
 
 </script>
@@ -77,25 +105,25 @@ input{
     overflow:scroll;
     left:10px;
     width:35%;
-    bottom:70%;
+    bottom:53%;
     top:80px;
     border:solid;
     border-width:3px;
     border-radius:10px;
 }
-#fetchscroll{
+#thingscroll{
     position:absolute;
     overflow:scroll;
     left:10px;
     width:35%;
-    bottom:35%;
-    top:31%;
+    bottom:10px;
+    top:50%;
     border:solid;
     border-width:3px;
     border-radius:10px;
 }
 
-#thingscroll{
+#fetchscroll{
     position:absolute;
     overflow:scroll;
     left:37%;
