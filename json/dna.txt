@@ -69,6 +69,7 @@
 			"gobutton.svg",
 			"hidetable.svg",
 			"imagefeed.svg",
+			"inflow.svg",
 			"linker.svg",
 			"linkfeed.svg",
 			"map2link.svg",

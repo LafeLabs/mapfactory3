@@ -66,6 +66,11 @@
             </a>
         </td>
         <td>
+            <a href = "inflow.php">
+                <img src = "mapicons/inflow.svg"/>
+            </a>
+        </td>
+        <td>
             <a href = "outflow.php">
                 <img src = "mapicons/outflow.svg"/>
             </a>
