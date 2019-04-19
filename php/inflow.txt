@@ -53,6 +53,8 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
 <div id = "thingscroll"></div>
 <div id = "fetchscroll"></div>
 
+<a id= "thisoutlink" href = "json/outflow.txt">json/outflow.txt</a>
+
 <script>
 
 inflow = JSON.parse(document.getElementById("inflow").innerHTML);
@@ -182,6 +184,12 @@ input{
 }
 #gobutton:active{
     background-color:yellow;
+}
+#thisoutlink{
+    position:absolute;
+    right:0px;
+    top:0px;
+    font-family:courier;
 }
 </style>
 
