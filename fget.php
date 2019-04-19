@@ -57,4 +57,8 @@ $file = fopen("json/outflow.txt","w");// create new file with this name
 fwrite($file,$data); //write data to file
 fclose($file);  //close file
 
+//echo the links to the various sub-things
+
 ?>
+
+<a href = "inflow.php">inflow.php</a>

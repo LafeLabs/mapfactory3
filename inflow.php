@@ -16,6 +16,9 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
 <div id = "inflow" style = "display:none;"><?php
     echo file_get_contents("json/inflow.txt");
 ?></div>
+<div id = "outflow" style = "display:none;"><?php
+    echo file_get_contents("json/outflow.txt");
+?></div>
 <div id = "thingsdiv" style = "display:none;"><?php
     $inflow = json_decode(file_get_contents("json/inflow.txt"));
     foreach($inflow as $source){
@@ -51,7 +54,7 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
 
 <div id = "sourcesscroll"></div>
 <div id = "thingscroll"></div>
-<div id = "fetchscroll"></div>
+<div id = "linkscroll"></div>
 
 <a id= "thisoutlink" href = "json/outflow.txt">json/outflow.txt</a>
 
@@ -81,6 +84,36 @@ for(var index = 0;index < inthings.length;index++){
     }
 }
 
+outflow = JSON.parse(document.getElementById("outflow").innerHTML);
+
+for(var index = 0;index < outflow.length;index++){
+    for(var sindex = 0;sindex < outflow[index].scrolls.length;sindex++){
+        var newp = document.createElement("P");
+        var newa = document.createElement("A");
+        newa.innerHTML = outflow[index].scrolls[sindex].split("markdown/")[1];
+        newa.href = "scroll/index.php?filename=" + outflow[index].scrolls[sindex].split("markdown/")[1];
+        newp.appendChild(newa);
+        document.getElementById("linkscroll").appendChild(newp);
+    }
+    for(var mindex = 0;mindex < outflow[index].maps.length;mindex++){
+        var newp = document.createElement("P");
+        var newa = document.createElement("A");
+        newa.innerHTML = outflow[index].maps[mindex];
+        newa.href = "index.php?path=" + outflow[index].maps[sindex];
+        newp.appendChild(newa);
+        document.getElementById("linkscroll").appendChild(newp);
+    }    
+    for(var sindex = 0;sindex < outflow[index].symbols.length;sindex++){
+        var newp = document.createElement("P");
+        var newa = document.createElement("A");
+        newa.innerHTML = outflow[index].symbols[sindex];
+        newa.href =      outflow[index].symbols[sindex];
+        newp.appendChild(newa);
+        document.getElementById("linkscroll").appendChild(newp);
+    }    
+    
+}
+
 document.getElementById("gobutton").onclick = function(){
     var newsource = document.getElementById("thingname").value;
     inflow.push(newsource);
@@ -91,6 +124,7 @@ document.getElementById("gobutton").onclick = function(){
     httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
     httpc.send("data=" + data + "&filename=" + "json/inflow.txt");//send text to filesaver.php
 }
+
 
 </script>
 
@@ -106,7 +140,7 @@ input{
     position:absolute;
     overflow:scroll;
     left:10px;
-    width:35%;
+    right:55%;
     bottom:53%;
     top:80px;
     border:solid;
@@ -117,7 +151,7 @@ input{
     position:absolute;
     overflow:scroll;
     left:10px;
-    width:35%;
+    right:55%;
     bottom:10px;
     top:50%;
     border:solid;
@@ -125,11 +159,11 @@ input{
     border-radius:10px;
 }
 
-#fetchscroll{
+#linkscroll{
     position:absolute;
     overflow:scroll;
-    left:37%;
-    width:30%;
+    right:10px;
+    left:55%;
     bottom:10px;
     top:80px;
     border:solid;
