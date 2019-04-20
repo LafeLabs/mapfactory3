@@ -42,9 +42,26 @@ echo $listtext;
 uploadimages = document.getElementById("uploadimages").innerHTML.split(",");
 
 for(var index = 0;index < uploadimages.length-1;index++){
+    var newp = document.createElement("P");
     var newimg = document.createElement("IMG");
+    newp.appendChild(newimg);
     newimg.src = "uploadimages/" + uploadimages[index];
-    document.getElementById("imagescroll").appendChild(newimg);
+    newimg.className = "uploadimage";
+    document.getElementById("imagescroll").appendChild(newp);
+    var newimg = document.createElement("img");
+    newimg.src = "mapicons/deletex.svg";
+    newp.appendChild(newimg);
+    newimg.className= "button";
+    newimg.onclick = function(){
+        imagename = this.parentElement.getElementsByTagName("img")[0].src.split("uploadimages/")[1];
+        var httpc = new XMLHttpRequest();
+        var url = "deletefile.php";         
+        httpc.open("POST", url, true);
+        httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+        httpc.send("filename=uploadimages/" + imagename);//send text to filesaver.php
+        document.getElementById("imagescroll").removeChild(this.parentElement);
+    }
+
 }
 </script>
 <style>
@@ -69,10 +86,22 @@ body{
     border:solid;
     border-radius:10px;
 }
-#imagescroll img{
-    width:50%;
-    display:block;
-    margin:auto;
+#imagescroll p{
+    border:solid;
+}
+.uploadimage{
+    max-width:90%;
+}
+.button{
+    cursor:pointer;
+    width:50px;
+    border:solid;
+}
+.button:hover{
+    background-color:green;
+}
+.button:active{
+    background-color:yellow;
 }
 </style>
 </body>
