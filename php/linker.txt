@@ -154,6 +154,18 @@ foreach($files as $value){
 echo $listtext;
     
 ?></div>
+<div id = "dirsdiv" style = "display:none;"><?php
+
+$files = scandir(getcwd());
+$listtext = "";
+foreach($files as $value){
+    if(is_dir($value)){
+        $listtext .= $value."/,";
+    }
+}
+echo $listtext;
+    
+?></div>
 <div id = "uploadimages" style = "display:none;"><?php
 
 $files = scandir(getcwd()."/uploadimages");
@@ -354,6 +366,11 @@ input{
     for(var index = 0;index < phpfiles.length - 1;index++){
         links.push(phpfiles[index]);
     }
+    dirs = document.getElementById("dirsdiv").innerHTML.split(",");
+    for(var index = 0;index < dirs.length - 1;index++){
+        links.push(dirs[index]);
+    }
+    
     memes = document.getElementById("memes").innerHTML.split(",");
     for(var index = 0;index < memes.length;index++){
         links.push("memefactory/index.php?path=memes/" + memes[index]);
