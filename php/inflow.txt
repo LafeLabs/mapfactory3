@@ -60,7 +60,7 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
 
 <script>
 
-inflow = JSON.parse(document.getElementById("inflow").innerHTML);
+inflow = JSON.parse(document.getElementById("inflow").innerText);
 
 for(var index = 0;index < inflow.length;index++){
     var newp = document.createElement("P");
@@ -72,7 +72,7 @@ for(var index = 0;index < inflow.length;index++){
     
 }
 
-inthings = document.getElementById("thingsdiv").innerHTML.split("\n");
+inthings = document.getElementById("thingsdiv").innerText.split("\n");
 for(var index = 0;index < inthings.length;index++){
     if(inthings[index].length > 0){
         var newp = document.createElement("P");
@@ -84,7 +84,7 @@ for(var index = 0;index < inthings.length;index++){
     }
 }
 
-outflow = JSON.parse(document.getElementById("outflow").innerHTML);
+outflow = JSON.parse(document.getElementById("outflow").innerText);
 
 for(var index = 0;index < outflow.length;index++){
     for(var sindex = 0;sindex < outflow[index].scrolls.length;sindex++){
