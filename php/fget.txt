@@ -42,20 +42,20 @@ foreach($sourcejson as $thing){
         foreach($thing->symbols as $symbolname){
             $symbolindexstring = strval($symbolindex);
             $symboldata = file_get_contents($baseurl.$symbolname);
-            $file = fopen("svg/".$thingname.$symbolindexstring,"w");// create new file with this name
+            $file = fopen("symbol/svg/".$thingname.$symbolindexstring,"w");// create new file with this name
             fwrite($file,$mapdata); //write data to file
             fclose($file);  //close file
             $symbolindex = $symbolindex + 1;
-            array_push($outthing->symbols,"svg/".$thingname.$symbolindexstring);
+            array_push($outthing->symbols,"symbol/svg/".$thingname.$symbolindexstring);
         }    
     }
 }
 
-array_push($outflow,$outthing);
-$data = json_encode($outflow);
-$file = fopen("json/outflow.txt","w");// create new file with this name
-fwrite($file,$data); //write data to file
-fclose($file);  //close file
+//array_push($outflow,$outthing);
+//$data = json_encode($outflow);
+//$file = fopen("json/outflow.txt","w");// create new file with this name
+//fwrite($file,$data); //write data to file
+//fclose($file);  //close file
 
 //echo the links to the various sub-things
 
