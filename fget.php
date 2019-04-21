@@ -41,12 +41,19 @@ foreach($sourcejson as $thing){
         $symbolindex = 1;
         foreach($thing->symbols as $symbolname){
             $symbolindexstring = strval($symbolindex);
-            $symboldata = file_get_contents($baseurl.$symbolname);
-            $file = fopen("symbol/svg/".$thingname.$symbolindexstring,"w");// create new file with this name
-            fwrite($file,$mapdata); //write data to file
+            $symboldata = file_get_contents($symbolname);
+
+            echo $symboldata;
+            
+            echo "<br/>";
+            
+            $file = fopen("symbol/svg/".$thingname.$symbolindexstring.".svg","w");// create new file with this name
+            echo "symbol/svg/".$thingname.$symbolindexstring.".svg";
+            echo "<br/>";
+            fwrite($file,$symboldata); //write data to file
             fclose($file);  //close file
             $symbolindex = $symbolindex + 1;
-            array_push($outthing->symbols,"symbol/svg/".$thingname.$symbolindexstring);
+            array_push($outthing->symbols,"symbol/svg/".$thingname.$symbolindexstring.".svg");
         }    
     }
 }

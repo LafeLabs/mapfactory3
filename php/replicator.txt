@@ -13,6 +13,10 @@
     mkdir("textfeed");
     mkdir("uploadimages");
 
+
+    if(file_exists("json/map.txt")){
+        copy("json/map.txt","maps/oldmap.txt");
+    }
     //sources
 
     foreach($dna as $dirs){
