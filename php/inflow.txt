@@ -16,27 +16,6 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
 <div id = "inflow" style = "display:none;"><?php
     echo file_get_contents("json/inflow.txt");
 ?></div>
-<div id = "outflow" style = "display:none;"><?php
-    echo file_get_contents("json/outflow.txt");
-?></div>
-<div id = "thingsdiv" style = "display:none;"><?php
-    $inflow = json_decode(file_get_contents("json/inflow.txt"));
-    foreach($inflow as $source){
-        //$source = json_decode(file_get_contents($source."/json/outflow.txt"));
-        $sourcejson = json_decode(file_get_contents($source));
-        foreach($sourcejson as $thing){
-//fget.php?baseurl=" + baseurl;
-  //      fgetlink += "&thingname=" + thingname;
-        
-            echo "fget.php?baseurl=";
-            echo $source;
-            echo "&thingname=";
-            echo $thing->name;
-            echo "\n";
-        }
-    }
-?></div>
-
 
 <table id = "toptable">
     <tr>
@@ -64,26 +43,33 @@ inflow = JSON.parse(document.getElementById("inflow").innerText);
 
 for(var index = 0;index < inflow.length;index++){
     var newp = document.createElement("P");
-    var newa = document.createElement("A");
-    newa.innerHTML = inflow[index];
-    newa.href = inflow[index];
-    newp.appendChild(newa);
+    newp.innerHTML = inflow[index];
+    newp.className = "button";
     document.getElementById("sourcesscroll").appendChild(newp);
-    
-}
-
-inthings = document.getElementById("thingsdiv").innerText.split("\n");
-for(var index = 0;index < inthings.length;index++){
-    if(inthings[index].length > 0){
-        var newp = document.createElement("P");
-        var newa = document.createElement("A");
-        newa.innerHTML = inthings[index];
-        newa.href = inthings[index];
-        newp.appendChild(newa);
-        document.getElementById("thingscroll").appendChild(newp);
+    newp.onclick = function(){
+        var httpc = new XMLHttpRequest();
+        httpc.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                filedata = this.responseText;
+                things = JSON.parse(filedata);
+                for(var index = 0;index < things.length;index++){
+                    var newa = document.createElement("A");
+                    var newp = document.createElement("P");
+                    newp.appendChild(newa);
+                    document.getElementById("thingscroll").appendChild(newp);
+                    newa.href = "fget.php?baseurl=" + sourceurl;
+                    newa.href += "&thingname=" + things[index].name;
+                    newa.innerHTML = newa.href;
+                }
+            }
+        };
+        sourceurl = this.innerHTML;
+        httpc.open("GET", "fileloader.php?filename=" + this.innerHTML, true);
+        httpc.send();
     }
 }
 
+/*
 outflow = JSON.parse(document.getElementById("outflow").innerText);
 
 for(var index = 0;index < outflow.length;index++){
@@ -113,6 +99,7 @@ for(var index = 0;index < outflow.length;index++){
     }    
     
 }
+*/
 
 document.getElementById("gobutton").onclick = function(){
     var newsource = document.getElementById("thingname").value;
