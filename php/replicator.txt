@@ -34,6 +34,11 @@
             }
         }    
     }
+    
+    if(file_exists("maps/oldmap.txt")){
+        copy("maps/oldmap.txt","json/map.txt");
+    }
+
 ?>
 
 <a href = "index.php" style = "font-size:5em;">index.php</a>
