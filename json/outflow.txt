@@ -1,12 +1,8 @@
 [
     {
-        "name": "foo",
-        "scrolls": [
-            "scroll/markdown/actiongeometrybook.txt"
-        ],
-        "maps": [
-            "maps/foo.txt"
-        ],
+        "name": "emptything",
+        "scrolls": [],
+        "maps": [],
         "symbols": []
     }
 ]
